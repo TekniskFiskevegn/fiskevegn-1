@@ -18,7 +18,6 @@ export const query = graphql`
       title
       description
       keywords
-      frontpageImage
     }
     projects: allSanityProject(
       limit: 6
@@ -63,7 +62,7 @@ export const query = graphql`
 
 const IndexPage = props => {
   const { data, errors } = props;
-
+  console.log("log data in index.js", data);
   if (errors) {
     return (
       <Layout>
@@ -88,7 +87,7 @@ const IndexPage = props => {
   return (
     <Layout>
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
-      <FrontpageImage image={site.frontpageImage} />
+      {/* <FrontpageImage /> */}
       <Container>
         <h1 hidden>Welcome to {site.title}</h1>
         {projectNodes && (

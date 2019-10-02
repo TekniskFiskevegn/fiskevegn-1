@@ -2,7 +2,7 @@
 
 .root {}
 
-.mainImage {
+.frontpageImage {
   position: relative;
   background: #eee;
   padding-bottom: calc(9 / 16 * 100%);

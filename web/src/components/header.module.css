@@ -4,18 +4,25 @@
 .root {
   position: relative;
   z-index: 100;
+  background-image: linear-gradient(to right,rgba(248,248,248,0) 0,#f8f8f8 50%,#f8f8f8 100%);
 }
 
 .wrapper {
   box-sizing: border-box;
   margin: 0 auto;
-  max-width: 960px;
-  padding: 1em;
+  padding: 1.5em;
   display: flex;
-
+  max-width: 1600px;
+  margin:0 auto;
+  
   @media (--media-min-small) {
-    padding: 1.5em 1.5em;
+    padding: 2em;
   }
+
+  @media (--media-min-xl) {
+    padding: 2em 3em;
+  }
+
 }
 
 .branding {

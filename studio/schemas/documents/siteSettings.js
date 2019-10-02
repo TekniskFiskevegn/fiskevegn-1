@@ -2,12 +2,12 @@ export default {
   name: "siteSettings",
   type: "document",
   title: "Site Settings",
-  __experimental_actions: [
-    // 'create',
-    "update",
-    // 'delete',
-    "publish"
-  ],
+  // __experimental_actions: [
+  //   // 'create',
+  //   "update",
+  //   // 'delete',
+  //   "publish"
+  // ],
   fields: [
     {
       name: "title",
@@ -36,11 +36,6 @@ export default {
       description: "Publish an author and set a reference to them here.",
       title: "Author",
       to: [{ type: "person" }]
-    },
-    {
-      name: "frontpageImage",
-      title: "Frontpage image",
-      type: "figure"
     }
   ]
 };
