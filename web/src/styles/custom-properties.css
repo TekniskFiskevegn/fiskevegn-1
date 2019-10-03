@@ -1,6 +1,9 @@
 :root {
   --font-family-sans: -apple-system, BlinkMacSystemFont, sans-serif;
 
+  --color-brand-primary: #d14a28;
+  --color-brand-secondary: #231f20;
+
   --color-black: #202123;
   --color-dark-gray: #32373e;
   --color-gray: #697a90;
@@ -13,7 +16,7 @@
   --unit: 16;
   --font-micro-size: calc(10 / var(--unit) * 1rem); /* 10px */
   --font-micro-line-height: calc(12 / 10); /* 12px */
-  --font-small-size: calc(14 / var(--unit) * 1rem); /* 14px */
+  --font-small-size: calc(15 / var(--unit) * 1rem); /* 14px */
   --font-small-line-height: calc(21 / 14); /* 21px */
   --font-base-size: 1em; /* 16px */
   --font-base-line-height: calc(24 / var(--unit)); /* 24px */

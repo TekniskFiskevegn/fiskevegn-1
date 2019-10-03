@@ -32,7 +32,7 @@
   margin: 0 auto;
 
   @media (--media-min-small) {
-    padding: 6em 2em 2em;
+    padding: 5em 2em 3em;
   }
 }
 

@@ -39,6 +39,7 @@ export const query = graphql`
           _id
         }
         alt
+        caption
       }
     }
     projects: allSanityProject(

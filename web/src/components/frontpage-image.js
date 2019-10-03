@@ -11,6 +11,7 @@ const FrontpageImage = props => {
   return (
     <div className={styles.root}>
       <div className={styles.frontpageImage}>
+        {frontpageImage.caption && <h2 className={styles.caption}>{frontpageImage.caption}</h2>}
         <img
           src={imageUrlFor(buildImageObj(frontpageImage))
             .width(1200)

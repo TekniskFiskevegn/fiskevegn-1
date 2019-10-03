@@ -1,0 +1,9 @@
+@import '../styles/custom-media.css';
+@import '../styles/custom-properties.css';
+
+.row {
+  display: flex;
+}
+.column {
+  flex:1 0 0;
+}
