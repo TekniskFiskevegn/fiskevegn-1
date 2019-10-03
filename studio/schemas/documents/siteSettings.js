@@ -36,6 +36,11 @@ export default {
       description: "Publish an author and set a reference to them here.",
       title: "Author",
       to: [{ type: "person" }]
+    },
+    {
+      name: "frontpageImage",
+      title: "Frontpage Image",
+      type: "figure"
     }
   ]
 };
