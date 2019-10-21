@@ -36,3 +36,26 @@ Netlify automatically deploys new changes commited to the `master` branch on Git
 [![Slack Community Button](https://slack.sanity.io/badge.svg)](https://slack.sanity.io/)
 
 Join [Sanity’s developer community](https://slack.sanity.io) or ping us [on twitter](https://twitter.com/sanity_io).
+
+## My own notes about workflow
+
+Workflow for changes in studio
+
+1. npm run dev 
+2. Make changes in /schemas
+3. This will update sanity studio
+4. But Gatsby will fail
+5. To fix this: npm run graphql-deploy
+6. Restart npm run dev
+7. Gatsby will most likely fail again, because of missing fields in the update sanity studio
+8. To fix this: changes some content on the current document, and re-publish
+9. It should now work
+
+## My own notes about lerna
+
+1. lerna add react --scope=web
+2. lerna add react --scope=studio
+
+## What I have installed
+
+- `react-parallax` (https://www.npmjs.com/package/react-parallax)
