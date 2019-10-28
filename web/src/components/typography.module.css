@@ -62,6 +62,21 @@
   text-transform: uppercase;
 }
 
+.u400 {
+  font-weight: 400;
+}
+.u500 {
+  font-weight: 500;
+}
+.u700 {
+  font-weight: 700;
+}
+.u900 {
+  font-weight: 900;
+}
+.uSlab {
+  font-family: 'Roboto Slab', sans-serif;
+}
 
 
 /*
@@ -89,7 +104,7 @@
 }
 
 .responsiveTitle1 {
-  font-weight: 900;
+  font-weight: 700;
   font-size: var(--font-title3-size);
   line-height: var(--font-title3-line-height);
   margin: 1rem 0 2rem;
@@ -106,7 +121,7 @@
 }
 
 .responsiveTitle2 {
-  font-weight: 900;
+  font-weight: 700;
   font-size: var(--font-large-size);
   line-height: var(--font-large-line-height);
   margin: 1.5rem 0 0.5rem;
@@ -123,7 +138,7 @@
 }
 
 .responsiveTitle3 {
-  font-weight: 900;
+  font-weight: 700;
   font-size: var(--font-large-size);
   line-height: var(--font-large-line-height);
   margin: 1rem 0 0.5rem;

@@ -1,5 +1,86 @@
+/* roboto-regular - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/static/fonts/roboto-v20-latin-regular.eot'); 
+  src: local('Roboto'), local('Roboto-Regular'),
+       url('/static/fonts/roboto-v20-latin-regular.woff2') format('woff2'), 
+       url('/static/fonts/roboto-v20-latin-regular.woff') format('woff'), 
+       url('/static/fonts/roboto-v20-latin-regular.ttf') format('truetype');
+}
+/* roboto-500 - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url('/static/fonts/roboto-v20-latin-500.eot'); 
+  src: local('Roboto Medium'), local('Roboto-Medium'),
+       url('/static/fonts/roboto-v20-latin-500.woff2') format('woff2'), 
+       url('/static/fonts/roboto-v20-latin-500.woff') format('woff'), 
+       url('/static/fonts/roboto-v20-latin-500.ttf') format('truetype');
+}
+/* roboto-700 - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/static/fonts/roboto-v20-latin-700.eot'); 
+  src: local('Roboto Bold'), local('Roboto-Bold'),
+       url('/static/fonts/roboto-v20-latin-700.woff2') format('woff2'), 
+       url('/static/fonts/roboto-v20-latin-700.woff') format('woff'), 
+       url('/static/fonts/roboto-v20-latin-700.ttf') format('truetype');
+}
+/* roboto-900 - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url('/static/fonts/roboto-v20-latin-900.eot'); 
+  src: local('Roboto Black'), local('Roboto-Black'),
+       url('/static/fonts/roboto-v20-latin-900.woff2') format('woff2'), 
+       url('/static/fonts/roboto-v20-latin-900.woff') format('woff'), 
+       url('/static/fonts/roboto-v20-latin-900.ttf') format('truetype');
+}
+
+/* roboto-slab-700 - latin */
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/static/fonts/roboto-slab-v9-latin-700.eot'); 
+  src: local('Roboto Slab Bold'), local('RobotoSlab-Bold'),
+       url('/static/fonts/roboto-slab-v9-latin-700.woff2') format('woff2'), 
+       url('/static/fonts/roboto-slab-v9-latin-700.woff') format('woff'), 
+       url('/static/fonts/roboto-slab-v9-latin-700.ttf') format('truetype');
+}
+
+/* lato-regular - latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/static/fonts/lato-v16-latin-regular.eot'); 
+  src: local('Lato Regular'), local('Lato-Regular'),
+       url('/static/fonts/lato-v16-latin-regular.woff2') format('woff2'), 
+       url('/static/fonts/lato-v16-latin-regular.woff') format('woff'), 
+       url('/static/fonts/lato-v16-latin-regular.ttf') format('truetype');
+}
+/* lato-700 - latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/static/fonts/lato-v16-latin-700.eot'); 
+  src: local('Lato Bold'), local('Lato-Bold'),
+       url('/static/fonts/lato-v16-latin-700.woff2') format('woff2'), 
+       url('/static/fonts/lato-v16-latin-700.woff') format('woff'), 
+       url('/static/fonts/lato-v16-latin-700.ttf') format('truetype');
+}
+
 :root {
-  --font-family-sans: -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --font-family-sans: 'Roboto', sans-serif;
 
   --color-brand-primary: #d14a28;
   --color-brand-secondary: #231f20;

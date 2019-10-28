@@ -29,8 +29,9 @@
 }
 
 .branding {
-  font-weight: 600;
+  font-weight: 700;
   flex: 1;
+  font-size: 20px;
 
   @nest & a {
     display: inline-block;

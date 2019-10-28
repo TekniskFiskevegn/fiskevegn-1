@@ -37,6 +37,19 @@ Netlify automatically deploys new changes commited to the `master` branch on Git
 
 Join [Sanity’s developer community](https://slack.sanity.io) or ping us [on twitter](https://twitter.com/sanity_io).
 
+
+## Font management
+`https://fontpair.co/` is a nice resource for finding good fonts.
+Download the fonts from `https://google-webfonts-helper.herokuapp.com/fonts`
+
+In this project these fonts are available in `public/static/fonts` folder:
+1. Roboto
+2. Roboto slab
+3. Lato
+
+I am hosting the font files locally. But another option is to use something like this in my custom.properties.css file:
+`@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');`
+
 ## My own notes about workflow
 
 Workflow for changes in studio
@@ -59,3 +72,6 @@ Workflow for changes in studio
 ## What I have installed
 
 - `react-parallax` (https://www.npmjs.com/package/react-parallax)
+
+## Todo
+- remove react-parallax
