@@ -9,8 +9,9 @@ const Header = ({ onHideNav, onShowNav, showNav, siteTitle, isFrontpage }) => (
   <div className={cn(styles.root, isFrontpage && styles.isFrontpage)}>
     <div className={styles.wrapper}>
       <div className={styles.branding}>
-        <Link to="/" className="uSlab">
-          {siteTitle}
+        <Link to="/">
+          <img src="/logo.png" alt="Fiskevegn" />
+          <h1 hidden>{siteTitle}</h1>
         </Link>
       </div>
 

@@ -5,13 +5,14 @@
   position: relative;
   z-index: 100;
   width:100%;
-  /* @media (--media-min-large) {
-    position: absolute;
-  } */
 }
 
 .isFrontpage {
-  position: absolute;
+  position: relative;
+  
+  @media (--media-min-xl) {
+    position:absolute;
+  }
 }
 
 .wrapper {
@@ -19,7 +20,7 @@
   margin: 0 auto;
   padding: 1.5em;
   display: flex;
-  max-width: 1600px;
+  max-width: 1400px;
   margin:0 auto;
   
   @media (--media-min-small) {
@@ -27,7 +28,7 @@
   }
 
   @media (--media-min-xl) {
-    padding: 2em 3em;
+    padding: 2.5em;
   }
 
 }
@@ -35,13 +36,16 @@
 .branding {
   font-weight: 700;
   flex: 1;
-  font-size: 20px;
 
   @nest & a {
     display: inline-block;
-    padding: 0.5em;
     color: inherit;
     text-decoration: none;
+    width:150px;
+
+    @nest & img {
+      max-width:100%;
+    }
 
     @media (hover: hover) {
       @nest &:hover {
@@ -74,7 +78,7 @@
 .nav {
   display: none;
   text-transform:uppercase;
-  font-weight: 700;
+  font-weight: 500;
   font-size: var(--font-small-size);
 
   @nest & ul {
