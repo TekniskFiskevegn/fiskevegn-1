@@ -69,6 +69,9 @@ Workflow for changes in studio
 1. lerna add react --scope=web
 2. lerna add react --scope=studio
 
+## Static files - Adding assets outside of the module system
+You can create a folder named static at the root of your project. Every file you put into that folder will be copied into the public folder. E.g. if you add a file named sun.jpg to the static folder, it’ll be copied to public/sun.jpg
+
 ## What I have installed
 
 - `react-parallax` (https://www.npmjs.com/package/react-parallax)

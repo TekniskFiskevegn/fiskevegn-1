@@ -8,9 +8,15 @@ import "../styles/layout.css";
 import styles from "./layout.module.css";
 import flex from "./flex.module.css";
 
-const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle }) => (
+const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle, isFrontpage }) => (
   <>
-    <Header siteTitle={siteTitle} onHideNav={onHideNav} onShowNav={onShowNav} showNav={showNav} />
+    <Header
+      isFrontpage={isFrontpage}
+      siteTitle={siteTitle}
+      onHideNav={onHideNav}
+      onShowNav={onShowNav}
+      showNav={showNav}
+    />
     <div className={styles.content}>{children}</div>
     <footer className={styles.footer}>
       <div className={styles.footerWrapper}>

@@ -5,9 +5,13 @@
   position: relative;
   z-index: 100;
   width:100%;
-  @media (--media-min-large) {
+  /* @media (--media-min-large) {
     position: absolute;
-  }
+  } */
+}
+
+.isFrontpage {
+  position: absolute;
 }
 
 .wrapper {
