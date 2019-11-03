@@ -85,3 +85,6 @@ You can create a folder named static at the root of your project. Every file you
 - remove react-parallax
 - alignment text and logo in header
 - responsive caption title
+- from project --> news
+- add products
+- add image block for frontpage

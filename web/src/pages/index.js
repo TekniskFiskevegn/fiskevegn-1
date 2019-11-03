@@ -8,7 +8,7 @@ import {
 import FrontpageImage from "../components/frontpage-image";
 import Container from "../components/container";
 import GraphQLErrorList from "../components/graphql-error-list";
-import ProjectPreviewGrid from "../components/project-preview-grid";
+import NewsPreviewGrid from "../components/news-preview-grid";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
 
@@ -80,6 +80,44 @@ export const query = graphql`
         }
       }
     }
+    news: allSanityNews(
+      limit: 6
+      sort: { fields: [publishedAt], order: DESC }
+      filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
+    ) {
+      edges {
+        node {
+          id
+          mainImage {
+            crop {
+              _key
+              _type
+              top
+              bottom
+              left
+              right
+            }
+            hotspot {
+              _key
+              _type
+              x
+              y
+              height
+              width
+            }
+            asset {
+              _id
+            }
+            alt
+          }
+          title
+          _rawExcerpt
+          slug {
+            current
+          }
+        }
+      }
+    }
   }
 `;
 
@@ -100,6 +138,11 @@ const IndexPage = props => {
         .filter(filterOutDocsWithoutSlugs)
         .filter(filterOutDocsPublishedInTheFuture)
     : [];
+  const newsNodes = (data || {}).news
+    ? mapEdgesToNodes(data.news)
+        .filter(filterOutDocsWithoutSlugs)
+        .filter(filterOutDocsPublishedInTheFuture)
+    : [];
 
   if (!site) {
     throw new Error(
@@ -113,8 +156,11 @@ const IndexPage = props => {
       <FrontpageImage {...site} />
       <Container>
         <h1 hidden>Welcome to {site.title}</h1>
+        {newsNodes && (
+          <NewsPreviewGrid title="Nyheter 1" nodes={newsNodes} browseMoreHref="/archive/" />
+        )}
         {projectNodes && (
-          <ProjectPreviewGrid title="Nyheter" nodes={projectNodes} browseMoreHref="/archive/" />
+          <NewsPreviewGrid title="Nyheter 2" nodes={projectNodes} browseMoreHref="/archive/" />
         )}
       </Container>
     </Layout>
