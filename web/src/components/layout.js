@@ -34,10 +34,9 @@ const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle, isFrontpag
           ></path>
         </g>
       </svg> */}
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 125 1440 140">
         <path
-          fill="#FD8E13"
-          fill-opacity="1"
+          fillOpacity="1"
           d="M0,192L60,208C120,224,240,256,360,240C480,224,600,160,720,138.7C840,117,960,139,1080,144C1200,149,1320,139,1380,133.3L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
         ></path>
       </svg>

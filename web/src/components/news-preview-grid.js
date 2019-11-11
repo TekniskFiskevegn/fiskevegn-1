@@ -1,10 +1,10 @@
 import { Link } from "gatsby";
 import React from "react";
-import ProjectPreview from "./project-preview";
+import NewsPreview from "./news-preview";
 
-import styles from "./project-preview-grid.module.css";
+import styles from "./news-preview-grid.module.css";
 
-function ProjectPreviewGrid(props) {
+function NewsPreviewGrid(props) {
   return (
     <div className={styles.root}>
       {props.title && <h2 className={styles.headline}>{props.title}</h2>}
@@ -12,7 +12,7 @@ function ProjectPreviewGrid(props) {
         {props.nodes &&
           props.nodes.map(node => (
             <li key={node.id}>
-              <ProjectPreview {...node} />
+              <NewsPreview {...node} />
             </li>
           ))}
       </ul>
@@ -25,10 +25,10 @@ function ProjectPreviewGrid(props) {
   );
 }
 
-ProjectPreviewGrid.defaultProps = {
+NewsPreviewGrid.defaultProps = {
   title: "",
   nodes: [],
   browseMoreHref: ""
 };
 
-export default ProjectPreviewGrid;
+export default NewsPreviewGrid;

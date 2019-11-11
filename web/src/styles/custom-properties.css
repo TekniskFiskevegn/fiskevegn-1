@@ -60,14 +60,15 @@
 
   --font-family-sans: 'Roboto', sans-serif;
 
-  --color-brand-primary: #d14a28;
-  --color-brand-secondary: #231f20;
+  --color-brand-primary: #292f8e;
+  --color-brand-secondary: #d14a28;
 
   --color-black: #202123;
   --color-dark-gray: #32373e;
   --color-gray: #697a90;
   --color-light-gray: #b4bcc7;
   --color-very-light-gray: #e7ebed;
+  --color-super-light-gray: #f9f9f9;
   --color-white: #fff;
   --color-accent: #156dff;
 
