@@ -5,12 +5,13 @@ import createSchema from "part:@sanity/base/schema-creator";
 import schemaTypes from "all:part:@sanity/base/schema-type";
 
 // Document types
-import category from "./documents/category";
+// import category from "./documents/category";
 import person from "./documents/person";
 import project from "./documents/project";
 import news from "./documents/news";
 import product from "./documents/product";
 import siteSettings from "./documents/siteSettings";
+import frontpage from "./documents/frontpage";
 
 // Object types
 import bioPortableText from "./objects/bioPortableText";
@@ -18,6 +19,7 @@ import figure from "./objects/figure";
 import projectMember from "./objects/projectMember";
 import projectPortableText from "./objects/projectPortableText";
 import simplePortableText from "./objects/simplePortableText";
+import promotedBlock from "./objects/promotedBlock";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -33,13 +35,15 @@ export default createSchema({
     projectMember,
     projectPortableText,
     simplePortableText,
+    promotedBlock,
     // The following are document types which will appear
     // in the studio.
-    category,
+    // category,
     person,
     project,
     product,
     news,
-    siteSettings
+    siteSettings,
+    frontpage
   ])
 });

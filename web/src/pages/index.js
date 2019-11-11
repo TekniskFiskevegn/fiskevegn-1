@@ -6,6 +6,7 @@ import {
   filterOutDocsPublishedInTheFuture
 } from "../lib/helpers";
 import FrontpageImage from "../components/frontpage-image";
+import PromotedBlock from "../components/promoted-block";
 import Container from "../components/container";
 import GraphQLErrorList from "../components/graphql-error-list";
 import NewsPreviewGrid from "../components/news-preview-grid";
@@ -18,6 +19,10 @@ export const query = graphql`
       title
       description
       keywords
+      frontpagePromotedBlock {
+        title
+        description
+      }
       frontpageImage {
         crop {
           _key
@@ -155,7 +160,8 @@ const IndexPage = props => {
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
       <FrontpageImage {...site} />
       <Container>
-        <h1 hidden>Welcome to {site.title}</h1>
+        <h1 hidden>{site.title}</h1>
+        <PromotedBlock />
         {newsNodes && (
           <NewsPreviewGrid title="Nyheter 1" nodes={newsNodes} browseMoreHref="/archive/" />
         )}

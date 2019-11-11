@@ -52,12 +52,12 @@ export default {
       title: "Main image",
       type: "figure"
     },
-    {
-      name: "categories",
-      title: "Categories",
-      type: "array",
-      of: [{ type: "reference", to: { type: "category" } }]
-    },
+    // {
+    //   name: "categories",
+    //   title: "Categories",
+    //   type: "array",
+    //   of: [{ type: "reference", to: { type: "category" } }]
+    // },
     {
       name: "body",
       title: "Body",
