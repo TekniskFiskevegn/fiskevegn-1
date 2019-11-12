@@ -1,4 +1,5 @@
 @import '../styles/custom-media.css';
+@import '../styles/custom-properties.css';
 
 .root {}
 
@@ -23,21 +24,56 @@
   top: 53%;
   left: 43%;
   transform: translate(-50%, -50%);
-  width: 600px;
+  width: 450px;
   z-index: 1;
+
+  @media (--media-min-medium) {
+    width: 500px;
+  }
+
+  @media (--media-min-large) {
+    width: 550px;
+  }
+  @media (--media-min-xl) {
+    width: 600px;
+  }
 }
 
 .captionSvg {
   width: 100%;
   height: 100%;
-  opacity: 0.3;
-  fill:blue;
+  opacity: 0;
+  fill:var(--color-brand-primary);
+  
+  @media (--media-min-medium) {
+    opacity: 0.9;
+  }
 }
 
 .captionTitle {
   position: absolute;
-  top: 53%;
+  top: 42%;
   left: 43%;
-  transform: translate(-50%, -50%);
+  transform: translate(-43%, -42%);
   z-index:2;
+  margin:0;
+  font-weight: 700;
+
+  font-size: var(--font-title5-size);
+  line-height: var(--font-title5-line-height);
+
+  @media (--media-min-medium) {
+    font-size: var(--font-title4-size);
+    line-height: var(--font-title4-line-height);
+  }
+
+  @media (--media-min-large) {
+    font-size: var(--font-title3-size);
+    line-height: var(--font-title3-line-height);
+  }
+
+  @media (--media-min-xl) {
+    font-size: var(--font-title2-size);
+    line-height: var(--font-title2-line-height);
+  }
 }

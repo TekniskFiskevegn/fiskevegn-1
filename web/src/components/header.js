@@ -22,19 +22,19 @@ const Header = ({ onHideNav, onShowNav, showNav, siteTitle, isFrontpage }) => (
       <nav className={cn(styles.nav, showNav && styles.showNav)}>
         <ul>
           <li>
-            <Link to="/about/">Om oss</Link>
+            <Link to="/about/">About</Link>
           </li>
           <li>
-            <Link to="/about/">Produkter</Link>
+            <Link to="/about/">Products</Link>
           </li>
           <li>
-            <Link to="/about/">Tjenester</Link>
+            <Link to="/about/">Services</Link>
           </li>
           <li>
-            <Link to="/archive/">Kontakt</Link>
+            <Link to="/archive/">Contact</Link>
           </li>
           <li>
-            <Link to="/archive/">Archive</Link>
+            <Link to="/archive/">Language</Link>
           </li>
         </ul>
       </nav>
