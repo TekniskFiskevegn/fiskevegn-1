@@ -1,7 +1,7 @@
 export default {
   name: "siteSettings",
   type: "document",
-  title: "Site Settings",
+  title: "Frontpage and SEO",
   // __experimental_actions: [
   //   // 'create',
   //   "update",
@@ -41,6 +41,11 @@ export default {
       name: "frontpageImage",
       title: "Frontpage Image",
       type: "figure"
+    },
+    {
+      name: "frontpagePromotedBlock",
+      title: "Promoted block for products on frontpage",
+      type: "promotedBlock"
     }
   ]
 };
