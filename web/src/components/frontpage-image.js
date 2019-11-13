@@ -47,8 +47,8 @@ const FrontpageImage = props => {
         )}
         <img
           src={imageUrlFor(buildImageObj(frontpageImage))
-            .width(1200)
-            .height(Math.floor((9 / 16) * 1200))
+            .width(1800)
+            .height(Math.floor((9 / 16) * 1800))
             .fit("crop")
             .url()}
           alt={frontpageImage.alt}

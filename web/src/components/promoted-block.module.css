@@ -11,6 +11,7 @@
 .flexRow {
   display: flex;
   position: relative;
+  margin:3em 0;
 }
 
 .imageContainer {
