@@ -22,6 +22,28 @@ export const query = graphql`
       frontpagePromotedBlock {
         title
         description
+        image {
+          crop {
+            _key
+            _type
+            top
+            bottom
+            left
+            right
+          }
+          hotspot {
+            _key
+            _type
+            x
+            y
+            height
+            width
+          }
+          asset {
+            _id
+          }
+          alt
+        }
       }
       frontpageImage {
         crop {
@@ -161,7 +183,7 @@ const IndexPage = props => {
       <FrontpageImage {...site} />
       <Container>
         <h1 hidden>{site.title}</h1>
-        <PromotedBlock />
+        <PromotedBlock {...site} />
         {newsNodes && (
           <NewsPreviewGrid title="Nyheter 1" nodes={newsNodes} browseMoreHref="/archive/" />
         )}

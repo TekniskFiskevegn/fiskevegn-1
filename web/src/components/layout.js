@@ -6,7 +6,6 @@ import "../styles/layout.css";
 
 // Layout specific styles
 import styles from "./layout.module.css";
-import flex from "./flex.module.css";
 
 const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle, isFrontpage }) => (
   <>

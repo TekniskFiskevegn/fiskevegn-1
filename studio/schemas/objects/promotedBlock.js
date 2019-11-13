@@ -5,13 +5,23 @@ export default {
   fields: [
     {
       name: "title",
-      title: "Title",
+      title: "Block title",
       type: "string"
     },
     {
       name: "description",
       type: "text",
-      title: "Description"
+      title: "Block description"
+    },
+    {
+      name: "subtitle",
+      title: "Subtitle",
+      type: "string"
+    },
+    {
+      name: "text",
+      type: "text",
+      title: "Text"
     },
     {
       name: "image",
