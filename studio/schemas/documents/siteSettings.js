@@ -43,9 +43,14 @@ export default {
       type: "figure"
     },
     {
-      name: "frontpagePromotedBlock",
+      name: "promotedBlock",
       title: "Promoted block for products on frontpage",
       type: "promotedBlock"
+    },
+    {
+      name: "promotedBlockLarge",
+      title: "Promoted block for services on frontpage",
+      type: "promotedBlockLarge"
     }
   ]
 };

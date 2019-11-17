@@ -47,11 +47,11 @@
       max-width:100%;
     }
 
-    @media (hover: hover) {
+    /* @media (hover: hover) {
       @nest &:hover {
         color: var(--color-accent);
       }
-    }
+    } */
   }
 }
 
@@ -92,11 +92,11 @@
     text-decoration: none;
   }
 
-  @media (hover: hover) {
+  /* @media (hover: hover) {
     @nest & ul li a:hover {
       color: var(--color-accent);
     }
-  }
+  } */
 
   @media (--media-max-small) {
     position: absolute;

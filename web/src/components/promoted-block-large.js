@@ -7,8 +7,8 @@ import { imageUrlFor } from "../lib/image-url";
 import styles from "./promoted-block.module.css";
 import { responsiveTitle1 } from "../components/typography.module.css";
 
-const PromotedBlock = props => {
-  console.log("promoted-block.js", props);
+const PromotedBlockLarge = props => {
+  console.log("props promoted-block-large.js", props);
 
   const { promotedBlock } = props;
 
@@ -24,16 +24,14 @@ const PromotedBlock = props => {
       </div>
       <div className={styles.flexRow}>
         <div className={styles.imageContainer}>
-          {promotedBlock.image && (
-            <img
-              src={imageUrlFor(buildImageObj(promotedBlock.image))
-                .width(700)
-                .height(Math.floor((9 / 16) * 700))
-                .fit("crop")
-                .url()}
-              alt={promotedBlock.image.alt}
-            />
-          )}
+          {/* <img
+            src={imageUrlFor(buildImageObj(promotedBlock.image))
+              .width(700)
+              .height(Math.floor((9 / 16) * 700))
+              .fit("crop")
+              .url()}
+            alt={promotedBlock.image.alt}
+          /> */}
         </div>
         <div className={styles.textContainer}>
           <h3>Consectetur</h3>
@@ -49,4 +47,4 @@ const PromotedBlock = props => {
   );
 };
 
-export default PromotedBlock;
+export default PromotedBlockLarge;

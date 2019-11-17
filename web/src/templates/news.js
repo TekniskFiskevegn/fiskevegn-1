@@ -11,10 +11,10 @@ export const query = graphql`
     news: sanityNews(id: { eq: $id }) {
       id
       publishedAt
-      categories {
-        _id
-        title
-      }
+      # categories {
+      #   _id
+      #   title
+      # }
       relatedProjects {
         title
         _id
