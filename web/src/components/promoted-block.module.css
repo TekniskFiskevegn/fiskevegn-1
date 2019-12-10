@@ -12,7 +12,24 @@
   display: flex;
   position: relative;
   margin:3em 0;
+  box-sizing: border-box;
+    max-width: 1140px;
+    padding: 2em;
+    margin: 0 auto;
 }
+
+
+.fullWidth {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background:blue;
+  /* height: 100px; */
+}
+
 
 .imageContainer {
   flex:60% 0 0;

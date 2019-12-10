@@ -15,7 +15,7 @@ export default {
       type: "figure"
     },
     {
-      name: "frontpagePromotedBlock",
+      name: "promotedBlock",
       title: "Products block on frontpage",
       type: "promotedBlock"
     },

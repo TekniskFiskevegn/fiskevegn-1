@@ -23,6 +23,58 @@ export const query = graphql`
     }
     frontpage: sanityFrontpage {
       _id
+      promotedBlockLarge {
+        title
+        description
+        image {
+          crop {
+            _key
+            _type
+            top
+            bottom
+            left
+            right
+          }
+          hotspot {
+            _key
+            _type
+            x
+            y
+            height
+            width
+          }
+          asset {
+            _id
+          }
+          alt
+        }
+      }
+      promotedBlock {
+        title
+        description
+        image {
+          crop {
+            _key
+            _type
+            top
+            bottom
+            left
+            right
+          }
+          hotspot {
+            _key
+            _type
+            x
+            y
+            height
+            width
+          }
+          asset {
+            _id
+          }
+          alt
+        }
+      }
       frontpageImage {
         crop {
           _key
@@ -162,14 +214,14 @@ const IndexPage = props => {
       <FrontpageImage {...frontpage} />
       <Container>
         <h1 hidden>{site.title}</h1>
-        {frontpage.PromotedBlock && <PromotedBlock {...frontpage} />}
-        {frontpage.PromotedBlockLarge && <PromotedBlockLarge {...frontpage} />}
+        {frontpage.promotedBlock && <PromotedBlock {...frontpage} />}
+        {frontpage.promotedBlockLarge && <PromotedBlockLarge {...frontpage} />}
         {newsNodes && (
-          <NewsPreviewGrid title="Nyheter 1" nodes={newsNodes} browseMoreHref="/archive/" />
+          <NewsPreviewGrid title="Siste nytt" nodes={newsNodes} browseMoreHref="/archive/" />
         )}
-        {projectNodes && (
+        {/* {projectNodes && (
           <NewsPreviewGrid title="Nyheter 2" nodes={projectNodes} browseMoreHref="/archive/" />
-        )}
+        )} */}
       </Container>
     </Layout>
   );
