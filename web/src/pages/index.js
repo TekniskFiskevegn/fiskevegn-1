@@ -20,58 +20,9 @@ export const query = graphql`
       title
       description
       keywords
-      promotedBlock {
-        title
-        description
-        image {
-          crop {
-            _key
-            _type
-            top
-            bottom
-            left
-            right
-          }
-          hotspot {
-            _key
-            _type
-            x
-            y
-            height
-            width
-          }
-          asset {
-            _id
-          }
-          alt
-        }
-      }
-      promotedBlockLarge {
-        title
-        description
-        image {
-          crop {
-            _key
-            _type
-            top
-            bottom
-            left
-            right
-          }
-          hotspot {
-            _key
-            _type
-            x
-            y
-            height
-            width
-          }
-          asset {
-            _id
-          }
-          alt
-        }
-      }
+    }
+    frontpage: sanityFrontpage {
+      _id
       frontpageImage {
         crop {
           _key
@@ -187,7 +138,7 @@ const IndexPage = props => {
   }
 
   const site = (data || {}).site;
-  const frontpage = {};
+  const frontpage = (data || {}).frontpage;
   const projectNodes = (data || {}).projects
     ? mapEdgesToNodes(data.projects)
         .filter(filterOutDocsWithoutSlugs)
@@ -208,11 +159,11 @@ const IndexPage = props => {
   return (
     <Layout isFrontpage={true}>
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
-      <FrontpageImage {...site} />
+      <FrontpageImage {...frontpage} />
       <Container>
         <h1 hidden>{site.title}</h1>
-        {site.PromotedBlock && <PromotedBlock {...site} />}
-        {site.PromotedBlockLarge && <PromotedBlockLarge {...site} />}
+        {frontpage.PromotedBlock && <PromotedBlock {...frontpage} />}
+        {frontpage.PromotedBlockLarge && <PromotedBlockLarge {...frontpage} />}
         {newsNodes && (
           <NewsPreviewGrid title="Nyheter 1" nodes={newsNodes} browseMoreHref="/archive/" />
         )}

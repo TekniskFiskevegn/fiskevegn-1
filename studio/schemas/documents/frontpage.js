@@ -11,13 +11,18 @@ export default {
   fields: [
     {
       name: "frontpageImage",
-      title: "Frontpage Image",
+      title: "Top image on frontpage",
       type: "figure"
     },
     {
       name: "frontpagePromotedBlock",
-      title: "Promoted block for products on frontpage",
+      title: "Products block on frontpage",
       type: "promotedBlock"
+    },
+    {
+      name: "promotedBlockLarge",
+      title: "Promoted block for services on frontpage",
+      type: "promotedBlockLarge"
     }
   ]
 };
