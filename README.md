@@ -19,6 +19,10 @@ export default {
 It takes the name: "frontpage" and uses this as a reference. So this becomes sanityFrontpage.
 
 
+## Naming conventions
+
+A new css module has to follow this naming convention in order to work, i.e: name.module.css
+
 ## Font management
 `https://fontpair.co/` is a nice resource for finding good fonts.
 Download the fonts from `https://google-webfonts-helper.herokuapp.com/fonts`

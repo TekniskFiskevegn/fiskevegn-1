@@ -20,9 +20,9 @@ export default {
       type: "promotedBlock"
     },
     {
-      name: "promotedBlockLarge",
-      title: "Promoted block for services on frontpage",
-      type: "promotedBlockLarge"
+      name: "fullWidthBlock",
+      title: "Full width block frontpage",
+      type: "fullWidthBlock"
     }
   ]
 };

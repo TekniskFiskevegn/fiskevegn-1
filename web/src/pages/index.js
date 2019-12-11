@@ -7,7 +7,7 @@ import {
 } from "../lib/helpers";
 import FrontpageImage from "../components/frontpage-image";
 import PromotedBlock from "../components/promoted-block";
-import PromotedBlockLarge from "../components/promoted-block-large";
+import FullWidthBlock from "../components/full-width-block";
 import Container from "../components/container";
 import GraphQLErrorList from "../components/graphql-error-list";
 import NewsPreviewGrid from "../components/news-preview-grid";
@@ -23,7 +23,7 @@ export const query = graphql`
     }
     frontpage: sanityFrontpage {
       _id
-      promotedBlockLarge {
+      fullWidthBlock {
         title
         description
         image {
@@ -215,7 +215,7 @@ const IndexPage = props => {
       <Container>
         <h1 hidden>{site.title}</h1>
         {frontpage.promotedBlock && <PromotedBlock {...frontpage} />}
-        {frontpage.promotedBlockLarge && <PromotedBlockLarge {...frontpage} />}
+        {frontpage.fullWidthBlock && <FullWidthBlock {...frontpage} />}
         {newsNodes && (
           <NewsPreviewGrid title="Siste nytt" nodes={newsNodes} browseMoreHref="/archive/" />
         )}

@@ -1,6 +1,6 @@
 export default {
-  name: "promotedBlockLarge",
-  title: "Promoted Block Full Width",
+  name: "fullWidthBlock",
+  title: "Full width block",
   type: "object",
   fields: [
     {
