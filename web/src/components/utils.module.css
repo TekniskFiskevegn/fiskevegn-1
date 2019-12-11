@@ -5,3 +5,13 @@
 .verticalFlow {
   padding:2em 0;
 }
+
+.positionRelative {
+  position: relative;
+}
+
+.positionAbsolute {
+  position: absolute;
+  left:0;
+  right:0;
+}

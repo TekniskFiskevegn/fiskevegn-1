@@ -67,10 +67,14 @@
   --color-dark-gray: #32373e;
   --color-gray: #697a90;
   --color-light-gray: #b4bcc7;
-  --color-very-light-gray: #F6F6F6;
-  --color-super-light-gray: #f9f9f9;
+  --color-very-light-gray: #F3F4F5;
+  --color-super-light-gray: #f6f6f6;
   --color-white: #fff;
-  --color-accent: #156dff;
+  --color-accent: #d35400;
+
+  /* blue: #1f3a93 */
+  /* blue chalk: #f1e7fe */
+  /* light purple: #B2B9E0 */
 
   /* Typography */
   --unit: 16;

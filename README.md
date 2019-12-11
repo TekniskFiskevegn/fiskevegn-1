@@ -61,6 +61,7 @@ You can create a folder named static at the root of your project. Every file you
 
 - https://getwaves.io/
 - https://undraw.co/illustrations
+- https://www.blobmaker.app/
 
 ## What I have installed
 

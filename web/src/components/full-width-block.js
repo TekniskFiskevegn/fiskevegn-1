@@ -17,35 +17,50 @@ const FullWidthBlock = props => {
     <div className={utils.verticalFlow}>
       <div className={styles.root}>
         <div className={styles.firstRow}>
-          <div className={styles.wrapper}>
-            <h2 className={responsiveTitle1}>Our Products</h2>
-            <p>
-              It is a long established fact that a reader will be distracted by the readable content
-              of a page when looking at its layout. The point of using Lorem Ipsum is that it has a
-              more-or-less normal distribution
-            </p>
+          <div className={styles.backgroundColor}>
+            <div className={styles.wrapper}>
+              <h2 className={responsiveTitle1}>Our Products</h2>
+              <p>
+                It is a long established fact that a reader will be distracted by the readable
+                content of a page when looking at its layout. The point of using Lorem Ipsum is that
+                it has a more-or-less normal distribution
+              </p>
+            </div>
           </div>
         </div>
         <div className={styles.secondRow}>
-          <div className={styles.wrapper}>
-            <div className={styles.imageContainer}>
-              <img
-                src={imageUrlFor(buildImageObj(fullWidthBlock.image))
-                  .width(700)
-                  .height(Math.floor((9 / 16) * 700))
-                  .fit("crop")
-                  .url()}
-                alt={fullWidthBlock.image.alt}
-              />
+          <div className={styles.backgroundSvg}>
+            <div className={utils.positionAbsolute}>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path
+                  fill="#F3F4F5"
+                  fill-opacity="1"
+                  d="M0,288L60,288C120,288,240,288,360,250.7C480,213,600,139,720,117.3C840,96,960,128,1080,122.7C1200,117,1320,75,1380,53.3L1440,32L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"
+                ></path>
+              </svg>
             </div>
-            <div className={styles.textContainer}>
-              <h3>Consectetur</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores porro iste sint
-                suscipit excepturi aliquid a laudantium nihil rerum nisi. Saepe pariatur at atque
-                esse accusamus repellendus exercitationem iusto odio!
-              </p>
-              <a href="">Iste sint</a>
+            <div className={styles.wrapper}>
+              <div className={utils.positionRelative}>
+                <div className={styles.imageContainer}>
+                  <img
+                    src={imageUrlFor(buildImageObj(fullWidthBlock.image))
+                      .width(700)
+                      .height(Math.floor((9 / 16) * 700))
+                      .fit("crop")
+                      .url()}
+                    alt={fullWidthBlock.image.alt}
+                  />
+                </div>
+                <div className={styles.textContainer}>
+                  <h3>Consectetur</h3>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores porro iste
+                    sint suscipit excepturi aliquid a laudantium nihil rerum nisi. Saepe pariatur at
+                    atque esse accusamus repellendus exercitationem iusto odio!
+                  </p>
+                  <a href="">Iste sint</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>

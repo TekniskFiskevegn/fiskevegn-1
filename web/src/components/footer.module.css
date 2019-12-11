@@ -1,0 +1,39 @@
+.root {
+  position: relative;
+}
+
+.backgroundColor {
+  background-color: var(--color-very-light-gray);
+}
+
+.wrapper {
+  box-sizing: border-box;
+  max-width: 1140px;
+  width:100%;
+  min-height: 350px;
+  margin:0 auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.waveContainer {
+  position: relative;
+}
+
+.companyAddress {
+  text-align: center;
+  margin: 0 0 1rem;
+}
+
+.siteInfo {
+  margin-top:-90px;
+  text-align: center;
+  font-size: var(--font-large-size);
+  line-height: var(--font-large-line-height);
+
+  @nest & a {
+    color:#d35400;
+  }
+}

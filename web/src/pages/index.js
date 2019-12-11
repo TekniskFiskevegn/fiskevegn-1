@@ -217,7 +217,7 @@ const IndexPage = props => {
         {frontpage.promotedBlock && <PromotedBlock {...frontpage} />}
         {frontpage.fullWidthBlock && <FullWidthBlock {...frontpage} />}
         {newsNodes && (
-          <NewsPreviewGrid title="Siste nytt" nodes={newsNodes} browseMoreHref="/archive/" />
+          <NewsPreviewGrid title="Latest news" nodes={newsNodes} browseMoreHref="/archive/" />
         )}
         {/* {projectNodes && (
           <NewsPreviewGrid title="Nyheter 2" nodes={projectNodes} browseMoreHref="/archive/" />

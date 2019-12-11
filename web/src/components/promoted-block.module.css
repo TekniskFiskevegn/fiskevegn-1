@@ -17,7 +17,7 @@
 }
 
 .textContainer {
-  background-color: var(--color-very-light-gray);
+  background-color: var(--color-super-light-gray);
   padding:3em;
   position: absolute;
   max-width: 400px;
