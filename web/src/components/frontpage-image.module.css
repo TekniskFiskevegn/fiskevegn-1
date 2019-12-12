@@ -58,8 +58,11 @@
   z-index:2;
   margin:0;
   font-weight: 700;
-
-  font-size: var(--font-title5-size);
+  /* font-size: var(--font-title2-size);
+  line-height: var(--font-title2-line-height); */
+  font-size:32px;
+  line-height: 39px;
+  /* font-size: var(--font-title5-size);
   line-height: var(--font-title5-line-height);
 
   @media (--media-min-medium) {
@@ -75,5 +78,5 @@
   @media (--media-min-xl) {
     font-size: var(--font-title2-size);
     line-height: var(--font-title2-line-height);
-  }
+  } */
 }
