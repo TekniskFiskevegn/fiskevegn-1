@@ -31,10 +31,10 @@ const Header = ({ onHideNav, onShowNav, showNav, siteTitle, isFrontpage }) => (
             <Link to="/about/">Services</Link>
           </li>
           <li>
-            <Link to="/archive/">Contact</Link>
+            <Link to="/about/">Contact</Link>
           </li>
           <li>
-            <Link to="/archive/">Language</Link>
+            <Link to="/about/">Language</Link>
           </li>
         </ul>
       </nav>

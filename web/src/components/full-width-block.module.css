@@ -4,6 +4,10 @@
 
 .firstRow {
   text-align: center;
+
+  @nest & .wrapper {
+    padding-bottom:0;
+  }
 }
 
 .secondRow {

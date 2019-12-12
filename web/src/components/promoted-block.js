@@ -18,7 +18,7 @@ const PromotedBlock = props => {
       <div className={styles.root}>
         <div className={styles.firstRow}>
           <h2 className={responsiveTitle1}>Our Products</h2>
-          <p>
+          <p className={utils.noMargin}>
             It is a long established fact that a reader will be distracted by the readable content
             of a page when looking at its layout. The point of using Lorem Ipsum is that it has a
             more-or-less normal distribution
@@ -44,7 +44,9 @@ const PromotedBlock = props => {
               suscipit excepturi aliquid a laudantium nihil rerum nisi. Saepe pariatur at atque esse
               accusamus repellendus exercitationem iusto odio!
             </p>
-            <a href="">Iste sint</a>
+            <a href="" className={utils.callToActionLink}>
+              SEE OUR PRODUCT LINE
+            </a>
           </div>
         </div>
       </div>

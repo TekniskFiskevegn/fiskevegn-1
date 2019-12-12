@@ -46,7 +46,7 @@
   fill:var(--color-super-light-gray);
   
   @media (--media-min-medium) {
-    opacity: 0.55;
+    opacity: 0.45;
   }
 }
 

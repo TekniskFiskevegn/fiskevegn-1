@@ -1,3 +1,5 @@
+@import '../styles/custom-properties.css';
+
 :root {
  
 }
@@ -5,13 +7,23 @@
 .verticalFlow {
   padding:2em 0;
 }
-
 .positionRelative {
   position: relative;
 }
-
 .positionAbsolute {
   position: absolute;
   left:0;
   right:0;
+}
+.noMargin {
+  margin:0;
+}
+.callToActionLink {
+  color: var(--color-brand-secondary);
+  text-decoration: none;
+  border-bottom: 2px solid var(--color-brand-secondary);
+  padding-bottom: 2px;
+  font-weight: 400;
+  font-size: var(--font-large-size);
+  line-height: var(--font-large-line-height);
 }
