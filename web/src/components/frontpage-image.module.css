@@ -8,6 +8,10 @@
   background: #eee;
   padding-bottom: calc(9 / 16 * 100%);
 
+  @media (--large-and-up) {
+    padding-bottom: calc(9 / 16 * 75%);
+  }
+
   @nest & img {
     position: absolute;
     top: 0;
@@ -21,62 +25,57 @@
 
 .caption {
   position: absolute;
-  top: 53%;
-  left: 43%;
-  transform: translate(-50%, -50%);
-  width: 450px;
+  bottom: -1.5em;
+  left: 1.5em;
+  right: 1.5em;
+  background-color: var(--color-very-light-gray);
   z-index: 1;
+  display: inline-block;
+  padding: 1.5em;
+  text-align: center;
 
-  @media (--media-min-medium) {
-    width: 500px;
-  }
-
-  @media (--media-min-large) {
-    width: 550px;
-  }
-  @media (--media-min-xl) {
-    width: 600px;
-  }
-}
-
-.captionSvg {
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  fill:var(--color-super-light-gray);
-  
-  @media (--media-min-medium) {
-    opacity: 0.45;
+  @media (--medium-and-up) {
+    background-color: transparent;
+    top: 53%;
+    left: 43%;
+    transform: translate(-50%, -50%);
+    width: 450px;
+    padding:0;
+    text-align:left;
+    display: none;
   }
 }
-
 .captionTitle {
-  position: absolute;
-  top: 42%;
+  font-size:15px;
+  margin:0;
+  color:var(--color-brand-secondary);
+
+  @media (--medium-and-up) {
+    display:block;
+  }
+  
+  /* top: 42%;
   left: 43%;
   transform: translate(-43%, -42%);
   z-index:2;
   margin:0;
   font-weight: 700;
+  font-size:32px;
+  line-height: 39px; */
   /* font-size: var(--font-title2-size);
   line-height: var(--font-title2-line-height); */
-  font-size:32px;
-  line-height: 39px;
-  /* font-size: var(--font-title5-size);
-  line-height: var(--font-title5-line-height);
 
-  @media (--media-min-medium) {
-    font-size: var(--font-title4-size);
-    line-height: var(--font-title4-line-height);
+}
+
+.captionSvg {
+  /* width: 100%;
+  height: 100%;
+  opacity: 0; */
+  display:none;
+  fill:var(--color---color-brand-secondary);
+  opacity:0.2;
+  
+  @media (--medium-and-up) {
+    display:block;
   }
-
-  @media (--media-min-large) {
-    font-size: var(--font-title3-size);
-    line-height: var(--font-title3-line-height);
-  }
-
-  @media (--media-min-xl) {
-    font-size: var(--font-title2-size);
-    line-height: var(--font-title2-line-height);
-  } */
 }

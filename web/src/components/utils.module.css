@@ -15,6 +15,9 @@
   left:0;
   right:0;
 }
+.displayFlex {
+  display:flex;
+}
 .noMargin {
   margin:0;
 }

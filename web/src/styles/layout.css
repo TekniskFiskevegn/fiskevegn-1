@@ -18,6 +18,13 @@ svg {
   vertical-align: middle;
 }
 
+img {
+  max-width:100%;
+  width:100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
 html,
 body,
 body > div,

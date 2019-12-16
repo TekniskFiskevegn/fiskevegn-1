@@ -1,3 +1,48 @@
+:root {
+
+  --font-family-sans: 'Roboto', sans-serif;
+
+  --color-brand-primary: #292f8e;
+  --color-brand-secondary: #d14a28;
+
+  --color-black: #202123;
+  --color-dark-gray: #32373e;
+  --color-gray: #697a90;
+  --color-light-gray: #b4bcc7;
+  --color-very-light-gray: #F3F4F5;
+  --color-super-light-gray: #f6f6f6;
+  --color-white: #fff;
+  --color-accent: #d35400;
+
+  /* blue: #1f3a93 */
+  /* blue chalk: #f1e7fe */
+  /* light purple: #B2B9E0 */
+
+  /* Typography */
+  --unit: 16;
+  --font-micro-size: calc(10 / var(--unit) * 1rem); /* 10px */
+  --font-micro-line-height: calc(12 / 10); /* 12px */
+  --font-small-size: calc(15 / var(--unit) * 1rem); /* 14px */
+  --font-small-line-height: calc(21 / 14); /* 21px */
+  --font-base-size: 1em; /* 16px */
+  --font-base-line-height: calc(24 / var(--unit)); /* 24px */
+  --font-large-size: calc(18 / var(--unit) * 1rem); /* 18px */
+  --font-large-line-height: calc(27 / 18); /* 27px */
+
+  --font-title4-size: calc(21 / var(--unit) * 1rem); /* 21px */
+  --font-title4-line-height: calc(30 / 21); /* 30px */
+  --font-title3-size: calc(24 / var(--unit) * 1rem); /* 24px */
+  --font-title3-line-height: calc(33 / 24); /* 33px */
+  --font-title2-size: calc(30 / var(--unit) * 1rem); /* 30px */
+  --font-title2-line-height: calc(39 / 30); /* 39px */
+  --font-title1-size: calc(36 / var(--unit) * 1rem); /* 36px */
+  --font-title1-line-height: calc(43 / 36); /* 43px */
+
+  /* super */
+  --font-super-size: calc(49 / var(--unit) * 1rem);
+  --font-super-line-height: calc(57 / 49); 
+}
+
 /* roboto-regular - latin */
 @font-face {
   font-family: 'Roboto';
@@ -52,51 +97,4 @@
   src: local('Roboto Slab Bold'), local('RobotoSlab-Bold'),
        url('/roboto-slab-v9-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
        url('/roboto-slab-v9-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-
-
-
-:root {
-
-  --font-family-sans: 'Roboto', sans-serif;
-
-  --color-brand-primary: #292f8e;
-  --color-brand-secondary: #d14a28;
-
-  --color-black: #202123;
-  --color-dark-gray: #32373e;
-  --color-gray: #697a90;
-  --color-light-gray: #b4bcc7;
-  --color-very-light-gray: #F3F4F5;
-  --color-super-light-gray: #f6f6f6;
-  --color-white: #fff;
-  --color-accent: #d35400;
-
-  /* blue: #1f3a93 */
-  /* blue chalk: #f1e7fe */
-  /* light purple: #B2B9E0 */
-
-  /* Typography */
-  --unit: 16;
-  --font-micro-size: calc(10 / var(--unit) * 1rem); /* 10px */
-  --font-micro-line-height: calc(12 / 10); /* 12px */
-  --font-small-size: calc(15 / var(--unit) * 1rem); /* 14px */
-  --font-small-line-height: calc(21 / 14); /* 21px */
-  --font-base-size: 1em; /* 16px */
-  --font-base-line-height: calc(24 / var(--unit)); /* 24px */
-  --font-large-size: calc(18 / var(--unit) * 1rem); /* 18px */
-  --font-large-line-height: calc(27 / 18); /* 27px */
-
-  --font-title4-size: calc(21 / var(--unit) * 1rem); /* 21px */
-  --font-title4-line-height: calc(30 / 21); /* 30px */
-  --font-title3-size: calc(24 / var(--unit) * 1rem); /* 24px */
-  --font-title3-line-height: calc(33 / 24); /* 33px */
-  --font-title2-size: calc(30 / var(--unit) * 1rem); /* 30px */
-  --font-title2-line-height: calc(39 / 30); /* 39px */
-  --font-title1-size: calc(36 / var(--unit) * 1rem); /* 36px */
-  --font-title1-line-height: calc(43 / 36); /* 43px */
-
-  /* super */
-  --font-super-size: calc(49 / var(--unit) * 1rem);
-  --font-super-line-height: calc(57 / 49); 
 }

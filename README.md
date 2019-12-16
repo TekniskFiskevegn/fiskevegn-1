@@ -1,5 +1,16 @@
 # fiskevegn
 
+## Todo
+- mobile first:
+  - vertical flow class
+  - logo
+  - slogan
+- remove react-parallax
+- alignment text and logo in header
+- responsive caption title
+- add products
+- gpdr existing webpage?
+
 ## Graphql queries
 
 Santiy requires a prepend of "sanity" in the query functions. This is some magic happening behind the curtains. 
@@ -66,11 +77,3 @@ You can create a folder named static at the root of your project. Every file you
 ## What I have installed
 
 - `react-parallax` (https://www.npmjs.com/package/react-parallax)
-
-## Todo
-- remove react-parallax
-- alignment text and logo in header
-- responsive caption title
-- from project --> news
-- add products
-- add image block for frontpage

@@ -1,6 +1,19 @@
-@custom-media --media-min-small (min-width: 450px);
 @custom-media --media-max-small (max-width: 449px);
+@custom-media --media-min-small (min-width: 450px);
 @custom-media --media-min-medium (min-width: 675px);
 @custom-media --media-min-large (min-width: 900px);
 @custom-media --media-min-xl (min-width: 1200px);
+
+
+/* No media queries for mobile and small devices since Sytalaust takes a mobile first approach, and these
+styles are therefor default */
+
+/* Medium devices (tablets, 768px and up) */
+@custom-media --medium-and-up (min-width: 768px);
+
+/* Large devices (desktops, 992px and up) */
+@custom-media --large-and-up (min-width: 992px);
+
+/* Extra large devices (large desktops, 1200px and up) */
+@custom-media ---extra-large-and-up (min-width: 1200px);
 
