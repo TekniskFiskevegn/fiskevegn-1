@@ -23,7 +23,7 @@ function NewsPreviewGrid(props) {
         </ul>
         {props.browseMoreHref && (
           <div className={styles.browseMoreNav}>
-            <Link to={props.browseMoreHref}>Visit our news archive</Link>
+            <Link to="#">Visit our news archive</Link>
           </div>
         )}
       </div>
