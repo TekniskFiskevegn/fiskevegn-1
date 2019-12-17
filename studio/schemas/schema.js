@@ -12,6 +12,7 @@ import news from "./documents/news";
 import product from "./documents/product";
 import siteSettings from "./documents/siteSettings";
 import frontpage from "./documents/frontpage";
+import about from "./documents/about";
 
 // Object types
 import bioPortableText from "./objects/bioPortableText";
@@ -46,6 +47,7 @@ export default createSchema({
     product,
     news,
     siteSettings,
-    frontpage
+    frontpage,
+    about
   ])
 });

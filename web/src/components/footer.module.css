@@ -3,7 +3,7 @@
 }
 
 .backgroundColor {
-  background-color: var(--color-very-light-gray);
+  background-color: var(--color-super-light-gray);
 }
 
 .wrapper {
@@ -16,6 +16,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border-top:2px solid var(--color-super-light-gray);
 }
 
 .waveContainer {
@@ -28,7 +29,6 @@
 }
 
 .siteInfo {
-  margin-top:-90px;
   text-align: center;
   font-size: var(--font-large-size);
   line-height: var(--font-large-line-height);

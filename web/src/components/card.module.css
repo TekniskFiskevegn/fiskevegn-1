@@ -1,0 +1,14 @@
+@import '../styles/custom-media.css';
+@import '../styles/custom-properties.css';
+
+.root {
+  box-shadow: 0 0.5rem 0.75rem -0.25rem rgba(39,48,54,0.05);
+  background-color: var(--color-white);
+  padding:2em;
+  margin:1em;
+}
+
+.title {
+  margin:0;
+  color:var(--color-brand-secondary);
+}

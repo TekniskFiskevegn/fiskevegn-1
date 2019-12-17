@@ -1,0 +1,17 @@
+.root {
+  text-align: center;
+  padding:3em 3em 1.5em 3em;
+}
+
+.number {
+  font-size: 84px;
+  color:var(--color-brand-primary);
+  margin:0;
+  line-height: 1;
+}
+
+.description {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size:15px;
+}

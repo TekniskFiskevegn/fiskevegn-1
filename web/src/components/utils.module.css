@@ -1,11 +1,18 @@
 @import '../styles/custom-properties.css';
+@import '../styles/custom-media.css';
 
 :root {
  
 }
 
 .verticalFlow {
-  padding:2em 0;
+  padding:1em 0;
+  @media (--medium-and-up) {
+    padding:1.5em 0;
+  }
+  @media (--large-and-up) {
+    padding:2em 0;
+  }
 }
 .positionRelative {
   position: relative;
@@ -29,4 +36,13 @@
   font-weight: 400;
   font-size: var(--font-large-size);
   line-height: var(--font-large-line-height);
+}
+.centeredTextLargeScreen {
+  text-align: left;
+  @media (--medium-and-up) {
+    text-align:center;
+  }
+}
+.centeredText {
+  text-align: center;
 }

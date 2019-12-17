@@ -5,10 +5,6 @@
   position: relative;
   z-index: 100;
   width:100%;
-
-  @media (--large-and-up) {
-    border-bottom: 2px solid rgba(255,255,255,0.3);
-  }
 }
 
 .isFrontpage {
@@ -16,6 +12,10 @@
   
   @media (--large-and-up) {
     position:absolute;
+    @nest & .wrapper {
+      /* border-bottom: 2px solid rgba(255,255,255,0.3); */
+      border-bottom:none;
+    }
   }
 }
 
@@ -37,6 +37,7 @@
 
   @media (--large-and-up) {
     padding: 2.5em;
+    border-bottom: 2px solid var(--color-super-light-gray);
   }
 }
 
@@ -97,6 +98,8 @@
   @nest & ul li a {
     text-decoration:none;
     color:inherit;
+    font-weight:700;
+    text-transform:uppercase;
   }
 
   /* medium and up */
@@ -107,7 +110,7 @@
       display:inline-block;
     }
     @nest & ul li a {
-      padding: 0.5rem 1rem;
+      padding: 0.5rem 1.5rem;
     }
   }
 }

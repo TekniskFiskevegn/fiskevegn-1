@@ -17,7 +17,7 @@ const PromotedBlock = props => {
     <div className={utils.verticalFlow}>
       <div className={styles.root}>
         <div className={styles.firstRow}>
-          <h2 className={responsiveTitle1}>Our Products</h2>
+          <h2 className={responsiveTitle1}>Modern fishing solutions</h2>
           <p className={utils.noMargin}>
             It is a long established fact that a reader will be distracted by the readable content
             of a page when looking at its layout. The point of using Lorem Ipsum is that it has a
@@ -38,7 +38,7 @@ const PromotedBlock = props => {
             )}
           </div>
           <div className={styles.textContainer}>
-            <h3 className={styles.textContainerTitle}>Consectetur</h3>
+            <h3 className={styles.textContainerTitle}>Our products</h3>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores porro iste sint
               suscipit excepturi aliquid a laudantium nihil rerum nisi. Saepe pariatur at atque esse

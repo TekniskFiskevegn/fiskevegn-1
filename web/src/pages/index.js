@@ -13,6 +13,7 @@ import GraphQLErrorList from "../components/graphql-error-list";
 import NewsPreviewGrid from "../components/news-preview-grid";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
+import utils from "../components/utils.module.css";
 
 export const query = graphql`
   query IndexPageQuery {
@@ -215,7 +216,11 @@ const IndexPage = props => {
       <Container>
         <h1 hidden>{site.title}</h1>
         {frontpage.promotedBlock && <PromotedBlock {...frontpage} />}
-        {frontpage.fullWidthBlock && <FullWidthBlock {...frontpage} />}
+        {frontpage.fullWidthBlock && (
+          <div className={utils.verticalFlow}>
+            <FullWidthBlock {...frontpage} />
+          </div>
+        )}
         {newsNodes && (
           <NewsPreviewGrid title="Latest news" nodes={newsNodes} browseMoreHref="/archive/" />
         )}

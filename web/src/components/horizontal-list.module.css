@@ -1,0 +1,13 @@
+.root {
+  display: flex;
+  align-items: center; /* Default */
+  justify-content: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  @nest & li {
+    display: block;
+    flex: 0 1 auto; /* Default */
+    list-style-type: none;
+  }
+}
