@@ -28,6 +28,31 @@
 .noMargin {
   margin:0;
 }
+.flex {
+  display:flex;
+}
+.flexWrap {
+  display:flex;
+  flex-wrap: wrap;
+}
+.flex50 {
+  flex:50%;
+}
+.flexAuto {
+  flex: 0 1 auto;
+}
+.flex1 {
+  flex:1;
+}
+.flex2 {
+  flex:2;
+}
+.flex3 {
+  flex:3;
+}
+.flexAlignItemsCenter {
+  align-items: center;
+}
 .callToActionLink {
   color: var(--color-brand-secondary);
   text-decoration: none;
@@ -45,4 +70,9 @@
 }
 .centeredText {
   text-align: center;
+}
+.tinyTitle {
+  color:#999;
+  text-transform: uppercase;
+  display: block;
 }

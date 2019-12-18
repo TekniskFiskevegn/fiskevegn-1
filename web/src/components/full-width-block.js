@@ -30,11 +30,18 @@ const FullWidthBlock = props => {
       <div className={styles.secondRow}>
         <div className={styles.backgroundSvg}>
           <div className={utils.positionAbsolute}>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
               <path
                 fill="#F3F4F5"
                 fillOpacity="1"
                 d="M0,288L60,288C120,288,240,288,360,250.7C480,213,600,139,720,117.3C840,96,960,128,1080,122.7C1200,117,1320,75,1380,53.3L1440,32L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"
+              ></path>
+            </svg> */}
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+              <path
+                fill="#F3F4F5"
+                fillOpacity="1"
+                d="M0,224L80,213.3C160,203,320,181,480,186.7C640,192,800,224,960,245.3C1120,267,1280,277,1360,282.7L1440,288L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
               ></path>
             </svg>
           </div>

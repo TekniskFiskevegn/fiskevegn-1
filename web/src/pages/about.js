@@ -73,7 +73,6 @@ const About = props => {
               responses to deliver better products.
             </p>
           </div>
-          <HorizontalList></HorizontalList>
         </div>
       </Container>
     </Layout>

@@ -39,25 +39,6 @@ const FrontpageImage = props => {
 
       {frontpageImage && (
         <div className={styles.frontpageImage}>
-          {frontpageImage.caption && (
-            <div className={styles.caption}>
-              <h2 className={styles.captionTitle}>
-                <span>{frontpageImage.caption}</span>
-              </h2>
-              <svg
-                className={styles.captionSvg}
-                viewBox="0 0 600 600"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g transform="translate(200,200)">
-                  <path
-                    d="M165.7,-124.8C205.9,-81.9,223.3,-13.4,208.7,46.4C194.1,106.3,147.4,157.7,96.1,171.6C44.8,185.6,-11,162.2,-62.9,135.3C-114.7,108.5,-162.7,78.3,-177.2,34.7C-191.7,-8.9,-172.9,-65.9,-137.8,-107.7C-102.7,-149.6,-51.3,-176.3,5.7,-180.8C62.8,-185.4,125.6,-167.8,165.7,-124.8Z"
-                    fill="#d35400"
-                  />
-                </g>
-              </svg>
-            </div>
-          )}
           <img
             src={imageUrlFor(buildImageObj(frontpageImage))
               .width(1800)

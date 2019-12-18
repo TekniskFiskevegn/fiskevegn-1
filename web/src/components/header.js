@@ -25,7 +25,7 @@ const Header = ({ onHideNav, onShowNav, showNav, siteTitle, isFrontpage }) => (
             <Link to="/about/">About</Link>
           </li>
           <li>
-            <Link to="/about/">Products</Link>
+            <Link to="/products/">Products</Link>
           </li>
           <li>
             <Link to="/about/">Services</Link>

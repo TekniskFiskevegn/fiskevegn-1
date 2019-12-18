@@ -4,11 +4,31 @@
 .root {
   box-shadow: 0 0.5rem 0.75rem -0.25rem rgba(39,48,54,0.05);
   background-color: var(--color-white);
-  padding:2em;
   margin:1em;
+}
+
+.regular {
+  padding:2em;
+}
+
+.link {
+  padding:2em;
+  text-decoration: none;
+  display: block;
+  color: inherit;
+  @nest &:hover {
+    background-color: var(--color-super-light-gray);
+  }
 }
 
 .title {
   margin:0;
   color:var(--color-brand-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 400;
+}
+
+.textSpace {
+  padding-left:2em;
 }
