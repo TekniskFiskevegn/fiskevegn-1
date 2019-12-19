@@ -28,31 +28,6 @@
 .noMargin {
   margin:0;
 }
-.flex {
-  display:flex;
-}
-.flexWrap {
-  display:flex;
-  flex-wrap: wrap;
-}
-.flex50 {
-  flex:50%;
-}
-.flexAuto {
-  flex: 0 1 auto;
-}
-.flex1 {
-  flex:1;
-}
-.flex2 {
-  flex:2;
-}
-.flex3 {
-  flex:3;
-}
-.flexAlignItemsCenter {
-  align-items: center;
-}
 .callToActionLink {
   color: var(--color-brand-secondary);
   text-decoration: none;
@@ -75,4 +50,30 @@
   color:#999;
   text-transform: uppercase;
   display: block;
+}
+
+/* Flexbox */
+.flex {
+  display:flex;
+}
+.flexWrap {
+  flex-wrap: wrap;
+}
+.flexItem {
+  flex:1;
+}
+.flexAuto {
+  flex: 0 1 auto;
+}
+.flexItemSmall {
+  flex:1;
+}
+.flexItemMedium {
+  flex:2;
+}
+.flexItemLarge {
+  flex:3;
+}
+.flexAlignItemsCenter {
+  align-items: center;
 }

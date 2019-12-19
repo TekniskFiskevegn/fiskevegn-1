@@ -3,7 +3,7 @@ import React from "react";
 import { buildImageObj, cn } from "../lib/helpers";
 import { imageUrlFor } from "../lib/image-url";
 
-import HorizontalList from "../components/horizontal-list";
+import List from "../components/list";
 import Card from "../components/card";
 
 import utils from "./utils.module.css";
@@ -64,7 +64,7 @@ const FullWidthBlock = props => {
           </div>
           <div className={styles.wrapper}>
             <div className={styles.flexController}>
-              <HorizontalList>
+              <List>
                 <Card
                   title="Colto"
                   description="sustainable solutions towards safer, cleaner oceans."
@@ -79,7 +79,7 @@ const FullWidthBlock = props => {
                   description="sustainable solutions
               towards safer, cleaner oceans."
                 />
-              </HorizontalList>
+              </List>
             </div>
           </div>
         </div>

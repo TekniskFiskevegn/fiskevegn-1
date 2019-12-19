@@ -110,9 +110,16 @@
       display:inline-block;
     }
     @nest & ul li a {
-      padding: 0.5rem 1.5rem;
+      padding: 0.5rem 1rem;
     }
   }
+
+    /* medium and up */
+    @media (--large-and-up) {
+      @nest & ul li a {
+        padding: 0.5rem 1.5rem;
+      }
+    }
 }
 
 .showNav {

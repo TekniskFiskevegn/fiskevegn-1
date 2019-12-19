@@ -6,17 +6,24 @@ import { cn } from "../lib/helpers";
 import styles from "./card.module.css";
 import utils from "../components/utils.module.css";
 
-const Card = ({ title, description, isLink = false, hasImage = false, imgSrc = null }) => {
+const Card = ({
+  title,
+  description,
+  isLink = false,
+  hasImage = false,
+  imgSrc = null,
+  linkSrc = "bar"
+}) => {
   return (
     <div className={styles.root}>
       {isLink && (
-        <a href="#" className={cn(styles.link, hasImage ? "hasImage" : "")}>
+        <Link className={cn(styles.link)} to={`/foo/${linkSrc}`}>
           {hasImage && (
             <div className={cn(utils.flex, utils.flexAlignItemsCenter)}>
-              <div className={utils.flex1}>
+              <div className={utils.flexItemSmall}>
                 <img src={imgSrc} alt="" />
               </div>
-              <div className={utils.flex3}>
+              <div className={utils.flexItemLarge}>
                 <div className={styles.textSpace}>
                   <h3 className={styles.title}>{title}</h3>
                   <span>{description}</span>
@@ -30,7 +37,7 @@ const Card = ({ title, description, isLink = false, hasImage = false, imgSrc = n
               <span>{description}</span>
             </div>
           )}
-        </a>
+        </Link>
       )}
       {!isLink && (
         <div className={styles.regular}>

@@ -1,0 +1,58 @@
+@import '../styles/custom-properties.css';
+@import '../styles/custom-media.css';
+
+.root {
+  width:100%;
+  list-style-type: none;
+  padding:0;
+  margin:0;
+}
+
+.default {
+  display: flex;
+  flex-flow:column;
+  align-items: center; 
+  justify-content: center;
+  
+  @media (--medium-and-up) {
+    flex-flow:row;
+  }
+
+  @nest & li {
+    display: block;
+    flex: 0 1 auto; 
+  }
+}
+
+.wrapping {
+  display: flex;
+  align-items: center; 
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+  @media (--medium-and-up) {
+    justify-content: center;
+  }
+
+  @nest & li {
+    display: block;
+    flex: 0 1 auto; 
+  }
+}
+
+.categories {
+  display:flex;
+  flex-flow: column;
+
+  @media (--medium-and-up) {
+    flex-flow:row;
+    flex-wrap:wrap;
+  }
+
+  @nest & li {
+    flex:1;
+    @media (--medium-and-up) {
+      flex:50%;
+    }
+  }
+}

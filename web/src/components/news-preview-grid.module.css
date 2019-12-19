@@ -15,11 +15,7 @@
   grid-template-columns: 1fr;
   grid-gap: 2em;
 
-  @media (--media-min-small) {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  @media (--media-min-medium) {
+  @media (--medium-and-up) {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }

@@ -1,13 +1,22 @@
+@import '../styles/custom-properties.css';
+@import '../styles/custom-media.css';
+
 .root {
   text-align: center;
-  padding:3em 3em 1.5em 3em;
+  padding:1.5em;
+  @media (--medium-and-up){
+    padding:3em 3em 1.5em 3em;
+  }
 }
 
 .number {
-  font-size: 84px;
+  font-size:44px;
   color:var(--color-brand-primary);
   margin:0;
   line-height: 1;
+  @media (--medium-and-up){
+    font-size: 74px;
+  }
 }
 
 .description {

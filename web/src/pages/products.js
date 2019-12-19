@@ -6,10 +6,12 @@ import Layout from "../containers/layout";
 
 import GraphQLErrorList from "../components/graphql-error-list";
 import HorizontalList from "../components/horizontal-list";
+import List from "../components/list";
 import Card from "../components/card";
 import SEO from "../components/seo";
 
 import utils from "../components/utils.module.css";
+import pages from "../components/pages.module.css";
 import { responsiveTitle1 } from "../components/typography.module.css";
 
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
@@ -43,7 +45,7 @@ import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
 
 const Products = props => {
   return (
-    <Layout>
+    <Layout pageClass={pages.products}>
       <SEO title="Fiskevegn products" />
       <Container>
         <div className={utils.verticalFlow}>
@@ -58,48 +60,47 @@ const Products = props => {
               trusted names in the global arena of longline fishing.
             </p>
           </div>
-          <div className={utils.flexWrap}>
-            <div className={utils.flex50}>
-              <Card
-                title="Fishery"
-                description="sustainable solutions
-              towards safer, cleaner oceans."
-                isLink={true}
-                hasImage={true}
-                imgSrc="/fishery.jpg"
-              />
-            </div>
-            <div className={utils.flex50}>
-              <Card
-                title="Aquaculture"
-                description="sustainable solutions
-              towards safer, cleaner oceans."
-                isLink={true}
-                hasImage={true}
-                imgSrc="/aquaculture.jpg"
-              />
-            </div>
-            <div className={utils.flex50}>
-              <Card
-                title="Rope solutions"
-                description="sustainable solutions
-              towards safer, cleaner oceans."
-                isLink={true}
-                hasImage={true}
-                imgSrc="/aquaculture.jpg"
-              />
-            </div>
-            <div className={utils.flex50}>
-              <Card
-                title="General supplies"
-                description="sustainable solutions
-              towards safer, cleaner oceans."
-                isLink={true}
-                hasImage={true}
-                imgSrc="/fishery.jpg"
-              />
-            </div>
-          </div>
+          <List type="category">
+            <Card
+              title="Fishery"
+              description="sustainable solutions
+                towards safer, cleaner oceans."
+              isLink={true}
+              linkSrc="fishery"
+              hasImage={true}
+              imgSrc="/fishery.jpg"
+            />
+
+            <Card
+              title="Aquaculture"
+              description="sustainable solutions
+                towards safer, cleaner oceans."
+              isLink={true}
+              linkSrc="aquaculture"
+              hasImage={true}
+              imgSrc="/aquaculture.jpg"
+            />
+
+            <Card
+              title="Rope solutions"
+              description="sustainable solutions
+                towards safer, cleaner oceans."
+              isLink={true}
+              linkSrc="rope-solutions"
+              hasImage={true}
+              imgSrc="/rope-2.jpg"
+            />
+
+            <Card
+              title="General supplies"
+              description="sustainable solutions
+                towards safer, cleaner oceans."
+              isLink={true}
+              linkSrc="general-supplies"
+              hasImage={true}
+              imgSrc="/fishery.jpg"
+            />
+          </List>
         </div>
       </Container>
     </Layout>

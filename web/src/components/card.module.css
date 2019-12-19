@@ -4,20 +4,29 @@
 .root {
   box-shadow: 0 0.5rem 0.75rem -0.25rem rgba(39,48,54,0.05);
   background-color: var(--color-white);
-  margin:1em;
+  margin-bottom:1em;
+  @media(--medium-and-up) {
+    margin:1em;
+  }
 }
 
 .regular {
-  padding:2em;
+  padding:1em;
+  @media(--medium-and-up) {
+    padding:2em;
+  }
 }
 
 .link {
-  padding:2em;
+  padding:1em;
   text-decoration: none;
   display: block;
   color: inherit;
   @nest &:hover {
     background-color: var(--color-super-light-gray);
+  }
+  @media(--medium-and-up) {
+    padding:2em;
   }
 }
 
@@ -27,6 +36,10 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 400;
+  font-size:15px;
+  @media(--medium-and-up) {
+    font-size:18px;
+  }
 }
 
 .textSpace {

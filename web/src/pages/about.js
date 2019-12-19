@@ -6,6 +6,7 @@ import NewsPreviewGrid from "../components/news-preview-grid";
 import KeyNumber from "../components/key-number";
 import FullWidthBlock2 from "../components/full-width-block-2";
 import HorizontalList from "../components/horizontal-list";
+import List from "../components/list";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
@@ -46,7 +47,8 @@ const About = props => {
       <SEO title="About Fiskevegn" />
       <Container>
         <div className={utils.verticalFlow}>
-          <div className={utils.centeredTextLargeScreen}>
+          <div className={utils.centeredText}>
+            <span className={utils.tinyTitle}>About us</span>
             <h2 className={responsiveTitle1}>QUALITY, DELIVERY AND INNOVATION</h2>
             <p>
               Since its inception, Fiskevegn has been founded on the core values of quality,
@@ -56,10 +58,10 @@ const About = props => {
               trusted names in the global arena of longline fishing.
             </p>
           </div>
-          <HorizontalList>
+          <List type="wrapping">
             <KeyNumber number={1876} description="Fishing hooks delivered" />
             <KeyNumber number={29} description="Partners worldwide" />
-          </HorizontalList>
+          </List>
         </div>
         <div className={utils.verticalFlow}>
           <FullWidthBlock2 />
