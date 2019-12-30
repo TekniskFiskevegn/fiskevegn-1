@@ -1,15 +1,11 @@
 # fiskevegn
 
 ## Todo
-- mobile first:
-  - vertical flow class
-  - logo
-  - slogan
+- a card component should not take into account where it is used
 - remove react-parallax
-- alignment text and logo in header
-- responsive caption title
 - add products
 - gpdr existing webpage?
+- slå sammen frontpage-image og hero-image?
 
 ## Graphql queries
 

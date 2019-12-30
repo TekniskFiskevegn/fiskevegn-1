@@ -210,7 +210,7 @@ const IndexPage = props => {
   }
 
   return (
-    <Layout isFrontpage={true}>
+    <Layout isCustomHeader={true}>
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
       <FrontpageImage {...frontpage} />
       <Container>

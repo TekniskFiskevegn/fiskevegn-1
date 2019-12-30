@@ -24,6 +24,16 @@
   }
 }
 
+.vertical {
+  display: flex;
+  flex-flow: column;
+
+  @nest & li {
+    display: block;
+    flex: 0 1 auto; 
+  }
+}
+
 .wrapping {
   display: flex;
   align-items: center; 

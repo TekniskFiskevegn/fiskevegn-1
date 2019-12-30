@@ -14,12 +14,12 @@ const Layout = ({
   onShowNav,
   showNav,
   siteTitle,
-  isFrontpage,
+  isCustomHeader,
   pageClass = "pageDefault"
 }) => (
   <div className={pageClass}>
     <Header
-      isFrontpage={isFrontpage}
+      isCustomHeader={isCustomHeader}
       siteTitle={siteTitle}
       onHideNav={onHideNav}
       onShowNav={onShowNav}

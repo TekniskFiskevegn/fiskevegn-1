@@ -11,6 +11,8 @@ const List = ({ type, children }) => {
       return <CategoryList children={children} />;
     case "wrapping":
       return <WrappingList children={children} />;
+    case "vertical":
+      return <VerticalList children={children} />;
     default:
       return <DefaultList children={children} />;
   }
@@ -18,6 +20,14 @@ const List = ({ type, children }) => {
 
 const DefaultList = ({ children }) => (
   <ul className={cn(styles.root, styles.default)}>
+    {React.Children.map(children, (child, i) => {
+      return <li>{child}</li>;
+    })}
+  </ul>
+);
+
+const VerticalList = ({ children }) => (
+  <ul className={cn(styles.root, styles.vertical)}>
     {React.Children.map(children, (child, i) => {
       return <li>{child}</li>;
     })}

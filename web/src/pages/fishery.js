@@ -1,6 +1,9 @@
 import React from "react";
 import { graphql } from "gatsby";
 
+import { buildImageObj } from "../lib/helpers";
+import { imageUrlFor } from "../lib/image-url";
+
 import Container from "../components/container";
 import Layout from "../containers/layout";
 
@@ -9,6 +12,7 @@ import HorizontalList from "../components/horizontal-list";
 import List from "../components/list";
 import Card from "../components/card";
 import SEO from "../components/seo";
+import HeroImage from "../components/hero-image";
 
 import utils from "../components/utils.module.css";
 import pages from "../components/pages.module.css";
@@ -43,61 +47,62 @@ import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
 //   }
 // `;
 
-const Products = props => {
+const Fishery = props => {
   return (
-    <Layout pageClass={pages.products}>
+    <Layout isCustomHeader={true} pageClass={pages.products}>
       <SEO title="Fiskevegn products" />
+      <HeroImage src="/bering-sea.jpg" />
       <Container>
+        {/* <FrontpageImage {...frontpage} /> */}
         <div className={utils.verticalFlow}>
-          <div className={utils.centeredTextLargeScreen}>
-            <span className={utils.tinyTitle}>Our products</span>
-            <h2 className={responsiveTitle1}>MODERN FISHING SOLUTIONS</h2>
-            <p>
-              Since its inception, Fiskevegn has been founded on the core values of quality,
-              delivery and innovation. We emphasize close communication with our customers and rapid
-              responses to deliver better products, solutions and services. Our core values have
-              yielded results both for our customers and for us. We are proud to be one of the most
-              trusted names in the global arena of longline fishing.
-            </p>
-          </div>
           <List type="category">
             <Card
-              title="Fishery"
+              title="Automatic longline systems"
               description="sustainable solutions
                 towards safer, cleaner oceans."
               isLink={true}
               linkSrc="fishery"
-              hasImage={true}
+              hasImage={false}
               imgSrc="/fishery.jpg"
             />
 
             <Card
-              title="Aquaculture"
+              title="Longlining"
               description="sustainable solutions
                 towards safer, cleaner oceans."
               isLink={true}
               linkSrc="aquaculture"
-              hasImage={true}
+              hasImage={false}
               imgSrc="/aquaculture.jpg"
             />
 
             <Card
-              title="Rope solutions"
+              title="Gillnetting"
               description="sustainable solutions
                 towards safer, cleaner oceans."
               isLink={true}
-              linkSrc=""
-              hasImage={true}
+              linkSrc="rope-solutions"
+              hasImage={false}
               imgSrc="/rope-2.jpg"
             />
 
             <Card
-              title="General supplies"
+              title="Trawl fishery"
               description="sustainable solutions
                 towards safer, cleaner oceans."
               isLink={true}
-              linkSrc=""
-              hasImage={true}
+              linkSrc="general-supplies"
+              hasImage={false}
+              imgSrc="/fishery.jpg"
+            />
+
+            <Card
+              title="Waste handling"
+              description="sustainable solutions
+                towards safer, cleaner oceans."
+              isLink={true}
+              linkSrc="general-supplies"
+              hasImage={false}
               imgSrc="/fishery.jpg"
             />
           </List>
@@ -107,4 +112,4 @@ const Products = props => {
   );
 };
 
-export default Products;
+export default Fishery;

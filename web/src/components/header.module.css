@@ -7,7 +7,7 @@
   width:100%;
 }
 
-.isFrontpage {
+.customHeader {
   position: relative;
   
   @media (--large-and-up) {

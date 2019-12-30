@@ -11,13 +11,13 @@ const Card = ({
   description,
   isLink = false,
   hasImage = false,
-  imgSrc = null,
-  linkSrc = "bar"
+  imgSrc = "null",
+  linkSrc = "null"
 }) => {
   return (
     <div className={styles.root}>
       {isLink && (
-        <Link className={cn(styles.link)} to={`/foo/${linkSrc}`}>
+        <Link className={cn(styles.link)} to={`/${linkSrc}`}>
           {hasImage && (
             <div className={cn(utils.flex, utils.flexAlignItemsCenter)}>
               <div className={utils.flexItemSmall}>

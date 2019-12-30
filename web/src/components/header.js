@@ -5,8 +5,8 @@ import { cn } from "../lib/helpers";
 
 import styles from "./header.module.css";
 
-const Header = ({ onHideNav, onShowNav, showNav, siteTitle, isFrontpage }) => (
-  <div className={cn(styles.root, isFrontpage && styles.isFrontpage)}>
+const Header = ({ onHideNav, onShowNav, showNav, siteTitle, isCustomHeader }) => (
+  <div className={cn(styles.root, isCustomHeader && styles.customHeader)}>
     <div className={styles.wrapper}>
       <div className={styles.branding}>
         <Link to="/">
