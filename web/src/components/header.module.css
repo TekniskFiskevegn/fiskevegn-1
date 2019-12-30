@@ -28,6 +28,8 @@
   padding: 1.5em;
   max-width: 1400px;
   margin:0 auto;
+  background:rgba(255,255,255,0.96);
+  box-shadow: 0 4px 2px -3px rgba(39,48,54,0.05);
   
   @media (--medium-and-up) {
     padding: 2em;
@@ -37,7 +39,7 @@
 
   @media (--large-and-up) {
     padding: 2.5em;
-    border-bottom: 2px solid var(--color-super-light-gray);
+    /* border-bottom: 2px solid var(--color-super-light-gray); */
   }
 }
 

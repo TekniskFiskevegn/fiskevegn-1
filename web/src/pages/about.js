@@ -49,7 +49,7 @@ const About = props => {
         <div className={utils.verticalFlow}>
           <div className={utils.centeredText}>
             <span className={utils.tinyTitle}>About us</span>
-            <h2 className={responsiveTitle1}>QUALITY, DELIVERY AND INNOVATION</h2>
+            <h2 className={responsiveTitle1}>Quality, delivery and innovation</h2>
             <p>
               Since its inception, Fiskevegn has been founded on the core values of quality,
               delivery and innovation. We emphasize close communication with our customers and rapid

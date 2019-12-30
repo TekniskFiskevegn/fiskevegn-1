@@ -1,0 +1,17 @@
+.root {
+  display: inline-block;
+  font-size:13px;
+}
+
+.breadcrumbs {
+  display: inline-block;
+  @nest & a {
+    padding:0 6px;
+    text-decoration:none;
+    color:inherit;
+  }
+
+  @nest & .home {
+    padding-left:0;
+  }
+}

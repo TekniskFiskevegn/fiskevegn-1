@@ -13,6 +13,8 @@ import List from "../components/list";
 import Card from "../components/card";
 import SEO from "../components/seo";
 import HeroImage from "../components/hero-image";
+import ProductTree from "../components/product-tree";
+import BreadCrumb from "../components/breadcrumb";
 
 import utils from "../components/utils.module.css";
 import pages from "../components/pages.module.css";
@@ -53,59 +55,26 @@ const Fishery = props => {
       <SEO title="Fiskevegn products" />
       <HeroImage src="/bering-sea.jpg" />
       <Container>
-        {/* <FrontpageImage {...frontpage} /> */}
+        <BreadCrumb />
         <div className={utils.verticalFlow}>
-          <List type="category">
-            <Card
-              title="Automatic longline systems"
-              description="sustainable solutions
-                towards safer, cleaner oceans."
-              isLink={true}
-              linkSrc="fishery"
-              hasImage={false}
-              imgSrc="/fishery.jpg"
-            />
-
-            <Card
-              title="Longlining"
-              description="sustainable solutions
-                towards safer, cleaner oceans."
-              isLink={true}
-              linkSrc="aquaculture"
-              hasImage={false}
-              imgSrc="/aquaculture.jpg"
-            />
-
-            <Card
-              title="Gillnetting"
-              description="sustainable solutions
-                towards safer, cleaner oceans."
-              isLink={true}
-              linkSrc="rope-solutions"
-              hasImage={false}
-              imgSrc="/rope-2.jpg"
-            />
-
-            <Card
-              title="Trawl fishery"
-              description="sustainable solutions
-                towards safer, cleaner oceans."
-              isLink={true}
-              linkSrc="general-supplies"
-              hasImage={false}
-              imgSrc="/fishery.jpg"
-            />
-
-            <Card
-              title="Waste handling"
-              description="sustainable solutions
-                towards safer, cleaner oceans."
-              isLink={true}
-              linkSrc="general-supplies"
-              hasImage={false}
-              imgSrc="/fishery.jpg"
-            />
-          </List>
+          <div className={utils.flex}>
+            <div className={utils.flexItemSmall}>
+              <ProductTree />
+            </div>
+            <div className={utils.flexItemMedium}>
+              <h2 className={responsiveTitle1}>Total provider of modern fishing solutions</h2>
+              <p>
+                Since its inception Fiskevegn has built on the core values of quality, delivery and
+                innovation. Our core values have yielded results for both our customer and for us.
+                Fiskevegn is a leading international manufacturer and supplier of fiber, rope,
+                fishing systems for automatic longlining, fishing gears and supplies for crew and
+                vessels. We are proud to be one of the most trusted names in the global arena of
+                longline fishing. We support vessel projects from idea to realization and can offer
+                advice on everything from suitable shipyards, suppliers, alliance partners and how
+                best to achieve optimal solutions for your vessel.
+              </p>
+            </div>
+          </div>
         </div>
       </Container>
     </Layout>

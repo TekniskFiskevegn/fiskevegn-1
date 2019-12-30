@@ -9,12 +9,14 @@ import HorizontalList from "../components/horizontal-list";
 import List from "../components/list";
 import Card from "../components/card";
 import SEO from "../components/seo";
+import FullWidthBlock3 from "../components/full-width-block-3";
 
 import utils from "../components/utils.module.css";
 import pages from "../components/pages.module.css";
 import { responsiveTitle1 } from "../components/typography.module.css";
 
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
+import FullWidthBlock from "../components/full-width-block-2";
 
 // export const query = graphql`
 //   query AboutQuery {
@@ -51,7 +53,7 @@ const Products = props => {
         <div className={utils.verticalFlow}>
           <div className={utils.centeredTextLargeScreen}>
             <span className={utils.tinyTitle}>Our products</span>
-            <h2 className={responsiveTitle1}>MODERN FISHING SOLUTIONS</h2>
+            <h2 className={responsiveTitle1}>Modern fishing solutions</h2>
             <p>
               Since its inception, Fiskevegn has been founded on the core values of quality,
               delivery and innovation. We emphasize close communication with our customers and rapid
@@ -60,47 +62,7 @@ const Products = props => {
               trusted names in the global arena of longline fishing.
             </p>
           </div>
-          <List type="category">
-            <Card
-              title="Fishery"
-              description="sustainable solutions
-                towards safer, cleaner oceans."
-              isLink={true}
-              linkSrc="fishery"
-              hasImage={true}
-              imgSrc="/fishery.jpg"
-            />
-
-            <Card
-              title="Aquaculture"
-              description="sustainable solutions
-                towards safer, cleaner oceans."
-              isLink={true}
-              linkSrc="aquaculture"
-              hasImage={true}
-              imgSrc="/aquaculture.jpg"
-            />
-
-            <Card
-              title="Rope solutions"
-              description="sustainable solutions
-                towards safer, cleaner oceans."
-              isLink={true}
-              linkSrc=""
-              hasImage={true}
-              imgSrc="/rope-2.jpg"
-            />
-
-            <Card
-              title="General supplies"
-              description="sustainable solutions
-                towards safer, cleaner oceans."
-              isLink={true}
-              linkSrc=""
-              hasImage={true}
-              imgSrc="/fishery.jpg"
-            />
-          </List>
+          <FullWidthBlock3 />
         </div>
       </Container>
     </Layout>

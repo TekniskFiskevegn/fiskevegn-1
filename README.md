@@ -6,6 +6,7 @@
 - add products
 - gpdr existing webpage?
 - slå sammen frontpage-image og hero-image?
+- slå sammen fullwidth blocks
 
 ## Graphql queries
 
