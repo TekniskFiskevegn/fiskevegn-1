@@ -24,7 +24,8 @@ const ProductTree = props => {
       <ul className={styles.list}>
         <li>Automatic longline systems</li>
         <li>
-          Longlining
+          <a href="">Longlining</a>
+
           {/* <ul className={styles.nestedList}>
               <li>Gillnets</li>
               <li>Gillnet service</li>

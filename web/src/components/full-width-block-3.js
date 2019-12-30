@@ -70,7 +70,7 @@ const FullWidthBlock = props => {
                   isLink={true}
                   linkSrc="aquaculture"
                   hasImage={true}
-                  imgSrc="/aquaculture.jpg"
+                  imgSrc="/rope-2.jpg"
                 />
 
                 <Card

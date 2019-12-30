@@ -22,8 +22,12 @@
   text-decoration: none;
   display: block;
   color: inherit;
+  transition: all 100ms linear;
   @nest &:hover {
-    background-color: var(--color-super-light-gray);
+    /* background-color: var(--color-super-light-gray); */
+    background-color:#f9fbfd;
+    /* box-shadow: inset 0 0 3px #eaf1f8; */
+    box-shadow: inset 0 0 1px #dce7f3;
   }
   @media(--medium-and-up) {
     padding:2em;

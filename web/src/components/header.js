@@ -28,13 +28,13 @@ const Header = ({ onHideNav, onShowNav, showNav, siteTitle, isCustomHeader }) =>
             <Link to="/products/">Products</Link>
           </li>
           <li>
-            <Link to="/about/">Services</Link>
+            <Link to="/services/">Services</Link>
           </li>
           <li>
-            <Link to="/about/">Contact</Link>
+            <Link to="/contact/">Contact</Link>
           </li>
           <li>
-            <Link to="/about/">Language</Link>
+            <Link to="#">Language</Link>
           </li>
         </ul>
       </nav>
