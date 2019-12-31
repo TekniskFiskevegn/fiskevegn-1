@@ -7,6 +7,7 @@ import KeyNumber from "../components/key-number";
 import FullWidthBlock2 from "../components/full-width-block-2";
 import HorizontalList from "../components/horizontal-list";
 import List from "../components/list";
+import PageIntro from "../components/page-intro";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
@@ -47,17 +48,15 @@ const About = props => {
       <SEO title="About Fiskevegn" />
       <Container>
         <div className={utils.verticalFlow}>
-          <div className={utils.centeredText}>
-            <span className={utils.tinyTitle}>The company</span>
-            <h2 className={responsiveTitle1}>Quality, delivery and innovation</h2>
-            <p>
-              Since its inception, Fiskevegn has been founded on the core values of quality,
+          <PageIntro
+            tinyTitle="The company"
+            title="Quality, delivery and innovation"
+            text="Since its inception, Fiskevegn has been founded on the core values of quality,
               delivery and innovation. We emphasize close communication with our customers and rapid
               responses to deliver better products, solutions and services. Our core values have
               yielded results both for our customers and for us. We are proud to be one of the most
-              trusted names in the global arena of longline fishing.
-            </p>
-          </div>
+              trusted names in the global arena of longline fishing."
+          />
           <List type="wrapping">
             <KeyNumber number={1876} description="Fishing hooks delivered" />
             <KeyNumber number={29} description="Partners worldwide" />
