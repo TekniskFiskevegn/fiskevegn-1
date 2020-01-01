@@ -11,6 +11,7 @@
 - make new custom block as seen on screenshot
 - make cards more customizeable
 - also make lessPaddingTop
+- find beautiful font for numbers
 
 ## Graphql queries
 

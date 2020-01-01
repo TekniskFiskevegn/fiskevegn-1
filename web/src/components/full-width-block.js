@@ -12,7 +12,7 @@ import styles from "./full-width-block.module.css";
 
 const FullWidthBlock = ({
   children,
-  isSpacious,
+  lessSpacious = false,
   isShaped,
   shapeType,
   shapeNumber,
@@ -33,7 +33,7 @@ const FullWidthBlock = ({
         <div
           className={cn(
             styles.wrapper,
-            isSpacious ? styles.spacious : "",
+            lessSpacious ? styles.lessPaddingTopAndBottom : "",
             isShaped && shapePosition === "bottom" ? styles.lessPaddingBottom : ""
           )}
         >

@@ -60,7 +60,7 @@ const Products = props => {
           />
         </div>
         <div className={utils.verticalFlow}>
-          <FullWidthBlock>
+          <FullWidthBlock lessSpacious={true} isShaped={false} shapeType="wave" shapePosition="top">
             <List type="category">
               <Card
                 title="Fishery"

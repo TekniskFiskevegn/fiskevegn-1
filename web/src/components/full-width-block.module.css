@@ -12,11 +12,6 @@
   margin-right: -50vw;
   background-color: var(--color-very-light-gray);
 }
-
-.spacious {
-  padding:50px 0;
-}
-
 .wrapper {
   box-sizing: border-box;
   max-width: var(--container-width);
@@ -31,6 +26,11 @@
     max-width: calc(var(--container-width) - 64px);
   }
 }
+
+.lessPaddingTopAndBottom {
+  padding:2em 0;
+}
+
 
 .lessPaddingBottom {
   padding:2.5em 2em;
