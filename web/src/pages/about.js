@@ -64,7 +64,7 @@ const About = props => {
           </List>
         </div>
         <div className={utils.verticalFlow}>
-          <FullWidthBlock isShaped={true} shapeType="wave" shapeNumber="2" shapePosition="bottom">
+          <FullWidthBlock svgShape={true} svgType="wave" svgSelection="2" svgPosition="bottom">
             <BlockIntro
               tinyTitle=""
               title="Partners and Collaborations"

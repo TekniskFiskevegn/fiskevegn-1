@@ -60,7 +60,7 @@ const Services = props => {
           />
         </div>
         <div className={utils.verticalFlow}>
-          <FullWidthBlock>
+          <FullWidthBlock hasGradient={true}>
             <List type="category">
               <Card
                 title="Fishery"

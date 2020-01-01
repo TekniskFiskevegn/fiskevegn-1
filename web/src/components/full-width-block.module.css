@@ -12,6 +12,11 @@
   margin-right: -50vw;
   background-color: var(--color-very-light-gray);
 }
+
+.gradient {
+  background-image: linear-gradient(#F3F4F5, #fff);
+}
+
 .wrapper {
   box-sizing: border-box;
   max-width: var(--container-width);
@@ -44,13 +49,4 @@
   position: relative;
   display: flex;
   flex-flow:column;
-}
-
-.gradient {
-  position: absolute;
-  left:0;
-  right:0;
-  top:40%;
-  bottom:0; 
-  background-image: linear-gradient(#F3F4F5, #fff);
 }

@@ -4,12 +4,12 @@ import { cn } from "../lib/helpers";
 import styles from "./svg-provider.module.css";
 import Icon from "./icon";
 
-const wave = (shapeNumber, shapePosition = "bottom") => {
+const wave = (svgSelection, svgPosition = "bottom") => {
   const waveClass = cn(
     styles.wave,
-    shapePosition === "bottom" ? styles.positionBottom : styles.positionTop
+    svgPosition === "bottom" ? styles.positionBottom : styles.positionTop
   );
-  switch (shapeNumber) {
+  switch (svgSelection) {
     case "1":
       return (
         <svg className={waveClass} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -55,11 +55,11 @@ const wave = (shapeNumber, shapePosition = "bottom") => {
   }
 };
 
-const angle = ({ shapeNumber }) => {
+const angle = ({ svgSelection }) => {
   return <p>angle</p>;
 };
 
-const circle = ({ shapeNumber }) => {
+const circle = ({ svgSelection }) => {
   return <p>circle</p>;
 };
 
@@ -67,14 +67,14 @@ const icon = () => {
   return <p>circle</p>;
 };
 
-const SvgProvider = ({ svgType = null, shapePosition, shapeNumber = "1", iconName = null }) => {
+const SvgProvider = ({ svgType = null, svgSelection = "1", svgPosition, iconName = null }) => {
   switch (svgType) {
     case "wave":
-      return wave(shapeNumber, shapePosition);
+      return wave(svgSelection, svgPosition);
     case "angle":
-      return angle(shapeNumber);
+      return angle(svgSelection);
     case "circle":
-      return circle(shapeNumber);
+      return circle(svgSelection);
     case "icon":
       return icon(iconName);
     default:
