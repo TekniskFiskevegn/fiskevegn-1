@@ -1,29 +1,29 @@
 import { Link } from "gatsby";
 import React from "react";
-import NewsPreview from "./news-preview";
+import BlockIntro from "./block-intro";
+import NewsTeaser from "./news-teaser";
 
 import utils from "./utils.module.css";
-import styles from "./news-preview-grid.module.css";
+import styles from "./news-block.module.css";
 import { responsiveTitle1 } from "./typography.module.css";
 
-function NewsPreviewGrid(props) {
+function NewsBlock(props) {
   return (
     <div className={utils.verticalFlow}>
       <div className={styles.root}>
-        <div className={styles.firstRow}>
-          {props.title && <h2 className={responsiveTitle1}>{props.title}</h2>}
-        </div>
-        <ul className={styles.grid}>
+        <BlockIntro title={props.title} />
+
+        <ul className={styles.list}>
           {props.nodes &&
             props.nodes.map(node => (
-              <li key={node.id}>
-                <NewsPreview {...node} />
+              <li className={styles.listItem} key={node.id}>
+                <NewsTeaser {...node} />
               </li>
             ))}
         </ul>
         {props.browseMoreHref && (
           <div className={styles.browseMoreNav}>
-            <Link to="/archive">Visit our news archive</Link>
+            <Link to="/archive">More news</Link>
           </div>
         )}
       </div>
@@ -31,10 +31,10 @@ function NewsPreviewGrid(props) {
   );
 }
 
-NewsPreviewGrid.defaultProps = {
+NewsBlock.defaultProps = {
   title: "",
   nodes: [],
   browseMoreHref: ""
 };
 
-export default NewsPreviewGrid;
+export default NewsBlock;

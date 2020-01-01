@@ -8,6 +8,7 @@
 - slå sammen frontpage-image og hero-image?
 - slå sammen fullwidth blocks
 - clean up color variables
+- kanskje det er bedre å bruke bare props objektet. Slik at jeg får "any"....
 
 ## Graphql queries
 

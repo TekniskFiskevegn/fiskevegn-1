@@ -5,18 +5,16 @@ import Container from "../components/container";
 import Layout from "../containers/layout";
 
 import GraphQLErrorList from "../components/graphql-error-list";
-import HorizontalList from "../components/horizontal-list";
+import FullWidthBlock from "../components/full-width-block";
+import BlockIntro from "../components/block-intro";
 import List from "../components/list";
 import Card from "../components/card";
 import SEO from "../components/seo";
-import FullWidthBlock3 from "../components/full-width-block-3";
 
 import utils from "../components/utils.module.css";
 import pages from "../components/pages.module.css";
-import { responsiveTitle1 } from "../components/typography.module.css";
 
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
-import FullWidthBlock from "../components/full-width-block-2";
 
 // export const query = graphql`
 //   query AboutQuery {
@@ -51,18 +49,60 @@ const Products = props => {
       <SEO title="Fiskevegn products" />
       <Container>
         <div className={utils.verticalFlow}>
-          <div className={utils.centeredTextLargeScreen}>
-            <span className={utils.tinyTitle}>Our products</span>
-            <h2 className={responsiveTitle1}>Modern fishing solutions</h2>
-            <p>
-              Since its inception, Fiskevegn has been founded on the core values of quality,
-              delivery and innovation. We emphasize close communication with our customers and rapid
-              responses to deliver better products, solutions and services. Our core values have
-              yielded results both for our customers and for us. We are proud to be one of the most
-              trusted names in the global arena of longline fishing.
-            </p>
-          </div>
-          <FullWidthBlock3 />
+          <BlockIntro
+            tinyTitle="Our products"
+            title="Modern fishing solutions"
+            text="Since its inception, Fiskevegn has been founded on the core values of quality,
+            delivery and innovation. We emphasize close communication with our customers and rapid
+            responses to deliver better products, solutions and services. Our core values have
+            yielded results both for our customers and for us. We are proud to be one of the most
+            trusted names in the global arena of longline fishing."
+          />
+        </div>
+        <div className={utils.verticalFlow}>
+          <FullWidthBlock>
+            <List type="category">
+              <Card
+                title="Fishery"
+                description="sustainable solutions
+                towards safer, cleaner oceans."
+                isLink={true}
+                linkSrc="fishery"
+                hasImage={true}
+                imgSrc="/fishery.jpg"
+              />
+
+              <Card
+                title="Aquaculture"
+                description="sustainable solutions
+                towards safer, cleaner oceans."
+                isLink={true}
+                linkSrc="aquaculture"
+                hasImage={true}
+                imgSrc="/rope-2.jpg"
+              />
+
+              <Card
+                title="Rope solutions"
+                description="sustainable solutions
+                towards safer, cleaner oceans."
+                isLink={true}
+                linkSrc=""
+                hasImage={true}
+                imgSrc="/rope-2.jpg"
+              />
+
+              <Card
+                title="General supplies"
+                description="sustainable solutions
+                towards safer, cleaner oceans."
+                isLink={true}
+                linkSrc=""
+                hasImage={true}
+                imgSrc="/fishery.jpg"
+              />
+            </List>
+          </FullWidthBlock>
         </div>
       </Container>
     </Layout>

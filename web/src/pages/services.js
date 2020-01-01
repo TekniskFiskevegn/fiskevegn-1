@@ -5,12 +5,11 @@ import Container from "../components/container";
 import Layout from "../containers/layout";
 
 import GraphQLErrorList from "../components/graphql-error-list";
-import HorizontalList from "../components/horizontal-list";
+import FullWidthBlock from "../components/full-width-block";
+import BlockIntro from "../components/block-intro";
 import List from "../components/list";
 import Card from "../components/card";
 import SEO from "../components/seo";
-import FullWidthBlock from "../components/full-width-block-final";
-import PageIntro from "../components/page-intro";
 
 import utils from "../components/utils.module.css";
 import pages from "../components/pages.module.css";
@@ -51,7 +50,7 @@ const Services = props => {
       <SEO title="Fiskevegn products" />
       <Container>
         <div className={utils.verticalFlow}>
-          <PageIntro
+          <BlockIntro
             tinyTitle="Our services"
             title="Excellent service and rewarding collaborations"
             text="In all Fiskevegn's activity sectors, industry know-how, on-the-fly problem-solving

@@ -7,10 +7,11 @@ import {
 } from "../lib/helpers";
 import FrontpageImage from "../components/frontpage-image";
 import PromotedBlock from "../components/promoted-block";
-import FullWidthBlock from "../components/full-width-block-final";
+import FullWidthBlock from "../components/full-width-block";
 import Container from "../components/container";
 import GraphQLErrorList from "../components/graphql-error-list";
-import NewsPreviewGrid from "../components/news-preview-grid";
+import NewsBlock from "../components/news-block";
+import List from "../components/list";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
 import utils from "../components/utils.module.css";
@@ -101,7 +102,7 @@ export const query = graphql`
       }
     }
     projects: allSanityProject(
-      limit: 6
+      limit: 2
       sort: { fields: [publishedAt], order: DESC }
       filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
     ) {
@@ -139,7 +140,7 @@ export const query = graphql`
       }
     }
     news: allSanityNews(
-      limit: 6
+      limit: 2
       sort: { fields: [publishedAt], order: DESC }
       filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
     ) {
@@ -229,11 +230,8 @@ const IndexPage = props => {
           </div>
         )}
         {newsNodes && (
-          <NewsPreviewGrid title="Latest news" nodes={newsNodes} browseMoreHref="/archive/" />
+          <NewsBlock title="Latest news" nodes={newsNodes} browseMoreHref="/archive/" />
         )}
-        {/* {projectNodes && (
-          <NewsPreviewGrid title="Nyheter 2" nodes={projectNodes} browseMoreHref="/archive/" />
-        )} */}
       </Container>
     </Layout>
   );

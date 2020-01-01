@@ -7,17 +7,31 @@
   text-align: center;
 }
 
-.grid {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 2em;
+.list {
+  display: flex;
+  flex-flow: column;
 
   @media (--medium-and-up) {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
+    flex-flow:row;
+    flex-wrap:wrap;
+  } 
+}
+
+.listItem {
+  flex:1;
+  margin-bottom: 1.5em;
+
+  @media (--medium-and-up) {
+    flex:50%;
+    max-width: 50%;
+    margin-bottom: 2em;
+    @nest &:nth-child(odd) {
+      padding-right:1em;
+    }
+    @nest &:nth-child(even) {
+      padding-left:1em;
+    }
+  } 
 }
 
 .browseMoreNav {

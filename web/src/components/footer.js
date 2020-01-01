@@ -1,6 +1,5 @@
 import { Link } from "gatsby";
 import React from "react";
-import NewsPreview from "./news-preview";
 
 import utils from "./utils.module.css";
 import styles from "./footer.module.css";

@@ -2,7 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import Container from "../components/container";
 import GraphQLErrorList from "../components/graphql-error-list";
-import NewsPreviewGrid from "../components/news-preview-grid";
+import NewsBlock from "../components/news-block";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from "../lib/helpers";
@@ -51,8 +51,8 @@ const ArchivePage = props => {
     <Layout>
       <SEO title="Archive" />
       <Container>
-        <h1 className={responsiveTitle1}>Projects</h1>
-        {projectNodes && projectNodes.length > 0 && <NewsPreviewGrid nodes={projectNodes} />}
+        <h1 className={responsiveTitle1}>News</h1>
+        {projectNodes && projectNodes.length > 0 && <NewsBlock nodes={projectNodes} />}
       </Container>
     </Layout>
   );

@@ -10,24 +10,24 @@ import List from "../components/list";
 import Card from "../components/card";
 import SEO from "../components/seo";
 
-import styles from "./page-intro.module.css";
+import styles from "./block-intro.module.css";
 import utils from "../components/utils.module.css";
 import pages from "../components/pages.module.css";
 import { responsiveTitle1 } from "../components/typography.module.css";
 
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
 
-const PageIntro = props => {
+const BlockIntro = props => {
   const { tinyTitle, title, text } = props;
   return (
-    <section className={styles.root}>
+    <div className={styles.root}>
       <div className={utils.centeredText}>
-        <span className={utils.tinyTitle}>{tinyTitle}</span>
-        <h2 className={responsiveTitle1}>{title}</h2>
-        <p>{text}</p>
+        {tinyTitle && <span className={utils.tinyTitle}>{tinyTitle}</span>}
+        {title && <h2 className={responsiveTitle1}>{title}</h2>}
+        {text && <p>{text}</p>}
       </div>
-    </section>
+    </div>
   );
 };
 
-export default PageIntro;
+export default BlockIntro;

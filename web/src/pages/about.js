@@ -2,13 +2,13 @@ import React from "react";
 import { graphql } from "gatsby";
 import Container from "../components/container";
 import GraphQLErrorList from "../components/graphql-error-list";
-import NewsPreviewGrid from "../components/news-preview-grid";
+import NewsPreviewGrid from "../components/news-block";
 import KeyNumber from "../components/key-number";
-import FullWidthBlock from "../components/full-width-block-final";
+import FullWidthBlock from "../components/full-width-block";
 import HorizontalList from "../components/horizontal-list";
 import List from "../components/list";
 import Card from "../components/card";
-import PageIntro from "../components/page-intro";
+import BlockIntro from "../components/block-intro";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
@@ -49,7 +49,7 @@ const About = props => {
       <SEO title="About Fiskevegn" />
       <Container>
         <div className={utils.verticalFlow}>
-          <PageIntro
+          <BlockIntro
             tinyTitle="The company"
             title="Quality, delivery and innovation"
             text="Since its inception, Fiskevegn has been founded on the core values of quality,
@@ -64,7 +64,15 @@ const About = props => {
           </List>
         </div>
         <div className={utils.verticalFlow}>
-          <FullWidthBlock>
+          <FullWidthBlock hasIntro={true} isShaped={true} shapeType="wave">
+            <BlockIntro
+              tinyTitle=""
+              title="Partners and Collaborations"
+              text="Fiskevegn is working together with mulitple industry operators, goverments and NGO's
+              to eliminate IUU fishing and to drive for economically viable, sustainable solutions
+              towards safer, cleaner oceans. We are also a member of several industry associations
+              to keep current with new developments in manufacturing technology."
+            />
             <List>
               <Card
                 title="Colto"

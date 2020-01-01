@@ -1,46 +1,9 @@
 @import '../styles/custom-media.css';
+@import '../styles/custom-properties.css';
 
 .root {}
 
-.firstRow {
-  text-align: center;
-
-  @nest & .wrapper {
-    padding-bottom:0;
-  }
-}
-
-.secondRow {
-  display: flex;
-  flex-flow:column;
-  position: relative;
-  box-sizing: border-box;
-
-  @media (--large-and-up) {
-    flex-flow:row;
-  }
-}
-
-.wrapper {
-  box-sizing: border-box;
-  max-width: 1140px;
-  width:100%;
-  padding:2em;
-  margin: 0 auto;
-}
-
-.flexController {
-  position: relative;
-  display: flex;
-  flex-flow:column;
-
-  @media (--large-and-up) {
-    flex-flow:row;
-  }
-}
-
-
-.backgroundColor {
+.extend {
   width: 100vw;
   position: relative;
   left: 50%;
@@ -50,46 +13,36 @@
   background-color: var(--color-very-light-gray);
 }
 
-.backgroundSvg {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
+.spacious {
+  padding:50px 0;
 }
 
-.imageContainer {
-  flex:1;
-  @media (--large-and-up) {
-    flex:60% 0 0;
-  }
-}
-
-.textContainer {
-  box-shadow: 0 0.5rem 0.75rem -0.25rem rgba(39,48,54,0.05);
-  background-color: var(--color-white);
-  position:relative;
-  padding:1.5em 1.5em 2em 1.5em;
-  margin:-2em 1.5em 0 1.5em;
-  flex:1;
+.wrapper {
+  box-sizing: border-box;
+  max-width: var(--container-width);
+  max-width: calc(var(--container-width) - 48px);
+  width:100%;
+  padding:2em 0em;
+  margin: 0 auto;
 
   @media (--medium-and-up) {
-    padding:2em 2em 2.5em 2em;
-    margin:-6em 2em 0 2em;
-  } 
-
-  @media (--large-and-up) {
-    padding:3em;
-    margin:0;
-    right: 0;
-    bottom: 25px;
-    top: 25px;
-    position: absolute;
-    max-width: 400px;
+    max-width: var(--container-width);
+    max-width: calc(var(--container-width) - 64px);
   }
+
 }
 
-.textContainerTitle {
-  margin-top:0;
+.flexController {
+  position: relative;
+  display: flex;
+  flex-flow:column;
+}
+
+.gradient {
+  position: absolute;
+  left:0;
+  right:0;
+  top:40%;
+  bottom:0; 
+  background-image: linear-gradient(#F3F4F5, #fff);
 }
