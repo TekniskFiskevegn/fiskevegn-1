@@ -1,1 +1,6 @@
-.root {}
+.root {
+  text-align: center;
+  @nest & p { 
+    margin:0; 
+  }
+}

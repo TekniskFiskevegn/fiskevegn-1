@@ -1,14 +1,16 @@
 # fiskevegn
 
 ## Todo
-- a card component should not take into account where it is used
 - remove react-parallax
 - add products
 - gpdr existing webpage?
 - slå sammen frontpage-image og hero-image?
-- slå sammen fullwidth blocks
 - clean up color variables
 - kanskje det er bedre å bruke bare props objektet. Slik at jeg får "any"....
+- flytte responsive title osv over til utils?
+- make new custom block as seen on screenshot
+- make cards more customizeable
+- also make lessPaddingTop
 
 ## Graphql queries
 

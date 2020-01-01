@@ -73,16 +73,13 @@
   font-weight: 700;
   font-size: var(--font-title3-size);
   line-height: var(--font-title3-line-height);
-  margin: 1rem 0 2rem;
+  /* margin: 1rem 0 2rem; */
+  margin: 0rem 0 1.5rem;
 
   @media (--medium-and-up) {
+    margin: 0rem 0 2rem;
     font-size: var(--font-title2-size);
     line-height: var(--font-title2-line-height);
-  }
-
-  @media (--media-min-medium) {
-    font-size: var(--font-title1-size);
-    line-height: var(--font-title1-line-height);
   }
 }
 

@@ -5,8 +5,10 @@ import styles from "./svg-provider.module.css";
 import Icon from "./icon";
 
 const wave = (shapeNumber, shapePosition = "bottom") => {
-  const waveClass = cn(styles.wave, shapePosition === "top" ? styles.waveTop : styles.waveBottom);
-
+  const waveClass = cn(
+    styles.wave,
+    shapePosition === "bottom" ? styles.positionBottom : styles.positionTop
+  );
   switch (shapeNumber) {
     case "1":
       return (
@@ -49,15 +51,7 @@ const wave = (shapeNumber, shapePosition = "bottom") => {
         </svg>
       );
     default:
-      return (
-        <svg className={waveClass} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-          <path
-            fill="#F3F4F5"
-            fillOpacity="1"
-            d="M0,288L60,288C120,288,240,288,360,250.7C480,213,600,139,720,117.3C840,96,960,128,1080,122.7C1200,117,1320,75,1380,53.3L1440,32L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"
-          ></path>
-        </svg>
-      );
+      return <p>Missing svg information</p>;
   }
 };
 
@@ -73,8 +67,8 @@ const icon = () => {
   return <p>circle</p>;
 };
 
-const SvgProvider = ({ shapeType = null, shapePosition, shapeNumber = 1, iconName = null }) => {
-  switch (shapeType) {
+const SvgProvider = ({ svgType = null, shapePosition, shapeNumber = "1", iconName = null }) => {
+  switch (svgType) {
     case "wave":
       return wave(shapeNumber, shapePosition);
     case "angle":

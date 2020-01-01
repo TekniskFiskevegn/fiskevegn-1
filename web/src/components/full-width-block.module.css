@@ -22,14 +22,22 @@
   max-width: var(--container-width);
   max-width: calc(var(--container-width) - 48px);
   width:100%;
-  padding:2em 0em;
+  padding:2em;
   margin: 0 auto;
 
   @media (--medium-and-up) {
+    padding:4em 0em;
     max-width: var(--container-width);
     max-width: calc(var(--container-width) - 64px);
   }
+}
 
+.lessPaddingBottom {
+  padding:2.5em 2em;
+
+  @media (--medium-and-up) {
+    padding:4em 0 2.5em 0;
+  }
 }
 
 .flexController {

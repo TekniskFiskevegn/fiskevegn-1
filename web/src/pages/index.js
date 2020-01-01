@@ -224,8 +224,8 @@ const IndexPage = props => {
         {frontpage.fullWidthBlock && (
           <div className={utils.verticalFlow}>
             {/* <FullWidthBlock {...frontpage} /> */}
-            <FullWidthBlock>
-              <PromotedBlock {...frontpage} />
+            <FullWidthBlock isShaped={true} shapeType="wave" shapeNumber="1">
+              <PromotedBlock lightTheme={true} {...frontpage} />
             </FullWidthBlock>
           </div>
         )}

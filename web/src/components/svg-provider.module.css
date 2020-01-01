@@ -8,9 +8,12 @@
   right:0;
   background-color:var(--color-background);
 }
-.waveTop {
-  top:0;
-}
-.waveBottom {
+
+.positionBottom {
   bottom:0;
+}
+
+.positionTop {
+  top:0;
+  transform: rotate(180deg);
 }

@@ -1,13 +1,14 @@
 @import '../styles/custom-media.css';
 
-.root {}
+.root {
 
-.firstRow {
-  text-align: center;
-  margin-bottom: 2em;
 }
 
-.secondRow {
+.intro {
+  margin-bottom: 2.5em;
+}
+
+.content {
   display: flex;
   flex-flow:column;
   position: relative;
@@ -18,14 +19,14 @@
   }
 }
 
-.imageContainer {
+.imageContent {
   flex:1;
   @media (--large-and-up) {
     flex:60% 0 0;
   }
 }
 
-.textContainer {
+.textContent {
   background-color: var(--color-super-light-gray);
   position:relative;
   padding:1.5em 1.5em 2em 1.5em;
@@ -48,6 +49,10 @@
   }
 }
 
-.textContainerTitle {
+.lightTheme {
+  background-color: var(--color-white);
+}
+
+.title {
   margin-top:0;
 }

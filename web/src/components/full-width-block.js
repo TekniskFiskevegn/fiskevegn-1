@@ -16,7 +16,7 @@ const FullWidthBlock = ({
   isShaped,
   shapeType,
   shapeNumber,
-  shapePosition
+  shapePosition = "bottom"
 }) => {
   console.log("full-width-block.js", children);
 
@@ -25,12 +25,18 @@ const FullWidthBlock = ({
       <div className={styles.extend}>
         {isShaped && (
           <SvgProvider
-            shapeType={shapeType}
+            svgType={shapeType}
             shapeNumber={shapeNumber}
             shapePosition={shapePosition}
           />
         )}
-        <div className={cn(styles.wrapper, isSpacious ? styles.spacious : "")}>
+        <div
+          className={cn(
+            styles.wrapper,
+            isSpacious ? styles.spacious : "",
+            isShaped && shapePosition === "bottom" ? styles.lessPaddingBottom : ""
+          )}
+        >
           <div className={styles.flexController}>{children}</div>
         </div>
       </div>
