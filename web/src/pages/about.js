@@ -4,9 +4,10 @@ import Container from "../components/container";
 import GraphQLErrorList from "../components/graphql-error-list";
 import NewsPreviewGrid from "../components/news-preview-grid";
 import KeyNumber from "../components/key-number";
-import FullWidthBlock2 from "../components/full-width-block-2";
+import FullWidthBlock from "../components/full-width-block-final";
 import HorizontalList from "../components/horizontal-list";
 import List from "../components/list";
+import Card from "../components/card";
 import PageIntro from "../components/page-intro";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
@@ -63,7 +64,24 @@ const About = props => {
           </List>
         </div>
         <div className={utils.verticalFlow}>
-          <FullWidthBlock2 />
+          <FullWidthBlock>
+            <List>
+              <Card
+                title="Colto"
+                description="sustainable solutions towards safer, cleaner oceans."
+              />
+              <Card
+                title="Eurocord"
+                description="sustainable solutions
+              towards safer, cleaner oceans."
+              />
+              <Card
+                title="Global Ghost Gear Initiative"
+                description="sustainable solutions
+              towards safer, cleaner oceans."
+              />
+            </List>
+          </FullWidthBlock>
         </div>
         <div className={utils.verticalFlow}>
           <div className={utils.centeredTextLargeScreen}>

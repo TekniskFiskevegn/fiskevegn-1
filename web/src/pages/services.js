@@ -17,7 +17,6 @@ import pages from "../components/pages.module.css";
 import { responsiveTitle1 } from "../components/typography.module.css";
 
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
-import FullWidthBlock from "../components/full-width-block-2";
 
 // export const query = graphql`
 //   query AboutQuery {
