@@ -7,6 +7,7 @@
 - gpdr existing webpage?
 - slå sammen frontpage-image og hero-image?
 - slå sammen fullwidth blocks
+- clean up color variables
 
 ## Graphql queries
 

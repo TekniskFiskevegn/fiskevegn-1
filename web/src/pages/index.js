@@ -7,7 +7,7 @@ import {
 } from "../lib/helpers";
 import FrontpageImage from "../components/frontpage-image";
 import PromotedBlock from "../components/promoted-block";
-import FullWidthBlock from "../components/full-width-block";
+import FullWidthBlock from "../components/full-width-block-final";
 import Container from "../components/container";
 import GraphQLErrorList from "../components/graphql-error-list";
 import NewsPreviewGrid from "../components/news-preview-grid";
@@ -215,10 +215,17 @@ const IndexPage = props => {
       <FrontpageImage {...frontpage} />
       <Container>
         <h1 hidden>{site.title}</h1>
-        {frontpage.promotedBlock && <PromotedBlock {...frontpage} />}
+        {frontpage.promotedBlock && (
+          <div className={utils.verticalFlow}>
+            <PromotedBlock {...frontpage} />
+          </div>
+        )}
         {frontpage.fullWidthBlock && (
           <div className={utils.verticalFlow}>
-            <FullWidthBlock {...frontpage} />
+            {/* <FullWidthBlock {...frontpage} /> */}
+            <FullWidthBlock>
+              <PromotedBlock {...frontpage} />
+            </FullWidthBlock>
           </div>
         )}
         {newsNodes && (
