@@ -1,63 +1,79 @@
 import { Link } from "gatsby";
 import React from "react";
-import Icon from "./icon";
 import { cn } from "../lib/helpers";
 
 import styles from "./list.module.css";
 
-const List = ({ type, children }) => {
+const List = ({ type, children, gap = null }) => {
+
   switch (type) {
-    case "category":
-      return <CategoryList children={children} />;
-    case "wrapping":
-      return <WrappingList children={children} />;
+    case "twoandtwo":
+      // two and two on large screens
+      return <TwoAndTwoList children={children} gap={gap} />;
+    case "nowrap":
+      // list items not wrapping under each other
+      return <NoWrapList children={children} gap={gap} />;
     case "vertical":
-      return <VerticalList children={children} />;
-    case "list-with-intro":
-      console.log("log children in list", children);
-      return <ListWithIntro children={children} />;
+      // vertical list
+      return <VerticalList children={children} gap={gap} />;
+    case "justifiedCenter":
+      // vertical list
+      return <JustifiedCenterList children={children} gap={gap} />;
+    case "justifiedSpaceAround":
+      // vertical list
+      return <JustifiedSpaceAroundList children={children} gap={gap} />;            
     default:
-      return <DefaultList children={children} />;
+      return <DefaultList children={children} gap={gap} />;
   }
 };
 
-const DefaultList = ({ children }) => (
-  <ul className={cn(styles.root, styles.default)}>
+const DefaultList = ({ children, gap }) => (
+  <ul className={cn(styles.root, styles.default, gap === "small" ? styles.smallGap : "", gap === "no" ? styles.noGap : "", gap === "large" ? styles.largeGap : "" )}>
     {React.Children.map(children, (child, i) => {
       return <li>{child}</li>;
     })}
   </ul>
 );
 
-const ListWithIntro = ({ children }) => (
-  <div>
-    <div className={styles.intro}>{children[0]}</div>
-    <ul className={cn(styles.root, styles.default)}>
-      {React.Children.map(children[1], (child, i) => {
-        return <li>{child}</li>;
-      })}
-    </ul>
-  </div>
-);
-
-const VerticalList = ({ children }) => (
-  <ul className={cn(styles.root, styles.vertical)}>
+const JustifiedCenterList = ({ children, gap }) => (
+  // vertical list
+  <ul className={cn(styles.root, styles.justifiedCenter, gap === "small" ? styles.smallGap : "", gap === "no" ? styles.noGap : "", gap === "large" ? styles.largeGap : "" )}>
     {React.Children.map(children, (child, i) => {
       return <li>{child}</li>;
     })}
   </ul>
 );
 
-const WrappingList = ({ children }) => (
-  <ul className={cn(styles.root, styles.wrapping)}>
+const JustifiedSpaceAroundList = ({ children, gap }) => (
+  // vertical list
+  <ul className={cn(styles.root, styles.justifiedSpaceAround, gap === "small" ? styles.smallGap : "", gap === "no" ? styles.noGap : "", gap === "large" ? styles.largeGap : "" )}>
     {React.Children.map(children, (child, i) => {
       return <li>{child}</li>;
     })}
   </ul>
 );
 
-const CategoryList = ({ children }) => (
-  <ul className={cn(styles.root, styles.categories)}>
+const VerticalList = ({ children, gap }) => (
+  // vertical list
+  <ul className={cn(styles.root, styles.vertical, gap === "small" ? styles.smallGap : "", gap === "no" ? styles.noGap : "", gap === "large" ? styles.largeGap : "" )}>
+    {React.Children.map(children, (child, i) => {
+      return <li>{child}</li>;
+    })}
+  </ul>
+);
+
+const NoWrapList = ({ children, gap }) => (
+  // list items not wrapping under each other
+  <ul className={cn(styles.root, styles.noWrap, gap === "small" ? styles.smallGap : "", gap === "no" ? styles.noGap : "", gap === "large" ? styles.largeGap : "" )}>
+    {React.Children.map(children, (child, i) => {
+      return <li>{child}</li>;
+    })}
+  </ul>
+);
+
+const TwoAndTwoList = ({ children, gap }) => (
+  // two and two on large screens
+  <ul className={cn(styles.root, styles.twoAndTwo, gap === "small" ? styles.smallGap : "", gap === "no" ? styles.noGap : "", gap === "large" ? styles.largeGap : "" )}>
     {React.Children.map(children, (child, i) => {
       return <li>{child}</li>;
     })}

@@ -4,17 +4,12 @@
 .root {
   box-shadow: 0 0.5rem 0.75rem -0.25rem rgba(39,48,54,0.05);
   background-color: var(--color-white);
-  margin-bottom:1em;
-  @media(--medium-and-up) {
-    margin:1em;
-  }
+  width:100%;
+  min-height: 100px;
 }
 
 .regular {
-  padding:1em;
-  @media(--medium-and-up) {
-    padding:2em;
-  }
+  padding:2em;
 }
 
 .link {
@@ -22,7 +17,7 @@
   text-decoration: none;
   display: block;
   color: inherit;
-  transition: all 100ms linear;
+  /* transition: background-color, box-shadow 100ms linear; */
   @nest &:hover {
     /* background-color: var(--color-super-light-gray); */
     background-color:#f9fbfd;

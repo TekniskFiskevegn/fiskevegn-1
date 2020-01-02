@@ -1,12 +1,6 @@
 @import '../styles/custom-media.css';
 
-.root {
-
-}
-
-.intro {
-  margin-bottom: 2.5em;
-}
+.root {}
 
 .content {
   display: flex;

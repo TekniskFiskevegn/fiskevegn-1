@@ -2,10 +2,24 @@
 @import '../styles/custom-media.css';
 
 .root {
-  width:100%;
   list-style-type: none;
   padding:0;
   margin:0;
+  display:flex;
+
+  /* @media (--medium-and-up) {
+    margin:0 -1em 0 -1em;
+  } */
+
+  @nest & li {
+    padding:1em 0;
+    display:flex;
+    align-self: stretch;
+
+    @media (--medium-and-up) {
+      padding:1em;
+    }
+  }
 }
 
 .intro {
@@ -13,24 +27,24 @@
 }
 
 .default {
-  display: flex;
   flex-flow:column;
   align-items: center; 
   justify-content: stretch;
+  flex-wrap: wrap;
   
   @media (--medium-and-up) {
     flex-flow:row;
+    flex-wrap: wrap;
   }
 
   @nest & li {
     display: flex;
-    flex: 0 1 auto; 
+    flex:1;
     align-self: stretch;
   }
 }
 
 .vertical {
-  display: flex;
   flex-flow: column;
 
   @nest & li {
@@ -39,11 +53,10 @@
   }
 }
 
-.wrapping {
-  display: flex;
+.noWrap {
   align-items: center; 
   justify-content: space-around;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 
   @media (--medium-and-up) {
     justify-content: center;
@@ -55,8 +68,7 @@
   }
 }
 
-.categories {
-  display:flex;
+.twoAndTwo {
   flex-flow: column;
 
   @media (--medium-and-up) {
@@ -69,5 +81,39 @@
     @media (--medium-and-up) {
       flex:50%;
     }
+  }
+}
+
+.justifiedCenter {
+  justify-content: center;
+}
+.justifiedSpaceAround {
+  justify-content: space-around;
+}
+
+.largeGap {
+  @nest & li {
+    padding:1em 0;
+
+    @media (--medium-and-up) {
+      padding:1.5em;
+    }
+  }
+}
+
+.smallGap {
+  @nest & li {
+    padding:0.5em 0;
+
+    @media (--medium-and-up) {
+      padding:0.5em;
+    }
+  }
+}
+
+.noGap {
+  margin:0;
+  @nest & li {
+    padding:0!important;
   }
 }

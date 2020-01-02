@@ -61,11 +61,12 @@ const Products = props => {
         </div>
         <div className={utils.verticalFlow}>
           <FullWidthBlock svgDesign={false} shapeType="wave" svgPosition="top">
-            <List type="category">
+            <List type="twoandtwo" gap="small">
               <Card
                 title="Fishery"
                 description="sustainable solutions
-                towards safer, cleaner oceans."
+                towards safer, cleaner oceans. sustainable solutions
+                towards safer, cleaner oceans. both for our customers"
                 isLink={true}
                 linkSrc="fishery"
                 hasImage={true}

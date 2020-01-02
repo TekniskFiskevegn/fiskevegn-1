@@ -12,6 +12,7 @@
 - make cards more customizeable
 - also make lessPaddingTop
 - add variable for fillcolor
+- svgType to designType, and designSelection?
 
 ## Graphql queries
 
