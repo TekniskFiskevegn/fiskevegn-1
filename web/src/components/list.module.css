@@ -8,19 +8,24 @@
   margin:0;
 }
 
+.intro {
+  margin-bottom: 2.5em;
+}
+
 .default {
   display: flex;
   flex-flow:column;
   align-items: center; 
-  justify-content: center;
+  justify-content: stretch;
   
   @media (--medium-and-up) {
     flex-flow:row;
   }
 
   @nest & li {
-    display: block;
+    display: flex;
     flex: 0 1 auto; 
+    align-self: stretch;
   }
 }
 

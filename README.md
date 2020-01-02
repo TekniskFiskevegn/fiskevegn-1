@@ -11,7 +11,7 @@
 - make new custom block as seen on screenshot
 - make cards more customizeable
 - also make lessPaddingTop
-- find beautiful font for numbers
+- add variable for fillcolor
 
 ## Graphql queries
 
@@ -77,6 +77,7 @@ You can create a folder named static at the root of your project. Every file you
 - https://www.blobmaker.app/
 - https://visme.co/blog/website-color-schemes/
 - https://coolors.co/
+- https://google-webfonts-helper.herokuapp.com/
 
 ## What I have installed
 

@@ -64,30 +64,34 @@ const About = props => {
           </List>
         </div>
         <div className={utils.verticalFlow}>
-          <FullWidthBlock svgShape={true} svgType="wave" svgSelection="4" svgPosition="bottom">
-            <BlockIntro
-              tinyTitle=""
-              title="Partners and Collaborations"
-              text="Fiskevegn is working together with mulitple industry operators, goverments and NGO's
-              to eliminate IUU fishing and to drive for economically viable, sustainable solutions
-              towards safer, cleaner oceans. We are also a member of several industry associations
-              to keep current with new developments in manufacturing technology."
-            />
-            <List>
-              <Card
-                title="Colto"
-                description="sustainable solutions towards safer, cleaner oceans."
-              />
-              <Card
-                title="Eurocord"
-                description="sustainable solutions
+          <FullWidthBlock svgDesign={true} svgType="wave" svgSelection="4" svgPosition="bottom">
+            <List type="list-with-intro">
+              <>
+                <BlockIntro
+                  tinyTitle=""
+                  title="Partners and Collaborations"
+                  text="Fiskevegn is working together with mulitple industry operators, goverments and NGO's
+                to eliminate IUU fishing and to drive for economically viable, sustainable solutions
+                towards safer, cleaner oceans. We are also a member of several industry associations
+                to keep current with new developments in manufacturing technology."
+                />
+              </>
+              <>
+                <Card
+                  title="Colto"
+                  description="sustainable solutions towards safer, cleaner oceans."
+                />
+                <Card
+                  title="Eurocord"
+                  description="sustainable solutions
               towards safer, cleaner oceans."
-              />
-              <Card
-                title="Global Ghost Gear Initiative"
-                description="sustainable solutions
+                />
+                <Card
+                  title="Global Ghost Gear Initiative"
+                  description="sustainable solutions
               towards safer, cleaner oceans."
-              />
+                />
+              </>
             </List>
           </FullWidthBlock>
         </div>
