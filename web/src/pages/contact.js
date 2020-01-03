@@ -13,6 +13,7 @@ import List from "../components/list";
 import Card from "../components/card";
 import SEO from "../components/seo";
 import HeroImage from "../components/hero-image";
+import ContactBlock from "../components/contact-block";
 import ProductTree from "../components/product-tree";
 import BreadCrumb from "../components/breadcrumb";
 
@@ -50,13 +51,24 @@ import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
 // `;
 
 const Contact = props => {
+  const nodes = [
+    {
+    }
+  ]
   return (
     <Layout isCustomHeader={true} pageClass={pages.products} currentPage="contact">
       <SEO title="Fiskevegn products" />
       <HeroImage src="/contact.jpg" />
       <Container>
-        <BreadCrumb />
-        <div className={utils.verticalFlow}></div>
+        <div className={utils.verticalFlow}>
+          <ContactBlock image="/office.jpg" title="Norway" tinyTitle="Main Office" description="Our main office is located at beautiful Flatraket." textTitle="Main Office" />
+        </div>
+        <div className={utils.verticalFlow}>
+          <ContactBlock image="/aalesund.jpg" title="Ålesund" tinyTitle="Department" description="Our department in Ålesund, Norway, is responsible for Equipment" textTitle="Ålesund" />
+        </div>
+        <div className={utils.verticalFlow}>
+          <ContactBlock image="/new-zealand.jpg" title="New Zealand" tinyTitle="Department" description="Our department in New Zealand is responsible for fishery in antarctica" textTitle="New Zealand" />
+        </div>
       </Container>
     </Layout>
   );

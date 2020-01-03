@@ -17,6 +17,10 @@
 - onClick header
 - a better way to use BlockIntro as done in newsblock?
 - add themeprovider component, variables or classes?
+- promoted block should get a new name
+- contact could or should be the same as promoted block
+- block intro have potential to be made better. f.eks Contactblock intro={true}
+- clean up theme usage
 
 ## Graphql queries
 

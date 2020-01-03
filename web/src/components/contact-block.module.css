@@ -1,0 +1,59 @@
+@import '../styles/custom-media.css';
+
+.root {}
+
+.content {
+  display: flex;
+  flex-flow:column;
+  position: relative;
+  box-sizing: border-box;
+
+  @media (--large-and-up) {
+    flex-flow:row;
+  }
+}
+
+.imageContent {
+  flex:1;
+  @media (--large-and-up) {
+    flex:60% 0 0;
+  }
+}
+
+.imageBg {
+  min-height:400px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.textContent {
+  background-color: var(--color-very-light-gray);
+  position:relative;
+  padding:1.5em 1.5em 2em 1.5em;
+  margin:-2em 1.5em 0 1.5em;
+  flex:1;
+
+  @media (--medium-and-up) {
+    padding:2em 2em 2.5em 2em;
+    margin:-6em 2em 0 2em;
+  } 
+
+  @media (--large-and-up) {
+    padding:3em;
+    margin:0;
+    right: 0;
+    bottom: 25px;
+    top: 25px;
+    position: absolute;
+    max-width: 50%;
+  }
+}
+
+.lightTheme {
+  background-color: var(--color-white);
+}
+
+.title {
+  margin-top:0;
+}
