@@ -65,6 +65,7 @@ const Services = props => {
             designType="wave"
             designSelection="3"
             designPosition="top"
+            lessPaddingTop={true}
           >
             <List type="twoandtwo" gap="small">
               <Card
@@ -74,7 +75,7 @@ const Services = props => {
                 isLink={true}
                 linkSrc="fishery"
                 hasImage={true}
-                imgSrc="/fishery.jpg"
+                imgSrc="/rope-2.jpg"
               />
 
               <Card
@@ -104,7 +105,7 @@ const Services = props => {
                 isLink={true}
                 linkSrc=""
                 hasImage={true}
-                imgSrc="/fishery.jpg"
+                imgSrc="/rope-2.jpg"
               />
             </List>
           </FullWidthBlock>

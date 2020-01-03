@@ -4,6 +4,7 @@ import Container from "../components/container";
 import GraphQLErrorList from "../components/graphql-error-list";
 import NewsPreviewGrid from "../components/news-block";
 import KeyNumber from "../components/key-number";
+import PunchLine from "../components/punch-line";
 import FullWidthBlock from "../components/full-width-block";
 import HorizontalList from "../components/horizontal-list";
 import List from "../components/list";
@@ -59,8 +60,9 @@ const About = props => {
               trusted names in the global arena of longline fishing."
           />
           <List type="justifiedCenter">
-            <KeyNumber number={5060} description="Fishing hooks delivered" />
-            <KeyNumber number={29} description="Partners worldwide" />
+            {/* <KeyNumber number={5060} description="Fishing hooks delivered" />
+            <KeyNumber number={29} description="Partners worldwide" /> */}
+            <PunchLine text="Usa" description="Equipment" />
           </List>
         </div>
         <div className={utils.verticalFlow}>

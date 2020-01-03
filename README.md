@@ -21,6 +21,7 @@
 - contact could or should be the same as promoted block
 - block intro have potential to be made better. f.eks Contactblock intro={true}
 - clean up theme usage
+- 404 page animation
 
 ## Graphql queries
 
