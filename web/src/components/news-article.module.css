@@ -12,6 +12,11 @@
   background: #eee;
   padding-bottom: calc(9 / 16 * 100%);
 
+
+  @media (--large-and-up) {
+    padding-bottom: calc(9 / 16 * 75%);
+  }
+
   @nest & img {
     position: absolute;
     top: 0;

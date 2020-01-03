@@ -10,9 +10,13 @@
 - flytte responsive title osv over til utils?
 - make new custom block as seen on screenshot
 - make cards more customizeable
-- also make lessPaddingTop
 - add variable for fillcolor
-- svgType to designType, and designSelection?
+- space-block
+- more customizable promoted block
+- verticalFlow could be a component
+- onClick header
+- a better way to use BlockIntro as done in newsblock?
+- add themeprovider component, variables or classes?
 
 ## Graphql queries
 

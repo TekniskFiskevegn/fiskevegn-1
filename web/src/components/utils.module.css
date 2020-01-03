@@ -64,6 +64,17 @@
   margin-bottom: 1em;
 }
 
+.subTitle {
+  color:#666;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 1em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin:0;
+  font-size:16px;
+}
+
 /* Flexbox */
 .flex {
   display:flex;

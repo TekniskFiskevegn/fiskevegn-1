@@ -45,7 +45,7 @@ import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
 
 const Products = props => {
   return (
-    <Layout pageClass={pages.products}>
+    <Layout pageClass={pages.products} currentPage="products">
       <SEO title="Fiskevegn products" />
       <Container>
         <div className={utils.verticalFlow}>
@@ -60,7 +60,13 @@ const Products = props => {
           />
         </div>
         <div className={utils.verticalFlow}>
-          <FullWidthBlock svgDesign={false} shapeType="wave" svgPosition="top">
+          <FullWidthBlock
+            svgDesign={true}
+            designType="wave"
+            designPosition="top"
+            designSelection="7"
+            lessPaddingTop={true}
+          >
             <List type="twoandtwo" gap="small">
               <Card
                 title="Fishery"

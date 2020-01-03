@@ -39,7 +39,6 @@
 
   @media (--large-and-up) {
     padding: 2.5em;
-    /* border-bottom: 2px solid var(--color-super-light-gray); */
   }
 }
 
@@ -126,4 +125,8 @@
 
 .showNav {
   display: block;
+}
+
+.activeLink {
+  color:var(--color-brand-secondary)!important;
 }

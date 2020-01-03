@@ -45,7 +45,7 @@ export const query = graphql`
 
 const About = props => {
   return (
-    <Layout>
+    <Layout currentPage="about">
       <SEO title="About Fiskevegn" />
       <Container>
         <div className={utils.verticalFlow}>
@@ -59,12 +59,18 @@ const About = props => {
               trusted names in the global arena of longline fishing."
           />
           <List type="justifiedCenter">
-            <KeyNumber number={1876} description="Fishing hooks delivered" />
+            <KeyNumber number={5060} description="Fishing hooks delivered" />
             <KeyNumber number={29} description="Partners worldwide" />
           </List>
         </div>
         <div className={utils.verticalFlow}>
-          <FullWidthBlock svgDesign={true} svgType="wave" svgSelection="4" svgPosition="bottom">
+          <FullWidthBlock
+            colorTheme="light"
+            svgDesign={true}
+            designType="wave"
+            designSelection="4"
+            designPosition="bottom"
+          >
             <BlockIntro
               marginBottom={true}
               tinyTitle=""

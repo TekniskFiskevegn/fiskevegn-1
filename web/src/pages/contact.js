@@ -51,7 +51,7 @@ import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
 
 const Contact = props => {
   return (
-    <Layout isCustomHeader={true} pageClass={pages.products}>
+    <Layout isCustomHeader={true} pageClass={pages.products} currentPage="contact">
       <SEO title="Fiskevegn products" />
       <HeroImage src="/contact.jpg" />
       <Container>

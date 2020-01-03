@@ -15,7 +15,8 @@ const Layout = ({
   showNav,
   siteTitle,
   isCustomHeader,
-  pageClass = "pageDefault"
+  pageClass = "pageDefault",
+  currentPage
 }) => (
   <div className={pageClass}>
     <Header
@@ -24,6 +25,7 @@ const Layout = ({
       onHideNav={onHideNav}
       onShowNav={onShowNav}
       showNav={showNav}
+      currentPage={currentPage}
     />
     <div className={styles.content}>{children}</div>
     <Footer />

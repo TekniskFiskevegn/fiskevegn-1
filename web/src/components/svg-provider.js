@@ -4,10 +4,16 @@ import { cn } from "../lib/helpers";
 import { getWaves } from "../lib/svg";
 import styles from "./svg-provider.module.css";
 
-const SvgProvider = ({ svgType = null, svgSelection, svgPosition, iconName = null }) => {
-  switch (svgType) {
+const SvgProvider = ({
+  designType = null,
+  designSelection,
+  designPosition = "bottom",
+  iconName = null,
+  colorTheme = "lightTheme"
+}) => {
+  switch (designType) {
     case "wave":
-      return wave(svgSelection, svgPosition);
+      return wave(designSelection, designPosition, colorTheme);
     // case "angle":
     //   return angle(selection);
     // case "circle":
@@ -19,14 +25,13 @@ const SvgProvider = ({ svgType = null, svgSelection, svgPosition, iconName = nul
   }
 };
 
-const wave = (svgSelection, svgPosition = "bottom") => {
+const wave = (designSelection, designPosition, colorTheme) => {
+  // todo: add colortheme
   const cssClass = cn(
     styles.wave,
-    svgPosition === "bottom" ? styles.positionBottom : styles.positionTop
+    designPosition === "bottom" ? styles.positionBottom : styles.positionTop
   );
-  const fill = "#F3F4F5";
-  const fillOpacity = "1";
-  return getWaves(svgSelection, cssClass, fill, fillOpacity);
+  return getWaves(designSelection, cssClass);
 };
 
 const angle = ({ selection }) => {

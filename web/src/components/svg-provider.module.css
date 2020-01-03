@@ -6,7 +6,12 @@
   position: absolute;
   left:0;
   right:0;
+  fill-opacity: 1;
   background-color:var(--color-background);
+  @nest & path {
+    fill: var(--color-light-theme);
+    fill-opacity:1;
+  }
 }
 
 .positionBottom {

@@ -3,10 +3,12 @@ import { graphql } from "gatsby";
 import Container from "../components/container";
 import GraphQLErrorList from "../components/graphql-error-list";
 import NewsBlock from "../components/news-block";
+import BlockIntro from "../components/block-intro";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from "../lib/helpers";
 
+import utils from "../components/utils.module.css";
 import { responsiveTitle1 } from "../components/typography.module.css";
 
 export const query = graphql`
@@ -51,7 +53,12 @@ const ArchivePage = props => {
     <Layout>
       <SEO title="Archive" />
       <Container>
-        <h1 className={responsiveTitle1}>News</h1>
+        <div className={utils.verticalFlow}>
+            <BlockIntro
+              tinyTitle="Archive"
+              title="Fiskevegn news from around the world"
+            />
+        </div>
         {projectNodes && projectNodes.length > 0 && <NewsBlock nodes={projectNodes} />}
       </Container>
     </Layout>

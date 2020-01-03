@@ -2,10 +2,6 @@
   position: relative;
 }
 
-.backgroundColor {
-  background-color: var(--color-super-light-gray);
-}
-
 .wrapper {
   box-sizing: border-box;
   max-width: 1140px;
@@ -16,7 +12,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-top:2px solid var(--color-super-light-gray);
+  border-top:2px solid var(--color-very-light-gray);
 }
 
 .waveContainer {

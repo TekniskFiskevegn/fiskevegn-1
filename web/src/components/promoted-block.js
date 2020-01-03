@@ -11,22 +11,34 @@ import { responsiveTitle1 } from "../components/typography.module.css";
 const PromotedBlock = props => {
   console.log("promoted-block.js", props);
 
-  const { promotedBlock, lightTheme, darkerTheme, darkTheme } = props;
+  const { promotedBlock, lightTheme, darkerTheme, darkTheme, demoImage = false } = props;
 
   return (
     <div className={styles.root}>
-      <BlockIntro
-        marginBottom={true}
-        tinyTitle=""
-        title="Modern fishing solutions"
-        text="It is a long established fact that a reader will be distracted by the readable content of
+      {!demoImage && (
+        <BlockIntro
+          marginBottom={true}
+          tinyTitle=""
+          title="Modern fishing solutions"
+          text="It is a long established fact that a reader will be distracted by the readable content of
           a page when looking at its layout. The point of using Lorem Ipsum is that it has a
           more-or-less normal distribution"
-      />
+        />
+      )}
+      {demoImage && (
+        <BlockIntro
+          marginBottom={true}
+          tinyTitle=""
+          title="Rewarding Collaborations"
+          text="It is a long established fact that a reader will be distracted by the readable content of
+          a page when looking at its layout. The point of using Lorem Ipsum is that it has a
+          more-or-less normal distribution"
+        />
+      )}
 
       <div className={styles.content}>
         <div className={styles.imageContent}>
-          {promotedBlock.image && (
+          {promotedBlock.image && !demoImage && (
             <img
               src={imageUrlFor(buildImageObj(promotedBlock.image))
                 .width(700)
@@ -36,6 +48,7 @@ const PromotedBlock = props => {
               alt={promotedBlock.image.alt}
             />
           )}
+          {demoImage && <img src="/boat.jpg" alt="" />}
         </div>
         <div
           className={cn(
@@ -45,14 +58,14 @@ const PromotedBlock = props => {
             darkTheme ? styles.darkTheme : ""
           )}
         >
-          <h3 className={styles.title}>Our products</h3>
+          <h3 className={styles.title}>{!demoImage ? "Our products" : "Our Services"}</h3>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores porro iste sint
             suscipit excepturi aliquid a laudantium nihil rerum nisi. Saepe pariatur at atque esse
             accusamus repellendus exercitationem iusto odio!
           </p>
           <a href="" className={utils.callToActionLink}>
-            SEE OUR PRODUCT LINE
+            {!demoImage ? "SEE OUR PRODUCT LINE" : "SEE OUR SERVICES"}
           </a>
         </div>
       </div>

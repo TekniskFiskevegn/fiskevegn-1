@@ -46,7 +46,7 @@ import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
 
 const Services = props => {
   return (
-    <Layout pageClass={pages.products}>
+    <Layout pageClass={pages.products} currentPage="services">
       <SEO title="Fiskevegn products" />
       <Container>
         <div className={utils.verticalFlow}>
@@ -60,12 +60,17 @@ const Services = props => {
           />
         </div>
         <div className={utils.verticalFlow}>
-          <FullWidthBlock hasGradient={true}>
-            <List type="category">
+          <FullWidthBlock
+            svgDesign={true}
+            designType="wave"
+            designSelection="3"
+            designPosition="top"
+          >
+            <List type="twoandtwo" gap="small">
               <Card
-                title="Fishery"
+                title="Fishery Development"
                 description="sustainable solutions
-                towards safer, cleaner oceans."
+                towards safer, cleaner oceans. sustainable solutions"
                 isLink={true}
                 linkSrc="fishery"
                 hasImage={true}
@@ -73,7 +78,7 @@ const Services = props => {
               />
 
               <Card
-                title="Aquaculture"
+                title="Project Planning"
                 description="sustainable solutions
                 towards safer, cleaner oceans."
                 isLink={true}
@@ -83,7 +88,7 @@ const Services = props => {
               />
 
               <Card
-                title="Rope solutions"
+                title="Bespoke Engineering"
                 description="sustainable solutions
                 towards safer, cleaner oceans."
                 isLink={true}
@@ -93,7 +98,7 @@ const Services = props => {
               />
 
               <Card
-                title="General supplies"
+                title="Mooring Analysis"
                 description="sustainable solutions
                 towards safer, cleaner oceans."
                 isLink={true}

@@ -8,9 +8,10 @@ import styles from "./full-width-block.module.css";
 const FullWidthBlock = ({
   children,
   svgDesign,
-  svgType,
-  svgSelection,
-  svgPosition = "bottom",
+  designType,
+  designSelection,
+  designPosition = "bottom",
+  colorTheme = "light",
   lessPadding = false,
   lessPaddingTop = false,
   lessPaddingBottom = false,
@@ -18,9 +19,20 @@ const FullWidthBlock = ({
 }) => {
   return (
     <div className={styles.root}>
-      <div className={cn(styles.extend, hasGradient ? styles.gradient : "")}>
+      <div
+        className={cn(
+          styles.extend,
+          hasGradient ? styles.gradient : "",
+          colorTheme === "light" ? styles.lightTheme : ""
+        )}
+      >
         {svgDesign && (
-          <SvgProvider svgType={svgType} svgSelection={svgSelection} svgPosition={svgPosition} />
+          <SvgProvider
+            designType={designType}
+            designSelection={designSelection}
+            designPosition={designPosition}
+            colorTheme={colorTheme}
+          />
         )}
         <div
           className={cn(
