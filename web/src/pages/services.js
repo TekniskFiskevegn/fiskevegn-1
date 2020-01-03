@@ -64,10 +64,10 @@ const Services = props => {
             svgDesign={true}
             designType="wave"
             designSelection="3"
-            designPosition="top"
+            designPosition="bottom"
             lessPaddingTop={true}
           >
-            <List type="twoandtwo" gap="small">
+            <List type="twoandtwo">
               <Card
                 title="Fishery Development"
                 description="sustainable solutions

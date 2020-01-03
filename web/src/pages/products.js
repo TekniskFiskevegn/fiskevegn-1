@@ -63,11 +63,11 @@ const Products = props => {
           <FullWidthBlock
             svgDesign={true}
             designType="wave"
-            designPosition="top"
-            designSelection="7"
+            designPosition="bottom"
+            designSelection="2"
             lessPaddingTop={true}
           >
-            <List type="twoandtwo" gap="small">
+            <List type="twoandtwo">
               <Card
                 title="Fishery"
                 description="sustainable solutions

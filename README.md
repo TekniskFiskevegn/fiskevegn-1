@@ -22,6 +22,8 @@
 - block intro have potential to be made better. f.eks Contactblock intro={true}
 - clean up theme usage
 - 404 page animation
+- justified center and space around responsive on mobile...
+- variables for light text and dusk text
 
 ## Graphql queries
 

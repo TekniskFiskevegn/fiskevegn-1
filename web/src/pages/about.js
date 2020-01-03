@@ -59,10 +59,12 @@ const About = props => {
               yielded results both for our customers and for us. We are proud to be one of the most
               trusted names in the global arena of longline fishing."
           />
-          <List type="justifiedCenter">
+          <List type="justifiedSpaceAround">
             {/* <KeyNumber number={5060} description="Fishing hooks delivered" />
             <KeyNumber number={29} description="Partners worldwide" /> */}
+            <PunchLine text="New Zealand" description="Antarctic fishery" />
             <PunchLine text="Usa" description="Equipment" />
+            <PunchLine text="Greenland" description="Arctic fishery" />
           </List>
         </div>
         <div className={utils.verticalFlow}>
@@ -70,7 +72,7 @@ const About = props => {
             colorTheme="light"
             svgDesign={true}
             designType="wave"
-            designSelection="4"
+            designSelection="1"
             designPosition="bottom"
           >
             <BlockIntro
@@ -83,7 +85,7 @@ const About = props => {
                 to keep current with new developments in manufacturing technology."
             />
 
-            <List gap="small">
+            <List>
               <Card
                 title="Colto"
                 description="sustainable solutions towards safer, cleaner oceans."

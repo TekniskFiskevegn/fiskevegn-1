@@ -3,21 +3,23 @@
 
 .root {
   text-align: center;
-  padding:1.5em;
+  padding:1.5em 0 0 0;
   @media (--medium-and-up){
-    padding:4em 3em 1em 3em;
+    padding:3em 0 0 0;
   }
 }
 
 .text {
-  font-size:44px;
+  font-size:32px;
   color:var(--color-brand-primary);
   margin:0;
   line-height: 1;
   font-family: "Lato";
   font-weight: 700;
+  text-transform: uppercase;
+  color:#555;
   @media (--medium-and-up){
-    font-size: 74px;
+    font-size: 36px;
   }
 }
 
@@ -27,6 +29,7 @@
   display:block;
   font-size:14px;
   margin-top:0.5em;
+  color:#666;
   @media (--medium-and-up){
     font-size:15px;
     letter-spacing:1px;
