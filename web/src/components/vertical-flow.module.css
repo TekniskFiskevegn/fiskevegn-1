@@ -1,0 +1,14 @@
+@import '../styles/custom-properties.css';
+@import '../styles/custom-media.css';
+
+.root {
+  padding:1.5em 0;
+  @media (--medium-and-up) {
+    padding:1.5em 0;
+  }
+  @media (--large-and-up) {
+    padding:2em 0;
+  }
+}
+
+.custom{}

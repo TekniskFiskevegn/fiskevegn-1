@@ -1,27 +1,32 @@
 :root {
-
+  /* layout */
   --font-family-sans: 'Roboto', sans-serif;
-
   --container-width:1140px;
-
-  --color-brand-primary: #292f8e;
-  --color-brand-secondary: #d14a28;
-  --color-brand-tertiary: #040E23;
+  
+  /* brand */
+  --color-brand: #292f8e;
+  --color-brand-complementary: #d14a28;
+  --color-brand-subtle: rbga(181,187,224,1);
   --color-background: #fff;
-
-  --color-black: #3a3a3a;
-  --color-black-2: #273036;
-  --color-dark-gray: #32373e;
-  --color-gray: #697a90;
-  --color-light-gray: #b4bcc7;
-  --color-very-light-gray: #f6f6f6;
-  --color-light-theme: #f6f6f6;
+  
+  /* standard colors */
+  --color-black: #1e1e1e;
+  /* --color-black: #3a3a3a; */
   --color-white: #ffffff;
-  --color-accent: #d35400;
+  --color-dusk: #c0c2ce;
+  --color-gray: #697a90;
+  --color-light-gray: #f6f6f6;
 
-  /* blue: #1f3a93 */
-  /* blue chalk: #f1e7fe */
-  /* light purple: #B2B9E0 */
+/* other nice colors
+#a6a39e
+BAB6B2
+CCC6C4
+676767
+b3cde0
+c0c2ce */
+
+  /* themes */
+  --color-light-theme: #f6f6f6;
 
   /* Typography */
   --unit: 16;

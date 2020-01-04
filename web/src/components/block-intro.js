@@ -8,15 +8,24 @@ import pages from "../components/pages.module.css";
 import { responsiveTitle1 } from "../components/typography.module.css";
 
 const BlockIntro = props => {
-  const { marginBottom = false, tinyTitle, title, text, subTitle } = props;
+  const { name, title, text, marginBottom = false } = props;
   return (
     <div className={cn(styles.root, marginBottom ? styles.marginBottom : "")}>
-      {tinyTitle && <span className={utils.tinyTitle}>{tinyTitle}</span>}
+      {name && <span className={utils.name}>{name}</span>}
       {title && <h2 className={responsiveTitle1}>{title}</h2>}
-      {subTitle && <h3 className={utils.subTitle}>{subTitle}</h3>}
       {text && <p>{text}</p>}
     </div>
   );
 };
+
+// const BlockIntro = ({ name, title, subTitle = "", text, marginBottom = false }) => {
+//   return (
+//     <div className={cn(styles.root, marginBottom ? styles.marginBottom : "")}>
+//       {name && <span className={utils.name}>{name}</span>}
+//       {title && <h2 className={responsiveTitle1}>{title}</h2>}
+//       {text && <p>{text}</p>}
+//     </div>
+//   );
+// };
 
 export default BlockIntro;

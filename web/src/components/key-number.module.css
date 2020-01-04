@@ -11,7 +11,7 @@
 
 .number {
   font-size:44px;
-  color:var(--color-brand-primary);
+  color:var(--color-brand);
   margin:0;
   line-height: 1;
   font-family: "Lato";

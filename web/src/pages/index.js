@@ -5,9 +5,10 @@ import {
   filterOutDocsWithoutSlugs,
   filterOutDocsPublishedInTheFuture
 } from "../lib/helpers";
+import VerticalFlow from "../components/vertical-flow";
 import FrontpageImage from "../components/frontpage-image";
 import PromotedBlock from "../components/promoted-block";
-import FullWidthBlock from "../components/full-width-block";
+import FullWidthBlock from "../components/block-full-width";
 import Container from "../components/container";
 import GraphQLErrorList from "../components/graphql-error-list";
 import NewsBlock from "../components/news-block";
@@ -217,20 +218,21 @@ const IndexPage = props => {
       <Container>
         <h1 hidden>{site.title}</h1>
         {frontpage.promotedBlock && (
-          <div className={utils.verticalFlow}>
+          <VerticalFlow>
             <PromotedBlock {...frontpage} />
-          </div>
+          </VerticalFlow>
         )}
         {frontpage.fullWidthBlock && (
-          <div className={utils.verticalFlow}>
-            {/* <FullWidthBlock {...frontpage} /> */}
+          <VerticalFlow>
             <FullWidthBlock svgDesign={true} designType="wave" designSelection="1">
               <PromotedBlock demoImage={true} lightTheme={true} {...frontpage} />
             </FullWidthBlock>
-          </div>
+          </VerticalFlow>
         )}
         {newsNodes && (
-          <NewsBlock title="Latest news" nodes={newsNodes} browseMoreHref="/archive/" />
+          <VerticalFlow>
+            <NewsBlock title="Latest news" nodes={newsNodes} browseMoreHref="/archive/" />
+          </VerticalFlow>
         )}
       </Container>
     </Layout>

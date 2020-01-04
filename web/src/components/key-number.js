@@ -1,8 +1,5 @@
-import { Link } from "gatsby";
 import React from "react";
-import Icon from "./icon";
 import { cn } from "../lib/helpers";
-
 import styles from "./key-number.module.css";
 
 const KeyNumber = ({ number, description }) => (

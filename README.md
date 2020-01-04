@@ -9,7 +9,7 @@
 - kanskje det er bedre å bruke bare props objektet. Slik at jeg får "any"....
 - flytte responsive title osv over til utils?
 - make new custom block as seen on screenshot
-- make cards more customizeable
+- make card module more customizeable
 - add variable for fillcolor
 - space-block
 - more customizable promoted block
@@ -24,6 +24,15 @@
 - 404 page animation
 - justified center and space around responsive on mobile...
 - variables for light text and dusk text
+- must be able to customize the full block design even more
+- disclaimer in footer i.e Personvern ++
+- create a starter component with all the basics
+- clean up utils and typography
+- start using default props for components?
+- look at the code for block intro, whats the preferred and best way? use proptypes?
+- clean up imports
+- key numbers and punchline should be same file
+
 
 ## Graphql queries
 

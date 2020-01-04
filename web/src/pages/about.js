@@ -5,17 +5,19 @@ import GraphQLErrorList from "../components/graphql-error-list";
 import NewsPreviewGrid from "../components/news-block";
 import KeyNumber from "../components/key-number";
 import PunchLine from "../components/punch-line";
-import FullWidthBlock from "../components/full-width-block";
+import FullWidthBlock from "../components/block-full-width";
 import HorizontalList from "../components/horizontal-list";
 import List from "../components/list";
 import Card from "../components/card";
-import BlockIntro from "../components/block-intro";
+import Block from "../components/block";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
+import { demoText } from "../lib/demoContent";
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
 
 import utils from "../components/utils.module.css";
 import { responsiveTitle1 } from "../components/typography.module.css";
+import VerticalFlow from "../components/vertical-flow";
 
 export const query = graphql`
   query AboutQuery {
@@ -49,42 +51,42 @@ const About = props => {
     <Layout currentPage="about">
       <SEO title="About Fiskevegn" />
       <Container>
-        <div className={utils.verticalFlow}>
-          <BlockIntro
-            tinyTitle="The company"
-            title="Quality, delivery and innovation"
-            text="Since its inception, Fiskevegn has been founded on the core values of quality,
-              delivery and innovation. We emphasize close communication with our customers and rapid
-              responses to deliver better products, solutions and services. Our core values have
-              yielded results both for our customers and for us. We are proud to be one of the most
-              trusted names in the global arena of longline fishing."
-          />
-          <List type="justifiedSpaceAround">
-            {/* <KeyNumber number={5060} description="Fishing hooks delivered" />
-            <KeyNumber number={29} description="Partners worldwide" /> */}
-            <PunchLine text="New Zealand" description="Antarctic fishery" />
-            <PunchLine text="Usa" description="Equipment" />
-            <PunchLine text="Greenland" description="Arctic fishery" />
-          </List>
-        </div>
-        <div className={utils.verticalFlow}>
-          <FullWidthBlock
-            colorTheme="light"
-            svgDesign={true}
-            designType="wave"
-            designSelection="1"
-            designPosition="bottom"
+        <VerticalFlow>
+          <Block
+            name="Company introduction"
+            blockOrder="1"
+            intro={{
+              name: "The company",
+              title: "Quality, delivery and innovation",
+              text: `${demoText(1)}`
+            }}
           >
-            <BlockIntro
-              marginBottom={true}
-              tinyTitle=""
-              title="Partners and Collaborations"
-              text="Fiskevegn is working together with mulitple industry operators, goverments and NGO's
-                to eliminate IUU fishing and to drive for economically viable, sustainable solutions
-                towards safer, cleaner oceans. We are also a member of several industry associations
-                to keep current with new developments in manufacturing technology."
-            />
-
+            {/* <List type="justifiedSpaceAround">
+              <KeyNumber number={5060} description="Fishing hooks delivered" />
+            <KeyNumber number={29} description="Partners worldwide" />
+              <PunchLine text="New Zealand" description="Antarctic fishery" />
+              <PunchLine text="Usa" description="Equipment" />
+              <PunchLine text="Greenland" description="Arctic fishery" />
+            </List> */}
+          </Block>
+        </VerticalFlow>
+        <VerticalFlow>
+          <Block
+            name="Partners"
+            blockOrder="2"
+            intro={{
+              name: "",
+              title: "Partners and Collaborations",
+              text: `${demoText(2)}`
+            }}
+            fullWidth={{
+              colorTheme: "light",
+              customDesign: true,
+              designType: "wave",
+              designSelection: "1",
+              designPosition: "bottom"
+            }}
+          >
             <List>
               <Card
                 title="Colto"
@@ -101,18 +103,11 @@ const About = props => {
               towards safer, cleaner oceans."
               />
             </List>
-          </FullWidthBlock>
-        </div>
-        <div className={utils.verticalFlow}>
-          <div className={utils.centeredTextLargeScreen}>
-            <h2 className={responsiveTitle1}>Core Values</h2>
-            <p>
-              Since its inception, Fiskevegn has been founded on the core values of quality,
-              delivery and innovation. We emphasize close communication with our customers and rapid
-              responses to deliver better products.
-            </p>
-          </div>
-        </div>
+          </Block>
+        </VerticalFlow>
+        <VerticalFlow>
+          <Block name="Values" intro={{ title: "Core Values", text: `${demoText(1)}` }}></Block>
+        </VerticalFlow>
       </Container>
     </Layout>
   );

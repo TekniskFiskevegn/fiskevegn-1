@@ -5,7 +5,7 @@ import Container from "../components/container";
 import Layout from "../containers/layout";
 
 import GraphQLErrorList from "../components/graphql-error-list";
-import FullWidthBlock from "../components/full-width-block";
+import FullWidthBlock from "../components/block-full-width";
 import BlockIntro from "../components/block-intro";
 import List from "../components/list";
 import Card from "../components/card";

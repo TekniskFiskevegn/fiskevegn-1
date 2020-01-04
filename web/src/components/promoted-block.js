@@ -9,8 +9,6 @@ import styles from "./promoted-block.module.css";
 import { responsiveTitle1 } from "../components/typography.module.css";
 
 const PromotedBlock = props => {
-  console.log("promoted-block.js", props);
-
   const { promotedBlock, lightTheme, darkerTheme, darkTheme, demoImage = false } = props;
 
   return (

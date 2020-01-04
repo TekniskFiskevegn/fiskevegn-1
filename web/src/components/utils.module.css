@@ -1,10 +1,6 @@
 @import '../styles/custom-properties.css';
 @import '../styles/custom-media.css';
 
-:root {
- 
-}
-
 .verticalFlow {
   padding:1.5em 0;
   @media (--medium-and-up) {
@@ -40,23 +36,15 @@
   margin:0;
 }
 .callToActionLink {
-  color: var(--color-brand-secondary);
+  color: var(--color-brand-complementary);
   text-decoration: none;
-  border-bottom: 2px solid var(--color-brand-secondary);
+  border-bottom: 2px solid var(--color-brand-complementary);
   padding-bottom: 2px;
   font-weight: 400;
   font-size: var(--font-large-size);
   line-height: var(--font-large-line-height);
 }
-.centeredTextLargeScreen {
-  text-align: left;
-  @media (--medium-and-up) {
-    text-align:center;
-  }
-}
-.centeredText {
-  text-align: center;
-}
+
 .tinyTitle {
   color:#999;
   text-transform: uppercase;

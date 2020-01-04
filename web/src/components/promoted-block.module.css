@@ -21,7 +21,7 @@
 }
 
 .textContent {
-  background-color: var(--color-very-light-gray);
+  background-color: var(--color-light-gray);
   position:relative;
   padding:1.5em 1.5em 2em 1.5em;
   margin:-2em 1.5em 0 1.5em;

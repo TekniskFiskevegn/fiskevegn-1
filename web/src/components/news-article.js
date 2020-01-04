@@ -3,7 +3,7 @@ import React from "react";
 import { Link } from "gatsby";
 import { buildImageObj } from "../lib/helpers";
 import { imageUrlFor } from "../lib/image-url";
-import BlockContent from "./block-content";
+import SanityBlockContent from "./sanity-block-content";
 import Container from "./container";
 import RoleList from "./role-list";
 
@@ -29,7 +29,7 @@ function Project(props) {
         <div className={styles.grid}>
           <div className={styles.mainContent}>
             <h1 className={styles.title}>{title}</h1>
-            {_rawBody && <BlockContent blocks={_rawBody || []} />}
+            {_rawBody && <SanityBlockContent blocks={_rawBody || []} />}
           </div>
           <aside className={styles.metaContent}>
             {publishedAt && (

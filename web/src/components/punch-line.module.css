@@ -10,26 +10,25 @@
 }
 
 .text {
+  color:var(--color-dusk);
+  font-family: "Lato";
   font-size:32px;
-  color:var(--color-brand-primary);
   margin:0;
   line-height: 1;
-  font-family: "Lato";
   font-weight: 700;
   text-transform: uppercase;
-  color:#555;
   @media (--medium-and-up){
     font-size: 36px;
   }
 }
 
 .description {
+  color:var(--color-dusk);
   text-transform: uppercase;
   font-weight: 400;
   display:block;
   font-size:14px;
   margin-top:0.5em;
-  color:#666;
   @media (--medium-and-up){
     font-size:15px;
     letter-spacing:1px;

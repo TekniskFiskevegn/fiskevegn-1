@@ -40,7 +40,7 @@
 
 .mainContent {
   @nest & a {
-    color: var(--color-accent);
+    color: var(--color-brand-complementary);
 
     @media (hover: hover) {
       @nest &:hover {
@@ -60,7 +60,7 @@
 }
 
 .categories {
-  border-top: 1px solid var(--color-very-light-gray);
+  border-top: 1px solid var(--color-light-gray);
   margin: 2rem 0 3rem;
 
   @nest & ul {
@@ -80,7 +80,7 @@
 }
 
 .relatedProjects {
-  border-top: 1px solid var(--color-very-light-gray);
+  border-top: 1px solid var(--color-light-gray);
   margin: 2rem 0 3rem;
 
   @nest & ul {
