@@ -8,7 +8,10 @@ import pages from "../components/pages.module.css";
 import { responsiveTitle1 } from "../components/typography.module.css";
 
 const BlockIntro = props => {
-  const { name, title, text, marginBottom = false } = props;
+  if (!props) {
+    return null;
+  }
+  const { name, title, text, marginBottom } = props;
   return (
     <div className={cn(styles.root, marginBottom ? styles.marginBottom : "")}>
       {name && <span className={utils.name}>{name}</span>}

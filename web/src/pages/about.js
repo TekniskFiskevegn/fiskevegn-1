@@ -58,7 +58,8 @@ const About = props => {
             intro={{
               name: "The company",
               title: "Quality, delivery and innovation",
-              text: `${demoText(1)}`
+              text: `${demoText(1)}`,
+              marginBottom: true
             }}
           >
             {/* <List type="justifiedSpaceAround">
@@ -72,19 +73,19 @@ const About = props => {
         </VerticalFlow>
         <VerticalFlow>
           <Block
+            type="fullWidth"
             name="Partners"
             blockOrder="2"
             intro={{
               name: "",
               title: "Partners and Collaborations",
-              text: `${demoText(2)}`
+              text: `${demoText(2)}`,
+              marginBottom: true
             }}
-            fullWidth={{
-              colorTheme: "light",
-              customDesign: true,
-              designType: "wave",
-              designSelection: "1",
-              designPosition: "bottom"
+            svg={{
+              type: "wave",
+              selection: "1",
+              position: "bottom"
             }}
           >
             <List>

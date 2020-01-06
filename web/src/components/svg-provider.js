@@ -4,46 +4,24 @@ import { cn } from "../lib/helpers";
 import { getWaves } from "../lib/svg";
 import styles from "./svg-provider.module.css";
 
-const SvgProvider = ({
-  designType = null,
-  designSelection,
-  designPosition = "bottom",
-  iconName = null,
-  colorTheme = "lightTheme"
-}) => {
-  switch (designType) {
+const SvgProvider = ({ type, ...props }) => {
+  if (!type) {
+    return <p>Specify svg type</p>;
+  }
+  switch (type) {
     case "wave":
-      return wave(designSelection, designPosition, colorTheme);
-    // case "angle":
-    //   return angle(selection);
-    // case "circle":
-    //   return circle(selection);
-    // case "icon":
-    //   return icon(iconName);
+      return wave({ ...props });
     default:
-      return <p>Please specify desired props for SvgProvider</p>;
+      return <p>Specify correct svg type</p>;
   }
 };
 
-const wave = (designSelection, designPosition, colorTheme) => {
-  // todo: add colortheme
+const wave = ({ selection, position = "bottom" }) => {
   const cssClass = cn(
     styles.wave,
-    designPosition === "bottom" ? styles.positionBottom : styles.positionTop
+    position === "bottom" ? styles.positionBottom : styles.positionTop
   );
-  return getWaves(designSelection, cssClass);
-};
-
-const angle = ({ selection }) => {
-  return <p>angle</p>;
-};
-
-const circle = ({ selection }) => {
-  return <p>circle</p>;
-};
-
-const icon = () => {
-  return <p>circle</p>;
+  return getWaves(selection, cssClass);
 };
 
 export default SvgProvider;

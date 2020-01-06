@@ -26,12 +26,27 @@
 - variables for light text and dusk text
 - must be able to customize the full block design even more
 - disclaimer in footer i.e Personvern ++
-- create a starter component with all the basics
 - clean up utils and typography
-- start using default props for components?
 - look at the code for block intro, whats the preferred and best way? use proptypes?
 - clean up imports
 - key numbers and punchline should be same file
+- I could pass boolean just with a name as prop
+- for theme, use a theme class as boolean in jsx, use a css variable as color and use a 
+- flexController should be a flexLayout component
+- margin bottom block intro, should use verticalflow instead, with a margin boolean to set margin instead
+- use this for cheking props:   
+  
+  if (!node.asset) {
+    return null
+  }
+
+  as first line in component
+
+  - also add animation and image, and background image on block component
+  - add error component, i.e specify block type
+  - test null return on block intro and svgprovider
+
+  - add angle svg
 
 
 ## Graphql queries
