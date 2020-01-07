@@ -54,4 +54,8 @@ const Header = ({ onHideNav, onShowNav, showNav, siteTitle, isCustomHeader, curr
   </div>
 );
 
+Header.DefaultProps = {
+  isCustomHeader: false
+};
+
 export default Header;

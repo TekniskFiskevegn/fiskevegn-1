@@ -1,11 +1,10 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 
 import Container from "../components/container";
 import Layout from "../containers/layout";
 
 import GraphQLErrorList from "../components/graphql-error-list";
-import HorizontalList from "../components/horizontal-list";
 import List from "../components/list";
 import Card from "../components/card";
 import SEO from "../components/seo";
@@ -24,7 +23,7 @@ const ProductTree = props => {
       <ul className={styles.list}>
         <li>Automatic longline systems</li>
         <li>
-          <a href="">Longlining</a>
+          <Link to="/product-template">Longlining</Link>
 
           {/* <ul className={styles.nestedList}>
               <li>Gillnets</li>

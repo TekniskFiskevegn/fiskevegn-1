@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 
 import { buildImageObj } from "../lib/helpers";
 import { imageUrlFor } from "../lib/image-url";
@@ -12,7 +12,6 @@ import List from "../components/list";
 import Card from "../components/card";
 import SEO from "../components/seo";
 import HeroImage from "../components/hero-image";
-import ContactBlock from "../components/contact-block";
 import ProductTree from "../components/product-tree";
 import BreadCrumb from "../components/breadcrumb";
 
@@ -49,43 +48,36 @@ import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
 //   }
 // `;
 
-const Contact = props => {
-  const nodes = [{}];
+const ProductTemplate = props => {
   return (
-    <Layout isCustomHeader={true} pageClass={pages.products} currentPage="contact">
+    <Layout isCustomHeader={true} pageClass={pages.products} currentPage="products">
       <SEO title="Fiskevegn products" />
-      <HeroImage src="/contact.jpg" />
+      <HeroImage src="/bering-sea.jpg" />
       <Container>
+        <BreadCrumb add />
         <div className={utils.verticalFlow}>
-          <ContactBlock
-            image="/office.jpg"
-            title="Norway"
-            tinyTitle="Main Office"
-            description="Our main office is located at beautiful Flatraket."
-            textTitle="Main Office"
-          />
-        </div>
-        <div className={utils.verticalFlow}>
-          <ContactBlock
-            image="/aalesund.jpg"
-            title="Ålesund"
-            tinyTitle="Department"
-            description="Our department in Ålesund, Norway, is responsible for Equipment"
-            textTitle="Ålesund"
-          />
-        </div>
-        <div className={utils.verticalFlow}>
-          <ContactBlock
-            image="/new-zealand.jpg"
-            title="New Zealand"
-            tinyTitle="Department"
-            description="Our department in New Zealand is responsible for fishery in antarctica"
-            textTitle="New Zealand"
-          />
+          <div className={utils.flex}>
+            <div className={utils.flexItemSmall}>
+              <ProductTree />
+            </div>
+            <div className={utils.flexItemMedium}>
+              <h2 className={responsiveTitle1}>Total provider of modern fishing solutions</h2>
+              <p>
+                Since its inception Fiskevegn has built on the core values of quality, delivery and
+                innovation. Our core values have yielded results for both our customer and for us.
+                Fiskevegn is a leading international manufacturer and supplier of fiber, rope,
+                fishing systems for automatic longlining, fishing gears and supplies for crew and
+                vessels. We are proud to be one of the most trusted names in the global arena of
+                longline fishing. We support vessel projects from idea to realization and can offer
+                advice on everything from suitable shipyards, suppliers, alliance partners and how
+                best to achieve optimal solutions for your vessel.
+              </p>
+            </div>
+          </div>
         </div>
       </Container>
     </Layout>
   );
 };
 
-export default Contact;
+export default ProductTemplate;

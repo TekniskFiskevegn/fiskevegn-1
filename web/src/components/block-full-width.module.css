@@ -24,12 +24,12 @@
 
 .wrapper {
   width:100%;
+  padding:0em 2em;
   max-width: var(--container-width);
   max-width: calc(var(--container-width) - 48px);
   margin: 0 auto;
 
   @media (--medium-and-up) {
-    padding:0em 2em;
     max-width: var(--container-width);
     max-width: calc(var(--container-width) - 64px);
   } 

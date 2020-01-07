@@ -22,18 +22,17 @@
 - block intro have potential to be made better. f.eks Contactblock intro={true}
 - clean up theme usage
 - 404 page animation
-- justified center and space around responsive on mobile...
 - variables for light text and dusk text
 - must be able to customize the full block design even more
 - disclaimer in footer i.e Personvern ++
 - clean up utils and typography
 - look at the code for block intro, whats the preferred and best way? use proptypes?
 - clean up imports
-- key numbers and punchline should be same file
-- I could pass boolean just with a name as prop
 - for theme, use a theme class as boolean in jsx, use a css variable as color and use a 
 - flexController should be a flexLayout component
 - margin bottom block intro, should use verticalflow instead, with a margin boolean to set margin instead
+- consider using folders to structure files, i.e block-types/
+- isResponsive class on verticalflow
 - use this for cheking props:   
   
   if (!node.asset) {

@@ -85,10 +85,30 @@
 }
 
 .justifiedCenter {
+  flex-flow:column;
   justify-content: center;
+  @nest & li {
+    align-self:center;
+  }
+  @media (--medium-and-up) {
+    flex-flow:row;
+    @nest & li {
+      align-self:stretch;
+    }
+  }
 }
 .justifiedSpaceAround {
+  flex-flow:column;
   justify-content: space-around;
+  @nest & li {
+    align-self:center;
+  }
+  @media (--medium-and-up) {
+    flex-flow:row;
+    @nest & li {
+      align-self:stretch;
+    }
+  }
 }
 
 .largeGap {

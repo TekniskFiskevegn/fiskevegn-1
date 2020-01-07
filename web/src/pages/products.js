@@ -1,11 +1,11 @@
 import React from "react";
 import { graphql } from "gatsby";
 
+import GraphQLErrorList from "../components/graphql-error-list";
 import Container from "../components/container";
 import Layout from "../containers/layout";
-
-import GraphQLErrorList from "../components/graphql-error-list";
-import FullWidthBlock from "../components/block-full-width";
+import VerticalFlow from "../components/vertical-flow";
+import Block from "../components/block";
 import BlockIntro from "../components/block-intro";
 import List from "../components/list";
 import Card from "../components/card";
@@ -48,9 +48,9 @@ const Products = props => {
     <Layout pageClass={pages.products} currentPage="products">
       <SEO title="Fiskevegn products" />
       <Container>
-        <div className={utils.verticalFlow}>
+        <VerticalFlow>
           <BlockIntro
-            tinyTitle="Our products"
+            name="Our products"
             title="Modern fishing solutions"
             text="Since its inception, Fiskevegn has been founded on the core values of quality,
             delivery and innovation. We emphasize close communication with our customers and rapid
@@ -58,15 +58,10 @@ const Products = props => {
             yielded results both for our customers and for us. We are proud to be one of the most
             trusted names in the global arena of longline fishing."
           />
-        </div>
-        <div className={utils.verticalFlow}>
-          <FullWidthBlock
-            svgDesign={true}
-            designType="wave"
-            designPosition="bottom"
-            designSelection="2"
-            lessPaddingTop={true}
-          >
+        </VerticalFlow>
+
+        <VerticalFlow>
+          <Block type="default">
             <List type="twoandtwo">
               <Card
                 title="Fishery"
@@ -109,8 +104,8 @@ const Products = props => {
                 imgSrc="/fishery.jpg"
               />
             </List>
-          </FullWidthBlock>
-        </div>
+          </Block>
+        </VerticalFlow>
       </Container>
     </Layout>
   );

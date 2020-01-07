@@ -5,7 +5,7 @@ import styles from "./vertical-flow.module.css";
 
 const VerticalFlow = ({ children, customValues, isMargin }) => {
   if (!customValues) {
-    return <div className={cn(styles.root, "default")}>{children}</div>;
+    return <div className={cn(styles.root)}>{children}</div>;
   }
   const { top, bottom } = customValues;
   // Undefined properties are not copied in the object, so no need for checking

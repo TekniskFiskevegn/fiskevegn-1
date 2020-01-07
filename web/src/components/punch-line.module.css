@@ -3,22 +3,25 @@
 
 .root {
   text-align: center;
-  padding:1.5em 0 0 0;
-  @media (--medium-and-up){
-    padding:3em 0 0 0;
-  }
 }
 
 .text {
-  color:var(--color-dusk);
   font-family: "Lato";
   font-size:32px;
-  margin:0;
-  line-height: 1;
   font-weight: 700;
   text-transform: uppercase;
+  color:var(--color-dusk);
+  margin:0;
+  line-height: 1;
   @media (--medium-and-up){
     font-size: 36px;
+  }
+}
+
+.number {
+  font-size:44px;
+  @media (--medium-and-up){
+    font-size: 74px;
   }
 }
 

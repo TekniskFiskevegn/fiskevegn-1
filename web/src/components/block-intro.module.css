@@ -1,8 +1,18 @@
+@import '../styles/custom-properties.css';
+@import '../styles/custom-media.css';
+
 .root {
   text-align: center;
   @nest & p { 
     margin:0; 
   }
+}
+
+.name {
+  color:#999;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 1em;
 }
 
 .marginBottom {

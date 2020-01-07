@@ -54,10 +54,7 @@ const ArchivePage = props => {
       <SEO title="Archive" />
       <Container>
         <div className={utils.verticalFlow}>
-            <BlockIntro
-              tinyTitle="Archive"
-              title="Fiskevegn news from around the world"
-            />
+          <BlockIntro tinyTitle="Archive" title="News" />
         </div>
         {projectNodes && projectNodes.length > 0 && <NewsBlock nodes={projectNodes} />}
       </Container>

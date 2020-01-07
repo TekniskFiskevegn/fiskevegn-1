@@ -14,7 +14,7 @@ const BlockIntro = props => {
   const { name, title, text, marginBottom } = props;
   return (
     <div className={cn(styles.root, marginBottom ? styles.marginBottom : "")}>
-      {name && <span className={utils.name}>{name}</span>}
+      {name && <span className={styles.name}>{name}</span>}
       {title && <h2 className={responsiveTitle1}>{title}</h2>}
       {text && <p>{text}</p>}
     </div>
