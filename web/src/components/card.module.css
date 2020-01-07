@@ -8,6 +8,10 @@
   min-height: 100px;
 }
 
+.plain {
+  box-shadow:none;
+}
+
 .regular {
   padding:2em;
 }

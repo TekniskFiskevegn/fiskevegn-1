@@ -5,10 +5,9 @@ import {
   filterOutDocsWithoutSlugs,
   filterOutDocsPublishedInTheFuture
 } from "../lib/helpers";
-import VerticalFlow from "../components/vertical-flow";
 import FrontpageImage from "../components/frontpage-image";
 import PromotedBlock from "../components/promoted-block";
-import FullWidthBlock from "../components/block-full-width";
+import BlockDesign from "../components/block-full-width";
 import Container from "../components/container";
 import GraphQLErrorList from "../components/graphql-error-list";
 import NewsBlock from "../components/news-block";
@@ -16,6 +15,8 @@ import List from "../components/list";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
 import utils from "../components/utils.module.css";
+import Block from "../components/block";
+import InnerContainer from "../components/inner-container";
 
 export const query = graphql`
   query IndexPageQuery {
@@ -218,21 +219,28 @@ const IndexPage = props => {
       <Container>
         <h1 hidden>{site.title}</h1>
         {frontpage.promotedBlock && (
-          <VerticalFlow>
-            <PromotedBlock {...frontpage} />
-          </VerticalFlow>
+          <Block name="products">
+            <InnerContainer>
+              <PromotedBlock {...frontpage} />
+            </InnerContainer>
+          </Block>
         )}
+
         {frontpage.fullWidthBlock && (
-          <VerticalFlow>
-            <FullWidthBlock svgDesign={true} designType="wave" designSelection="1">
-              <PromotedBlock demoImage={true} lightTheme={true} {...frontpage} />
-            </FullWidthBlock>
-          </VerticalFlow>
+          <Block name="services">
+            <BlockDesign svgDesign={true} designType="wave" designSelection="1">
+              <InnerContainer>
+                <PromotedBlock demoImage={true} lightTheme={true} {...frontpage} />
+              </InnerContainer>
+            </BlockDesign>
+          </Block>
         )}
         {newsNodes && (
-          <VerticalFlow>
-            <NewsBlock title="Latest news" nodes={newsNodes} browseMoreHref="/archive/" />
-          </VerticalFlow>
+          <Block name="news">
+            <InnerContainer>
+              <NewsBlock title="Latest news" nodes={newsNodes} browseMoreHref="/archive/" />
+            </InnerContainer>
+          </Block>
         )}
       </Container>
     </Layout>

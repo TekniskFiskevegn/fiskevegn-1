@@ -4,8 +4,10 @@ import { graphql } from "gatsby";
 import { buildImageObj } from "../lib/helpers";
 import { imageUrlFor } from "../lib/image-url";
 
-import Container from "../components/container";
 import Layout from "../containers/layout";
+import Container from "../components/container";
+import VerticalFlow from "../components/vertical-flow";
+import Navigation from "../components/navigation";
 
 import GraphQLErrorList from "../components/graphql-error-list";
 import List from "../components/list";
@@ -16,7 +18,6 @@ import ProductTree from "../components/product-tree";
 import BreadCrumb from "../components/breadcrumb";
 import Block from "../components/block";
 import BlockIntro from "../components/block-intro";
-import VerticalFlow from "../components/vertical-flow";
 
 import utils from "../components/utils.module.css";
 import pages from "../components/pages.module.css";
@@ -62,7 +63,8 @@ const Fishery = props => {
           <BlockIntro title="Fishery" text="We are proud to be one of the most trusted names in the global arena of longline fishing."/>
         </VerticalFlow>
         <VerticalFlow>
-          <div className={utils.flex}>
+          <Navigation></Navigation>
+          {/* <div className={utils.flex}>
             <div className={utils.flexItemSmall}>
               <ProductTree />
             </div>
@@ -79,7 +81,7 @@ const Fishery = props => {
                 best to achieve optimal solutions for your vessel.
               </p>
             </div>
-          </div>
+          </div> */}
         </VerticalFlow>
       </Container>
     </Layout>

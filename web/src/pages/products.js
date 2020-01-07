@@ -61,8 +61,8 @@ const Products = props => {
         </VerticalFlow>
 
         <VerticalFlow>
-          <Block type="default">
-            <List type="twoandtwo">
+          <Block type="fullWidth" backgroundImage="/bering-sea.jpg">
+            <List type="twoandtwo" gap="no">
               <Card
                 title="Fishery"
                 description="sustainable solutions

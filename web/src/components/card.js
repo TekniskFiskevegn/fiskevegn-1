@@ -9,13 +9,14 @@ import utils from "../components/utils.module.css";
 const Card = ({
   title,
   description,
-  isLink = false,
-  hasImage = false,
-  imgSrc = "null",
-  linkSrc = "null"
+  isLink,
+  hasImage,
+  imgSrc,
+  linkSrc,
+  plain
 }) => {
   return (
-    <div className={styles.root}>
+    <div className={cn(styles.root, plain ? styles.plain : "")}>
       {isLink && (
         <Link className={cn(styles.link)} to={`/${linkSrc}`}>
           {hasImage && (
@@ -48,5 +49,13 @@ const Card = ({
     </div>
   );
 };
+
+Card.DefaultProps = {
+  isLink: false,
+  hasImage: false,
+  plain: false,
+  imgSrc: "",
+  linkSrc: ""
+}
 
 export default Card;

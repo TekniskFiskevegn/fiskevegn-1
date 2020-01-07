@@ -4,8 +4,11 @@ import { graphql, Link } from "gatsby";
 import { buildImageObj } from "../lib/helpers";
 import { imageUrlFor } from "../lib/image-url";
 
-import Container from "../components/container";
 import Layout from "../containers/layout";
+import Container from "../components/container";
+import VerticalFlow from "../components/vertical-flow";
+import BlockIntro from "../components/block-intro";
+
 
 import GraphQLErrorList from "../components/graphql-error-list";
 import List from "../components/list";
@@ -55,7 +58,10 @@ const ProductTemplate = props => {
       <HeroImage src="/bering-sea.jpg" />
       <Container>
         <BreadCrumb add />
-        <div className={utils.verticalFlow}>
+        <VerticalFlow>
+        <BlockIntro title="Fishery" text="We are proud to be one of the most trusted names in the global arena of longline fishing."/>
+        </VerticalFlow>
+        {/* <div className={utils.verticalFlow}>
           <div className={utils.flex}>
             <div className={utils.flexItemSmall}>
               <ProductTree />
@@ -74,7 +80,7 @@ const ProductTemplate = props => {
               </p>
             </div>
           </div>
-        </div>
+        </div> */}
       </Container>
     </Layout>
   );

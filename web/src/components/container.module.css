@@ -3,11 +3,4 @@
 
 .root {
   box-sizing: border-box;
-  max-width: var(--container-width);
-  padding: 1.5em;
-  margin: 0 auto;
-
-  @media (--medium-and-up) {
-    padding: 2em;
-  }
 }
