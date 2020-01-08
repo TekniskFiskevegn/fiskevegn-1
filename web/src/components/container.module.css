@@ -3,4 +3,8 @@
 
 .root {
   box-sizing: border-box;
+  padding-top:1em;
+  @media(--medium-and-up) {
+    padding-top: 2em;
+  }
 }

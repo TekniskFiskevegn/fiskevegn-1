@@ -2,25 +2,24 @@
 
 .root {}
 
-.content {
+.wrapper {
   display: flex;
   flex-flow:column;
   position: relative;
-  box-sizing: border-box;
 
   @media (--large-and-up) {
     flex-flow:row;
   }
 }
 
-.imageContent {
+.image {
   flex:1;
   @media (--large-and-up) {
     flex:60% 0 0;
   }
 }
 
-.textContent {
+.text {
   background-color: var(--color-light-gray);
   position:relative;
   padding:1.5em 1.5em 2em 1.5em;
@@ -33,12 +32,13 @@
   } 
 
   @media (--large-and-up) {
+    position: absolute;
+    top: 25px;
+    bottom: 25px;
+    right: 0;
     padding:3em;
     margin:0;
-    right: 0;
-    bottom: 25px;
-    top: 25px;
-    position: absolute;
+    width:100%;
     max-width: 50%;
   }
 }

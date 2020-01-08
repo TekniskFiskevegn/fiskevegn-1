@@ -1,0 +1,54 @@
+@import '../styles/custom-media.css';
+@import '../styles/custom-properties.css';
+
+.root {}
+
+.firstRow {
+  text-align: center;
+}
+
+.list {
+  display: flex;
+  flex-flow: column;
+
+  @media (--medium-and-up) {
+    flex-flow:row;
+    flex-wrap:wrap;
+  } 
+}
+
+.listItem {
+  flex:1;
+  margin-bottom: 1.5em;
+
+  @media (--medium-and-up) {
+    flex:50%;
+    max-width: 50%;
+    margin-bottom: 2em;
+    @nest &:nth-child(odd) {
+      padding-right:1em;
+    }
+    @nest &:nth-child(even) {
+      padding-left:1em;
+    }
+  } 
+}
+
+.browseMoreNav {
+  composes: small from './typography.module.css';
+  margin-top: 1rem;
+  text-align: right;
+
+  @nest & a {
+    display: inline-block;
+    padding: 0.5rem 0;
+    color: inherit;
+    text-decoration: none;
+
+    @media (hover: hover) {
+      @nest &:hover {
+        color: var(--color-brand-complementary);
+      }
+    }
+  }
+}

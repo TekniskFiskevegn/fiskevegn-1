@@ -1,7 +1,9 @@
 @import '../styles/custom-properties.css';
 @import '../styles/custom-media.css';
 
-.root {
+.root {}
+
+.ul {
   list-style-type: none;
   padding:0;
   margin:0;
@@ -20,10 +22,6 @@
       padding:1em;
     }
   }
-}
-
-.intro {
-  margin-bottom: 2.5em;
 }
 
 .default {
@@ -80,6 +78,29 @@
     flex:1;
     @media (--medium-and-up) {
       flex:50%;
+    }
+  }
+}
+
+.news {
+  flex-flow: column;
+
+  @media (--medium-and-up) {
+    flex-flow:row;
+    flex-wrap:wrap;
+  }
+
+  @nest & li {
+    flex:1;
+    padding: 1em 0;
+    @media (--medium-and-up) {
+      flex:50%;
+      @nest &:nth-child(odd) {
+        padding-right:1em;
+      }
+      @nest &:nth-child(even) {
+        padding-left:1em;
+      }
     }
   }
 }

@@ -1,0 +1,23 @@
+@import '../styles/custom-properties.css';
+@import '../styles/custom-media.css';
+
+.root {
+  text-align: center;
+  @nest & p { 
+    margin:0; 
+  }
+}
+
+.name {
+  color:#999;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 1em;
+}
+
+.marginBottom {
+  margin-bottom:2em;
+  @media (--medium-and-up) {
+    margin-bottom: 2.5em;
+  }
+}

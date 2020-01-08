@@ -3,10 +3,10 @@
 
 .root {
   max-width: var(--container-width);
-  padding: 1.5em;
+  padding: 0 1.5em;
   margin: 0 auto;
 
   @media (--medium-and-up) {
-    padding: 2em;
+    padding: 0 2em;
   }
 }

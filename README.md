@@ -34,6 +34,7 @@
 - consider using folders to structure files, i.e block-types/
 - isResponsive class on verticalflow
 - make a new list type called categories, which needs to be flexible based on how many categories
+- error component
 - use this for cheking props:   
   
   if (!node.asset) {

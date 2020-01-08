@@ -1,11 +1,11 @@
 import React from "react";
 import { cn } from "../lib/helpers";
-import VerticalFlow from "../components/vertical-flow";
-import BlockIntro from "../components/block-intro";
-import SvgProvider from "../components/svg-provider";
-import styles from "./block-full-width.module.css";
+import VerticalFlow from "./vertical-flow";
+import BlockIntro from "./block-intro";
+import SvgProvider from "./svg-provider";
+import styles from "./block-design.module.css";
 
-const BlockFullWidth = ({ intro, svg, children, backgroundImage }) => {
+const BlockDesign = ({ intro, svg, children, backgroundImage }) => {
   let customStyle;
   if (backgroundImage) {
     customStyle = {
@@ -15,7 +15,20 @@ const BlockFullWidth = ({ intro, svg, children, backgroundImage }) => {
 
   return (
     <div className={styles.root}>
-      <div
+      {svg && <SvgProvider {...svg} />}
+      {children}
+    </div>
+  );
+};
+
+BlockDesign.DefaultProps = {
+  backgroundImage: false
+};
+
+export default BlockDesign;
+
+{
+  /* <div
         className={cn(styles.extend, backgroundImage ? styles.backgroundImage : "")}
         style={customStyle}
       >
@@ -28,13 +41,5 @@ const BlockFullWidth = ({ intro, svg, children, backgroundImage }) => {
             </div>
           </VerticalFlow>
         </div>
-      </div>
-    </div>
-  );
-};
-
-BlockFullWidth.DefaultProps = {
-  backgroundImage: false
-};
-
-export default BlockFullWidth;
+      </div> */
+}
