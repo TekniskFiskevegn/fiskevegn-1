@@ -1,10 +1,13 @@
 import React from "react";
+import VerticalRhythm from "../components/vertical-rhythm";
 import styles from "./block.module.css";
 
-const Block = ({ name, blockOrder, verticalRhythm, fullWidth, children }) => {
+// sytalaust: add prop blockOrder
+
+const Block = ({ name, ...props }) => {
   return (
     <div className={styles.root} name={name}>
-      {children}
+      <VerticalRhythm {...props} />
     </div>
   );
 };

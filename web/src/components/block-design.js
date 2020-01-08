@@ -1,7 +1,5 @@
 import React from "react";
 import { cn } from "../lib/helpers";
-import VerticalFlow from "./vertical-flow";
-import BlockIntro from "./block-intro";
 import SvgProvider from "./svg-provider";
 import styles from "./block-design.module.css";
 

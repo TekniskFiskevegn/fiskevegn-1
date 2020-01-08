@@ -24,7 +24,7 @@
   }
 }
 
-.default {
+.defaultList {
   flex-flow:column;
   align-items: center; 
   justify-content: stretch;
@@ -42,7 +42,7 @@
   }
 }
 
-.vertical {
+.verticalList {
   flex-flow: column;
 
   @nest & li {
@@ -51,7 +51,7 @@
   }
 }
 
-.noWrap {
+.noWrapList {
   align-items: center; 
   justify-content: space-around;
   flex-wrap: nowrap;
@@ -66,7 +66,7 @@
   }
 }
 
-.twoAndTwo {
+.fiftyFiftyList {
   flex-flow: column;
 
   @media (--medium-and-up) {
@@ -82,7 +82,7 @@
   }
 }
 
-.news {
+.newsList {
   flex-flow: column;
 
   @media (--medium-and-up) {
@@ -105,7 +105,7 @@
   }
 }
 
-.justifiedCenter {
+.justifiedCenterList {
   flex-flow:column;
   justify-content: center;
   @nest & li {
@@ -118,7 +118,7 @@
     }
   }
 }
-.justifiedSpaceAround {
+.justifiedSpaceAroundList {
   flex-flow:column;
   justify-content: space-around;
   @nest & li {

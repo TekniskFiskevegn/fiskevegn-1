@@ -8,9 +8,9 @@ import utils from "./utils.module.css";
 
 const List = ({ type, ...props }) => {
   switch (type) {
-    case "twoandtwo":
+    case "fiftyfifty":
       // two and two on large screens
-      return <TwoAndTwoList {...props} />;
+      return <FiftyFiftyList {...props} />;
     case "nowrap":
       // list items not wrapping under each other
       return <NoWrapList {...props} />;
@@ -31,27 +31,24 @@ const List = ({ type, ...props }) => {
   }
 };
 
-const DefaultList = ({ children, gap }) => (
-  <ul
-    className={cn(
-      styles.root,
-      styles.default,
-      gap === "small" ? styles.smallGap : "",
-      gap === "no" ? styles.noGap : "",
-      gap === "large" ? styles.largeGap : ""
-    )}
-  >
-    {React.Children.map(children, (child, i) => {
-      return <li>{child}</li>;
-    })}
-  </ul>
-);
+const DefaultList = ({ ...props }) => {
+  const { children } = props;
+  return (
+    <div styles={styles.root}>
+      <ul className={cn(styles.ul, styles.defaultList)}>
+        {React.Children.map(children, (child, i) => {
+          return <li>{child}</li>;
+        })}
+      </ul>
+    </div>
+  );
+};
 
 const NewsList = ({ title, nodes, browseMoreHref }) => {
   return (
     <div className={styles.root}>
       <Intro title={title} />
-      <ul className={cn(styles.ul, styles.news)}>
+      <ul className={cn(styles.ul, styles.newsList)}>
         {nodes &&
           nodes.map(node => (
             <li key={node.id}>
@@ -68,89 +65,69 @@ const NewsList = ({ title, nodes, browseMoreHref }) => {
   );
 };
 
-const JustifiedCenterList = ({ children, gap }) => (
-  // vertical list
-  <ul
-    className={cn(
-      styles.root,
-      styles.justifiedCenter,
-      gap === "small" ? styles.smallGap : "",
-      gap === "no" ? styles.noGap : "",
-      gap === "large" ? styles.largeGap : ""
-    )}
-  >
-    {React.Children.map(children, (child, i) => {
-      return <li>{child}</li>;
-    })}
-  </ul>
-);
+const JustifiedCenterList = ({ ...props }) => {
+  const { children } = props;
+  return (
+    <div styles={styles.root}>
+      <ul className={cn(styles.ul, styles.justifiedCenterList)}>
+        {React.Children.map(children, (child, i) => {
+          return <li>{child}</li>;
+        })}
+      </ul>
+    </div>
+  );
+};
 
-const JustifiedSpaceAroundList = ({ children, gap }) => (
-  // vertical list
-  <ul
-    className={cn(
-      styles.root,
-      styles.justifiedSpaceAround,
-      gap === "small" ? styles.smallGap : "",
-      gap === "no" ? styles.noGap : "",
-      gap === "large" ? styles.largeGap : ""
-    )}
-  >
-    {React.Children.map(children, (child, i) => {
-      return <li>{child}</li>;
-    })}
-  </ul>
-);
+const JustifiedSpaceAroundList = ({ ...props }) => {
+  const { children } = props;
+  return (
+    <div className={styles.root}>
+      <ul className={cn(styles.ul, styles.justifiedSpaceAroundList)}>
+        {React.Children.map(children, (child, i) => {
+          return <li>{child}</li>;
+        })}
+      </ul>
+    </div>
+  );
+};
 
-const VerticalList = ({ children, gap }) => (
-  // vertical list
-  <ul
-    className={cn(
-      styles.root,
-      styles.vertical,
-      gap === "small" ? styles.smallGap : "",
-      gap === "no" ? styles.noGap : "",
-      gap === "large" ? styles.largeGap : ""
-    )}
-  >
-    {React.Children.map(children, (child, i) => {
-      return <li>{child}</li>;
-    })}
-  </ul>
-);
+const VerticalList = ({ ...props }) => {
+  const { children } = props;
+  return (
+    <div className={styles.root}>
+      <ul className={cn(styles.ul, styles.verticalList)}>
+        {React.Children.map(children, (child, i) => {
+          return <li>{child}</li>;
+        })}
+      </ul>
+    </div>
+  );
+};
 
-const NoWrapList = ({ children, gap }) => (
-  // list items not wrapping under each other
-  <ul
-    className={cn(
-      styles.root,
-      styles.noWrap,
-      gap === "small" ? styles.smallGap : "",
-      gap === "no" ? styles.noGap : "",
-      gap === "large" ? styles.largeGap : ""
-    )}
-  >
-    {React.Children.map(children, (child, i) => {
-      return <li>{child}</li>;
-    })}
-  </ul>
-);
+const NoWrapList = ({ ...props }) => {
+  const { children } = props;
+  return (
+    <div className={styles.root}>
+      <ul className={cn(styles.ul, styles.noWrapList)}>
+        {React.Children.map(children, (child, i) => {
+          return <li>{child}</li>;
+        })}
+      </ul>
+    </div>
+  );
+};
 
-const TwoAndTwoList = ({ children, gap }) => (
-  // two and two on large screens
-  <ul
-    className={cn(
-      styles.root,
-      styles.twoAndTwo,
-      gap === "small" ? styles.smallGap : "",
-      gap === "no" ? styles.noGap : "",
-      gap === "large" ? styles.largeGap : ""
-    )}
-  >
-    {React.Children.map(children, (child, i) => {
-      return <li>{child}</li>;
-    })}
-  </ul>
-);
+const FiftyFiftyList = ({ ...props }) => {
+  const { children } = props;
+  return (
+    <div className={styles.root}>
+      <ul className={cn(styles.ul, styles.fiftyFiftyList)}>
+        {React.Children.map(children, (child, i) => {
+          return <li>{child}</li>;
+        })}
+      </ul>
+    </div>
+  );
+};
 
 export default List;

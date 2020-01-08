@@ -1,17 +1,17 @@
 import { Link } from "gatsby";
 import React from "react";
 import { cn } from "../lib/helpers";
-import styles from "./punch-line.module.css";
+import styles from "./feature.module.css";
 
-const PunchLine = ({ text, description, isNumber }) => (
+const Feature = ({ text, description, isNumber }) => (
   <div className={styles.root}>
     <h2 className={cn(styles.text, isNumber ? styles.number : "")}>{text}</h2>
     <span className={styles.description}>{description}</span>
   </div>
 );
 
-PunchLine.defaultProps = {
+Feature.defaultProps = {
   isNumber: false
 };
 
-export default PunchLine;
+export default Feature;
