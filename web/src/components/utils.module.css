@@ -46,6 +46,10 @@
   text-transform: uppercase;
 }
 
+.textAlignRight {
+  text-align: right;
+}
+
 .tinyTitle {
   color:#999;
   text-transform: uppercase;

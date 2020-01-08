@@ -4,6 +4,7 @@ import { cn } from "../lib/helpers";
 import Intro from "./intro";
 import NewsTeaser from "./news-teaser";
 import styles from "./list.module.css";
+import utils from "./utils.module.css";
 
 const List = ({ type, ...props }) => {
   switch (type) {
@@ -59,7 +60,7 @@ const NewsList = ({ title, nodes, browseMoreHref }) => {
           ))}
       </ul>
       {browseMoreHref && (
-        <div className={styles.browseMoreNav}>
+        <div className={utils.textAlignRight}>
           <Link to="/archive">More news</Link>
         </div>
       )}
