@@ -23,6 +23,7 @@
 - isResponsive class on verticalflow
 - make a new list type called categories, which needs to be flexible based on how many categories
 - error component
+- take a look at the structure for svg provider, passing props and so on
 - use this for cheking props:   
   
   if (!node.asset) {

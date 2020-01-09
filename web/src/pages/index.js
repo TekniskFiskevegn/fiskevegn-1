@@ -11,7 +11,7 @@ import Container from "../components/container";
 import Block from "../components/block";
 import BlockDesign from "../components/block-design";
 import InnerContainer from "../components/inner-container";
-import FrontpageImage from "../components/frontpage-image";
+import Hero from "../components/hero";
 import Promoted from "../components/promoted";
 import List from "../components/list";
 
@@ -198,7 +198,7 @@ const IndexPage = props => {
   const site = (data || {}).site;
   const frontpage = (data || {}).frontpage;
   // this is how it should be
-  const { hero, products, services } = (data || {}).frontpage;
+  const { image, products, services } = (data || {}).frontpage;
   const { promotedBlock, fullWidthBlock } = (data || {}).frontpage;
 
   const mockBlock1 = {
@@ -243,7 +243,7 @@ const IndexPage = props => {
   return (
     <Layout isCustomHeader={true}>
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
-      <FrontpageImage {...frontpage} />
+      <Hero {...frontpage} />
       <Container>
         <h1 hidden>{site.title}</h1>
         {promotedBlock && (
@@ -258,9 +258,8 @@ const IndexPage = props => {
           <Block name="services">
             <BlockDesign
               svg={{
-                type: "wave",
-                selection: "1",
-                position: "bottom"
+                wave: true,
+                number: "1"
               }}
             >
               <InnerContainer>

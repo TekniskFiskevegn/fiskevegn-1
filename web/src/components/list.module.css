@@ -78,6 +78,7 @@
     flex:1;
     @media (--medium-and-up) {
       flex:50%;
+      max-width:50%;  
     }
   }
 }
@@ -128,26 +129,6 @@
     flex-flow:row;
     @nest & li {
       align-self:stretch;
-    }
-  }
-}
-
-.largeGap {
-  @nest & li {
-    padding:1em 0;
-
-    @media (--medium-and-up) {
-      padding:1.5em;
-    }
-  }
-}
-
-.smallGap {
-  @nest & li {
-    padding:0.5em 0;
-
-    @media (--medium-and-up) {
-      padding:0.5em;
     }
   }
 }

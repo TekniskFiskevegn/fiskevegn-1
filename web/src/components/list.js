@@ -118,10 +118,10 @@ const NoWrapList = ({ ...props }) => {
 };
 
 const FiftyFiftyList = ({ ...props }) => {
-  const { children } = props;
+  const { children, noGap } = props;
   return (
     <div className={styles.root}>
-      <ul className={cn(styles.ul, styles.fiftyFiftyList)}>
+      <ul className={cn(styles.ul, styles.fiftyFiftyList, noGap ? styles.noGap : "")}>
         {React.Children.map(children, (child, i) => {
           return <li>{child}</li>;
         })}

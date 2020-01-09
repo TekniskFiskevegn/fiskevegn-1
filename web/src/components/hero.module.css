@@ -1,9 +1,7 @@
 @import '../styles/custom-media.css';
 @import '../styles/custom-properties.css';
 
-.root {}
-
-.heroImage {
+.root {
   position: relative;
   background: #eee;
   padding-bottom: calc(9 / 16 * 100%);
@@ -21,14 +19,6 @@
     vertical-align: top;
     object-fit: cover;
   }
-}
-
-.wave {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;  
-  z-index: 1;
 }
 
 .caption {
@@ -58,31 +48,6 @@
   margin:0;
   color:var(--color-brand-complementary);
 
-  @media (--medium-and-up) {
-    display:block;
-  }
-  
-  /* top: 42%;
-  left: 43%;
-  transform: translate(-43%, -42%);
-  z-index:2;
-  margin:0;
-  font-weight: 700;
-  font-size:32px;
-  line-height: 39px; */
-  /* font-size: var(--font-title2-size);
-  line-height: var(--font-title2-line-height); */
-
-}
-
-.captionSvg {
-  /* width: 100%;
-  height: 100%;
-  opacity: 0; */
-  display:none;
-  fill:var(--color---color-brand-complementary);
-  opacity:0.2;
-  
   @media (--medium-and-up) {
     display:block;
   }

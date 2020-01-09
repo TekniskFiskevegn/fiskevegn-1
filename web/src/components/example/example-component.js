@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { cn } from "../lib/helpers";
-import VerticalFlow from "../components/vertical-flow";
 import styles from "./example-component.module.css";
 
 const ExampleComponent = props => {

@@ -93,3 +93,7 @@
 .flexAlignItemsCenter {
   align-items: center;
 }
+
+.boxShadow {
+  box-shadow: 0 0.5rem 0.75rem -0.25rem rgba(39,48,54,0.08);
+}

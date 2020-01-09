@@ -1,43 +1,43 @@
 import React from "react";
 import { cn } from "../lib/helpers";
-import SvgProvider from "./svg-provider";
+import Svg from "./svg";
 import styles from "./block-design.module.css";
 
-const BlockDesign = ({ intro, svg, children, backgroundImage }) => {
-  let customStyle;
-  if (backgroundImage) {
-    customStyle = {
-      backgroundImage: `url(${backgroundImage})`
+// @ sytalaust: add support for images in svg
+
+const BlockDesign = ({ svg, children, bgImage, opacityClass }) => {
+  if (bgImage) {
+    console.log("opacityclass", opacityClass);
+    const inlineStyle = {
+      backgroundImage: `url(${bgImage})`
     };
+    return (
+      <div
+        className={cn(
+          styles.root,
+          styles.bgImage,
+          opacityClass == "small" ? styles.opacitySmall : "",
+          opacityClass == "medium" ? styles.opacityMedium : "",
+          opacityClass == "large" ? styles.opacityLarge : ""
+        )}
+        style={inlineStyle}
+      >
+        {svg && <Svg {...svg} />}
+        {children}
+      </div>
+    );
   }
 
   return (
     <div className={styles.root}>
-      {svg && <SvgProvider {...svg} />}
+      {svg && <Svg {...svg} />}
       {children}
     </div>
   );
 };
 
 BlockDesign.DefaultProps = {
-  backgroundImage: false
+  bgImage: false
 };
 
 export default BlockDesign;
-
-{
-  /* <div
-        className={cn(styles.extend, backgroundImage ? styles.backgroundImage : "")}
-        style={customStyle}
-      >
-        {svg && <SvgProvider {...svg} />}
-        <div className={styles.wrapper}>
-          <VerticalFlow>
-            <div className={styles.flexController}>
-              {intro && <BlockIntro {...intro} />}
-              {children}
-            </div>
-          </VerticalFlow>
-        </div>
-      </div> */
-}

@@ -7,17 +7,14 @@ import Container from "../components/container";
 import Block from "../components/block";
 import BlockDesign from "../components/block-design";
 import InnerContainer from "../components/inner-container";
-import VerticalRhythm from "../components/vertical-rhythm";
 import Intro from "../components/intro";
-import GraphQLErrorList from "../components/graphql-error-list";
 import Feature from "../components/feature";
 import List from "../components/list";
 import Card from "../components/card";
 import { demoText } from "../lib/demoContent";
-import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
 
-import utils from "../components/utils.module.css";
-import { responsiveTitle1 } from "../components/typography.module.css";
+import GraphQLErrorList from "../components/graphql-error-list";
+import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
 
 export const query = graphql`
   query AboutQuery {
@@ -70,26 +67,22 @@ const About = props => {
         <Block name="services" verticalRhythm={{ bottom: 0 }}>
           <BlockDesign
             svg={{
-              type: "wave",
-              selection: "1",
-              position: "bottom"
+              wave: true,
+              number: "1"
             }}
           >
             <InnerContainer>
               <Intro {...blockIntro} margin />
               <List>
-                <Card
-                  title="Colto"
-                  description="sustainable solutions towards safer, cleaner oceans."
-                />
+                <Card title="Colto" text="Sustainable solutions towards safer, cleaner oceans." />
                 <Card
                   title="Eurocord"
-                  description="sustainable solutions
+                  text="Sustainable solutions
               towards safer, cleaner oceans."
                 />
                 <Card
-                  title="Global Ghost Gear Initiative"
-                  description="sustainable solutions
+                  title="Global Ghost Gear"
+                  text="Sustainable solutions
               towards safer, cleaner oceans."
                 />
               </List>
