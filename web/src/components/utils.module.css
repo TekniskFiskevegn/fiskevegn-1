@@ -46,6 +46,17 @@
   text-transform: uppercase;
 }
 
+.callToAction {
+  color: var(--color-brand-complementary);
+  text-decoration: none;
+  border-bottom: 2px solid var(--color-brand-complementary);
+  padding-bottom: 2px;
+  font-weight: 400;
+  font-size: var(--font-large-size);
+  line-height: var(--font-large-line-height);
+  text-transform: uppercase;
+}
+
 .textAlignRight {
   text-align: right;
 }
@@ -95,5 +106,5 @@
 }
 
 .boxShadow {
-  box-shadow: 0 0.5rem 0.75rem -0.25rem rgba(39,48,54,0.08);
+  box-shadow: 0 0.5rem 0.75rem -0.25rem rgba(39,48,54,0.1);
 }

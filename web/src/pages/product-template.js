@@ -3,19 +3,22 @@ import { graphql } from "gatsby";
 
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
+import Hero from "../components/hero";
+import BreadCrumb from "../components/breadcrumb";
 import Container from "../components/container";
 import InnerContainer from "../components/inner-container";
 import Block from "../components/block";
 import BlockDesign from "../components/block-design";
-import Hero from "../components/hero";
 import Intro from "../components/intro";
 import List from "../components/list";
 import Card from "../components/card";
 
 import utils from "../components/utils.module.css";
+import styles from "../components/product-data.module.css";
 
 import GraphQLErrorList from "../components/graphql-error-list";
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
+import Svg from "../components/svg";
 
 // export const query = graphql`
 //   query AboutQuery {
@@ -48,8 +51,11 @@ const ProductTemplate = props => {
   return (
     <Layout pageClass="" currentPage="products" isCustomHeader={true}>
       <SEO title="Fiskevegn Fishery" />
-      <Hero demo />
+      <Hero demo demoSrc="/ropes-2.jpg" low />
       <Container>
+        {/* <InnerContainer>
+          <BreadCrumb add />
+        </InnerContainer> */}
         <Block>
           <InnerContainer>
             <Intro
@@ -63,11 +69,35 @@ const ProductTemplate = props => {
           </InnerContainer>
         </Block>
         <Block>
-          <BlockDesign backgroundImage="/bering-sea.jpg">
+          <BlockDesign bgImage="/hooks.jpg" opacityClass="large">
             <InnerContainer>
-              <p>Product information</p>
+              <div className={styles.wrapper}>
+                <div className={styles.firstColumn}>
+                  <Svg blob={{ blobTitle: "Factsheet" }} number="1" />
+                </div>
+                <div className={styles.secondColumn}>
+                  <p>
+                    Whether you are planning a state-of-the art deep-sea longline vessel or want to
+                    equip a small coastal boat for automatic longline fishing, contact Fiskevegn and
+                    we will help you through the whole process from planning to successful fishing.
+                    As a customer of ours, you will be in good hands.
+                  </p>
+                </div>
+              </div>
             </InnerContainer>
           </BlockDesign>
+        </Block>
+        <Block>
+          <InnerContainer>
+            <Intro title="Video"></Intro>
+            <p>Video</p>
+          </InnerContainer>
+        </Block>
+        <Block>
+          <InnerContainer>
+            <Intro title="Images"></Intro>
+            <p>Other images</p>
+          </InnerContainer>
         </Block>
       </Container>
     </Layout>

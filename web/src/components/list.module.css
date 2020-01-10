@@ -133,6 +133,19 @@
   }
 }
 
+.oddBorder {
+  @nest & li {
+    @nest &:nth-child(odd) {
+      @media(--medium-and-up) {
+        border-right:2px solid var(--color-light-gray);
+      }
+    }
+    /* @media(--medium-and-up) {
+      border-right:2px solid var(--color-light-gray);
+    } */
+  }
+}
+
 .noGap {
   margin:0;
   @nest & li {

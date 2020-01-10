@@ -1,6 +1,8 @@
 # fiskevegn
 
 ## Todo
+- button and or links
+- @ sytalaust: make a product tree design as well
 - remove react-parallax
 - add products
 - gpdr existing webpage?
@@ -104,6 +106,7 @@ You can create a folder named static at the root of your project. Every file you
 - https://visme.co/blog/website-color-schemes/
 - https://coolors.co/
 - https://google-webfonts-helper.herokuapp.com/
+- http://svgicons.sparkk.fr/
 
 ## What I have installed
 

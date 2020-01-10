@@ -6,7 +6,7 @@ import GraphQLErrorList from "./graphql-error-list";
 import styles from "./intro.module.css";
 import { responsiveTitle1 } from "./typography.module.css";
 
-const Intro = ({ name, title, text, margin }) => {
+const Intro = ({ name, title, text, margin, readMore }) => {
   if (!(title || text)) {
     return null;
   }
@@ -16,6 +16,11 @@ const Intro = ({ name, title, text, margin }) => {
       {name && <span className={styles.name}>{name}</span>}
       {title && <h2 className={responsiveTitle1}>{title}</h2>}
       {text && <p>{text}</p>}
+      {readMore && (
+        <div className={styles.readMore}>
+          <p>{text}</p>
+        </div>
+      )}
     </div>
   );
 };

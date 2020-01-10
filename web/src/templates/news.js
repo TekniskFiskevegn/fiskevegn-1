@@ -2,12 +2,12 @@ import React from "react";
 import { graphql } from "gatsby";
 import Container from "../components/container";
 import GraphQLErrorList from "../components/graphql-error-list";
-import News from "../components/news-article";
+import Article from "../components/article";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
 
 export const query = graphql`
-  query NewsTemplateQuery($id: String!) {
+  query ArticleTemplateQuery($id: String!) {
     news: sanityNews(id: { eq: $id }) {
       id
       publishedAt
@@ -81,7 +81,7 @@ export const query = graphql`
   }
 `;
 
-const NewsTemplate = props => {
+const ArticleTemplate = props => {
   const { data, errors } = props;
   const project = data && data.news;
   return (
@@ -94,9 +94,9 @@ const NewsTemplate = props => {
           <GraphQLErrorList errors={errors} />
         </Container>
       )}
-      {project && <News {...project} />}
+      {project && <Article {...project} />}
     </Layout>
   );
 };
 
-export default NewsTemplate;
+export default ArticleTemplate;

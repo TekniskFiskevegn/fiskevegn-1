@@ -21,6 +21,10 @@
   }
 }
 
+.low {
+  padding-bottom: calc(9 / 16 * 60%);
+}
+
 .caption {
   position: absolute;
   bottom: -1.5em;

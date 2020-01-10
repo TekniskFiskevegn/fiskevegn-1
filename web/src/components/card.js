@@ -42,7 +42,7 @@ const Card = ({ title, text, linkSrc, icon, imgSrc, imgInsideBlob, styling }) =>
         {icon && (
           <div>
             <div>
-              <Svg icon />
+              <Svg icon name="arrow-thin" />
             </div>
             <div>
               <h3 className={styles.title}>{title}</h3>

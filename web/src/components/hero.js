@@ -5,10 +5,10 @@ import styles from "./hero.module.css";
 
 const Hero = props => {
   console.log("hero", props);
-  const { frontpageImage, demo, demoSrc } = props;
+  const { frontpageImage, demo, demoSrc, low } = props;
   if (demo) {
     return (
-      <div className={styles.root}>
+      <div className={cn(styles.root, low ? styles.low : "")}>
         <img src={demoSrc} />
       </div>
     );

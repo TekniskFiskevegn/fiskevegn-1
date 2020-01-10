@@ -1,11 +1,12 @@
 import React from "react";
 import { cn } from "../lib/helpers";
 import Svg from "./svg";
+import VerticalRhythm from "./vertical-rhythm";
 import styles from "./block-design.module.css";
 
 // @ sytalaust: add support for images in svg
 
-const BlockDesign = ({ svg, children, bgImage, opacityClass }) => {
+const BlockDesign = ({ svg, children, bgImage, opacityClass, split }) => {
   if (bgImage) {
     console.log("opacityclass", opacityClass);
     const inlineStyle = {
@@ -16,12 +17,13 @@ const BlockDesign = ({ svg, children, bgImage, opacityClass }) => {
         className={cn(
           styles.root,
           styles.bgImage,
-          opacityClass == "small" ? styles.opacitySmall : "",
-          opacityClass == "medium" ? styles.opacityMedium : "",
-          opacityClass == "large" ? styles.opacityLarge : ""
+          opacityClass == "015" ? styles.opacity015 : "",
+          opacityClass == "085" ? styles.opacity085 : ""
         )}
         style={inlineStyle}
       >
+        {split && <div className={styles.splitLeft}></div>}
+        {split && <div className={styles.splitRight}></div>}
         {svg && <Svg {...svg} />}
         {children}
       </div>

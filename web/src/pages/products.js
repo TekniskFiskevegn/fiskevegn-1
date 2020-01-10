@@ -52,7 +52,7 @@ const Products = props => {
           <InnerContainer>
             <Intro
               name="products"
-              title="Modern fishing solutions"
+              title="Our products for modern fishery"
               text="Since its inception, Fiskevegn has been founded on the core values of quality,
             delivery and innovation. We emphasize close communication with our customers and rapid
             responses to deliver better products, solutions and services. Our core values have
@@ -62,15 +62,15 @@ const Products = props => {
           </InnerContainer>
         </Block>
         <Block>
-          <BlockDesign bgImage="/bering-sea.jpg" opacityClass="medium">
+          <BlockDesign bgImage="/bering-sea.jpg" opacityClass="015">
             <InnerContainer>
               <div className={utils.boxShadow}>
-                <List type="fiftyfifty" noGap>
+                <List type="fiftyfifty" noGap oddBorder>
                   <Card
                     title="Fishery"
                     text="Sustainable solutions towards safer, cleaner oceans. sustainable solutions"
                     linkSrc="/product-category"
-                    imgSrc="/fishery.jpg"
+                    // imgSrc="/fishery.jpg"
                     styling={{ flat: true, opacity: true }}
                   />
 
@@ -78,7 +78,7 @@ const Products = props => {
                     title="Aquaculture"
                     text="Sustainable solutions towards safer, cleaner oceans. sustainable solutions"
                     linkSrc="/product-category"
-                    imgSrc="/rope-2.jpg"
+                    // imgSrc="/rope-2.jpg"
                     styling={{ flat: true, opacity: true }}
                   />
 
@@ -86,7 +86,7 @@ const Products = props => {
                     title="Ropes"
                     text="Sustainable solutions towards safer, cleaner oceans. sustainable solutions"
                     linkSrc="/product-category"
-                    imgSrc="/rope-2.jpg"
+                    // imgSrc="/rope-2.jpg"
                     styling={{ flat: true, opacity: true }}
                   />
 
@@ -94,7 +94,7 @@ const Products = props => {
                     title="General supplies"
                     text="Sustainable solutions towards safer, cleaner oceans. sustainable solutions"
                     linkSrc="/product-category"
-                    imgSrc="/fishery.jpg"
+                    // imgSrc="/fishery.jpg"
                     styling={{ flat: true, opacity: true }}
                   />
                 </List>

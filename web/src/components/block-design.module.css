@@ -3,8 +3,9 @@
 
 .root {
   background-color: var(--color-light-gray);
-  padding:4em 0;
+  /* padding:4em 0; */
   position: relative;
+  min-height: 400px;
 }
 
 /* <svg viewbox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -21,6 +22,26 @@
   background-repeat: no-repeat;
   background-position: 0 0;
   background-size: cover;
+}
+.splitLeft {
+  @nest &:before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 50%; height: 100%;
+    background-color:var(--color-light-gray);
+    opacity:0.3;
+  }
+}
+.splitRight {
+  @nest &:before {
+    content: "";
+    position: absolute;
+    top: 0; right: 0;
+    width: 50%; height: 100%;
+    background-color:var(--color-light-gray);
+    opacity:0.6;
+  }
 }
 
 .opacitySmall {
@@ -46,9 +67,6 @@
 }
 
 .opacityLarge {
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  background-size: cover;
   @nest &:before {
     content: "";
     position: absolute;
@@ -56,6 +74,28 @@
     width: 100%; height: 100%;
     background-color:var(--color-light-gray);
     opacity:0.95;
+  }
+}
+
+.opacity015 {
+  @nest &:before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color:var(--color-light-gray);
+    opacity:0.15;
+  }
+}
+
+.opacity085 {
+  @nest &:before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color:var(--color-light-gray);
+    opacity:0.85;
   }
 }
 

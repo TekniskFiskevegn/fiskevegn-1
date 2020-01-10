@@ -20,6 +20,7 @@ const VerticalRhythm = props => {
   };
   return (
     <div className={cn(styles.root, "inline-custom-rhythm")} name={name} style={inlineStyle}>
+      bar
       {children}
     </div>
   );

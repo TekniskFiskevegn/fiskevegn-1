@@ -7,6 +7,7 @@ import Container from "../components/container";
 import InnerContainer from "../components/inner-container";
 import Block from "../components/block";
 import BlockDesign from "../components/block-design";
+import BreadCrumb from "../components/breadcrumb";
 import Svg from "../components/svg";
 import Intro from "../components/intro";
 import List from "../components/list";
@@ -62,16 +63,15 @@ const ProductCategory = props => {
           </InnerContainer>
         </Block>
         <Block>
-          <BlockDesign bgImage="/bering-sea.jpg" opacityClass="large">
+          <BlockDesign bgImage="/scenery-1.jpg" opacityClass="015">
             <InnerContainer>
               <div className={utils.boxShadow}>
-                <List type="fiftyfifty" noGap>
+                <List type="fiftyfifty" oddBorder noGap>
                   <Card
                     title="Automatic longline systems"
                     text="Sustainable solutions towards safer, cleaner oceans. sustainable solutions"
                     linkSrc="/product-template"
                     styling={{ flat: true, opacity: true }}
-                    icon
                   />
 
                   <Card
@@ -91,7 +91,7 @@ const ProductCategory = props => {
                   <Card
                     title="Trawl fishery"
                     text="Sustainable solutions towards safer, cleaner oceans. sustainable solutions"
-                    linkSrc="/product-template"
+                    linkSrc="/product-template-1"
                     styling={{ flat: true, opacity: true }}
                   />
                   <Card
