@@ -1,26 +1,6 @@
 @import '../styles/custom-properties.css';
 @import '../styles/custom-media.css';
 
-.verticalFlow {
-  padding:1.5em 0;
-  @media (--medium-and-up) {
-    padding:1.5em 0;
-  }
-  @media (--large-and-up) {
-    padding:2em 0;
-  }
-}
-
-.verticalFlowBottom {
-  padding:0 0 1em 0;
-  @media (--medium-and-up) {
-    padding:0 0 1.5em 0;
-  }
-  @media (--large-and-up) {
-    padding:0 0 2em 0;
-  }
-}
-
 .positionRelative {
   position: relative;
 }
@@ -28,12 +8,6 @@
   position: absolute;
   left:0;
   right:0;
-}
-.displayFlex {
-  display:flex;
-}
-.noMargin {
-  margin:0;
 }
 .callToActionLink {
   color: var(--color-brand-complementary);
@@ -57,8 +31,18 @@
   text-transform: uppercase;
 }
 
+.attention {
+  font-size: 50px;
+  margin:0;
+  color:var(--color-black);
+}
+
 .textAlignRight {
   text-align: right;
+}
+
+.center {
+  text-align: center;
 }
 
 .tinyTitle {

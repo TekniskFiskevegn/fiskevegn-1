@@ -3,6 +3,7 @@
 
 .root {
   position: relative;
+  width:100%;
   max-width: var(--container-width);
   padding: 0 1.5em;
   margin: 0 auto;
@@ -10,4 +11,8 @@
   @media (--medium-and-up) {
     padding: 0 2em;
   }
+}
+
+.contentFit {
+  min-height: 400px;
 }

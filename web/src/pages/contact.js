@@ -54,11 +54,11 @@ const ProductCategory = props => {
         <Block>
           <InnerContainer>
             <ContactBlock
-              image="/office.jpg"
-              title="Norway"
-              tinyTitle="Main Office"
-              description="Our main office is located at beautiful Flatraket."
-              textTitle="Main Office"
+              image="/scenery-1.jpg"
+              title="Flatraket, Norway"
+              tinyTitle="Headquarter"
+              description="Our headquarter is located at beautiful Flatraket"
+              textTitle="Contact"
             />
           </InnerContainer>
         </Block>
@@ -68,19 +68,8 @@ const ProductCategory = props => {
               image="/aalesund.jpg"
               title="Ålesund"
               tinyTitle="Department"
-              description="Our department in Ålesund, Norway, is responsible for Equipment"
-              textTitle="Ålesund"
-            />
-          </InnerContainer>
-        </Block>
-        <Block>
-          <InnerContainer>
-            <ContactBlock
-              image="/new-zealand.jpg"
-              title="New Zealand"
-              tinyTitle="Department"
-              description="Our department in New Zealand is responsible for fishery in antarctica"
-              textTitle="New Zealand"
+              description="Our department in Ålesund, Norway"
+              textTitle="Contact"
             />
           </InnerContainer>
         </Block>

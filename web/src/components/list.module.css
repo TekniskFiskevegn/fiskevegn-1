@@ -152,3 +152,16 @@
     padding:0!important;
   }
 }
+
+.smallGap {
+  @nest & li {
+    padding: 0.5em;
+  }
+}
+
+.thight {
+  @nest & li {
+    padding-top:0.3em;
+    padding-bottom:0.3em;
+  }
+}

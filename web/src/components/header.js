@@ -36,7 +36,7 @@ const Header = ({ onHideNav, onShowNav, showNav, siteTitle, isCustomHeader, curr
             </Link>
           </li>
           <li>
-            <Link to="/services/" className={currentPage === "services" ? styles.activeLink : ""}>
+            <Link to="/services" className={currentPage === "services" ? styles.activeLink : ""}>
               Services
             </Link>
           </li>
@@ -46,7 +46,7 @@ const Header = ({ onHideNav, onShowNav, showNav, siteTitle, isCustomHeader, curr
             </Link>
           </li>
           <li>
-            <Link to="#">Language</Link>
+            <Link to="/not-found">Language</Link>
           </li>
         </ul>
       </nav>

@@ -45,8 +45,20 @@ export const query = graphql`
 
 const About = props => {
   const blockIntro = {
-    name: "The company",
-    title: "Quality, delivery and innovation",
+    name: "Made in norway",
+    title: "World leading longline manufacturer",
+    text: `${demoText(1)}`
+  };
+
+  const blockIntro2 = {
+    name: "",
+    title: "Partners and Collaborations",
+    text: `${demoText(1)}`
+  };
+
+  const blockIntro3 = {
+    name: "",
+    title: "Career at AS Fiskevegn",
     text: `${demoText(1)}`
   };
   return (
@@ -55,16 +67,32 @@ const About = props => {
       <Container>
         <Block name="Company introduction" blockOrder="1">
           <InnerContainer>
-            <Intro {...blockIntro} margin />
-            <List type="justifiedSpaceAround">
+            <Intro {...blockIntro} />
+            {/* <List type="justifiedSpaceAround">
               <Feature text="New Zealand" description="Antarctic fishery" />
               <Feature text="Usa" description="Equipment" />
               <Feature text="Greenland" description="Arctic fishery" />
-            </List>
+            </List> */}
+          </InnerContainer>
+        </Block>
+        <Block>
+          <BlockDesign bgImage="/map-2.jpg" opacityClass="085" flex>
+            <InnerContainer>
+              <List type="justifiedCenter">
+                <Feature text="New Zealand" description="Antarctic fishery" />
+                <Feature text="USA" description="Serving the Alaskan market" />
+                <Feature text="Russia" description="Longlines & hooks to our neighbour" />
+              </List>
+            </InnerContainer>
+          </BlockDesign>
+        </Block>
+        <Block name="Values" blockOrder="3" verticalRhythm={{ top: 3, bottom: 3 }}>
+          <InnerContainer>
+            <Intro {...blockIntro3} />
           </InnerContainer>
         </Block>
 
-        <Block name="services" verticalRhythm={{ bottom: 0 }}>
+        <Block name="Partners">
           <BlockDesign
             svg={{
               wave: true,
@@ -72,28 +100,35 @@ const About = props => {
             }}
           >
             <InnerContainer>
-              <Intro {...blockIntro} margin />
-              <List>
-                <Card title="Colto" text="Sustainable solutions towards safer, cleaner oceans." />
+              <Intro {...blockIntro2} margin />
+              <List smallGap>
                 <Card
-                  title="Eurocord"
-                  text="Sustainable solutions
-              towards safer, cleaner oceans."
+                  title="MMG"
+                  text="Måløy Maritime Group"
+                  linkSrc="https://www.maloymaritime.no/"
+                  externalLink
                 />
                 <Card
-                  title="Global Ghost Gear"
-                  text="Sustainable solutions
-              towards safer, cleaner oceans."
+                  title="Colto"
+                  text="Coalition of Legal Toothfish Operators"
+                  linkSrc="https://www.colto.org/"
+                  externalLink
+                />
+                <Card
+                  title="Eurocord"
+                  text="European organization for cordage manufacturers"
+                  linkSrc="https://www.eurocord.com/"
+                  externalLink
+                />
+                <Card
+                  title="GGGI"
+                  text="Global Ghost Gear Initiative"
+                  linkSrc="https://www.ghostgear.org/"
+                  externalLink
                 />
               </List>
             </InnerContainer>
           </BlockDesign>
-        </Block>
-
-        <Block name="Values" blockOrder="3">
-          <InnerContainer>
-            <Intro {...blockIntro} />
-          </InnerContainer>
         </Block>
       </Container>
     </Layout>

@@ -49,7 +49,11 @@ const ProductCategory = props => {
   return (
     <Layout pageClass="" currentPage="products">
       <SEO title="Fiskevegn Fishery" />
+
       <Container>
+        <InnerContainer>
+          <BreadCrumb goBack="/products" />
+        </InnerContainer>
         <Block>
           <InnerContainer>
             <Intro
@@ -71,40 +75,40 @@ const ProductCategory = props => {
                     title="Automatic longline systems"
                     text="Sustainable solutions towards safer, cleaner oceans. sustainable solutions"
                     linkSrc="/product-template"
-                    styling={{ flat: true, opacity: true }}
+                    styling={{ flat: true, opacity: true, subtle: true }}
                   />
 
                   <Card
                     title="Longlining"
                     text="Sustainable solutions towards safer, cleaner oceans. sustainable solutions"
-                    linkSrc="/product-template"
-                    styling={{ flat: true, opacity: true }}
+                    linkSrc="/not-found"
+                    styling={{ flat: true, opacity: true, subtle: true }}
                   />
 
                   <Card
                     title="Gillnetting"
                     text="Sustainable solutions towards safer, cleaner oceans. sustainable solutions"
-                    linkSrc="/product-template"
-                    styling={{ flat: true, opacity: true }}
+                    linkSrc="/not-found"
+                    styling={{ flat: true, opacity: true, subtle: true }}
                   />
 
                   <Card
                     title="Trawl fishery"
                     text="Sustainable solutions towards safer, cleaner oceans. sustainable solutions"
                     linkSrc="/product-template-1"
-                    styling={{ flat: true, opacity: true }}
+                    styling={{ flat: true, opacity: true, subtle: true }}
                   />
                   <Card
                     title="Waste handling"
                     text="Sustainable solutions towards safer, cleaner oceans. sustainable solutions"
-                    linkSrc="/product-template"
-                    styling={{ flat: true, opacity: true }}
+                    linkSrc="/not-found"
+                    styling={{ flat: true, opacity: true, subtle: true }}
                   />
                   <Card
                     title="All catalouges"
                     text="Sustainable solutions towards safer, cleaner oceans. sustainable solutions"
                     linkSrc="/product-template"
-                    styling={{ flat: true, opacity: true }}
+                    styling={{ flat: true, opacity: true, subtle: true }}
                   />
                 </List>
               </div>

@@ -14,7 +14,7 @@
 
 
   @media (--large-and-up) {
-    padding-bottom: calc(9 / 16 * 75%);
+    padding-bottom: calc(9 / 16 * 55%);
   }
 
   @nest & img {

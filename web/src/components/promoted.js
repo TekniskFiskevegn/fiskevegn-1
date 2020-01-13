@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "gatsby";
 import { Parallax, Background } from "react-parallax";
 
 import { buildImageObj, cn } from "../lib/helpers";
@@ -9,7 +10,16 @@ import styles from "./promoted.module.css";
 import { responsiveTitle1 } from "./typography.module.css";
 
 const Promoted = props => {
-  const { introTitle, introText, image, title, text, browseMoreHref, lightTheme } = props;
+  const {
+    introTitle,
+    introText,
+    image,
+    title,
+    text,
+    browseMoreHref,
+    browseMoreText,
+    lightTheme
+  } = props;
   console.log("log props promoted", props);
   return (
     <div className={styles.root}>
@@ -31,9 +41,9 @@ const Promoted = props => {
         <div className={cn(styles.text, lightTheme ? styles.lightTheme : "")}>
           <h3 className={styles.title}>{title}</h3>
           <p>{text}</p>
-          <a href="" className={utils.callToActionLink}>
-            {browseMoreHref}
-          </a>
+          <Link to={browseMoreHref} className={utils.callToActionLink}>
+            {browseMoreText}
+          </Link>
         </div>
       </div>
     </div>

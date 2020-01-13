@@ -2,10 +2,7 @@ import React from "react";
 import Header from "./header";
 import Footer from "./footer";
 
-// Scaffold styles
 import "../styles/scaffold.css";
-
-// Layout specific styles
 import styles from "./layout.module.css";
 
 const Layout = ({

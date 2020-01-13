@@ -51,18 +51,14 @@ const Products = props => {
         <Block>
           <InnerContainer>
             <Intro
-              name="products"
-              title="Our products for modern fishery"
-              text="Since its inception, Fiskevegn has been founded on the core values of quality,
-            delivery and innovation. We emphasize close communication with our customers and rapid
-            responses to deliver better products, solutions and services. Our core values have
-            yielded results both for our customers and for us. We are proud to be one of the most
-            trusted names in the global arena of longline fishing."
+              name="Categories"
+              title="Total provider of modern fishing solutions"
+              text="Since its inception Fiskevegn has built on the core values of quality, delivery and innovation. Our core values have yielded results for both our customer and for us. Fiskevegn is a leading international manufacturer and supplier of fiber, rope, fishing systems for automatic longlining, fishing gears and supplies for crew and vessels. We are proud to be one of the most trusted names in the global arena of longline fishing."
             />
           </InnerContainer>
         </Block>
         <Block>
-          <BlockDesign bgImage="/bering-sea.jpg" opacityClass="015">
+          <BlockDesign bgImage="/scenery-7.jpg" opacityClass="015">
             <InnerContainer>
               <div className={utils.boxShadow}>
                 <List type="fiftyfifty" noGap oddBorder>
@@ -77,7 +73,7 @@ const Products = props => {
                   <Card
                     title="Aquaculture"
                     text="Sustainable solutions towards safer, cleaner oceans. sustainable solutions"
-                    linkSrc="/product-category"
+                    linkSrc="/not-found"
                     // imgSrc="/rope-2.jpg"
                     styling={{ flat: true, opacity: true }}
                   />
@@ -85,7 +81,7 @@ const Products = props => {
                   <Card
                     title="Ropes"
                     text="Sustainable solutions towards safer, cleaner oceans. sustainable solutions"
-                    linkSrc="/product-category"
+                    linkSrc="/not-found"
                     // imgSrc="/rope-2.jpg"
                     styling={{ flat: true, opacity: true }}
                   />
@@ -93,7 +89,7 @@ const Products = props => {
                   <Card
                     title="General supplies"
                     text="Sustainable solutions towards safer, cleaner oceans. sustainable solutions"
-                    linkSrc="/product-category"
+                    linkSrc="/not-found"
                     // imgSrc="/fishery.jpg"
                     styling={{ flat: true, opacity: true }}
                   />

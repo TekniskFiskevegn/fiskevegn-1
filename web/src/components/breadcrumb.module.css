@@ -6,9 +6,9 @@
 .breadcrumbs {
   display: inline-block;
   @nest & a {
-    padding:0 6px;
     text-decoration:none;
-    color:inherit;
+    color:#888;
+    border-bottom:1px solid #ccc;
   }
 
   @nest & .home {

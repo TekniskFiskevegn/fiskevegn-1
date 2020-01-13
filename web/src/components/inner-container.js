@@ -8,7 +8,7 @@ const InnerContainer = props => {
   }
 
   const { children } = props;
-  return <div className={styles.root}>{children}</div>;
+  return <div className={cn(styles.root)}>{children}</div>;
 };
 
 InnerContainer.defaultProps = {};

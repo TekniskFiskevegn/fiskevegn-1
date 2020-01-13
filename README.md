@@ -1,44 +1,30 @@
 # fiskevegn
 
 ## Todo
+
+@ Sytalaust
 - button and or links
-- @ sytalaust: make a product tree design as well
-- remove react-parallax
-- add products
-- gpdr existing webpage?
-- slå sammen frontpage-image og hero-image?
-- clean up color variables
 - flytte responsive title osv over til utils?
-- make new custom block as seen on screenshot
-- make card module more customizeable
-- add variable for fillcolor
-- onClick header
-- add themeprovider component, variables or classes?
-- 404 page animation
-- variables for light text and dusk text
-- must be able to customize the full block design even more
-- disclaimer in footer i.e Personvern ++
-- clean up utils and typography
-- clean up imports
+- add variable for svg fillcolor, or just use predefined classes
 - for theme, use a theme class as boolean in jsx, use a css variable as color and use a 
-- flexController should be a flexLayout component
-- isResponsive class on verticalflow
-- make a new list type called categories, which needs to be flexible based on how many categories
 - error component
 - take a look at the structure for svg provider, passing props and so on
-- use this for cheking props:   
-  
-  if (!node.asset) {
-    return null
-  }
+- also add animation for block design
+- add angle svg
+- make a product tree design as well
+- clean up color variables
+- make new custom block as seen on screenshot
+- add themeprovider component, variables or classes?
 
-  as first line in component
+@ Fiskevegn
+- ui text switch no eng
+- 404 page
+- variables for light text and dusk text
+- disclaimer in footer i.e Personvern ++
+- clean up imports
+- make a new list type called categories, which needs to be flexible based on how many categories
 
-  - also add animation and image, and background image on block component
-  - add error component, i.e specify block type
-  - test null return on block intro and svgprovider
 
-  - add angle svg
 
 
 ## Graphql queries

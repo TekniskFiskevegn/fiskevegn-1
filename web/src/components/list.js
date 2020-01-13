@@ -32,10 +32,10 @@ const List = ({ type, ...props }) => {
 };
 
 const DefaultList = ({ ...props }) => {
-  const { children } = props;
+  const { children, smallGap } = props;
   return (
     <div styles={styles.root}>
-      <ul className={cn(styles.ul, styles.defaultList)}>
+      <ul className={cn(styles.ul, styles.defaultList, smallGap ? styles.smallGap : "")}>
         {React.Children.map(children, (child, i) => {
           return <li>{child}</li>;
         })}
@@ -92,10 +92,10 @@ const JustifiedSpaceAroundList = ({ ...props }) => {
 };
 
 const VerticalList = ({ ...props }) => {
-  const { children } = props;
+  const { children, thight } = props;
   return (
     <div className={styles.root}>
-      <ul className={cn(styles.ul, styles.verticalList)}>
+      <ul className={cn(styles.ul, styles.verticalList, thight ? styles.thight : "")}>
         {React.Children.map(children, (child, i) => {
           return <li>{child}</li>;
         })}

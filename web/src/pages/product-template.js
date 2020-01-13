@@ -53,13 +53,13 @@ const ProductTemplate = props => {
       <SEO title="Fiskevegn Fishery" />
       <Hero demo demoSrc="/ropes-2.jpg" low />
       <Container>
-        {/* <InnerContainer>
-          <BreadCrumb add />
-        </InnerContainer> */}
+        <InnerContainer>
+          <BreadCrumb goBack="/product-category" />
+        </InnerContainer>
         <Block>
           <InnerContainer>
             <Intro
-              name="Fishery"
+              name="Product"
               title="Automatic longline systems"
               text="Since its inception, Fiskevegn has been founded on the core values of quality,
             delivery and innovation. We emphasize close communication with our customers and rapid
@@ -69,11 +69,12 @@ const ProductTemplate = props => {
           </InnerContainer>
         </Block>
         <Block>
-          <BlockDesign bgImage="/hooks.jpg" opacityClass="large">
+          <BlockDesign bgImage="/scenery-7.jpg" opacityClass="090" flex>
             <InnerContainer>
               <div className={styles.wrapper}>
                 <div className={styles.firstColumn}>
-                  <Svg blob={{ blobTitle: "Factsheet" }} number="1" />
+                  {/* <Svg blob={{ blobTitle: "Factsheet", asBackground: true }} number="1" /> */}
+                  <a href="">Download factsheet</a>
                 </div>
                 <div className={styles.secondColumn}>
                   <p>
@@ -89,14 +90,7 @@ const ProductTemplate = props => {
         </Block>
         <Block>
           <InnerContainer>
-            <Intro title="Video"></Intro>
-            <p>Video</p>
-          </InnerContainer>
-        </Block>
-        <Block>
-          <InnerContainer>
-            <Intro title="Images"></Intro>
-            <p>Other images</p>
+            <Intro title="Video and/or images"></Intro>
           </InnerContainer>
         </Block>
       </Container>

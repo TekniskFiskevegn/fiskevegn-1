@@ -13,8 +13,7 @@
   @media (--large-and-up) {
     position:absolute;
     @nest & .wrapper {
-      /* border-bottom: 2px solid rgba(255,255,255,0.3); */
-      border-bottom:none;
+      background:rgba(255,255,255,0.96);
     }
   }
 }
@@ -28,7 +27,6 @@
   padding: 1.5em;
   max-width: 1400px;
   margin:0 auto;
-  background:rgba(255,255,255,0.96);
   box-shadow: 0 4px 2px -3px rgba(39,48,54,0.05);
   
   @media (--medium-and-up) {

@@ -9,6 +9,9 @@
   flex:40%;
   display:flex;
   justify-content: center;
+  @nest & a {
+    border-bottom:1px solid;
+  }
 }
 
 .secondColumn {

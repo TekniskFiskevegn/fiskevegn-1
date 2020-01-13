@@ -2,10 +2,10 @@
 @import '../styles/custom-properties.css';
 
 .content {
-  background: var(--color-white);
+  /* background: var(--color-white);
   min-height: calc(100% - 73px - 120px);
 
   @media (--medium-and-up) {
     min-height: calc(100% - 88px - 150px);
-  }
+  } */
 }

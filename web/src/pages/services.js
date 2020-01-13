@@ -43,7 +43,7 @@ import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
 //   }
 // `;
 
-const Services = props => {
+const Products = props => {
   return (
     <Layout pageClass="" currentPage="services">
       <SEO title="Fiskevegn products" />
@@ -52,49 +52,45 @@ const Services = props => {
           <InnerContainer>
             <Intro
               name="Services"
-              title="Rewarding Collaborations"
-              text="Since its inception, Fiskevegn has been founded on the core values of quality,
-            delivery and innovation. We emphasize close communication with our customers and rapid
-            responses to deliver better products, solutions and services. Our core values have
-            yielded results both for our customers and for us. We are proud to be one of the most
-            trusted names in the global arena of longline fishing."
+              title="Industry know-how"
+              text="Fiskevegn supplies business-essential products and services. Supplying the ocean-going fishing fleet in particular can be compared to servicing the airline industry. Many ocean-going fishing vessels barely touch base before returning back to sea. Also for coastal vessels, the reality is that if essensial equipment breaks down or gears are lost, there may be no choice but to return to port while losing time and revenues. "
             />
           </InnerContainer>
         </Block>
         <Block>
-          <BlockDesign bgImage="/fishery.jpg" opacityClass="medium">
+          <BlockDesign bgImage="/scenery-6.jpg" opacityClass="015">
             <InnerContainer>
               <div className={utils.boxShadow}>
-                <List type="fiftyfifty" noGap>
+                <List type="fiftyfifty" noGap oddBorder>
                   <Card
-                    title="Fishery"
+                    title="Fishery development"
                     text="Sustainable solutions towards safer, cleaner oceans. sustainable solutions"
                     linkSrc="/product-category"
-                    imgSrc="/fishery.jpg"
+                    // imgSrc="/fishery.jpg"
                     styling={{ flat: true, opacity: true }}
                   />
 
                   <Card
-                    title="Aquaculture"
+                    title="Project planning"
                     text="Sustainable solutions towards safer, cleaner oceans. sustainable solutions"
                     linkSrc="/product-category"
-                    imgSrc="/rope-2.jpg"
+                    // imgSrc="/rope-2.jpg"
                     styling={{ flat: true, opacity: true }}
                   />
 
                   <Card
-                    title="Ropes"
+                    title="Bespoke engineering"
                     text="Sustainable solutions towards safer, cleaner oceans. sustainable solutions"
                     linkSrc="/product-category"
-                    imgSrc="/rope-2.jpg"
+                    // imgSrc="/rope-2.jpg"
                     styling={{ flat: true, opacity: true }}
                   />
 
                   <Card
-                    title="General supplies"
+                    title="Research collaboration"
                     text="Sustainable solutions towards safer, cleaner oceans. sustainable solutions"
                     linkSrc="/product-category"
-                    imgSrc="/fishery.jpg"
+                    // imgSrc="/fishery.jpg"
                     styling={{ flat: true, opacity: true }}
                   />
                 </List>
@@ -107,4 +103,4 @@ const Services = props => {
   );
 };
 
-export default Services;
+export default Products;

@@ -19,7 +19,7 @@ const ContactBlock = props => {
       <Intro
         margin
         title={title}
-        tinyTitle={tinyTitle}
+        name={tinyTitle}
         text={description}
         textTitle={textTitle}
         image={image}
@@ -35,12 +35,14 @@ const ContactBlock = props => {
           <h3 className={styles.title}>{textTitle}</h3>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores porro iste sint
-            suscipit excepturi aliquid a laudantium nihil rerum nisi. Saepe pariatur at atque esse
-            accusamus repellendus exercitationem iusto odio!
+            suscipit excepturi aliquid a laudantium nihil rerum nisi.
           </p>
-          <List type="justifiedCenter">
+          <List type="vertical" thight>
             <a href="" className={utils.callToActionLink}>
-              Mail
+              +47 5785 8400
+            </a>
+            <a href="" className={utils.callToActionLink}>
+              sales@fiskevegn.no
             </a>
             <a href="" className={utils.callToActionLink}>
               Map

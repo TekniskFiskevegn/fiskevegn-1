@@ -18,8 +18,6 @@ import styles from "../components/product-data.module.css";
 
 import GraphQLErrorList from "../components/graphql-error-list";
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
-import Svg from "../components/svg";
-import VerticalRhythm from "../components/vertical-rhythm";
 
 // export const query = graphql`
 //   query AboutQuery {
@@ -54,13 +52,13 @@ const ProductTemplate = props => {
       <SEO title="Fiskevegn Fishery" />
       <Hero demo demoSrc="/ropes-2.jpg" low />
       <Container>
-        {/* <InnerContainer>
-          <BreadCrumb add />
-        </InnerContainer> */}
+        <InnerContainer>
+          <BreadCrumb goBack="/product-category" />
+        </InnerContainer>
         <Block>
           <InnerContainer>
             <Intro
-              name="Fishery"
+              name="Product"
               title="Trawl fishery"
               text="Since its inception, Fiskevegn has been founded on the core values of quality,
             delivery and innovation. We emphasize close communication with our customers and rapid
@@ -88,37 +86,27 @@ const ProductTemplate = props => {
           </InnerContainer>
         </Block>
         <Block>
-          <BlockDesign bgImage="/scenery-2.jpg" opacityClass="085">
-            <VerticalRhythm>
-              <InnerContainer>
-                <div className={styles.wrapper}>
-                  <div className={styles.firstColumn}>
-                    {/* <Svg blob={{ blobTitle: "Factsheet", asBackground: true }} number="1" /> */}
-                    Download factsheet
-                  </div>
-                  <div className={styles.secondColumn}>
-                    <p>
-                      Whether you are planning a state-of-the art deep-sea longline vessel or want
-                      to equip a small coastal boat for automatic longline fishing, contact
-                      Fiskevegn and we will help you through the whole process from planning to
-                      successful fishing. As a customer of ours, you will be in good hands.
-                    </p>
-                  </div>
+          <BlockDesign bgImage="/scenery-5.jpg" opacityClass="090" flex>
+            <InnerContainer>
+              <div className={styles.wrapper}>
+                <div className={styles.firstColumn}>
+                  <a href="">Download factsheet</a>
                 </div>
-              </InnerContainer>
-            </VerticalRhythm>
+                <div className={styles.secondColumn}>
+                  <p>
+                    Whether you are planning a state-of-the art deep-sea longline vessel or want to
+                    equip a small coastal boat for automatic longline fishing, contact Fiskevegn and
+                    we will help you through the whole process from planning to successful fishing.
+                    As a customer of ours, you will be in good hands.
+                  </p>
+                </div>
+              </div>
+            </InnerContainer>
           </BlockDesign>
         </Block>
         <Block>
           <InnerContainer>
-            <Intro title="Video"></Intro>
-            <p>Video</p>
-          </InnerContainer>
-        </Block>
-        <Block>
-          <InnerContainer>
-            <Intro title="Images"></Intro>
-            <p>Other images</p>
+            <Intro title="Video and/or images"></Intro>
           </InnerContainer>
         </Block>
       </Container>

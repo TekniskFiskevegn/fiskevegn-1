@@ -5,6 +5,7 @@ import { buildImageObj } from "../lib/helpers";
 import { imageUrlFor } from "../lib/image-url";
 import SanityBlockContent from "./sanity-block-content";
 import Container from "./container";
+import InnerContainer from "./inner-container";
 import RoleList from "./role-list";
 
 import styles from "./article.module.css";
@@ -26,48 +27,52 @@ function Project(props) {
         </div>
       )}
       <Container>
-        <div className={styles.grid}>
-          <div className={styles.mainContent}>
-            <h1 className={styles.title}>{title}</h1>
-            {_rawBody && <SanityBlockContent blocks={_rawBody || []} />}
+        <InnerContainer>
+          <div className={styles.grid}>
+            <div className={styles.mainContent}>
+              <h1 className={styles.title}>{title}</h1>
+              {_rawBody && <SanityBlockContent blocks={_rawBody || []} />}
+            </div>
+            <aside className={styles.metaContent}>
+              {publishedAt && (
+                <div className={styles.publishedAt}>
+                  {differenceInDays(new Date(publishedAt), new Date()) > 3
+                    ? distanceInWords(new Date(publishedAt), new Date())
+                    : format(new Date(publishedAt), "MMMM Do YYYY")}
+                </div>
+              )}
+              {members && members.length > 0 && (
+                <RoleList items={members} title="Project members" />
+              )}
+              {categories && categories.length > 0 && (
+                <div className={styles.categories}>
+                  <h3 className={styles.categoriesHeadline}>Categories</h3>
+                  <ul>
+                    {categories.map(category => (
+                      <li key={category._id}>{category.title}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              {relatedProjects && relatedProjects.length > 0 && (
+                <div className={styles.relatedProjects}>
+                  <h3 className={styles.relatedProjectsHeadline}>Related projects</h3>
+                  <ul>
+                    {relatedProjects.map(project => (
+                      <li key={`related_${project._id}`}>
+                        {project.slug ? (
+                          <Link to={`/news/${project.slug.current}`}>{project.title}</Link>
+                        ) : (
+                          <span>{project.title}</span>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </aside>
           </div>
-          <aside className={styles.metaContent}>
-            {publishedAt && (
-              <div className={styles.publishedAt}>
-                {differenceInDays(new Date(publishedAt), new Date()) > 3
-                  ? distanceInWords(new Date(publishedAt), new Date())
-                  : format(new Date(publishedAt), "MMMM Do YYYY")}
-              </div>
-            )}
-            {members && members.length > 0 && <RoleList items={members} title="Project members" />}
-            {categories && categories.length > 0 && (
-              <div className={styles.categories}>
-                <h3 className={styles.categoriesHeadline}>Categories</h3>
-                <ul>
-                  {categories.map(category => (
-                    <li key={category._id}>{category.title}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
-            {relatedProjects && relatedProjects.length > 0 && (
-              <div className={styles.relatedProjects}>
-                <h3 className={styles.relatedProjectsHeadline}>Related projects</h3>
-                <ul>
-                  {relatedProjects.map(project => (
-                    <li key={`related_${project._id}`}>
-                      {project.slug ? (
-                        <Link to={`/news/${project.slug.current}`}>{project.title}</Link>
-                      ) : (
-                        <span>{project.title}</span>
-                      )}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-          </aside>
-        </div>
+        </InnerContainer>
       </Container>
     </article>
   );

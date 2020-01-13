@@ -19,7 +19,9 @@ function Footer(props) {
           <p>
             +47 57 85 84 00
             <br />
-            <a href="#">post@fiskevegn.no</a>
+            facebook.com/fiskevegn
+            <br />
+            <a href="#">sales@fiskevegn.no</a>
           </p>
           <p hidden>
             Built with <a href="https://www.sanity.io">Sanity</a> &amp;

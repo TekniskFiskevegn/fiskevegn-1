@@ -206,10 +206,11 @@ const IndexPage = props => {
     introText:
       "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution",
     image: promotedBlock.image,
-    title: "Our Products",
+    title: "Modern fishing solutions",
     text:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores porro iste sint suscipit excepturi aliquid a laudantium nihil rerum nisi. Saepe pariatur at atque esse accusamus repellendus exercitationem iusto odio!",
-    browseMoreHref: "See our products"
+    browseMoreHref: "/products",
+    browseMoreText: "See our products"
   };
 
   const mockBlock2 = {
@@ -217,10 +218,11 @@ const IndexPage = props => {
     introText:
       "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution",
     image: null,
-    title: "Our Service",
+    title: "Industry know-how",
     text:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores porro iste sint suscipit excepturi aliquid a laudantium nihil rerum nisi. Saepe pariatur at atque esse accusamus repellendus exercitationem iusto odio!",
-    browseMoreHref: "See our services"
+    browseMoreHref: "/services",
+    browseMoreText: "See our services"
   };
 
   const projectNodes = (data || {}).projects
@@ -255,7 +257,7 @@ const IndexPage = props => {
         )}
 
         {fullWidthBlock && (
-          <Block name="services">
+          <Block name="services" verticalRhythm={{ bottom: 0 }}>
             <BlockDesign
               svg={{
                 wave: true,
