@@ -73,40 +73,40 @@ const ProductCategory = props => {
                 <List type="fiftyfifty" oddBorder noGap>
                   <Card
                     title="Automatic longline systems"
-                    text="Sustainable solutions towards safer, cleaner oceans. sustainable solutions"
+                    text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores poro iste."
                     linkSrc="/product-template"
                     styling={{ flat: true, opacity: true, subtle: true }}
                   />
 
                   <Card
                     title="Longlining"
-                    text="Sustainable solutions towards safer, cleaner oceans. sustainable solutions"
+                    text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores poro iste."
                     linkSrc="/not-found"
                     styling={{ flat: true, opacity: true, subtle: true }}
                   />
 
                   <Card
                     title="Gillnetting"
-                    text="Sustainable solutions towards safer, cleaner oceans. sustainable solutions"
+                    text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores poro iste."
                     linkSrc="/not-found"
                     styling={{ flat: true, opacity: true, subtle: true }}
                   />
 
                   <Card
                     title="Trawl fishery"
-                    text="Sustainable solutions towards safer, cleaner oceans. sustainable solutions"
+                    text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores poro iste."
                     linkSrc="/product-template-1"
                     styling={{ flat: true, opacity: true, subtle: true }}
                   />
                   <Card
                     title="Waste handling"
-                    text="Sustainable solutions towards safer, cleaner oceans. sustainable solutions"
+                    text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores poro iste."
                     linkSrc="/not-found"
                     styling={{ flat: true, opacity: true, subtle: true }}
                   />
                   <Card
                     title="All catalouges"
-                    text="Sustainable solutions towards safer, cleaner oceans. sustainable solutions"
+                    text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores poro iste."
                     linkSrc="/product-template"
                     styling={{ flat: true, opacity: true, subtle: true }}
                   />

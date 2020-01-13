@@ -13,6 +13,8 @@ import List from "../components/list";
 import Card from "../components/card";
 import { demoText } from "../lib/demoContent";
 
+import utils from "../components/utils.module.css";
+
 import GraphQLErrorList from "../components/graphql-error-list";
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
 
@@ -46,7 +48,7 @@ export const query = graphql`
 const About = props => {
   const blockIntro = {
     name: "Made in norway",
-    title: "World leading longline manufacturer",
+    title: "Leading Longline Manufacturer",
     text: `${demoText(1)}`
   };
 
@@ -78,6 +80,9 @@ const About = props => {
         <Block>
           <BlockDesign bgImage="/map-2.jpg" opacityClass="085" flex>
             <InnerContainer>
+              {/* <div className={utils.center}>
+                <h3>Worldwide presence</h3>
+              </div> */}
               <List type="justifiedCenter">
                 <Feature text="New Zealand" description="Antarctic fishery" />
                 <Feature text="USA" description="Serving the Alaskan market" />

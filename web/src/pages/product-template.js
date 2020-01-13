@@ -49,9 +49,8 @@ import Svg from "../components/svg";
 
 const ProductTemplate = props => {
   return (
-    <Layout pageClass="" currentPage="products" isCustomHeader={true}>
+    <Layout pageClass="" currentPage="products">
       <SEO title="Fiskevegn Fishery" />
-      <Hero demo demoSrc="/ropes-2.jpg" low />
       <Container>
         <InnerContainer>
           <BreadCrumb goBack="/product-category" />
@@ -67,6 +66,9 @@ const ProductTemplate = props => {
             yielded results both for our customers."
             />
           </InnerContainer>
+        </Block>
+        <Block>
+          <Hero demo demoSrc="/ropes-2.jpg" low />
         </Block>
         <Block>
           <BlockDesign bgImage="/scenery-7.jpg" opacityClass="090" flex>

@@ -64,7 +64,7 @@ const Products = props => {
                 <List type="fiftyfifty" noGap oddBorder>
                   <Card
                     title="Fishery"
-                    text="Sustainable solutions towards safer, cleaner oceans. sustainable solutions"
+                    text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores poro iste."
                     linkSrc="/product-category"
                     // imgSrc="/fishery.jpg"
                     styling={{ flat: true, opacity: true }}
@@ -72,7 +72,7 @@ const Products = props => {
 
                   <Card
                     title="Aquaculture"
-                    text="Sustainable solutions towards safer, cleaner oceans. sustainable solutions"
+                    text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores poro iste."
                     linkSrc="/not-found"
                     // imgSrc="/rope-2.jpg"
                     styling={{ flat: true, opacity: true }}
@@ -80,7 +80,7 @@ const Products = props => {
 
                   <Card
                     title="Ropes"
-                    text="Sustainable solutions towards safer, cleaner oceans. sustainable solutions"
+                    text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores poro iste."
                     linkSrc="/not-found"
                     // imgSrc="/rope-2.jpg"
                     styling={{ flat: true, opacity: true }}
@@ -88,7 +88,7 @@ const Products = props => {
 
                   <Card
                     title="General supplies"
-                    text="Sustainable solutions towards safer, cleaner oceans. sustainable solutions"
+                    text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores poro iste."
                     linkSrc="/not-found"
                     // imgSrc="/fishery.jpg"
                     styling={{ flat: true, opacity: true }}

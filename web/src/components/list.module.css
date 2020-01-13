@@ -111,6 +111,8 @@
   justify-content: center;
   @nest & li {
     align-self:center;
+    justify-content:center;
+    flex:1;
   }
   @media (--medium-and-up) {
     flex-flow:row;
@@ -135,14 +137,17 @@
 
 .oddBorder {
   @nest & li {
+    border-bottom:2px solid var(--color-light-gray);
     @nest &:nth-child(odd) {
       @media(--medium-and-up) {
         border-right:2px solid var(--color-light-gray);
       }
     }
-    /* @media(--medium-and-up) {
-      border-right:2px solid var(--color-light-gray);
-    } */
+    @nest &:nth-last-of-type(-n+2) {
+      @media(--medium-and-up) {
+        border-bottom:0;
+      }
+    }
   }
 }
 

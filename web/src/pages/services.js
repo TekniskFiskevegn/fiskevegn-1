@@ -65,7 +65,7 @@ const Products = props => {
                   <Card
                     title="Fishery development"
                     text="Sustainable solutions towards safer, cleaner oceans. sustainable solutions"
-                    linkSrc="/product-category"
+                    linkSrc="/not-found"
                     // imgSrc="/fishery.jpg"
                     styling={{ flat: true, opacity: true }}
                   />
@@ -73,7 +73,7 @@ const Products = props => {
                   <Card
                     title="Project planning"
                     text="Sustainable solutions towards safer, cleaner oceans. sustainable solutions"
-                    linkSrc="/product-category"
+                    linkSrc="/not-found"
                     // imgSrc="/rope-2.jpg"
                     styling={{ flat: true, opacity: true }}
                   />
@@ -81,7 +81,7 @@ const Products = props => {
                   <Card
                     title="Bespoke engineering"
                     text="Sustainable solutions towards safer, cleaner oceans. sustainable solutions"
-                    linkSrc="/product-category"
+                    linkSrc="/not-found"
                     // imgSrc="/rope-2.jpg"
                     styling={{ flat: true, opacity: true }}
                   />
@@ -89,7 +89,7 @@ const Products = props => {
                   <Card
                     title="Research collaboration"
                     text="Sustainable solutions towards safer, cleaner oceans. sustainable solutions"
-                    linkSrc="/product-category"
+                    linkSrc="/not-found"
                     // imgSrc="/fishery.jpg"
                     styling={{ flat: true, opacity: true }}
                   />

@@ -23,7 +23,7 @@
   color: inherit;
   height: 100%;
   @nest &:hover {
-    background-color:#fbfbfb;
+    background-color:var(--color-almost-white);
     
     /* box-shadow: inset 0 0 1px #dce7f3; */
   }
