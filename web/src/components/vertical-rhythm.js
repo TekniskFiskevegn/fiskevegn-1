@@ -6,11 +6,7 @@ const VerticalRhythm = props => {
   const { verticalRhythm, children } = props;
   if (!verticalRhythm) {
     // return default rhythm
-    return (
-      <div className={styles.root} name={name}>
-        {children}
-      </div>
-    );
+    return <div className={styles.root}>{children}</div>;
   }
   const { top, bottom, inner } = verticalRhythm;
   // return custom rhythm
@@ -19,7 +15,7 @@ const VerticalRhythm = props => {
     paddingBottom: bottom + "em"
   };
   return (
-    <div className={cn(styles.root, "inline-custom-rhythm")} name={name} style={inlineStyle}>
+    <div className={cn(styles.root, "inline-custom-rhythm")} style={inlineStyle}>
       {children}
     </div>
   );
