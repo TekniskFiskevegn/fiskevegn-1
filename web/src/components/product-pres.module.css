@@ -25,3 +25,12 @@
 .reverse {
   flex-flow: row-reverse;
 }
+
+.titleSubtle {
+  font-size:36px;
+  margin:0;
+}
+
+.pMargin {
+  margin:0.5em 0!important;
+}

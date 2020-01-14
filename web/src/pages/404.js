@@ -4,7 +4,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Container from "../components/container";
 import Block from "../components/block";
-import Intro from "../components/Intro";
+import Intro from "../components/intro";
 import BlockDesign from "../components/block-design";
 import InnerContainer from "../components/inner-container";
 
@@ -17,13 +17,13 @@ const NotFoundPage = () => (
     <Container>
       <Block>
         <InnerContainer>
-        <Intro
+          <Intro
             backButton
             backTo="/"
-              name="404"
-              title="Content Not Found"
-              text="Sorry, but this page doesn`t exist. Go back to our homepage and keep looking."
-            />
+            name="404"
+            title="Content Not Found"
+            text="Sorry, but this page doesn`t exist. Go back to our homepage and keep looking."
+          />
         </InnerContainer>
       </Block>
     </Container>

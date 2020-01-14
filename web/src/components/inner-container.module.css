@@ -21,3 +21,11 @@
   border-bottom:2px solid var(--color-light-gray);
   padding-bottom: 2em;
 }
+
+.article {
+  text-align: left;
+  max-width: 800px;
+  margin-top:2em;
+  border-bottom:2px solid var(--color-light-gray);
+  padding-bottom:2em;
+}

@@ -6,7 +6,7 @@ import styles from "./card.module.css";
 // @ sytalaust: add palette option
 
 const Card = ({ title, text, linkSrc, imgSrc, externalLink, styling }) => {
-  const { flat, opacity, subtle, palette, borderRadius } = styling || {};
+  const { flat, opacity, subtle, palette, borderRadius, gray } = styling || {};
   if (!linkSrc) {
     return null;
   }
@@ -34,7 +34,15 @@ const Card = ({ title, text, linkSrc, imgSrc, externalLink, styling }) => {
   );
 
   return (
-    <div className={cn(styles.root, flat ? styles.flat : "", opacity ? styles.opacity : "", borderRadius ? styles.borderRadius : "")}>
+    <div
+      className={cn(
+        styles.root,
+        flat ? styles.flat : "",
+        opacity ? styles.opacity : "",
+        borderRadius ? styles.borderRadius : "",
+        gray ? styles.gray : ""
+      )}
+    >
       {externalLink && (
         <a className={cn(styles.link)} href={linkSrc} target="_blank">
           {body}

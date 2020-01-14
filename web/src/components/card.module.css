@@ -73,3 +73,10 @@
 .borderRadius {
   border-radius:6px;
 }
+
+.gray {
+  background-color:var(--color-almost-white);
+  @nest & h3 {
+    font-weight:400;
+  }
+}

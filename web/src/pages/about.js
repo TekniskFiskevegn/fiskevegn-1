@@ -14,6 +14,7 @@ import Card from "../components/card";
 import { demoText } from "../lib/demoContent";
 
 import utils from "../components/utils.module.css";
+import borrowed from "../components/product-pres.module.css";
 
 import GraphQLErrorList from "../components/graphql-error-list";
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
@@ -70,19 +71,12 @@ const About = props => {
         <Block name="Company introduction" blockOrder="1">
           <InnerContainer>
             <Intro {...blockIntro} />
-            {/* <List type="justifiedSpaceAround">
-              <Feature text="New Zealand" description="Antarctic fishery" />
-              <Feature text="Usa" description="Equipment" />
-              <Feature text="Greenland" description="Arctic fishery" />
-            </List> */}
           </InnerContainer>
         </Block>
+
         <Block>
           <BlockDesign bgImage="/scenery-4.jpg" opacityClass="050" flex>
             <InnerContainer>
-              {/* <div className={utils.center}>
-                <h3>Worldwide presence</h3>
-              </div> */}
               <List type="justifiedCenter">
                 <Feature text="New Zealand" description="Antarctic fishery" />
                 <Feature text="USA" description="Serving the Alaskan market" />
@@ -91,55 +85,118 @@ const About = props => {
             </InnerContainer>
           </BlockDesign>
         </Block>
-        <Block name="Values" blockOrder="3" verticalRhythm={{ top: 3, bottom: 3 }}>
+
+        <Block name="Partners">
+          {/* <BlockDesign
+            // svg={{
+            //   wave: true,
+            //   number: "10",
+            //   positionTop: true
+            // }}
+          > */}
           <InnerContainer>
-            <Intro {...blockIntro3} />
+            <Intro {...blockIntro2} margin />
+            <List smallGap>
+              <Card
+                title="MMG"
+                text="Måløy Maritime Group"
+                linkSrc="https://www.maloymaritime.no/"
+                styling={{ borderRadius: true, flat: false, gray: true }}
+                externalLink
+              />
+              <Card
+                title="Colto"
+                text="Coalition of Legal Toothfish Operators"
+                linkSrc="https://www.colto.org/"
+                styling={{ borderRadius: true, flat: false, gray: true }}
+                externalLink
+              />
+              <Card
+                title="Eurocord"
+                text="European organization for cordage manufacturers"
+                linkSrc="https://www.eurocord.com/"
+                styling={{ borderRadius: true, flat: false, gray: true }}
+                externalLink
+              />
+              <Card
+                title="GGGI"
+                text="Global Ghost Gear Initiative"
+                linkSrc="https://www.ghostgear.org/"
+                styling={{ borderRadius: true, flat: false, gray: true }}
+                externalLink
+              />
+            </List>
+          </InnerContainer>
+          {/* </BlockDesign> */}
+        </Block>
+
+        <Block name="Partners">
+          <InnerContainer>
+            <div className={cn(borrowed.root)}>
+              <div className={borrowed.first}>
+                <div>
+                  <h2 className={borrowed.titleSubtle}>Career at Fiskevegn</h2>
+                  <p className={borrowed.pMargin}>
+                    Lorem ipsum dolor sit amet consectetur adipisicing.
+                  </p>
+                  <a href="" className={utils.callToActionSubtle1}>
+                    career@fiskevegn.no
+                  </a>
+                </div>
+              </div>
+              <div className={borrowed.second}>
+                <img src="/scenery-small.jpg" alt="" />
+              </div>
+            </div>
           </InnerContainer>
         </Block>
 
-        <Block name="Partners" verticalRhythm={{ top: 0 }}>
-          <BlockDesign
-            svg={{
-              wave: true,
-              number: "10",
-              positionTop: true
-            }}
-          >
-            <InnerContainer>
-              <Intro {...blockIntro2} margin />
-              <List smallGap>
-                <Card
-                  title="MMG"
-                  text="Måløy Maritime Group"
-                  linkSrc="https://www.maloymaritime.no/"
-                  styling={{borderRadius: true, flat:true}}
-                  externalLink
-                />
-                <Card
-                  title="Colto"
-                  text="Coalition of Legal Toothfish Operators"
-                  linkSrc="https://www.colto.org/"
-                  styling={{borderRadius: true, flat:true}}
-                  externalLink
-                />
-                <Card
-                  title="Eurocord"
-                  text="European organization for cordage manufacturers"
-                  linkSrc="https://www.eurocord.com/"
-                  styling={{borderRadius: true, flat:true}}
-                  externalLink
-                />
-                <Card
-                  title="GGGI"
-                  text="Global Ghost Gear Initiative"
-                  linkSrc="https://www.ghostgear.org/"
-                  styling={{borderRadius: true, flat:true}}
-                  externalLink
-                />
-              </List>
-            </InnerContainer>
-          </BlockDesign>
-        </Block>
+        {/* <Block name="Partners">
+          <InnerContainer>
+            <div className={cn(borrowed.root, borrowed.reverse)}>
+              <div className={borrowed.first}>
+                <div>
+                  <h2 className={borrowed.titleSubtle}>Partners</h2>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                </div>
+              </div>
+              <div className={borrowed.second}>
+                <div className={utils.boxShadow}>
+                  <List type="fiftyfifty" noGap>
+                    <Card
+                      title="MMG"
+                      text="Måløy Maritime Group"
+                      linkSrc="https://www.maloymaritime.no/"
+                      styling={{ borderRadius: true, flat: false }}
+                      externalLink
+                    />
+                    <Card
+                      title="Colto"
+                      text="Coalition of Legal Toothfish Operators"
+                      linkSrc="https://www.colto.org/"
+                      styling={{ borderRadius: true, flat: false }}
+                      externalLink
+                    />
+                    <Card
+                      title="Eurocord"
+                      text="European organization for cordage manufacturers"
+                      linkSrc="https://www.eurocord.com/"
+                      styling={{ borderRadius: true, flat: false }}
+                      externalLink
+                    />
+                    <Card
+                      title="GGGI"
+                      text="Global Ghost Gear Initiative"
+                      linkSrc="https://www.ghostgear.org/"
+                      styling={{ borderRadius: true, flat: false }}
+                      externalLink
+                    />
+                  </List>
+                </div>
+              </div>
+            </div>
+          </InnerContainer>
+        </Block> */}
       </Container>
     </Layout>
   );

@@ -7,19 +7,20 @@
   /* @media (--medium-and-up){
     padding:0 1em;
   } */
-  color:#0C2D48;
+  /* color:#666; */
+  color: #555;
 }
 
 .text {
   font-family: "Lato";
-  font-size:32px;
+  font-size:26px;
   font-weight: 700;
   text-transform: uppercase;
   /* color:var(--color-brand); */
   margin:0;
   line-height: 1;
   @media (--medium-and-up){
-    font-size: 34px;
+    font-size: 32px;
   }
 }
 

@@ -85,7 +85,7 @@ const ArticleTemplate = props => {
   const { data, errors } = props;
   const project = data && data.news;
   return (
-    <Layout isCustomHeader={true}>
+    <Layout>
       {errors && <SEO title="GraphQL Error" />}
       {project && <SEO title={project.title || "Untitled"} />}
 
