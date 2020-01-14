@@ -5,6 +5,7 @@ import { buildImageObj } from "../lib/helpers";
 import { imageUrlFor } from "../lib/image-url";
 import SanityBlockContent from "./sanity-block-content";
 import Container from "./container";
+import Block from "./block";
 import InnerContainer from "./inner-container";
 import RoleList from "./role-list";
 
@@ -27,6 +28,8 @@ function Project(props) {
         </div>
       )}
       <Container>
+        <Block>
+
         <InnerContainer>
           <div className={styles.grid}>
             <div className={styles.mainContent}>
@@ -73,6 +76,7 @@ function Project(props) {
             </aside>
           </div>
         </InnerContainer>
+        </Block>
       </Container>
     </article>
   );

@@ -11,8 +11,12 @@
 .name {
   color:#999;
   text-transform: uppercase;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 1em;
+  line-height:1;
+  position:relative;
 }
 
 .marginBottom {
@@ -20,4 +24,9 @@
   @media (--medium-and-up) {
     margin-bottom: 2.5em;
   }
+}
+
+.backButton {
+  position:absolute;
+  left:1em;
 }

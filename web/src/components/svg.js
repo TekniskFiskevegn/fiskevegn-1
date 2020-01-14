@@ -6,7 +6,7 @@ import styles from "./svg.module.css";
 
 const Svg = ({ icon, wave, blob, name, number, positionTop }) => {
   if (icon) {
-    return <div className={cn(styles.icon)}>{getIcon(name)}</div>;
+    return <i className={cn(styles.icon)}>{getIcon(name)}</i>;
   }
   if (wave) {
     const cssClass = cn(styles.wave, positionTop ? styles.positionTop : styles.positionBottom);

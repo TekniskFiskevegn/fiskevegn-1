@@ -18,6 +18,7 @@
 
 @ Fiskevegn
 - ui text switch no eng
+- responsiveness cards
 - 404 page
 - variables for light text and dusk text
 - disclaimer in footer i.e Personvern ++
@@ -93,6 +94,7 @@ You can create a folder named static at the root of your project. Every file you
 - https://coolors.co/
 - https://google-webfonts-helper.herokuapp.com/
 - http://svgicons.sparkk.fr/
+- https://iconmonstr.com/
 
 ## What I have installed
 

@@ -13,6 +13,8 @@ import Intro from "../components/intro";
 import List from "../components/list";
 import Card from "../components/card";
 
+import Presentation from "../components/product-pres";
+
 import utils from "../components/utils.module.css";
 import styles from "../components/product-data.module.css";
 
@@ -47,17 +49,28 @@ import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
 // `;
 
 const ProductTemplate = props => {
+  const pres1 = {
+    title: "Warps",
+    text: "",
+    img: "/gilnets-small.jpg"
+  };
+
+  const pres2 = {
+    title: "Gilsons",
+    text: "",
+    img: "/cobraline-small.jpg",
+    reverse: true
+  };
+
   return (
-    <Layout pageClass="" currentPage="products" isCustomHeader={true}>
+    <Layout pageClass="" currentPage="products">
       <SEO title="Fiskevegn Fishery" />
-      <Hero demo demoSrc="/ropes-2.jpg" low />
       <Container>
-        <InnerContainer>
-          <BreadCrumb goBack="/product-category" />
-        </InnerContainer>
         <Block>
           <InnerContainer>
             <Intro
+                        backButton
+                        backTo="/product-category"
               name="Product"
               title="Trawl fishery"
               text="Since its inception, Fiskevegn has been founded on the core values of quality,
@@ -68,45 +81,16 @@ const ProductTemplate = props => {
           </InnerContainer>
         </Block>
         <Block>
+          <Hero demo demoSrc="/ropes-2.jpg" low />
+        </Block>
+        <Block>
           <InnerContainer>
-            <List type="justifiedCenter">
-              <a className={utils.callToAction} href="">
-                Warps
-              </a>
-              <a className={utils.callToAction} href="">
-                Gilsons
-              </a>
-              <a className={utils.callToAction} href="">
-                Backstrops
-              </a>
-              <a className={utils.callToAction} href="">
-                Sweeplines
-              </a>
-            </List>
+            <Presentation {...pres1} />
           </InnerContainer>
         </Block>
         <Block>
-          <BlockDesign bgImage="/scenery-5.jpg" opacityClass="090" flex>
-            <InnerContainer>
-              <div className={styles.wrapper}>
-                <div className={styles.firstColumn}>
-                  <a href="">Download factsheet</a>
-                </div>
-                <div className={styles.secondColumn}>
-                  <p>
-                    Whether you are planning a state-of-the art deep-sea longline vessel or want to
-                    equip a small coastal boat for automatic longline fishing, contact Fiskevegn and
-                    we will help you through the whole process from planning to successful fishing.
-                    As a customer of ours, you will be in good hands.
-                  </p>
-                </div>
-              </div>
-            </InnerContainer>
-          </BlockDesign>
-        </Block>
-        <Block>
           <InnerContainer>
-            <Intro title="Video and/or images"></Intro>
+            <Presentation {...pres2} />
           </InnerContainer>
         </Block>
       </Container>

@@ -13,6 +13,8 @@ import Intro from "../components/intro";
 import List from "../components/list";
 import Card from "../components/card";
 
+import Presentation from "../components/product-pres";
+
 import utils from "../components/utils.module.css";
 import styles from "../components/product-data.module.css";
 
@@ -48,16 +50,28 @@ import Svg from "../components/svg";
 // `;
 
 const ProductTemplate = props => {
+  const pres1 = {
+    title: "Automatic Baiter",
+    text: "",
+    img: "/baiter.png"
+  };
+
+  const pres2 = {
+    title: "Hook Separator HS7000",
+    text: "",
+    img: "/hook-separator.png",
+    reverse: true
+  };
+
   return (
     <Layout pageClass="" currentPage="products">
       <SEO title="Fiskevegn Fishery" />
       <Container>
-        <InnerContainer>
-          <BreadCrumb goBack="/product-category" />
-        </InnerContainer>
         <Block>
-          <InnerContainer>
+          <InnerContainer borderBottom>
             <Intro
+            backButton
+            backTo="/product-category"
               name="Product"
               title="Automatic longline systems"
               text="Since its inception, Fiskevegn has been founded on the core values of quality,
@@ -68,31 +82,13 @@ const ProductTemplate = props => {
           </InnerContainer>
         </Block>
         <Block>
-          <Hero demo demoSrc="/ropes-2.jpg" low />
-        </Block>
-        <Block>
-          <BlockDesign bgImage="/scenery-7.jpg" opacityClass="090" flex>
-            <InnerContainer>
-              <div className={styles.wrapper}>
-                <div className={styles.firstColumn}>
-                  {/* <Svg blob={{ blobTitle: "Factsheet", asBackground: true }} number="1" /> */}
-                  <a href="">Download factsheet</a>
-                </div>
-                <div className={styles.secondColumn}>
-                  <p>
-                    Whether you are planning a state-of-the art deep-sea longline vessel or want to
-                    equip a small coastal boat for automatic longline fishing, contact Fiskevegn and
-                    we will help you through the whole process from planning to successful fishing.
-                    As a customer of ours, you will be in good hands.
-                  </p>
-                </div>
-              </div>
-            </InnerContainer>
-          </BlockDesign>
+          <InnerContainer>
+            <Presentation {...pres1} />
+          </InnerContainer>
         </Block>
         <Block>
           <InnerContainer>
-            <Intro title="Video and/or images"></Intro>
+            <Presentation {...pres2} />
           </InnerContainer>
         </Block>
       </Container>

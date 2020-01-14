@@ -2,6 +2,4 @@
 @import '../styles/custom-media.css';
 
 /* 404 */
-.contentNotFound {
-  background-color: var(--color-light-gray);
-}
+.contentNotFound {}

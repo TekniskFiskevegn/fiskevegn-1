@@ -55,13 +55,13 @@ const About = props => {
   const blockIntro2 = {
     name: "",
     title: "Partners and Collaborations",
-    text: `${demoText(1)}`
+    text: `${demoText(2)}`
   };
 
   const blockIntro3 = {
     name: "",
     title: "Career at AS Fiskevegn",
-    text: `${demoText(1)}`
+    text: `${demoText(3)}`
   };
   return (
     <Layout currentPage="about">
@@ -78,7 +78,7 @@ const About = props => {
           </InnerContainer>
         </Block>
         <Block>
-          <BlockDesign bgImage="/map-2.jpg" opacityClass="085" flex>
+          <BlockDesign bgImage="/scenery-4.jpg" opacityClass="050" flex>
             <InnerContainer>
               {/* <div className={utils.center}>
                 <h3>Worldwide presence</h3>
@@ -97,11 +97,12 @@ const About = props => {
           </InnerContainer>
         </Block>
 
-        <Block name="Partners">
+        <Block name="Partners" verticalRhythm={{ top: 0 }}>
           <BlockDesign
             svg={{
               wave: true,
-              number: "1"
+              number: "10",
+              positionTop: true
             }}
           >
             <InnerContainer>
@@ -111,24 +112,28 @@ const About = props => {
                   title="MMG"
                   text="Måløy Maritime Group"
                   linkSrc="https://www.maloymaritime.no/"
+                  styling={{borderRadius: true, flat:true}}
                   externalLink
                 />
                 <Card
                   title="Colto"
                   text="Coalition of Legal Toothfish Operators"
                   linkSrc="https://www.colto.org/"
+                  styling={{borderRadius: true, flat:true}}
                   externalLink
                 />
                 <Card
                   title="Eurocord"
                   text="European organization for cordage manufacturers"
                   linkSrc="https://www.eurocord.com/"
+                  styling={{borderRadius: true, flat:true}}
                   externalLink
                 />
                 <Card
                   title="GGGI"
                   text="Global Ghost Gear Initiative"
                   linkSrc="https://www.ghostgear.org/"
+                  styling={{borderRadius: true, flat:true}}
                   externalLink
                 />
               </List>

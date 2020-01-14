@@ -16,3 +16,8 @@
 .contentFit {
   min-height: 400px;
 }
+
+.borderBottom {
+  border-bottom:2px solid var(--color-light-gray);
+  padding-bottom: 2em;
+}

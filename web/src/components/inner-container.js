@@ -7,8 +7,8 @@ const InnerContainer = props => {
     return null;
   }
 
-  const { children } = props;
-  return <div className={cn(styles.root)}>{children}</div>;
+  const { children, borderBottom } = props;
+  return <div className={cn(styles.root, borderBottom ? styles.borderBottom : "")}>{children}</div>;
 };
 
 InnerContainer.defaultProps = {};

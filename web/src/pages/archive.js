@@ -58,7 +58,7 @@ const ArchivePage = props => {
         <Block name="news">
           <InnerContainer>
             {/* {projectNodes && projectNodes.length > 0 && <NewsBlock nodes={projectNodes} />} */}
-            <List type="news" title="Latest news" nodes={projectNodes} browseMoreHref="/archive/" />
+            <List type="news" title="News archive" nodes={projectNodes} />
           </InnerContainer>
         </Block>
       </Container>

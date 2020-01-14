@@ -69,3 +69,7 @@
 .opacity {
   opacity: 0.97;
 }
+
+.borderRadius {
+  border-radius:6px;
+}

@@ -2,3 +2,7 @@
 @import '../styles/custom-media.css';
 
 .root {}
+
+.borderBottom {
+  border-bottom:2px solid var(--color-almost-white);
+}

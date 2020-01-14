@@ -1,0 +1,27 @@
+.root {
+  display:flex;
+}
+
+.first {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex:1;
+
+  @nest & .title {
+    font-size:40px;
+    margin:0
+  }
+  @nest & p {
+    margin:0;
+  }
+}
+
+.second {
+  display: flex;
+  flex:1;
+}
+
+.reverse {
+  flex-flow: row-reverse;
+}

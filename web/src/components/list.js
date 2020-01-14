@@ -66,10 +66,17 @@ const NewsList = ({ title, nodes, browseMoreHref }) => {
 };
 
 const JustifiedCenterList = ({ ...props }) => {
-  const { children } = props;
+  const { children, border, flexAuto } = props;
   return (
     <div styles={styles.root}>
-      <ul className={cn(styles.ul, styles.justifiedCenterList)}>
+      <ul
+        className={cn(
+          styles.ul,
+          styles.justifiedCenterList,
+          border ? styles.border : "",
+          flexAuto ? styles.flexAuto : ""
+        )}
+      >
         {React.Children.map(children, (child, i) => {
           return <li>{child}</li>;
         })}

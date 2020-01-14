@@ -51,12 +51,11 @@ const ProductCategory = props => {
       <SEO title="Fiskevegn Fishery" />
 
       <Container>
-        <InnerContainer>
-          <BreadCrumb goBack="/products" />
-        </InnerContainer>
         <Block>
           <InnerContainer>
             <Intro
+              backButton
+              backTo="/products"
               name="Category"
               title="Fishery"
               text="Since its inception, Fiskevegn has been founded on the core values of quality,
@@ -107,7 +106,7 @@ const ProductCategory = props => {
                   <Card
                     title="All catalouges"
                     text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores poro iste."
-                    linkSrc="/product-template"
+                    linkSrc="/not-found"
                     styling={{ flat: true, opacity: true, subtle: true }}
                   />
                 </List>

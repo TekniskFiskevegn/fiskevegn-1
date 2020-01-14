@@ -170,3 +170,15 @@
     padding-bottom:0.3em;
   }
 }
+
+.border {
+  border-top:1px solid var(--color-light-gray);
+  border-bottom:1px solid var(--color-light-gray);
+  padding:1.5em 0;
+}
+
+.flexAuto {
+  @nest & li {
+    flex:0 1 auto;
+  }
+}

@@ -22,27 +22,12 @@
     fill-opacity:0.5;
   }  
 }
-
-.blobIcon {}
-.blobTitle {}
-.blobList {}
-
 .icon {
+  display:block;
   position: relative;
-  width:25px;
-  height:25px;
-  @nest & svg {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin: auto;
-    width: 1.5em;
-    height: 1.5em;
-  }
+  width:35px;
   @nest & path {
-    fill:blue;
+    fill:#ccc;
   }
 }
 
