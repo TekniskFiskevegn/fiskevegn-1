@@ -18,7 +18,7 @@ import List from "../components/list";
 import GraphQLErrorList from "../components/graphql-error-list";
 import SEO from "../components/seo";
 
-import { demoText } from "../lib/demoContent";
+import { demoText } from "../lib/demo-content";
 
 export const query = graphql`
   query IndexPageQuery {
@@ -202,27 +202,41 @@ const IndexPage = props => {
   const { promotedBlock, fullWidthBlock } = (data || {}).frontpage;
 
   const mockBlock1 = {
-    introTitle: "Modern fishing solutions",
-    introText:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution",
-    image: promotedBlock.image,
-    title: "Modern fishing solutions",
-    text:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores porro iste sint suscipit excepturi aliquid a laudantium nihil rerum nisi. Saepe pariatur at atque esse accusamus repellendus exercitationem iusto odio!",
-    browseMoreHref: "/products",
-    browseMoreText: "See our products"
+    intro: {
+      name: "",
+      title: "Modern fishing solutions",
+      text:
+        "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution"
+    },
+    content: {
+      image: promotedBlock.image,
+      title: "Modern fishing solutions",
+      text:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores porro iste sint suscipit excepturi aliquid a laudantium nihil rerum nisi. Saepe pariatur at atque esse accusamus repellendus exercitationem iusto odio!",
+      browseMoreHref: "/products",
+      browseMoreText: "See our products"
+    }
   };
 
   const mockBlock2 = {
-    introTitle: "Rewarding Collaborations",
-    introText:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution",
-    image: null,
-    title: "Industry know-how",
-    text:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores porro iste sint suscipit excepturi aliquid a laudantium nihil rerum nisi. Saepe pariatur at atque esse accusamus repellendus exercitationem iusto odio!",
-    browseMoreHref: "/services",
-    browseMoreText: "See our services"
+    intro: {
+      name: "",
+      title: "Rewarding Collaborations",
+      text:
+        "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution"
+    },
+    content: {
+      demoImage: "/related-images/ship.jpg",
+      title: "Industry know-how",
+      text:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores porro iste sint suscipit excepturi aliquid a laudantium nihil rerum nisi. Saepe pariatur at atque esse accusamus repellendus exercitationem iusto odio!",
+      browseMoreHref: "/services",
+      browseMoreText: "See our services"
+    },
+    styling: {
+      theme: "white",
+      reverse: true
+    }
   };
 
   const projectNodes = (data || {}).projects

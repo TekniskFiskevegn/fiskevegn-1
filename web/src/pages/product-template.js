@@ -53,13 +53,13 @@ const ProductTemplate = props => {
   const pres1 = {
     title: "Automatic Baiter",
     text: "",
-    img: "/baiter.png"
+    img: "/product-images/baiter.png"
   };
 
   const pres2 = {
     title: "Hook Separator HS7000",
     text: "",
-    img: "/hook-separator.png",
+    img: "/product-images/hook-separator.png",
     reverse: true
   };
 
@@ -70,8 +70,8 @@ const ProductTemplate = props => {
         <Block>
           <InnerContainer borderBottom>
             <Intro
-            backButton
-            backTo="/product-category"
+              backButton
+              backTo="/product-category"
               name="Product"
               title="Automatic longline systems"
               text="Since its inception, Fiskevegn has been founded on the core values of quality,

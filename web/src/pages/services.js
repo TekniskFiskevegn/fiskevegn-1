@@ -58,7 +58,7 @@ const Products = props => {
           </InnerContainer>
         </Block>
         <Block>
-          <BlockDesign bgImage="/scenery-6.jpg" opacityClass="015">
+          <BlockDesign bgImage="/sceneries/scenery-6.jpg" opacityClass="015">
             <InnerContainer>
               <div className={utils.boxShadow}>
                 <List type="fiftyfifty" noGap oddBorder>

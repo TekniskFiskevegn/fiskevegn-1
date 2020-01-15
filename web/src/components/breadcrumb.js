@@ -1,12 +1,9 @@
 import { Link } from "gatsby";
 import React from "react";
-import Svg from "../components/svg";
 import { cn } from "../lib/helpers";
-
 import styles from "./breadcrumb.module.css";
-import utils from "../components/utils.module.css";
 
-const Card = ({ add, withCloseButton, goBack }) => {
+const Card = ({ goBack }) => {
   return (
     <div className={styles.root}>
       <div className={styles.breadcrumbs}>

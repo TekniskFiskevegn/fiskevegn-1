@@ -7,70 +7,83 @@ import Container from "../components/container";
 import InnerContainer from "../components/inner-container";
 import Hero from "../components/hero";
 import Block from "../components/block";
-import ContactBlock from "../components/contact-block";
-import BlockDesign from "../components/block-design";
-import Intro from "../components/intro";
-import List from "../components/list";
-import Card from "../components/card";
+import ContactCard from "../components/contact";
 
 import utils from "../components/utils.module.css";
 
 import GraphQLErrorList from "../components/graphql-error-list";
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
 
-// export const query = graphql`
-//   query AboutQuery {
-//     about: allSanityProject(
-//       limit: 12
-//       sort: { fields: [publishedAt], order: DESC }
-//       filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
-//     ) {
-//       edges {
-//         node {
-//           id
-//           mainImage {
-//             asset {
-//               _id
-//             }
-//             alt
-//           }
-//           title
-//           _rawExcerpt
-//           slug {
-//             current
-//           }
-//         }
-//       }
-//     }
-//   }
-// `;
+const Contact = props => {
+  // const department1 = {
+  //   intro: {
+  //     name: "Headquarter",
+  //     title: "Flatraket, Norway",
+  //     text: "Our headquarter is located at beautiful Flatraket"
+  //   },
+  //   content: {
+  //     demoImage: "/sceneries/scenery-1.jpg",
+  //     title: "Contact",
+  //     text:
+  //       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores porro iste sint suscipit",
+  //     phone: "+47 5785 8400",
+  //     email: "sales@fiskevegn.no",
+  //     map: "/"
+  //   }
+  // };
 
-const ProductCategory = props => {
+  const department1 = {
+    intro: {
+      name: "Headquarter",
+      title: "Flatraket, Norway",
+      text: "Our headquarter is located at beautiful Flatraket"
+    },
+    content: {
+      demoImage: "/related-images/contact-flatraket.jpg",
+      title: "Contact",
+      text:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores porro iste sint suscipit",
+      phone: "+47 5785 8400",
+      email: "aalesund@fiskevegn.no",
+      map: "/"
+    }
+  };
+
+  const department2 = {
+    intro: {
+      name: "Department",
+      title: "Ålesund, Norway",
+      text: "Our department in Ålesund, Norway"
+    },
+    content: {
+      demoImage: "/related-images/contact-aalesund.jpg",
+      title: "Contact",
+      text:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores porro iste sint suscipit",
+      phone: "+47 5785 8400",
+      email: "aalesund@fiskevegn.no",
+      map: "/"
+    }
+  };
+
   return (
     <Layout pageClass="" currentPage="contact" isCustomHeader={true}>
       <SEO title="Fiskevegn Fishery" />
-      <Hero demoSrc="/contact.jpg" demo />
+      {/* <Hero demoSrc="/related-images/contact.jpg" demo /> */}
+      <div className={utils.videoContainer}>
+        <video className={utils.video} autoPlay muted>
+          <source src="/videos/factory.mov" type="video/mp4" />
+        </video>
+      </div>
       <Container>
         <Block>
           <InnerContainer>
-            <ContactBlock
-              image="/scenery-1.jpg"
-              title="Flatraket, Norway"
-              tinyTitle="Headquarter"
-              description="Our headquarter is located at beautiful Flatraket"
-              textTitle="Contact"
-            />
+            <ContactCard {...department1} />
           </InnerContainer>
         </Block>
         <Block>
           <InnerContainer>
-            <ContactBlock
-              image="/aalesund.jpg"
-              title="Ålesund"
-              tinyTitle="Department"
-              description="Our department in Ålesund, Norway"
-              textTitle="Contact"
-            />
+            <ContactCard {...department2} />
           </InnerContainer>
         </Block>
       </Container>
@@ -78,4 +91,4 @@ const ProductCategory = props => {
   );
 };
 
-export default ProductCategory;
+export default Contact;

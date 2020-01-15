@@ -12,6 +12,17 @@
   }
 }
 
+.reverse {
+  @media (--large-and-up) {
+    flex-flow:row-reverse;
+  }
+  @nest & .text {
+    @media (--large-and-up) {
+      left:0;
+    }
+  }
+}
+
 .image {
   flex:1;
   @media (--large-and-up) {
@@ -43,8 +54,12 @@
   }
 }
 
-.lightTheme {
+.themeWhite {
   background-color: var(--color-white);
+}
+
+.themeAlmostWhite {
+  background-color: var(--color-almost-white);
 }
 
 .title {

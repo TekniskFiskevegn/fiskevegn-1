@@ -11,7 +11,7 @@ import Intro from "../components/intro";
 import Feature from "../components/feature";
 import List from "../components/list";
 import Card from "../components/card";
-import { demoText } from "../lib/demoContent";
+import { demoText } from "../lib/demo-content";
 
 import GraphQLErrorList from "../components/graphql-error-list";
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";

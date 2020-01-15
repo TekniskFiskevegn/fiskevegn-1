@@ -1,30 +1,19 @@
 import React from "react";
 import { Link } from "gatsby";
-import { Parallax, Background } from "react-parallax";
-
 import { buildImageObj, cn } from "../lib/helpers";
 import { imageUrlFor } from "../lib/image-url";
 import Intro from "../components/intro";
 import utils from "./utils.module.css";
 import styles from "./promoted.module.css";
-import { responsiveTitle1 } from "./typography.module.css";
 
-const Promoted = props => {
-  const {
-    introTitle,
-    introText,
-    image,
-    title,
-    text,
-    browseMoreHref,
-    browseMoreText,
-    lightTheme
-  } = props;
-  console.log("log props promoted", props);
+const Promoted = ({ intro = {}, content = {}, styling = {} }) => {
+  const { title, text, image, demoImage, browseMoreHref, browseMoreText } = content;
+  const { theme, reverse } = styling;
+
   return (
     <div className={styles.root}>
-      <Intro title={title} text={introText} margin />
-      <div className={styles.wrapper}>
+      <Intro {...intro} margin />
+      <div className={cn(styles.wrapper, reverse ? styles.reverse : "")}>
         <div className={styles.image}>
           {image && (
             <img
@@ -36,9 +25,9 @@ const Promoted = props => {
               alt={image.alt}
             />
           )}
-          {!image && <img src="/boat.jpg" alt="" />}
+          {demoImage && <img src={demoImage} alt="" />}
         </div>
-        <div className={cn(styles.text, lightTheme ? styles.lightTheme : "")}>
+        <div className={cn(styles.text, theme == "white" ? styles.themeWhite : "")}>
           <h3 className={styles.title}>{title}</h3>
           <p>{text}</p>
           <Link to={browseMoreHref} className={utils.callToActionLink}>
@@ -48,6 +37,10 @@ const Promoted = props => {
       </div>
     </div>
   );
+};
+
+Promoted.DefaultProps = {
+  intro: {}
 };
 
 export default Promoted;

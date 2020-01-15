@@ -51,6 +51,8 @@ const ArchivePage = props => {
   }
   const projectNodes =
     data && data.projects && mapEdgesToNodes(data.projects).filter(filterOutDocsWithoutSlugs);
+
+  // console.log("projectNodes in archive", projectNodes);
   return (
     <Layout>
       <SEO title="Archive" />

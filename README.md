@@ -3,6 +3,7 @@
 ## Todo
 
 @ Sytalaust
+- theme.module.css
 - button and or links
 - flytte responsive title osv over til utils?
 - add variable for svg fillcolor, or just use predefined classes

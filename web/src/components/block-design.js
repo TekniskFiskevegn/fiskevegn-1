@@ -1,10 +1,7 @@
 import React from "react";
 import { cn } from "../lib/helpers";
 import Svg from "./svg";
-import VerticalRhythm from "./vertical-rhythm";
 import styles from "./block-design.module.css";
-
-// @ sytalaust: add support for images in svg
 
 const BlockDesign = ({ svg, children, bgImage, opacityClass, split, flex, light }) => {
   if (bgImage) {

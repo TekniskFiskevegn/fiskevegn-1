@@ -10,7 +10,7 @@ import Intro from "./intro";
 import InnerContainer from "./inner-container";
 import RoleList from "./role-list";
 
-import { demoText } from "../lib/demoContent";
+import { demoText } from "../lib/demo-content";
 
 import styles from "./article.module.css";
 

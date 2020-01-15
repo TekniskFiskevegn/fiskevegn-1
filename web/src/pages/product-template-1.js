@@ -52,13 +52,13 @@ const ProductTemplate = props => {
   const pres1 = {
     title: "Warps",
     text: "",
-    img: "/gilnets-small.jpg"
+    img: "/product-images/gilnets-small.jpg"
   };
 
   const pres2 = {
     title: "Gilsons",
     text: "",
-    img: "/cobraline-small.jpg",
+    img: "/product-images/cobraline-small.jpg",
     reverse: true
   };
 
@@ -69,8 +69,8 @@ const ProductTemplate = props => {
         <Block>
           <InnerContainer>
             <Intro
-                        backButton
-                        backTo="/product-category"
+              backButton
+              backTo="/product-category"
               name="Product"
               title="Trawl fishery"
               text="Since its inception, Fiskevegn has been founded on the core values of quality,
@@ -81,7 +81,7 @@ const ProductTemplate = props => {
           </InnerContainer>
         </Block>
         <Block>
-          <Hero demo demoSrc="/ropes-2.jpg" low />
+          <Hero demo demoSrc="/product-images/ropes-2.jpg" low />
         </Block>
         <Block>
           <InnerContainer>

@@ -11,7 +11,7 @@ import Intro from "../components/intro";
 import Feature from "../components/feature";
 import List from "../components/list";
 import Card from "../components/card";
-import { demoText } from "../lib/demoContent";
+import { demoText } from "../lib/demo-content";
 
 import utils from "../components/utils.module.css";
 import borrowed from "../components/product-pres.module.css";
@@ -75,7 +75,7 @@ const About = props => {
         </Block>
 
         <Block>
-          <BlockDesign bgImage="/scenery-4.jpg" opacityClass="050" flex>
+          <BlockDesign bgImage="/sceneries/scenery-4.jpg" opacityClass="050" flex>
             <InnerContainer>
               <List type="justifiedCenter">
                 <Feature text="New Zealand" description="Antarctic fishery" />
@@ -139,7 +139,7 @@ const About = props => {
                   <p className={borrowed.pMargin}>
                     Lorem ipsum dolor sit amet consectetur adipisicing.
                   </p>
-                  <a href="" className={utils.callToActionSubtle1}>
+                  <a href="" className={utils.defaultLink}>
                     career@fiskevegn.no
                   </a>
                 </div>

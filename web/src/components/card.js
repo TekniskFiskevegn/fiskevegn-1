@@ -5,9 +5,9 @@ import styles from "./card.module.css";
 
 // @ sytalaust: add palette option
 
-const Card = ({ title, text, linkSrc, imgSrc, externalLink, styling }) => {
-  const { flat, opacity, subtle, palette, borderRadius, gray } = styling || {};
-  if (!linkSrc) {
+const Card = ({ title, text, url, imgSrc, externalLink, styling = {} }) => {
+  const { flat, opacity, subtle, palette, borderRadius, gray } = styling;
+  if (!url) {
     return null;
   }
 
@@ -44,12 +44,12 @@ const Card = ({ title, text, linkSrc, imgSrc, externalLink, styling }) => {
       )}
     >
       {externalLink && (
-        <a className={cn(styles.link)} href={linkSrc} target="_blank">
+        <a className={cn(styles.link)} href={url} target="_blank">
           {body}
         </a>
       )}
       {!externalLink && (
-        <Link className={cn(styles.link)} to={`${linkSrc}`}>
+        <Link className={cn(styles.link)} to={`${url}`}>
           {body}
         </Link>
       )}
@@ -60,7 +60,7 @@ const Card = ({ title, text, linkSrc, imgSrc, externalLink, styling }) => {
 Card.DefaultProps = {
   title: "",
   text: "",
-  linkSrc: "",
+  url: "",
   imgSrc: "",
   styling: {},
   externalLink: false

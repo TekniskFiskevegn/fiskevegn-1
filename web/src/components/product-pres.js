@@ -16,7 +16,7 @@ const ProductPres = props => {
         <div>
           <h2 className={styles.title}>{title}</h2>
           <p>{text}</p>
-          <a href="" className={utils.callToActionSubtle1}>
+          <a href="" className={utils.defaultLink}>
             Download specification
           </a>
         </div>

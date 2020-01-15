@@ -57,7 +57,7 @@ const NewsList = ({ title, nodes, browseMoreHref }) => {
           ))}
       </ul>
       {browseMoreHref && (
-        <div className={utils.textAlignRight}>
+        <div className={utils.textRight}>
           <Link to="/archive">More news</Link>
         </div>
       )}
@@ -137,7 +137,7 @@ const FiftyFiftyList = ({ ...props }) => {
         )}
       >
         {React.Children.map(children, (child, i) => {
-          return <li>{child}</li>;
+          return <li key={children.id}>{child}</li>;
         })}
       </ul>
     </div>
