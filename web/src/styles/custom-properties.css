@@ -44,8 +44,8 @@ c0c2ce */
   --font-title4-line-height: calc(30 / 21); /* 30px */
   --font-title3-size: calc(24 / var(--unit) * 1rem); /* 24px */
   --font-title3-line-height: calc(33 / 24); /* 33px */
-  --font-title2-size: calc(30 / var(--unit) * 1rem); /* 30px */
-  --font-title2-line-height: calc(39 / 30); /* 39px */
+  --font-title2-size: calc(34 / var(--unit) * 1rem); /* 30px */
+  --font-title2-line-height: calc(43 / 34); /* 39px */
   --font-title1-size: calc(36 / var(--unit) * 1rem); /* 36px */
   --font-title1-line-height: calc(43 / 36); /* 43px */
 

@@ -33,13 +33,12 @@
 
 .description {
   /* color:var(--color-dusk); */
-  text-transform: capitalize;
+  text-transform: uppercase;
   font-weight: 400;
   display:block;
   font-size:14px;
   margin-top:0.5em;
   @media (--medium-and-up){
     font-size:15px;
-    letter-spacing:1px;
   }
 }

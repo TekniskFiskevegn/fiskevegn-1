@@ -6,7 +6,7 @@ import styles from "./block-design.module.css";
 
 // @ sytalaust: add support for images in svg
 
-const BlockDesign = ({ svg, children, bgImage, opacityClass, split, flex, light }) => {
+const BlockDesign = ({ svg, children, bgImage, opacityClass, split, flex, light, gradient }) => {
   if (bgImage) {
     console.log("opacityclass", opacityClass);
     const inlineStyle = {
@@ -24,7 +24,6 @@ const BlockDesign = ({ svg, children, bgImage, opacityClass, split, flex, light 
           opacityClass == "075" ? styles.opacity075 : "",
           opacityClass == "085" ? styles.opacity085 : "",
           opacityClass == "090" ? styles.opacity090 : "",
-          light ? styles.light : "",
           flex ? styles.flex : ""
         )}
         style={inlineStyle}
@@ -38,7 +37,7 @@ const BlockDesign = ({ svg, children, bgImage, opacityClass, split, flex, light 
   }
 
   return (
-    <div className={styles.root}>
+    <div className={cn(styles.root, light ? styles.light : "", gradient ? styles.gradient : "")}>
       {svg && <Svg {...svg} />}
       {children}
     </div>
