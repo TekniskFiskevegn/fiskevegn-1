@@ -4,6 +4,7 @@
 
 @ Sytalaust
 - theme.module.css
+- add palette component
 - button and or links
 - flytte responsive title osv over til utils?
 - add variable for svg fillcolor, or just use predefined classes

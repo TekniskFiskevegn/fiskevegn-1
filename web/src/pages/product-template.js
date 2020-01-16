@@ -11,7 +11,6 @@ import Block from "../components/block";
 import BlockDesign from "../components/block-design";
 import Intro from "../components/intro";
 import List from "../components/list";
-import Card from "../components/card";
 
 import Presentation from "../components/product-pres";
 

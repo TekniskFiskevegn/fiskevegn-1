@@ -9,10 +9,6 @@
   margin:0;
   display:flex;
 
-  /* @media (--medium-and-up) {
-    margin:0 -1em 0 -1em;
-  } */
-
   @nest & li {
     padding:1em 0;
     display:flex;
@@ -66,7 +62,7 @@
   }
 }
 
-.fiftyFiftyList {
+.oneHalf {
   flex-flow: column;
 
   @media (--medium-and-up) {

@@ -11,7 +11,7 @@ import BreadCrumb from "../components/breadcrumb";
 import Svg from "../components/svg";
 import Intro from "../components/intro";
 import List from "../components/list";
-import Card from "../components/card";
+import Item from "../components/item";
 
 import utils from "../components/utils.module.css";
 
@@ -70,7 +70,7 @@ const ProductCategory = props => {
             <InnerContainer>
               <div className={utils.boxShadow}>
                 <List type="fiftyfifty" oddBorder noGap>
-                  <Card
+                  {/* <Card
                     title="Automatic longline systems"
                     text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores poro iste."
                     linkSrc="/product-template"
@@ -108,7 +108,7 @@ const ProductCategory = props => {
                     text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores poro iste."
                     linkSrc="/not-found"
                     styling={{ flat: true, opacity: true, subtle: true }}
-                  />
+                  /> */}
                 </List>
               </div>
             </InnerContainer>

@@ -10,7 +10,7 @@ import InnerContainer from "../components/inner-container";
 import Intro from "../components/intro";
 import Feature from "../components/feature";
 import List from "../components/list";
-import Card from "../components/card";
+import Item from "../components/item";
 import { demoText } from "../lib/demo-content";
 
 import utils from "../components/utils.module.css";
@@ -97,7 +97,7 @@ const About = props => {
           <InnerContainer>
             <Intro {...blockIntro2} margin />
             <List smallGap>
-              <Card
+              {/* <Card
                 title="MMG"
                 text="Måløy Maritime Group"
                 linkSrc="https://www.maloymaritime.no/"
@@ -124,7 +124,7 @@ const About = props => {
                 linkSrc="https://www.ghostgear.org/"
                 styling={{ borderRadius: true, flat: false, gray: true }}
                 externalLink
-              />
+              /> */}
             </List>
           </InnerContainer>
           {/* </BlockDesign> */}

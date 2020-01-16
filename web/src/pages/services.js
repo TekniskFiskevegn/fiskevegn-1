@@ -9,41 +9,17 @@ import Block from "../components/block";
 import BlockDesign from "../components/block-design";
 import Intro from "../components/intro";
 import List from "../components/list";
-import Card from "../components/card";
-
+import Item from "../components/item";
 import utils from "../components/utils.module.css";
-
 import GraphQLErrorList from "../components/graphql-error-list";
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
 
-// export const query = graphql`
-//   query AboutQuery {
-//     about: allSanityProject(
-//       limit: 12
-//       sort: { fields: [publishedAt], order: DESC }
-//       filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
-//     ) {
-//       edges {
-//         node {
-//           id
-//           mainImage {
-//             asset {
-//               _id
-//             }
-//             alt
-//           }
-//           title
-//           _rawExcerpt
-//           slug {
-//             current
-//           }
-//         }
-//       }
-//     }
-//   }
-// `;
+import { demoServices } from "../lib/demo-content";
 
-const Products = props => {
+const Service = props => {
+  const nodes = demoServices;
+  const items = nodes.map(node => <Item {...node} key={node.id || 1} attention />);
+
   return (
     <Layout pageClass="" currentPage="services">
       <SEO title="Fiskevegn products" />
@@ -61,38 +37,8 @@ const Products = props => {
           <BlockDesign bgImage="/sceneries/scenery-6.jpg" opacityClass="015">
             <InnerContainer>
               <div className={utils.boxShadow}>
-                <List type="fiftyfifty" noGap oddBorder>
-                  <Card
-                    title="Fishery development"
-                    text="Sustainable solutions towards safer, cleaner oceans. sustainable solutions"
-                    linkSrc="/not-found"
-                    // imgSrc="/fishery.jpg"
-                    styling={{ flat: true, opacity: true }}
-                  />
-
-                  <Card
-                    title="Project planning"
-                    text="Sustainable solutions towards safer, cleaner oceans. sustainable solutions"
-                    linkSrc="/not-found"
-                    // imgSrc="/rope-2.jpg"
-                    styling={{ flat: true, opacity: true }}
-                  />
-
-                  <Card
-                    title="Bespoke engineering"
-                    text="Sustainable solutions towards safer, cleaner oceans. sustainable solutions"
-                    linkSrc="/not-found"
-                    // imgSrc="/rope-2.jpg"
-                    styling={{ flat: true, opacity: true }}
-                  />
-
-                  <Card
-                    title="Research collaboration"
-                    text="Sustainable solutions towards safer, cleaner oceans. sustainable solutions"
-                    linkSrc="/not-found"
-                    // imgSrc="/fishery.jpg"
-                    styling={{ flat: true, opacity: true }}
-                  />
+                <List oneHalf style={{ noGap: true, oddBorder: true }}>
+                  {items}
                 </List>
               </div>
             </InnerContainer>
@@ -103,4 +49,4 @@ const Products = props => {
   );
 };
 
-export default Products;
+export default Service;

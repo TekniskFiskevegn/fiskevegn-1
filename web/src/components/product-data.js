@@ -10,7 +10,6 @@ import BlockDesign from "../components/block-design";
 import Hero from "../components/hero";
 import Intro from "../components/intro";
 import List from "../components/list";
-import Card from "../components/card";
 
 import utils from "../components/utils.module.css";
 import styles from "../components/product-template.module.css";

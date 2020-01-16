@@ -9,7 +9,7 @@ import Block from "../components/block";
 import BlockDesign from "../components/block-design";
 import Intro from "../components/intro";
 import List from "../components/list";
-import Card from "../components/card";
+import Card from "../components/item";
 import utils from "../components/utils.module.css";
 import GraphQLErrorList from "../components/graphql-error-list";
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";

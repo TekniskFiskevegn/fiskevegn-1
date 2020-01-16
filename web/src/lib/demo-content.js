@@ -1,26 +1,33 @@
-export function demoPage(n) {
-  switch (n) {
-    case "about":
-      return {
-        intro: {}
-      };
-    case "products":
-      return {
-        pageIntro: {
-          name: "Categories",
-          title: "Total provider of modern fishing solutions",
-          text:
-            "Since its inception Fiskevegn has built on the core values of quality, delivery and innovation. Our core values have yielded results for both our customer and for us. Fiskevegn is a leading international manufacturer and supplier of fiber, rope, fishing systems for automatic longlining, fishing gears and supplies for crew and vessels. We are proud to be one of the most trusted names in the global arena of longline fishing."
-        }
-      };
-    case "services":
-      return {};
-    case "contact":
-      return {};
-    default:
-      return {};
-  }
+export function demoProducts() {
+  return {};
 }
+
+export const demoServices = [
+  {
+    id: "1",
+    title: "Fishery development",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores poro iste.",
+    url: "/not-found"
+  },
+  {
+    id: "2",
+    title: "Project planning",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores poro iste.",
+    url: "/not-found"
+  },
+  {
+    id: "3",
+    title: "Bespoke engineering",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores poro iste.",
+    url: "/not-found"
+  },
+  {
+    id: "4",
+    title: "Research collaboration",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores poro iste.",
+    url: "/not-found"
+  }
+];
 
 export function demoText(n) {
   switch (n) {
