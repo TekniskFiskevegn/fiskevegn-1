@@ -19,7 +19,15 @@ const Item = ({ title, text, image, url, externalUrl, attention, wave, inYourFac
     );
   }
   return (
-    <div className={cn(styles.root, styles.linkItem, attention ? styles.attention : "")}>
+    <div
+      className={cn(
+        styles.root,
+        styles.linkItem,
+        attention ? styles.attention : "",
+        subtleAttention ? styles.subtleAttention : "",
+        inYourFace ? styles.inYourFace : ""
+      )}
+    >
       {externalUrl && (
         <a href={url} target="_blank">
           {body}

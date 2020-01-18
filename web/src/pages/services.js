@@ -19,6 +19,12 @@ import { demoServices } from "../lib/demo-content";
 const Service = props => {
   const nodes = demoServices;
   const items = nodes.map(node => <Item {...node} key={node.id || 1} attention />);
+  const pageIntro = {
+    name: "Services",
+    title: "Industry know-how",
+    text:
+      "Fiskevegn supplies business-essential products and services. Supplying the ocean-going fishing fleet in particular can be compared to servicing the airline industry. Many ocean-going fishing vessels barely touch base before returning back to sea. Also for coastal vessels, the reality is that if essensial equipment breaks down or gears are lost, there may be no choice but to return to port while losing time and revenues."
+  };
 
   return (
     <Layout pageClass="" currentPage="services">
@@ -26,11 +32,7 @@ const Service = props => {
       <Container>
         <Block>
           <InnerContainer>
-            <Intro
-              name="Services"
-              title="Industry know-how"
-              text="Fiskevegn supplies business-essential products and services. Supplying the ocean-going fishing fleet in particular can be compared to servicing the airline industry. Many ocean-going fishing vessels barely touch base before returning back to sea. Also for coastal vessels, the reality is that if essensial equipment breaks down or gears are lost, there may be no choice but to return to port while losing time and revenues. "
-            />
+            <Intro {...pageIntro} />
           </InnerContainer>
         </Block>
         <Block>

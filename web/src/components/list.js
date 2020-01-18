@@ -33,10 +33,25 @@ import utils from "./utils.module.css";
 
 // a list should take children or nodes
 
-const List = ({ oneWhole, oneHalf, oneThird, oneFourth, flexAuto, children, nodes, style }) => {
+const List = ({
+  oneWhole,
+  oneHalf,
+  oneThird,
+  oneFourth,
+  flexAuto,
+  children,
+  nodes,
+  browseMoreHref,
+  style
+}) => {
   const customStyle = getStyling(style);
+  const extra = (
+    <div className={utils.textRight}>
+      <Link to="/archive">More news</Link>
+    </div>
+  );
+
   if (oneHalf) {
-    console.log("oneHalf", children);
     return (
       <div className={styles.root}>
         <ul className={cn(styles.ul, styles.oneHalf, customStyle)}>
@@ -44,6 +59,7 @@ const List = ({ oneWhole, oneHalf, oneThird, oneFourth, flexAuto, children, node
             return <li key="foo">{child}</li>;
           })}
         </ul>
+        {browseMoreHref && { extra }}
       </div>
     );
   }
@@ -56,10 +72,10 @@ const getStyling = ({ ...style }) => {
     // spaceAround ? styles.spaceAround : "",
     // justifyCenter ? styles.justifyCenter : "",
     // alignCenter ? styles.alignCenter : "",
-    noGap ? styles.noGap : ""
+    noGap ? styles.noGap : "",
     // smallGap ? styles.smallGap : "",
     // opacity ? styles.opacity : "",
-    // oddBorder ? styles.oddBorder : ""
+    oddBorder ? styles.oddBorder : ""
   );
   return styling;
 };

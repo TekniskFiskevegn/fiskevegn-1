@@ -1,6 +1,29 @@
-export function demoProducts() {
-  return {};
-}
+export const demoProducts = [
+  {
+    id: "Fishery",
+    title: "Fishery",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores poro iste.",
+    url: "/product-category"
+  },
+  {
+    id: "Aquaculture",
+    title: "Aquaculture",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores poro iste.",
+    url: "/not-found"
+  },
+  {
+    id: "Ropes",
+    title: "Ropes",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores poro iste.",
+    url: "/not-found"
+  },
+  {
+    id: "General-supplies",
+    title: "General supplies",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores poro iste.",
+    url: "/not-found"
+  }
+];
 
 export const demoServices = [
   {
@@ -40,21 +63,19 @@ export function demoText(n) {
   }
 }
 
-export function demoDepartment(n) {
-  return {
-    intro: {
-      name: "Department",
-      title: "Ålesund, Norway",
-      text: "Our department in Ålesund, Norway"
-    },
-    content: {
-      demoImage: "/related-images/contact-aalesund.jpg",
-      title: "Contact",
-      text:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores porro iste sint suscipit",
-      phone: "+47 5785 8400",
-      email: "aalesund@fiskevegn.no",
-      map: "/"
-    }
-  };
-}
+export const demoDepartment = {
+  intro: {
+    name: "Department",
+    title: "Ålesund, Norway",
+    text: "Our department in Ålesund, Norway"
+  },
+  content: {
+    demoImage: "/related-images/contact-aalesund.jpg",
+    title: "Contact",
+    text:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores porro iste sint suscipit",
+    phone: "+47 5785 8400",
+    email: "aalesund@fiskevegn.no",
+    map: "/"
+  }
+};

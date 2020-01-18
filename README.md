@@ -97,6 +97,9 @@ You can create a folder named static at the root of your project. Every file you
 - https://google-webfonts-helper.herokuapp.com/
 - http://svgicons.sparkk.fr/
 - https://iconmonstr.com/
+- Dribble
+- Adobe stock videos
+- https://uigradients.com/#Influenza
 
 ## What I have installed
 
