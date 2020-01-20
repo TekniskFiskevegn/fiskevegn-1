@@ -3,7 +3,7 @@ import React from "react";
 import { cn } from "../lib/helpers";
 import styles from "./item.module.css";
 
-const Item = ({ title, text, image, url, externalUrl, attention, wave, inYourFace }) => {
+const Item = ({ title, text, image, url, externalUrl, attention, subtleAttention, inYourFace }) => {
   const body = (
     <>
       <h3>{title}</h3>

@@ -5,7 +5,6 @@ import styles from "./block-design.module.css";
 
 const BlockDesign = ({ svg, children, bgImage, opacityClass, split, flex, light }) => {
   if (bgImage) {
-    console.log("opacityclass", opacityClass);
     const inlineStyle = {
       backgroundImage: `url(${bgImage})`
     };

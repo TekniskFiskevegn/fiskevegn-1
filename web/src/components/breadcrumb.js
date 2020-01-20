@@ -1,9 +1,8 @@
 import { Link } from "gatsby";
 import React from "react";
-import { cn } from "../lib/helpers";
 import styles from "./breadcrumb.module.css";
 
-const Card = ({ goBack }) => {
+const BreadCrumb = ({ goBack }) => {
   return (
     <div className={styles.root}>
       <div className={styles.breadcrumbs}>
@@ -13,9 +12,9 @@ const Card = ({ goBack }) => {
   );
 };
 
-Card.DefaultProps = {
+BreadCrumb.DefaultProps = {
   add: false,
   withCloseButton: false
 };
 
-export default Card;
+export default BreadCrumb;

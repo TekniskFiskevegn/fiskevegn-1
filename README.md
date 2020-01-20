@@ -28,6 +28,21 @@
 - make a new list type called categories, which needs to be flexible based on how many categories
 
 
+## Sytalaust!o workflow
+
+- Git commits:
+  - "continue work on ..."
+  - "finished work on ..."
+  - "fixed bug with ..."
+  - "hotfix for ..."
+
+- React components vs. functional components
+
+There are two main types of components in React. Class Components and Functional Components. The difference is pretty obvious. Class components are ES6 classes and Functional Components are functions. The only constraint for a functional component is to accept props as an argument and return valid JSX.
+
+The key thing that makes this type of component different from a class component is the lack of state and lifecycle methods. This is why functional components are also commonly referred to as stateless components.  
+
+Use functional components whenever possible. You might be wondering what all the fuss is about for a type of component that actually removes functionality. But it turns out constraints are often super valuable. One of the main benefits of functional components is that they make your code easier to read and understand. It’s easier to test functional components because you don’t have to worry about hidden state or side effects. For every input (props), functional components have exactly one output. Functional components depend only on the props they are given to produce an output which in turn makes debugging easier. But by removing function level state, we often make our components easier to use and more widely applicable. 
 
 
 ## Graphql queries

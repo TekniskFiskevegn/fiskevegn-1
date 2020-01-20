@@ -1,7 +1,5 @@
-import { Link } from "gatsby";
 import React from "react";
-
-import utils from "./utils.module.css";
+import { Link } from "gatsby";
 import styles from "./footer.module.css";
 
 function Footer(props) {

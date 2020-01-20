@@ -287,7 +287,12 @@ const IndexPage = props => {
         {newsNodes && (
           <Block name="news">
             <InnerContainer>
-              <List type="news" title="Latest news" nodes={newsNodes} browseMoreHref="/archive/" />
+              <List
+                oneHalf
+                browseMoreTitle="Latest news"
+                nodes={newsNodes}
+                browseMoreHref="/archive/"
+              />
             </InnerContainer>
           </Block>
         )}

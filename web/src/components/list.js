@@ -2,7 +2,7 @@ import { Link } from "gatsby";
 import React from "react";
 import { cn } from "../lib/helpers";
 import Intro from "./intro";
-import NewsTeaser from "./news-teaser";
+import ListTeaser from "./news-teaser";
 import styles from "./list.module.css";
 import utils from "./utils.module.css";
 
@@ -31,7 +31,8 @@ import utils from "./utils.module.css";
 //   }
 // };
 
-// a list should take children or nodes
+// a list takes children or nodes
+// a list-teaster controls output of nodes
 
 const List = ({
   oneWhole,
@@ -42,24 +43,29 @@ const List = ({
   children,
   nodes,
   browseMoreHref,
+  browseMoreTitle,
   style
 }) => {
   const customStyle = getStyling(style);
   const extra = (
     <div className={utils.textRight}>
-      <Link to="/archive">More news</Link>
+      <Link to="/archive">{browseMoreTitle}</Link>
     </div>
   );
 
   if (oneHalf) {
+    console.log("one half", children, nodes);
     return (
       <div className={styles.root}>
         <ul className={cn(styles.ul, styles.oneHalf, customStyle)}>
-          {React.Children.map(children, (child, i) => {
-            return <li key="foo">{child}</li>;
-          })}
+          {children &&
+            children.length > 0 &&
+            React.Children.map(children, (child, i) => {
+              return <li key={i}>{child}</li>;
+            })}
+          {/* {nodes && nodes.map((node, i) => <ListTeaser key={node.id}></ListTeaser>)} */}
+          {nodes && nodes.map((node, i) => <p key={node.id}>{node.id}</p>)}
         </ul>
-        {browseMoreHref && { extra }}
       </div>
     );
   }
@@ -116,7 +122,7 @@ const NewsList = ({ title, nodes, browseMoreHref }) => {
       <Intro title={title} />
       <ul className={cn(styles.ul, styles.newsList)}>
         {nodes &&
-          nodes.map(node => (
+          nodes.map(node, i => (
             <li key={node.id}>
               <NewsTeaser {...node} />
             </li>

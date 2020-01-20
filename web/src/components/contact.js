@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "gatsby";
 import { buildImageObj, cn } from "../lib/helpers";
 import { imageUrlFor } from "../lib/image-url";
 import Intro from "../components/intro";
@@ -28,7 +27,7 @@ const Contact = ({ intro = {}, content = {}, styling = {} }) => {
           )}
           {demoImage && <img src={demoImage} alt="" />}
         </div>
-        <div className={cn(styles.text, theme == "white" ? styles.themeWhite : "")}>
+        <div className={cn(styles.text)}>
           <h3 className={styles.title}>{title}</h3>
           <p>{text}</p>
           <List type="vertical" thight>
