@@ -18,7 +18,9 @@ import { demoProducts } from "../lib/demo-content";
 
 const Products = props => {
   const nodes = demoProducts;
-  const items = nodes.map(node => <Item {...node} key={node.id || 1} attention />);
+  const items = nodes.map(node => (
+    <Item {...node} key={node.id || 1} style={{ attention: true, opacity: true }} />
+  ));
   const pageIntro = {
     name: "Categories",
     title: "Total provider of modern fishing solutions",
@@ -39,7 +41,7 @@ const Products = props => {
           <BlockDesign bgImage="/sceneries/scenery-7.jpg" opacityClass="015">
             <InnerContainer>
               <div className={utils.boxShadow}>
-                <List type="fiftyfifty" noGap oddBorder>
+                <List oneHalf style={{ noGap: true, oddBorder: true }}>
                   {items}
                 </List>
               </div>

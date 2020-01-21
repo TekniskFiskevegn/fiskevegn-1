@@ -18,7 +18,9 @@ import { demoServices } from "../lib/demo-content";
 
 const Service = props => {
   const nodes = demoServices;
-  const items = nodes.map(node => <Item {...node} key={node.id || 1} attention />);
+  const items = nodes.map(node => (
+    <Item {...node} key={node.id || 1} style={{ attention: true, opacity: true }} />
+  ));
   const pageIntro = {
     name: "Services",
     title: "Industry know-how",

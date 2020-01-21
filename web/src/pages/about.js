@@ -77,7 +77,7 @@ const About = props => {
         <Block>
           <BlockDesign bgImage="/sceneries/scenery-4.jpg" opacityClass="050" flex>
             <InnerContainer>
-              <List type="justifiedCenter">
+              <List style={{ justifyCenter: true }}>
                 <Feature text="New Zealand" description="Antarctic fishery" />
                 <Feature text="USA" description="Serving the Alaskan market" />
                 <Feature text="Russia" description="Longlines & hooks to our neighbour" />
@@ -130,7 +130,7 @@ const About = props => {
           {/* </BlockDesign> */}
         </Block>
 
-        <Block name="Partners">
+        <Block name="career">
           <InnerContainer>
             <div className={cn(borrowed.root)}>
               <div className={borrowed.first}>

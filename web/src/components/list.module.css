@@ -20,6 +20,23 @@
   }
 }
 
+.oneHalf {
+  flex-flow: column;
+
+  @media (--medium-and-up) {
+    flex-flow:row;
+    flex-wrap:wrap;
+  }
+
+  @nest & li {
+    flex:1;
+    @media (--medium-and-up) {
+      flex:50%;
+      max-width:50%;  
+    }
+  }
+}
+
 .defaultList {
   flex-flow:column;
   align-items: center; 
@@ -62,22 +79,6 @@
   }
 }
 
-.oneHalf {
-  flex-flow: column;
-
-  @media (--medium-and-up) {
-    flex-flow:row;
-    flex-wrap:wrap;
-  }
-
-  @nest & li {
-    flex:1;
-    @media (--medium-and-up) {
-      flex:50%;
-      max-width:50%;  
-    }
-  }
-}
 
 .newsList {
   flex-flow: column;
@@ -102,7 +103,7 @@
   }
 }
 
-.justifiedCenterList {
+.justifyCenter {
   flex-flow:column;
   justify-content: center;
   @nest & li {
@@ -117,7 +118,7 @@
     }
   }
 }
-.justifiedSpaceAroundList {
+.spaceAround {
   flex-flow:column;
   justify-content: space-around;
   @nest & li {

@@ -59,49 +59,61 @@ const List = ({
       <div className={styles.root}>
         <ul className={cn(styles.ul, styles.oneHalf, customStyle)}>
           {children &&
-            children.length > 0 &&
             React.Children.map(children, (child, i) => {
               return <li key={i}>{child}</li>;
             })}
-          {/* {nodes && nodes.map((node, i) => <ListTeaser key={node.id}></ListTeaser>)} */}
-          {nodes && nodes.map((node, i) => <p key={node.id}>{node.id}</p>)}
+          {nodes &&
+            nodes.map((node, i) => (
+              <li>
+                <ListTeaser key={node.id} {...node} />
+              </li>
+            ))}
         </ul>
+        {browseMoreHref && (
+          <div className={utils.textRight}>
+            <Link to="/archive">More news</Link>
+          </div>
+        )}
       </div>
     );
   }
+  return (
+    <div className={styles.root}>
+      <ul className={cn(styles.ul, customStyle)}>
+        {children &&
+          React.Children.map(children, (child, i) => {
+            return <li key={i}>{child}</li>;
+          })}
+        {nodes &&
+          nodes.map((node, i) => (
+            <li>
+              <ListTeaser key={node.id} {...node} />
+            </li>
+          ))}
+      </ul>
+      {browseMoreHref && (
+        <div className={utils.textRight}>
+          <Link to="/archive">More news</Link>
+        </div>
+      )}
+    </div>
+  );
 };
 
 const getStyling = ({ ...style }) => {
   console.log("getStyling", style);
   const { spaceAround, justifyCenter, alignCenter, noGap, smallGap, opacity, oddBorder } = style;
   const styling = cn(
-    // spaceAround ? styles.spaceAround : "",
-    // justifyCenter ? styles.justifyCenter : "",
+    spaceAround ? styles.spaceAround : "",
+    justifyCenter ? styles.justifyCenter : "",
     // alignCenter ? styles.alignCenter : "",
     noGap ? styles.noGap : "",
     // smallGap ? styles.smallGap : "",
-    // opacity ? styles.opacity : "",
+    opacity ? styles.opacity : "",
     oddBorder ? styles.oddBorder : ""
   );
   return styling;
 };
-
-// const oneHalf = (
-//   <div className={styles.root}>
-//     <ul
-//       className={cn(
-//         styles.ul,
-//         styles.fiftyFiftyList,
-//         noGap ? styles.noGap : "",
-//         oddBorder ? styles.oddBorder : ""
-//       )}
-//     >
-//       {React.Children.map(children, (child, i) => {
-//         return <li key={children.id}>{child}</li>;
-//       })}
-//     </ul>
-//   </div>
-// );
 
 const DefaultList = ({ ...props }) => {
   const { children, smallGap } = props;
@@ -116,26 +128,26 @@ const DefaultList = ({ ...props }) => {
   );
 };
 
-const NewsList = ({ title, nodes, browseMoreHref }) => {
-  return (
-    <div className={styles.root}>
-      <Intro title={title} />
-      <ul className={cn(styles.ul, styles.newsList)}>
-        {nodes &&
-          nodes.map(node, i => (
-            <li key={node.id}>
-              <NewsTeaser {...node} />
-            </li>
-          ))}
-      </ul>
-      {browseMoreHref && (
-        <div className={utils.textRight}>
-          <Link to="/archive">More news</Link>
-        </div>
-      )}
-    </div>
-  );
-};
+// const NewsList = ({ title, nodes, browseMoreHref }) => {
+//   return (
+//     <div className={styles.root}>
+//       <Intro title={title} />
+//       <ul className={cn(styles.ul, styles.newsList)}>
+//         {nodes &&
+//           nodes.map(node, i => (
+//             <li key={node.id}>
+//               <NewsTeaser {...node} />
+//             </li>
+//           ))}
+//       </ul>
+//       {browseMoreHref && (
+//         <div className={utils.textRight}>
+//           <Link to="/archive">More news</Link>
+//         </div>
+//       )}
+//     </div>
+//   );
+// };
 
 const JustifiedCenterList = ({ ...props }) => {
   const { children, border, flexAuto } = props;

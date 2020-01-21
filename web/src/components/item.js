@@ -3,7 +3,8 @@ import React from "react";
 import { cn } from "../lib/helpers";
 import styles from "./item.module.css";
 
-const Item = ({ title, text, image, url, externalUrl, attention, subtleAttention, inYourFace }) => {
+const Item = ({ title, text, image, url, externalUrl, style = {} }) => {
+  const { attention, subtleAttention, inYourFace, opacity } = style;
   const body = (
     <>
       <h3>{title}</h3>
@@ -25,7 +26,8 @@ const Item = ({ title, text, image, url, externalUrl, attention, subtleAttention
         styles.linkItem,
         attention ? styles.attention : "",
         subtleAttention ? styles.subtleAttention : "",
-        inYourFace ? styles.inYourFace : ""
+        inYourFace ? styles.inYourFace : "",
+        opacity ? styles.opacity : ""
       )}
     >
       {externalUrl && (
