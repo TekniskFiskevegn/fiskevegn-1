@@ -86,51 +86,49 @@ const About = props => {
           </BlockDesign>
         </Block>
 
-        <Block name="Partners">
-          {/* <BlockDesign
-            // svg={{
-            //   wave: true,
-            //   number: "10",
-            //   positionTop: true
-            // }}
-          > */}
-          <InnerContainer>
-            <Intro {...blockIntro2} margin />
-            <List smallGap>
-              {/* <Card
-                title="MMG"
-                text="Måløy Maritime Group"
-                linkSrc="https://www.maloymaritime.no/"
-                styling={{ borderRadius: true, flat: false, gray: true }}
-                externalLink
-              />
-              <Card
-                title="Colto"
-                text="Coalition of Legal Toothfish Operators"
-                linkSrc="https://www.colto.org/"
-                styling={{ borderRadius: true, flat: false, gray: true }}
-                externalLink
-              />
-              <Card
-                title="Eurocord"
-                text="European organization for cordage manufacturers"
-                linkSrc="https://www.eurocord.com/"
-                styling={{ borderRadius: true, flat: false, gray: true }}
-                externalLink
-              />
-              <Card
-                title="GGGI"
-                text="Global Ghost Gear Initiative"
-                linkSrc="https://www.ghostgear.org/"
-                styling={{ borderRadius: true, flat: false, gray: true }}
-                externalLink
-              /> */}
-            </List>
-          </InnerContainer>
-          {/* </BlockDesign> */}
+        <Block verticalRhythm={{ top: 0, bottom: 1 }}>
+          <BlockDesign light gradient>
+            <InnerContainer>
+              <Intro {...blockIntro2} margin />
+              <List>
+                <a href="https://www.maloymaritime.no/" className={utils.card}>
+                  <div className={utils.cardImage}>
+                    <img src="/logos/mmg.png" alt="" />
+                  </div>
+                  <div className={utils.cardInfo}>
+                    <span>Måløy Maritime Group</span>
+                  </div>
+                </a>
+                <a href="https://www.colto.org/" className={utils.card}>
+                  <div className={utils.cardImage}>
+                    <img src="/logos/colto.png" alt="" />
+                  </div>
+                  <div className={utils.cardInfo}>
+                    <span>Coalition of Legal Toothfish Operators</span>
+                  </div>
+                </a>
+                <a href="https://www.eurocord.com/" className={utils.card}>
+                  <div className={utils.cardImage}>
+                    <img src="/logos/eurocord.png" alt="" />
+                  </div>
+                  <div className={utils.cardInfo}>
+                    <span>European organization for cordage manufacturers</span>
+                  </div>
+                </a>
+                <a href="https://www.ghostgear.org/" className={utils.card}>
+                  <div className={utils.cardImage}>
+                    <img src="/logos/gggi.jpg" alt="" />
+                  </div>
+                  <div className={utils.cardInfo}>
+                    <span>Global Ghost Gear Initiative</span>
+                  </div>
+                </a>
+              </List>
+            </InnerContainer>
+          </BlockDesign>
         </Block>
 
-        <Block name="career">
+        <Block>
           <InnerContainer>
             <div className={cn(borrowed.root)}>
               <div className={borrowed.first}>
@@ -150,53 +148,6 @@ const About = props => {
             </div>
           </InnerContainer>
         </Block>
-
-        {/* <Block name="Partners">
-          <InnerContainer>
-            <div className={cn(borrowed.root, borrowed.reverse)}>
-              <div className={borrowed.first}>
-                <div>
-                  <h2 className={borrowed.titleSubtle}>Partners</h2>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-                </div>
-              </div>
-              <div className={borrowed.second}>
-                <div className={utils.boxShadow}>
-                  <List type="fiftyfifty" noGap>
-                    <Card
-                      title="MMG"
-                      text="Måløy Maritime Group"
-                      linkSrc="https://www.maloymaritime.no/"
-                      styling={{ borderRadius: true, flat: false }}
-                      externalLink
-                    />
-                    <Card
-                      title="Colto"
-                      text="Coalition of Legal Toothfish Operators"
-                      linkSrc="https://www.colto.org/"
-                      styling={{ borderRadius: true, flat: false }}
-                      externalLink
-                    />
-                    <Card
-                      title="Eurocord"
-                      text="European organization for cordage manufacturers"
-                      linkSrc="https://www.eurocord.com/"
-                      styling={{ borderRadius: true, flat: false }}
-                      externalLink
-                    />
-                    <Card
-                      title="GGGI"
-                      text="Global Ghost Gear Initiative"
-                      linkSrc="https://www.ghostgear.org/"
-                      styling={{ borderRadius: true, flat: false }}
-                      externalLink
-                    />
-                  </List>
-                </div>
-              </div>
-            </div>
-          </InnerContainer>
-        </Block> */}
       </Container>
     </Layout>
   );

@@ -126,3 +126,7 @@
 .light {
   background-color:#fbfbfb;
 }
+
+.gradient {
+  background-image: linear-gradient(#f5f5f5,var(--color-white));
+}
