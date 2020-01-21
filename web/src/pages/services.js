@@ -18,9 +18,9 @@ import { demoServices } from "../lib/demo-content";
 
 const Service = props => {
   const nodes = demoServices;
-  const items = nodes.map(node => (
-    <Item {...node} key={node.id || 1} style={{ attention: true, opacity: true }} />
-  ));
+  // const items = nodes.map(node => (
+  //   <Item {...node} key={node.id || 1} style={{ attention: true, opacity: true }} />
+  // ));
   const pageIntro = {
     name: "Services",
     title: "Industry know-how",
@@ -42,7 +42,7 @@ const Service = props => {
             <InnerContainer>
               <div className={utils.boxShadow}>
                 <List oneHalf style={{ noGap: true, oddBorder: true }}>
-                  {items}
+                  {/* {items} */}
                 </List>
               </div>
             </InnerContainer>

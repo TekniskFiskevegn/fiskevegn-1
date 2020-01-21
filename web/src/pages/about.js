@@ -11,7 +11,7 @@ import Intro from "../components/intro";
 import Feature from "../components/feature";
 import List from "../components/list";
 import Item from "../components/item";
-import { demoText } from "../lib/demo-content";
+import { demoText, demoPartners, demoFeatures } from "../lib/demo-content";
 
 import utils from "../components/utils.module.css";
 import borrowed from "../components/product-pres.module.css";
@@ -19,34 +19,40 @@ import borrowed from "../components/product-pres.module.css";
 import GraphQLErrorList from "../components/graphql-error-list";
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
 
-export const query = graphql`
-  query AboutQuery {
-    about: allSanityProject(
-      limit: 12
-      sort: { fields: [publishedAt], order: DESC }
-      filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
-    ) {
-      edges {
-        node {
-          id
-          mainImage {
-            asset {
-              _id
-            }
-            alt
-          }
-          title
-          _rawExcerpt
-          slug {
-            current
-          }
-        }
-      }
-    }
-  }
-`;
+// export const query = graphql`
+//   query AboutQuery {
+//     about: allSanityProject(
+//       limit: 12
+//       sort: { fields: [publishedAt], order: DESC }
+//       filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
+//     ) {
+//       edges {
+//         node {
+//           id
+//           mainImage {
+//             asset {
+//               _id
+//             }
+//             alt
+//           }
+//           title
+//           _rawExcerpt
+//           slug {
+//             current
+//           }
+//         }
+//       }
+//     }
+//   }
+// `;
 
 const About = props => {
+  const partnerNodes = demoPartners;
+  const featureNodes = demoFeatures;
+  // const partners = nodes.map(node => (
+  //   <Item {...node} key={node.id || 1} style={{ attention: true, opacity: true }} />
+  // ));
+
   const blockIntro = {
     name: "Made in norway",
     title: "Leading Longline Manufacturer",
@@ -74,13 +80,13 @@ const About = props => {
           </InnerContainer>
         </Block>
 
-        <Block>
+        <Block verticalRhythm={{ bottom: 0 }}>
           <BlockDesign bgImage="/sceneries/scenery-4.jpg" opacityClass="050" flex>
             <InnerContainer>
-              <List style={{ justifyCenter: true }}>
-                <Feature text="New Zealand" description="Antarctic fishery" />
+              <List nodes={demoFeatures} listItemStyle="feature">
+                {/* <Feature text="New Zealand" description="Antarctic fishery" />
                 <Feature text="USA" description="Serving the Alaskan market" />
-                <Feature text="Russia" description="Longlines & hooks to our neighbour" />
+                <Feature text="Russia" description="Longlines & hooks to our neighbour" /> */}
               </List>
             </InnerContainer>
           </BlockDesign>
@@ -90,8 +96,8 @@ const About = props => {
           <BlockDesign light gradient>
             <InnerContainer>
               <Intro {...blockIntro2} margin />
-              <List>
-                <a href="https://www.maloymaritime.no/" className={utils.card}>
+              <List nodes={partnerNodes} style="" listItemStyle="pop">
+                {/* <a href="https://www.maloymaritime.no/" className={utils.card}>
                   <div className={utils.cardImage}>
                     <img src="/logos/mmg.png" alt="" />
                   </div>
@@ -122,7 +128,7 @@ const About = props => {
                   <div className={utils.cardInfo}>
                     <span>Global Ghost Gear Initiative</span>
                   </div>
-                </a>
+                </a> */}
               </List>
             </InnerContainer>
           </BlockDesign>

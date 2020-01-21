@@ -3,6 +3,7 @@ import React from "react";
 import { cn } from "../lib/helpers";
 import Intro from "./intro";
 import ListTeaser from "./news-teaser";
+import Item from "./item";
 import styles from "./list.module.css";
 import utils from "./utils.module.css";
 
@@ -31,74 +32,130 @@ import utils from "./utils.module.css";
 //   }
 // };
 
-// a list takes children or nodes
-// a list-teaster controls output of nodes
+// A list takes nodes [] and style {}
 
-const List = ({
-  oneWhole,
-  oneHalf,
-  oneThird,
-  oneFourth,
-  flexAuto,
-  children,
-  nodes,
-  browseMoreHref,
-  browseMoreTitle,
-  style
-}) => {
-  const customStyle = getStyling(style);
-  const extra = (
-    <div className={utils.textRight}>
-      <Link to="/archive">{browseMoreTitle}</Link>
-    </div>
-  );
-
-  if (oneHalf) {
-    console.log("one half", children, nodes);
-    return (
-      <div className={styles.root}>
-        <ul className={cn(styles.ul, styles.oneHalf, customStyle)}>
-          {children &&
-            React.Children.map(children, (child, i) => {
-              return <li key={i}>{child}</li>;
-            })}
-          {nodes &&
-            nodes.map((node, i) => (
-              <li>
-                <ListTeaser key={node.id} {...node} />
-              </li>
-            ))}
-        </ul>
-        {browseMoreHref && (
-          <div className={utils.textRight}>
-            <Link to="/archive">More news</Link>
-          </div>
-        )}
-      </div>
-    );
+const List = ({ nodes, style = "", listItemStyle = "" }) => {
+  if (!nodes) {
+    return null;
   }
+
+  const customStyle = getCustomStyle(style);
+
   return (
     <div className={styles.root}>
       <ul className={cn(styles.ul, customStyle)}>
-        {children &&
-          React.Children.map(children, (child, i) => {
-            return <li key={i}>{child}</li>;
-          })}
         {nodes &&
           nodes.map((node, i) => (
-            <li>
-              <ListTeaser key={node.id} {...node} />
+            <li key={i}>
+              <Item key={node.id} {...node} style={listItemStyle} />
             </li>
           ))}
       </ul>
-      {browseMoreHref && (
-        <div className={utils.textRight}>
-          <Link to="/archive">More news</Link>
-        </div>
-      )}
     </div>
   );
 };
+
+const getCustomStyle = style => {
+  const foo = "";
+
+  return foo;
+};
+
+List.DefaultProps = {
+  style: "",
+  listItemStyle: "pop"
+};
+
+// const List = ({
+//   oneWhole,
+//   oneHalf,
+//   oneThird,
+//   oneFourth,
+//   flexAuto,
+//   children,
+//   nodes,
+//   browseMoreHref,
+//   browseMoreTitle,
+//   style
+// }) => {
+//   const customStyle = getStyling(style);
+//   const extra = (
+//     <div className={utils.textRight}>
+//       <Link to="/archive">{browseMoreTitle}</Link>
+//     </div>
+//   );
+
+//   if (oneHalf) {
+//     console.log("one half", children, nodes);
+//     return (
+//       <div className={styles.root}>
+//         <ul className={cn(styles.ul, styles.oneHalf, customStyle)}>
+//           {children &&
+//             React.Children.map(children, (child, i) => {
+//               return <li key={i}>{child}</li>;
+//             })}
+//           {nodes &&
+//             nodes.map((node, i) => (
+//               <li>
+//                 <ListTeaser key={node.id} {...node} />
+//               </li>
+//             ))}
+//         </ul>
+//         {browseMoreHref && (
+//           <div className={utils.textRight}>
+//             <Link to="/archive">More news</Link>
+//           </div>
+//         )}
+//       </div>
+//     );
+//   }
+//   if (oneFourth) {
+//     console.log("one fourth", children, nodes);
+//     return (
+//       <div className={styles.root}>
+//         <ul className={cn(styles.ul, styles.oneFourth, customStyle)}>
+//           {children &&
+//             React.Children.map(children, (child, i) => {
+//               return <li key={i}>{child}</li>;
+//             })}
+//           {nodes &&
+//             nodes.map((node, i) => (
+//               <li>
+//                 <ListTeaser key={node.id} {...node} />
+//               </li>
+//             ))}
+//         </ul>
+//         {browseMoreHref && (
+//           <div className={utils.textRight}>
+//             <Link to="/archive">More news</Link>
+//           </div>
+//         )}
+//       </div>
+//     );
+//   }
+
+//   return (
+//     <div className={styles.root}>
+//       <ul className={cn(styles.ul, customStyle)}>
+//         {children &&
+//           React.Children.map(children, (child, i) => {
+//             return <li key={i}>{child}</li>;
+//           })}
+//         {nodes &&
+//           nodes.map((node, i) => (
+//             <li>
+//               <ListTeaser key={node.id} {...node} />
+//             </li>
+//           ))}
+//       </ul>
+//       {browseMoreHref && (
+//         <div className={utils.textRight}>
+//           <Link to="/archive">More news</Link>
+//         </div>
+//       )}
+//     </div>
+//   );
+// };
 
 const getStyling = ({ ...style }) => {
   console.log("getStyling", style);

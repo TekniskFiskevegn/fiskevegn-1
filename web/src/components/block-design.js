@@ -3,7 +3,7 @@ import { cn } from "../lib/helpers";
 import Svg from "./svg";
 import styles from "./block-design.module.css";
 
-const BlockDesign = ({ svg, children, bgImage, opacityClass, split, flex, light }) => {
+const BlockDesign = ({ svg, children, bgImage, opacityClass, split, flex, light, gradient }) => {
   if (bgImage) {
     const inlineStyle = {
       backgroundImage: `url(${bgImage})`

@@ -8,11 +8,17 @@
   padding:0;
   margin:0;
   display:flex;
+  flex-flow:column;
+
+  @media (--medium-and-up) {
+    flex-flow:row;
+  }
 
   @nest & li {
-    padding:1em 0;
+    padding:0;
     display:flex;
     align-self: stretch;
+    flex:1;
 
     @media (--medium-and-up) {
       padding:1em;
@@ -34,6 +40,28 @@
       flex:50%;
       max-width:50%;  
     }
+  }
+}
+
+.oneFourth {
+  flex-flow: column;
+  
+  @media (--medium-and-up) {
+    flex-flow:row;
+    flex-wrap:wrap;
+  }
+
+  @nest & li {
+    flex:1;
+    padding:0.5em;
+    @media (--medium-and-up) {
+      flex:25%;
+      max-width:25%;  
+    }
+    /* @media (--large-and-up) {
+      flex:25%;
+      max-width:25%;
+    } */
   }
 }
 

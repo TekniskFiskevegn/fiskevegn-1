@@ -17,10 +17,11 @@ import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
 import { demoProducts } from "../lib/demo-content";
 
 const Products = props => {
+  const page = {};
   const nodes = demoProducts;
-  const items = nodes.map(node => (
-    <Item {...node} key={node.id || 1} style={{ attention: true, opacity: true }} />
-  ));
+  // const items = nodes.map(node => (
+  //   <Item {...node} key={node.id || 1} style={{ attention: true, opacity: true }} />
+  // ));
   const pageIntro = {
     name: "Categories",
     title: "Total provider of modern fishing solutions",
@@ -42,7 +43,7 @@ const Products = props => {
             <InnerContainer>
               <div className={utils.boxShadow}>
                 <List oneHalf style={{ noGap: true, oddBorder: true }}>
-                  {items}
+                  {/* {items} */}
                 </List>
               </div>
             </InnerContainer>

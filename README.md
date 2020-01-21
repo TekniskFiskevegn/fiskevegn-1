@@ -17,6 +17,9 @@
 - clean up color variables
 - make new custom block as seen on screenshot
 - add themeprovider component, variables or classes?
+- make Item.js more customizeable
+- intro left align, more padding  ++++
+- all content left align option ++++
 
 @ Fiskevegn
 - ui text switch no eng

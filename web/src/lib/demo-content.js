@@ -1,3 +1,52 @@
+export const demoFeatures = [
+  {
+    id: "1",
+    title: "New Zealand",
+    text: "Antarctic fishery"
+  },
+  {
+    id: "2",
+    title: "USA",
+    text: "Serving the Alaskan market"
+  },
+  {
+    id: "3",
+    title: "Russia",
+    text: "Longlines & hooks to our neighbour"
+  }
+];
+
+export const demoPartners = [
+  {
+    id: "1",
+    title: "Måløy Maritime Group",
+    imgSrc: "/logos/mmg.png",
+    url: "https://www.maloymaritime.no/",
+    externalUrl: true
+  },
+  {
+    id: "2",
+    title: "Coalition of Legal Toothfish Operators",
+    imgSrc: "/logos/colto.png",
+    url: "https://www.colto.org/",
+    externalUrl: true
+  },
+  {
+    id: "3",
+    title: "European organization for cordage manufacturers",
+    imgSrc: "/logos/eurocord.png",
+    url: "https://www.eurocord.com/",
+    externalUrl: true
+  },
+  {
+    id: "4",
+    title: "Global Ghost Gear Initiative",
+    imgSrc: "/logos/gggi.jpg",
+    url: "https://www.ghostgear.org/",
+    externalUrl: true
+  }
+];
+
 export const demoProducts = [
   {
     id: "Fishery",
