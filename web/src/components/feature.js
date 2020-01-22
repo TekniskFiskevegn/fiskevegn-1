@@ -1,6 +1,7 @@
 import React from "react";
 import { cn } from "../lib/helpers";
 import styles from "./feature.module.css";
+import utils from "./utils.module.css";
 
 const Feature = ({ text, description, isNumber = false }) => (
   <div className={styles.root}>

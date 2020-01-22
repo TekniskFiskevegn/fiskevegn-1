@@ -1,9 +1,9 @@
 @import '../styles/custom-media.css';
 @import '../styles/custom-properties.css';
-
+/* 
 :root {
  
-}
+} */
 
 /*
  * Statically sized elements
@@ -81,6 +81,11 @@
     font-size: var(--font-title2-size);
     line-height: var(--font-title2-line-height);
   }
+  @media (--large-and-up) {
+    margin: 0rem 0 1.5rem;
+    font-size: var(--font-title1-size);
+    line-height: var(--font-title1-line-height);
+  }
 }
 
 .responsiveTitle2 {
@@ -93,8 +98,7 @@
     font-size: var(--font-title3-size);
     line-height: var(--font-title3-line-height);
   }
-
-  @media (--media-min-medium) {
+  @media (--large-and-up) {
     font-size: var(--font-title2-size);
     line-height: var(--font-title2-line-height);
   }
@@ -110,11 +114,6 @@
     font-size: var(--font-large-size);
     line-height: var(--font-large-line-height);
   }
-
-  @media (--media-min-medium) {
-    font-size: var(--font-title3-size);
-    line-height: var(--font-title3-line-height);
-  }
 }
 
 .responsiveTitle4 {
@@ -125,10 +124,5 @@
   @media (--medium-and-up) {
     font-size: var(--font-base-size);
     line-height: var(--font-base-line-height);
-  }
-
-  @media (--media-min-medium) {
-    font-size: var(--font-large-size);
-    line-height: var(--font-large-line-height);
   }
 }

@@ -13,7 +13,7 @@ import List from "../components/list";
 import Item from "../components/item";
 import { demoText, demoPartners, demoFeatures } from "../lib/demo-content";
 
-import utils from "../components/utils.module.css";
+import { responsiveTitle2, defaultLink } from "../components/utils.module.css";
 import borrowed from "../components/product-pres.module.css";
 
 import GraphQLErrorList from "../components/graphql-error-list";
@@ -83,11 +83,7 @@ const About = props => {
         <Block verticalRhythm={{ bottom: 0 }}>
           <BlockDesign bgImage="/sceneries/scenery-4.jpg" opacityClass="050" flex>
             <InnerContainer>
-              <List nodes={demoFeatures} listItemStyle="feature">
-                {/* <Feature text="New Zealand" description="Antarctic fishery" />
-                <Feature text="USA" description="Serving the Alaskan market" />
-                <Feature text="Russia" description="Longlines & hooks to our neighbour" /> */}
-              </List>
+              <List nodes={demoFeatures} listItemStyle="feature"></List>
             </InnerContainer>
           </BlockDesign>
         </Block>
@@ -139,11 +135,11 @@ const About = props => {
             <div className={cn(borrowed.root)}>
               <div className={borrowed.first}>
                 <div>
-                  <h2 className={borrowed.titleSubtle}>Career at Fiskevegn</h2>
+                  <h2 className={responsiveTitle2}>Career at Fiskevegn</h2>
                   <p className={borrowed.pMargin}>
                     Lorem ipsum dolor sit amet consectetur adipisicing.
                   </p>
-                  <a href="" className={utils.defaultLink}>
+                  <a href="" className={defaultLink}>
                     career@fiskevegn.no
                   </a>
                 </div>

@@ -15,10 +15,9 @@
   }
 
   @nest & li {
-    padding:0;
     display:flex;
-    align-self: stretch;
     flex:1;
+    padding:0;
 
     @media (--medium-and-up) {
       padding:1em;
@@ -26,9 +25,17 @@
   }
 }
 
-.oneHalf {
+.oneWhole {
   flex-flow: column;
 
+  @nest & li {
+    display: block;
+    flex:1; 
+  }
+}
+
+.oneHalf {
+  flex-flow: column;
   @media (--medium-and-up) {
     flex-flow:row;
     flex-wrap:wrap;
@@ -44,118 +51,12 @@
 }
 
 .oneFourth {
-  flex-flow: column;
-  
-  @media (--medium-and-up) {
-    flex-flow:row;
-    flex-wrap:wrap;
-  }
-
+  flex-flow:wrap;
   @nest & li {
     flex:1;
-    padding:0.5em;
-    @media (--medium-and-up) {
-      flex:25%;
-      max-width:25%;  
-    }
-    /* @media (--large-and-up) {
+    @media(--medium-and-up) {
       flex:25%;
       max-width:25%;
-    } */
-  }
-}
-
-.defaultList {
-  flex-flow:column;
-  align-items: center; 
-  justify-content: stretch;
-  flex-wrap: wrap;
-  
-  @media (--medium-and-up) {
-    flex-flow:row;
-    flex-wrap: wrap;
-  }
-
-  @nest & li {
-    display: flex;
-    flex:1;
-    align-self: stretch;
-  }
-}
-
-.verticalList {
-  flex-flow: column;
-
-  @nest & li {
-    display: block;
-    flex: 0 1 auto; 
-  }
-}
-
-.noWrapList {
-  align-items: center; 
-  justify-content: space-around;
-  flex-wrap: nowrap;
-
-  @media (--medium-and-up) {
-    justify-content: center;
-  }
-
-  @nest & li {
-    display: block;
-    flex: 0 1 auto; 
-  }
-}
-
-
-.newsList {
-  flex-flow: column;
-
-  @media (--medium-and-up) {
-    flex-flow:row;
-    flex-wrap:wrap;
-  }
-
-  @nest & li {
-    flex:1;
-    padding: 1em 0;
-    @media (--medium-and-up) {
-      flex:50%;
-      @nest &:nth-child(odd) {
-        padding-right:1em;
-      }
-      @nest &:nth-child(even) {
-        padding-left:1em;
-      }
-    }
-  }
-}
-
-.justifyCenter {
-  flex-flow:column;
-  justify-content: center;
-  @nest & li {
-    align-self:center;
-    justify-content:center;
-    flex:1;
-  }
-  @media (--medium-and-up) {
-    flex-flow:row;
-    @nest & li {
-      align-self:stretch;
-    }
-  }
-}
-.spaceAround {
-  flex-flow:column;
-  justify-content: space-around;
-  @nest & li {
-    align-self:center;
-  }
-  @media (--medium-and-up) {
-    flex-flow:row;
-    @nest & li {
-      align-self:stretch;
     }
   }
 }
