@@ -5,10 +5,10 @@ import styles from "./item.module.css";
 
 // Item has a selection of predefined styles
 
-const Item = ({ title, text, imgSrc, url, externalUrl, style }) => {
+const Item = ({ title, text, imgSrc, url, externalUrl, itemStyle }) => {
   // const { attention, subtleAttention, inYourFace, opacity } = style;
 
-  const customStyle = getCustomStyle(style);
+  const customStyle = getCustomStyle(itemStyle);
 
   const body = (
     <>
@@ -43,8 +43,10 @@ const Item = ({ title, text, imgSrc, url, externalUrl, style }) => {
 const getCustomStyle = style => {
   console.log("item getcustomstyle", style || "none");
   const customStyle = cn(
-    style == "pop" ? styles.popItem : "foo",
-    style == "feature" ? styles.featureItem : "bar"
+    style == "feature" ? styles.feature : "",
+    style == "nav" ? styles.nav : "",
+    style == "navMember" ? styles.navMember : "",
+    style == "pop" ? styles.pop : ""
   );
 
   // attention ? styles.attention : "",

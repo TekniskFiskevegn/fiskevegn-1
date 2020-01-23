@@ -12,40 +12,15 @@ import Svg from "../components/svg";
 import Intro from "../components/intro";
 import List from "../components/list";
 import Item from "../components/item";
-
 import utils from "../components/utils.module.css";
 
 import GraphQLErrorList from "../components/graphql-error-list";
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
-
-// export const query = graphql`
-//   query AboutQuery {
-//     about: allSanityProject(
-//       limit: 12
-//       sort: { fields: [publishedAt], order: DESC }
-//       filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
-//     ) {
-//       edges {
-//         node {
-//           id
-//           mainImage {
-//             asset {
-//               _id
-//             }
-//             alt
-//           }
-//           title
-//           _rawExcerpt
-//           slug {
-//             current
-//           }
-//         }
-//       }
-//     }
-//   }
-// `;
+import { demoProducts } from "../lib/demo-content";
 
 const ProductCategory = props => {
+  const nodes = demoProducts;
+
   return (
     <Layout pageClass="" currentPage="products">
       <SEO title="Fiskevegn Fishery" />
@@ -68,48 +43,8 @@ const ProductCategory = props => {
         <Block>
           <BlockDesign bgImage="/sceneries/scenery-1.jpg" opacityClass="015">
             <InnerContainer>
-              <div className={utils.boxShadow}>
-                <List type="fiftyfifty" oddBorder noGap>
-                  {/* <Card
-                    title="Automatic longline systems"
-                    text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores poro iste."
-                    linkSrc="/product-template"
-                    styling={{ flat: true, opacity: true, subtle: true }}
-                  />
-
-                  <Card
-                    title="Longlining"
-                    text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores poro iste."
-                    linkSrc="/not-found"
-                    styling={{ flat: true, opacity: true, subtle: true }}
-                  />
-
-                  <Card
-                    title="Gillnetting"
-                    text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores poro iste."
-                    linkSrc="/not-found"
-                    styling={{ flat: true, opacity: true, subtle: true }}
-                  />
-
-                  <Card
-                    title="Trawl fishery"
-                    text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores poro iste."
-                    linkSrc="/product-template-1"
-                    styling={{ flat: true, opacity: true, subtle: true }}
-                  />
-                  <Card
-                    title="Waste handling"
-                    text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores poro iste."
-                    linkSrc="/not-found"
-                    styling={{ flat: true, opacity: true, subtle: true }}
-                  />
-                  <Card
-                    title="All catalouges"
-                    text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores poro iste."
-                    linkSrc="/not-found"
-                    styling={{ flat: true, opacity: true, subtle: true }}
-                  /> */}
-                </List>
+              <div className={utils.boxShadowSubtle}>
+                <List nodes={nodes} listStyle="oneHalf" listItemStyle="navMember" />
               </div>
             </InnerContainer>
           </BlockDesign>

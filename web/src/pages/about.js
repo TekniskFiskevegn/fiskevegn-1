@@ -12,8 +12,8 @@ import Feature from "../components/feature";
 import List from "../components/list";
 import Item from "../components/item";
 import { demoText, demoPartners, demoFeatures } from "../lib/demo-content";
-
-import { responsiveTitle2, defaultLink } from "../components/utils.module.css";
+import { responsiveTitle1 } from "../components/typography.module.css";
+import { defaultLink } from "../components/utils.module.css";
 import borrowed from "../components/product-pres.module.css";
 
 import GraphQLErrorList from "../components/graphql-error-list";
@@ -83,7 +83,7 @@ const About = props => {
         <Block verticalRhythm={{ bottom: 0 }}>
           <BlockDesign bgImage="/sceneries/scenery-4.jpg" opacityClass="050" flex>
             <InnerContainer>
-              <List nodes={demoFeatures} listItemStyle="feature"></List>
+              <List nodes={demoFeatures} listItemStyle="feature" />
             </InnerContainer>
           </BlockDesign>
         </Block>
@@ -92,40 +92,7 @@ const About = props => {
           <BlockDesign light gradient>
             <InnerContainer>
               <Intro {...blockIntro2} margin />
-              <List nodes={partnerNodes} style="" listItemStyle="pop">
-                {/* <a href="https://www.maloymaritime.no/" className={utils.card}>
-                  <div className={utils.cardImage}>
-                    <img src="/logos/mmg.png" alt="" />
-                  </div>
-                  <div className={utils.cardInfo}>
-                    <span>Måløy Maritime Group</span>
-                  </div>
-                </a>
-                <a href="https://www.colto.org/" className={utils.card}>
-                  <div className={utils.cardImage}>
-                    <img src="/logos/colto.png" alt="" />
-                  </div>
-                  <div className={utils.cardInfo}>
-                    <span>Coalition of Legal Toothfish Operators</span>
-                  </div>
-                </a>
-                <a href="https://www.eurocord.com/" className={utils.card}>
-                  <div className={utils.cardImage}>
-                    <img src="/logos/eurocord.png" alt="" />
-                  </div>
-                  <div className={utils.cardInfo}>
-                    <span>European organization for cordage manufacturers</span>
-                  </div>
-                </a>
-                <a href="https://www.ghostgear.org/" className={utils.card}>
-                  <div className={utils.cardImage}>
-                    <img src="/logos/gggi.jpg" alt="" />
-                  </div>
-                  <div className={utils.cardInfo}>
-                    <span>Global Ghost Gear Initiative</span>
-                  </div>
-                </a> */}
-              </List>
+              <List nodes={partnerNodes} style="" listItemStyle="pop" />
             </InnerContainer>
           </BlockDesign>
         </Block>
@@ -135,7 +102,7 @@ const About = props => {
             <div className={cn(borrowed.root)}>
               <div className={borrowed.first}>
                 <div>
-                  <h2 className={responsiveTitle2}>Career at Fiskevegn</h2>
+                  <h2 className={responsiveTitle1}>Career at Fiskevegn</h2>
                   <p className={borrowed.pMargin}>
                     Lorem ipsum dolor sit amet consectetur adipisicing.
                   </p>

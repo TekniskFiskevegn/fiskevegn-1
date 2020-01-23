@@ -14,11 +14,12 @@ import InnerContainer from "../components/inner-container";
 import Hero from "../components/hero";
 import Promoted from "../components/promoted";
 import List from "../components/list";
-
+import Intro from "../components/intro";
 import GraphQLErrorList from "../components/graphql-error-list";
 import SEO from "../components/seo";
 
 import { demoText } from "../lib/demo-content";
+import { uiText } from "../lib/ui-text";
 
 export const query = graphql`
   query IndexPageQuery {
@@ -256,6 +257,13 @@ const IndexPage = props => {
     );
   }
 
+  const mode = "en";
+
+  const newsIntro = {
+    name: "",
+    title: `${uiText.news[mode]}`
+  };
+
   return (
     <Layout isCustomHeader={true}>
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
@@ -287,12 +295,13 @@ const IndexPage = props => {
         {newsNodes && (
           <Block name="news">
             <InnerContainer>
-              {/* <List
-                oneHalf
-                browseMoreTitle="Latest news"
+              <Intro {...newsIntro} />
+              <List
                 nodes={newsNodes}
+                browseMoreTitle="Latest news"
                 browseMoreHref="/archive/"
-              /> */}
+                isNews
+              />
             </InnerContainer>
           </Block>
         )}

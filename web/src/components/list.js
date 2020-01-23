@@ -2,44 +2,26 @@ import { Link } from "gatsby";
 import React from "react";
 import { cn } from "../lib/helpers";
 import Intro from "./intro";
-import ListTeaser from "./news-teaser";
+import NewsTeaser from "./news-teaser";
 import Item from "./item";
 import styles from "./list.module.css";
 import utils from "./utils.module.css";
 
-// const List = ({ type, ...props }) => {
-//   switch (type) {
-//     case "fiftyfifty":
-//       // two and two on large screens
-//       return <FiftyFiftyList {...props} />;
-//     case "nowrap":
-//       // list items not wrapping under each other
-//       return <NoWrapList {...props} />;
-//     case "vertical":
-//       // vertical list
-//       return <VerticalList {...props} />;
-//     case "justifiedCenter":
-//       // vertical list
-//       return <JustifiedCenterList {...props} />;
-//     case "justifiedSpaceAround":
-//       // vertical list
-//       return <JustifiedSpaceAroundList {...props} />;
-//     case "news":
-//       // vertical list
-//       return <NewsList {...props} />;
-//     default:
-//       return <DefaultList {...props} />;
-//   }
-// };
-
 // A list takes nodes [] and style {}
 
-const List = ({ nodes, style = "", listItemStyle = "" }) => {
+const List = ({
+  nodes,
+  listStyle = "",
+  listItemStyle = "",
+  isNews = false,
+  browseMoreHref = "",
+  browseMoreTitle = ""
+}) => {
   if (!nodes) {
     return null;
   }
 
-  const customStyle = getCustomStyle(style);
+  const customStyle = cn(listStyle == "oneHalf" ? styles.oneHalf : "");
 
   return (
     <div className={styles.root}>
@@ -47,19 +29,24 @@ const List = ({ nodes, style = "", listItemStyle = "" }) => {
         {nodes &&
           nodes.map((node, i) => (
             <li key={i}>
-              <Item key={node.id} {...node} style={listItemStyle} />
+              {isNews && <NewsTeaser key={node.id} {...node} />}
+              {!isNews && <Item key={node.id} {...node} itemStyle={listItemStyle} />}
             </li>
           ))}
       </ul>
+      {browseMoreHref && (
+        <div className={utils.textRight}>
+          <Link to="/archive">{browseMoreTitle}</Link>
+        </div>
+      )}
     </div>
   );
 };
 
-const getCustomStyle = style => {
-  const foo = "";
-
-  return foo;
-};
+// const getCustomStyle = style => {
+//   const customStyle = cn(itemStyle == "oneHalf" ? styles.oneHalf : "");
+//   return customStyle;
+// };
 
 List.DefaultProps = {
   style: "",

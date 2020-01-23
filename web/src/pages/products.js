@@ -1,27 +1,27 @@
 import React from "react";
 import { graphql } from "gatsby";
 
-import SEO from "../components/seo";
 import Layout from "../containers/layout";
-import Container from "../components/container";
-import InnerContainer from "../components/inner-container";
+
 import Block from "../components/block";
 import BlockDesign from "../components/block-design";
+import Container from "../components/container";
+import InnerContainer from "../components/inner-container";
 import Intro from "../components/intro";
-import List from "../components/list";
 import Item from "../components/item";
+import List from "../components/list";
+import SEO from "../components/seo";
 import utils from "../components/utils.module.css";
-import GraphQLErrorList from "../components/graphql-error-list";
-import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
 
-import { demoProducts } from "../lib/demo-content";
+import GraphQLErrorList from "../components/graphql-error-list";
+
+import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
+import { demoCategories } from "../lib/demo-content";
 
 const Products = props => {
   const page = {};
-  const nodes = demoProducts;
-  // const items = nodes.map(node => (
-  //   <Item {...node} key={node.id || 1} style={{ attention: true, opacity: true }} />
-  // ));
+  const nodes = demoCategories;
+
   const pageIntro = {
     name: "Categories",
     title: "Total provider of modern fishing solutions",
@@ -41,10 +41,8 @@ const Products = props => {
         <Block>
           <BlockDesign bgImage="/sceneries/scenery-7.jpg" opacityClass="015">
             <InnerContainer>
-              <div className={utils.boxShadow}>
-                <List oneHalf style={{ noGap: true, oddBorder: true }}>
-                  {/* {items} */}
-                </List>
+              <div className={utils.boxShadowSubtle}>
+                <List nodes={nodes} listStyle="oneHalf" listItemStyle="nav" />
               </div>
             </InnerContainer>
           </BlockDesign>

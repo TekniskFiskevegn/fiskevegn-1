@@ -47,7 +47,7 @@ export const demoPartners = [
   }
 ];
 
-export const demoProducts = [
+export const demoCategories = [
   {
     id: "Fishery",
     title: "Fishery",
@@ -71,6 +71,45 @@ export const demoProducts = [
     title: "General supplies",
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores poro iste.",
     url: "/not-found"
+  }
+];
+
+export const demoProducts = [
+  {
+    id: "1",
+    title: "Automatic longline systems",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores poro iste.",
+    url: "/product-template"
+  },
+  {
+    id: "2",
+    title: "Longlining",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores poro iste.",
+    url: ""
+  },
+  {
+    id: "3",
+    title: "Gillnetting",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores poro iste.",
+    url: ""
+  },
+  {
+    id: "4",
+    title: "Trawl fishery",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores poro iste.",
+    url: "/product-template-1"
+  },
+  {
+    id: "5",
+    title: "Waste handling",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores poro iste.",
+    url: ""
+  },
+  {
+    id: "6",
+    title: "All catalouges",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores poro iste.",
+    url: ""
   }
 ];
 

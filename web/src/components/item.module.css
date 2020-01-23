@@ -46,7 +46,7 @@
   }
 }
 
-.popItem {
+.pop {
   padding:0 2em 1em 2em;
   background:transparent;
   @media(--medium-and-up) {
@@ -86,7 +86,7 @@
   }
 }
 
-.featureItem {
+.feature {
   background-color: transparent;
   color: #000;
   font-family: "Lato";
@@ -94,6 +94,24 @@
   text-align: center;
   @nest & h3 {
     font-size:24px;
+  }
+}
+
+.nav {
+  background-color: rgba(255,255,255,0.96);
+  @nest & h3 {
+    color:var(--color-brand-complementary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+}
+
+.navMember {
+  composes: nav;
+  @nest & h3 {
+    color:var(--color-brand-complementary);
+    text-transform:capitalize;
+    letter-spacing: 0;
   }
 }
 

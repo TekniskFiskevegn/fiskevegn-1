@@ -3,9 +3,12 @@
 
 .root {
   background-color: var(--color-light-gray);
-  padding:4em 0;
-  position: relative;
   min-height: 400px;
+  padding:2em 0;
+  position: relative;
+  @media(--medium-and-up) {
+    padding:4em 0;
+  }
 }
 
 .flex {
@@ -17,7 +20,10 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  padding:4.5em 0;
+  padding:2.5em 0;
+  @media(--medium-and-up) {
+    padding:4.5em 0;
+  }
 }
 
 .splitLeft {
