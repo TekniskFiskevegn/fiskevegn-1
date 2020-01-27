@@ -19,7 +19,6 @@ import { responsiveTitle2, responsiveTitle3 } from "./typography.module.css";
 const Promoted = ({ intro = {}, visuals = {}, content = {}, meta = {}, styling = {} }) => {
   const { image, staticImage, svg } = visuals;
   const { largeTitle, title, smallTitle, text } = content;
-  const { browseMoreHref, browseMoreText } = meta;
   const { reverseFlow } = styling;
 
   return (
@@ -41,10 +40,9 @@ const Promoted = ({ intro = {}, visuals = {}, content = {}, meta = {}, styling =
         </div>
         <div className={cn(styles.content, utils.boxShadowMoreSubtle)}>
           <div>
-            {largeTitle && <h3 className={responsiveTitle2}>{title}</h3>}
-            {title && <h3 className={responsiveTitle3}>{title}</h3>}
+            {title && <h3 className={responsiveTitle2}>{title}</h3>}
             {text && <p>{text}</p>}
-            {meta && <Meta />}
+            {meta && <Meta {...meta} />}
             {/* {browseMoreHref && (
               <Link to={browseMoreHref} className={utils.callToActionLink}>
                 {browseMoreText}

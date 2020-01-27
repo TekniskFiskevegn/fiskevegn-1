@@ -20,14 +20,12 @@ export const flatraket = {
     visuals: {
       staticImage: "/related-images/contact-flatraket.png"
     },
-    content: {
-      title: "Besøks og postadresse",
-      text: "AS Fiskevegn, N-6717 Flatraket"
-    },
+    content: {},
     meta: {
-      browseMoreHref: "",
-      browseMoreText: "",
-      person: "",
+      // easiest to use flag or type?
+      isContact: true,
+      title: "Besøks- og postadresse",
+      text: "AS Fiskevegn, N-6717 Flatraket",
       phone: "+47 57 85 84 00",
       email: "sales@fiskevegn.no",
       map: "/"
@@ -46,19 +44,15 @@ export const aalesund = {
     visuals: {
       staticImage: "/related-images/contact-aalesund.jpg"
     },
-    content: {
-      largeTitle: "",
-      title: "Kontakt",
-      smallTitle: "Besøks og postadresse",
-      text: "AS Fiskevegn, N-6717 Flatraket",
-      meta: {
-        browseMoreHref: "",
-        browseMoreText: "",
-        person: "",
-        phone: "+47 57 85 84 00",
-        email: "aalesund@fiskevegn.no",
-        map: "/"
-      }
+    content: {},
+    meta: {
+      // easiest to use flag or type?
+      isContact: true,
+      title: "Besøks- og postadresse",
+      text: "Tonningsgate 2729, 6006 Ålesund",
+      phone: "+47 70 10 18 80",
+      email: "aalesund@fiskevegn.no",
+      map: "/"
     }
   },
   en: {}

@@ -60,9 +60,4 @@
   @nest & p {
     margin:0 0 1em 0;
   }
-
-  /* adjust to line-height on title */
-  @nest & div {
-    padding-bottom:8px;
-  }
 }

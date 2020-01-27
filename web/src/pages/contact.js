@@ -29,11 +29,11 @@ const Contact = props => {
             <Promoted {...flatraket.no} />
           </InnerContainer>
         </Block>
-        <InnerContainer>
+        <Block>
           <InnerContainer>
             <Promoted {...aalesund.no} />
           </InnerContainer>
-        </InnerContainer>
+        </Block>
       </Container>
     </Layout>
   );

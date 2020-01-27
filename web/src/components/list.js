@@ -15,7 +15,7 @@ const List = ({
   listItemStyle = "",
   isNews = false,
   browseMoreHref = "",
-  browseMoreTitle = ""
+  browseMoreText = ""
 }) => {
   if (!nodes) {
     return null;
@@ -38,9 +38,9 @@ const List = ({
           ))}
       </ul>
       {browseMoreHref && (
-        <div className={styles.browseMoreHref}>
-          <Link to="/archive">{browseMoreTitle}</Link>
-        </div>
+        <Link className={styles.browseMoreHref} to={browseMoreHref}>
+          {browseMoreText}
+        </Link>
       )}
     </div>
   );

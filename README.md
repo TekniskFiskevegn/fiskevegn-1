@@ -35,6 +35,8 @@
 - finpusse promoted, med dreamy soft og border? og lysere hvitfarge
 - begynne på templates
 - ferdigstille kontakt
+- mailto concatenation
+- phone tel link
 
 
 ## Sytalaust!o workflow

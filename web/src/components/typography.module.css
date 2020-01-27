@@ -115,3 +115,10 @@
     line-height: var(--font-title4-line-height);
   }
 }
+
+.responsiveTitle4 {
+  font-weight: 700;
+  font-size: var(--font-large-size);
+  line-height: var(--font-large-line-height);
+  margin: 1rem 0 0.5rem;
+}

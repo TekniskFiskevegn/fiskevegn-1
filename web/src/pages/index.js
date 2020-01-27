@@ -218,12 +218,7 @@ const IndexPage = props => {
     );
   }
 
-  const mode = "en";
-
-  // const newsIntro = {
-  //   name: "",
-  //   title: `${uiNewsTitle.news[mode]}`
-  // };
+  const lang = "en";
 
   return (
     <Layout isCustomHeader={true}>
@@ -256,10 +251,10 @@ const IndexPage = props => {
         {newsNodes && (
           <Block name="news">
             <InnerContainer>
-              <Intro {...{}} />
+              <Intro title={`${uiNewsTitle[lang]}`} />
               <List
                 nodes={newsNodes}
-                browseMoreTitle="More news"
+                browseMoreText="More news"
                 browseMoreHref="/archive/"
                 isNews
               />
