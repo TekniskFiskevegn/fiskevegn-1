@@ -10,7 +10,7 @@ import Intro from "./intro";
 import InnerContainer from "./inner-container";
 import RoleList from "./role-list";
 
-import { demoText } from "../lib/demo-content";
+import { demoText } from "../lib/dummy";
 
 import styles from "./article.module.css";
 
@@ -25,8 +25,8 @@ function Project(props) {
     <article className={styles.root}>
       <Container>
         <Block verticalRhythm={{ bottom: 0 }}>
-          <InnerContainer borderBottom>
-            <Intro {...blockIntro} />
+          <InnerContainer>
+            <Intro {...blockIntro} margin />
           </InnerContainer>
           {props.mainImage && mainImage.asset && (
             <div className={styles.mainImage}>
@@ -40,23 +40,19 @@ function Project(props) {
               />
             </div>
           )}
-          <InnerContainer article>
-            <div className={styles.grid}>
-              <div className={styles.mainContent}>
-                {/* <h1 className={styles.title}>{title}</h1> */}
-                <h2>Article text </h2>
-                {_rawBody && <SanityBlockContent blocks={_rawBody || []} />}
-                <h3>Sub heading</h3>
-                {_rawBody && <SanityBlockContent blocks={_rawBody || []} />}
-              </div>
-              <aside className={styles.metaContent}>
-                {/* {publishedAt && (
+          <InnerContainer>
+            <div className={styles.mainContent}>
+              {_rawBody && <SanityBlockContent blocks={_rawBody || []} />}
+            </div>
+
+            {/* <aside className={styles.metaContent}>
+                {publishedAt && (
                   <div className={styles.publishedAt}>
                     {differenceInDays(new Date(publishedAt), new Date()) > 3
                       ? distanceInWords(new Date(publishedAt), new Date())
                       : format(new Date(publishedAt), "MMMM Do YYYY")}
                   </div>
-                )} */}
+                )}
                 {members && members.length > 0 && (
                   <RoleList items={members} title="Project members" />
                 )}
@@ -86,8 +82,7 @@ function Project(props) {
                     </ul>
                   </div>
                 )}
-              </aside>
-            </div>
+              </aside> */}
           </InnerContainer>
         </Block>
       </Container>

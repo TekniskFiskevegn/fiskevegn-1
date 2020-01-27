@@ -39,6 +39,9 @@
 }
 
 .mainContent {
+  max-width: 800px;
+  margin:0 auto;
+  padding:5em 0;
   @nest & a {
     color: var(--color-brand-complementary);
 

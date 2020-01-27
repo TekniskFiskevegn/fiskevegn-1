@@ -20,15 +20,21 @@
 - make Item.js more customizeable
 - intro left align, more padding  ++++
 - all content left align option ++++
+- better list.js
+- should list or item decide space around item
+- svg clean up, make functions for icons and illustrations
+- contact could and should be a promoted component
 
 @ Fiskevegn
 - ui text switch no eng
-- responsiveness cards
-- 404 page
-- variables for light text and dusk text
 - disclaimer in footer i.e Personvern ++
 - clean up imports
 - make a new list type called categories, which needs to be flexible based on how many categories
+- default link for read more
+- finpusse nav
+- finpusse promoted, med dreamy soft og border? og lysere hvitfarge
+- begynne på templates
+- ferdigstille kontakt
 
 
 ## Sytalaust!o workflow

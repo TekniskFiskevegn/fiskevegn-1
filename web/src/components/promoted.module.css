@@ -1,4 +1,5 @@
 @import '../styles/custom-media.css';
+@import '../styles/custom-properties.css';
 
 .root {}
 
@@ -12,33 +13,36 @@
   }
 }
 
-.reverse {
+.reverseFlow {
   @media (--large-and-up) {
     flex-flow:row-reverse;
   }
-  @nest & .text {
+  @nest & .content {
+    background-color: var(--color-white);
     @media (--large-and-up) {
       left:0;
     }
   }
 }
 
-.image {
+.visuals {
   flex:1;
   @media (--large-and-up) {
     flex:60% 0 0;
   }
 }
 
-.text {
-  background-color: var(--color-light-gray);
+.content {
+  background-color: var(--color-almost-white);
   position:relative;
-  padding:1.5em 1.5em 2em 1.5em;
-  margin:-2em 1.5em 0 1.5em;
+  padding:1em 1.5em;
+  margin:-2em 1em 0 1em;
+  display:flex;
   flex:1;
+  align-items: center;
 
   @media (--medium-and-up) {
-    padding:2em 2em 2.5em 2em;
+    padding:2em;
     margin:-6em 2em 0 2em;
   } 
 
@@ -52,16 +56,13 @@
     width:100%;
     max-width: 50%;
   }
-}
 
-.themeWhite {
-  background-color: var(--color-white);
-}
+  @nest & p {
+    margin:0 0 1em 0;
+  }
 
-.themeAlmostWhite {
-  background-color: var(--color-almost-white);
-}
-
-.title {
-  margin-top:0;
+  /* adjust to line-height on title */
+  @nest & div {
+    padding-bottom:8px;
+  }
 }

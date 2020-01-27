@@ -14,16 +14,12 @@ const Intro = ({ name, title, text, margin, backButton, backTo }) => {
 
   return (
     <div className={cn(styles.root, margin ? styles.marginBottom : "")}>
-      {name && (
-        <span className={styles.name}>
-          {backButton && (
-            <a className={styles.backButton} href={backTo}>
-              <Svg icon name="arrow-left-circle" />
-            </a>
-          )}
-          {name}
-        </span>
+      {backButton && (
+        <a className={styles.backButton} href={backTo}>
+          <Svg adjustToParent icon name="arrow-left-circle" />
+        </a>
       )}
+      {name && <span className={styles.name}>{name}</span>}
       {title && <h2 className={responsiveTitle1}>{title}</h2>}
       {text && <p>{text}</p>}
     </div>

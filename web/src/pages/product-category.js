@@ -16,7 +16,7 @@ import utils from "../components/utils.module.css";
 
 import GraphQLErrorList from "../components/graphql-error-list";
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
-import { demoProducts } from "../lib/demo-content";
+import { demoProducts } from "../lib/dummy";
 
 const ProductCategory = props => {
   const nodes = demoProducts;
@@ -44,7 +44,7 @@ const ProductCategory = props => {
           <BlockDesign bgImage="/sceneries/scenery-1.jpg" opacityClass="015">
             <InnerContainer>
               <div className={utils.boxShadowSubtle}>
-                <List nodes={nodes} listStyle="oneHalf" listItemStyle="navMember" />
+                <List nodes={nodes} listStyle="nav" listItemStyle="navMember" />
               </div>
             </InnerContainer>
           </BlockDesign>

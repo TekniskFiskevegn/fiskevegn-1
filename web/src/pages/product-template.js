@@ -12,10 +12,9 @@ import BlockDesign from "../components/block-design";
 import Intro from "../components/intro";
 import List from "../components/list";
 
-import Presentation from "../components/product-pres";
+import Presentation from "../components/presentation";
 
 import utils from "../components/utils.module.css";
-import styles from "../components/product-data.module.css";
 
 import GraphQLErrorList from "../components/graphql-error-list";
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
@@ -52,14 +51,14 @@ const ProductTemplate = props => {
   const pres1 = {
     title: "Automatic Baiter",
     text: "",
-    img: "/product-images/baiter.png"
+    image: "/product-images/baiter.png"
   };
 
   const pres2 = {
     title: "Hook Separator HS7000",
     text: "",
-    img: "/product-images/hook-separator.png",
-    reverse: true
+    image: "/product-images/hook-separator.png",
+    reverseFlow: true
   };
 
   return (

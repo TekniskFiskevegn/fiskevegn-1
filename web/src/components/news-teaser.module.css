@@ -1,11 +1,14 @@
+@import '../styles/custom-properties.css';
+@import '../styles/custom-media.css';
+
 .root {
   display: block;
   color: inherit;
   text-decoration: none;
-}
-
-.title {
-  composes: responsiveTitle1 from './typography.module.css';
+  margin-bottom: 1em;
+  @media(--medium-and-up) {
+    margin-bottom:0;
+  }
 }
 
 .leadMediaThumb {

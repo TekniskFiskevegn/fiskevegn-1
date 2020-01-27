@@ -22,13 +22,20 @@
     fill-opacity:0.5;
   }  
 }
+
 .icon {
   display:block;
   position: relative;
-  width:35px;
+  width:35px; 
   @nest & path {
     fill:var(--color-black);
   }
+}
+
+/* Let a parent control size */
+.adjustToParent {
+  composes: icon;
+  width:100%; 
 }
 
 .wave {

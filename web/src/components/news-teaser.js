@@ -22,7 +22,7 @@ const NewsTeaser = props => {
           />
         )}
       </div>
-      <h3 className={cn(responsiveTitle3, styles.title)}>{props.title}</h3>
+      <h3 className={responsiveTitle3}>{props.title}</h3>
       {props._rawExcerpt && (
         <div className={styles.excerpt}>
           <SanityBlockText blocks={props._rawExcerpt} />

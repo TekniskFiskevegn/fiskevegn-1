@@ -7,24 +7,22 @@ function Footer(props) {
     <footer className={styles.root}>
       <div className={styles.wrapper}>
         <div className={styles.siteInfo}>
+          <h4 hidden>AS Fiskevegn kontaktinformasjon</h4>
           <p>
             <strong>AS Fiskevegn</strong>
-            <br />
-            N-6717 Flatraket
-            <br />
-            NORWAY
+            <span>N-6717 Flatraket</span>
+            <span>NORWAY</span>
           </p>
           <p>
-            +47 57 85 84 00
-            <br />
-            facebook.com/fiskevegn
-            <br />
+            <span>+47 57 85 84 00</span>
+            <span>facebook.com/fiskevegn</span>
             <a href="#">sales@fiskevegn.no</a>
           </p>
           <p hidden>
             Built with <a href="https://www.sanity.io">Sanity</a> &amp;
             {` `}
             <a href="https://www.gatsbyjs.org">Gatsby</a>
+            by WeBeyond
           </p>
         </div>
       </div>

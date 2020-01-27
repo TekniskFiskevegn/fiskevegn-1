@@ -8,13 +8,12 @@ import Block from "../components/block";
 import BlockDesign from "../components/block-design";
 import InnerContainer from "../components/inner-container";
 import Intro from "../components/intro";
-import Feature from "../components/feature";
 import List from "../components/list";
 import Item from "../components/item";
-import { demoText, demoPartners, demoFeatures } from "../lib/demo-content";
+import { demoText, demoPartners, demoFeatures } from "../lib/dummy";
 import { responsiveTitle1 } from "../components/typography.module.css";
 import { defaultLink } from "../components/utils.module.css";
-import borrowed from "../components/product-pres.module.css";
+import borrowed from "../components/presentation.module.css";
 
 import GraphQLErrorList from "../components/graphql-error-list";
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
@@ -81,7 +80,7 @@ const About = props => {
         </Block>
 
         <Block verticalRhythm={{ bottom: 0 }}>
-          <BlockDesign bgImage="/sceneries/scenery-4.jpg" opacityClass="050" flex>
+          <BlockDesign bgImage="/sceneries/scenery-4.jpg" opacityClass="065" flex>
             <InnerContainer>
               <List nodes={demoFeatures} listItemStyle="feature" />
             </InnerContainer>

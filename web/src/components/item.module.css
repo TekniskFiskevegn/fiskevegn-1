@@ -35,7 +35,7 @@
     color: inherit;
     display: block;
     height: 100%;
-    padding:1em;
+    padding:1.5em 2em;
     text-decoration: none;
     @nest &:hover {
       background-color:var(--color-almost-white);
@@ -99,11 +99,15 @@
 
 .nav {
   background-color: rgba(255,255,255,0.96);
+  /* padding:0.5em; */
   @nest & h3 {
     color:var(--color-brand-complementary);
     text-transform: uppercase;
     letter-spacing: 1px;
   }
+  /* @media(--medium-and-up) {
+    padding:0;
+  } */
 }
 
 .navMember {

@@ -7,85 +7,33 @@ import Container from "../components/container";
 import InnerContainer from "../components/inner-container";
 import Hero from "../components/hero";
 import Block from "../components/block";
-import ContactCard from "../components/contact";
+import Promoted from "../components/promoted";
 
 import utils from "../components/utils.module.css";
 
 import GraphQLErrorList from "../components/graphql-error-list";
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
+import { flatraket, aalesund } from "../lib/ui";
 
 const Contact = props => {
-  // const department1 = {
-  //   intro: {
-  //     name: "Headquarter",
-  //     title: "Flatraket, Norway",
-  //     text: "Our headquarter is located at beautiful Flatraket"
-  //   },
-  //   content: {
-  //     demoImage: "/sceneries/scenery-1.jpg",
-  //     title: "Contact",
-  //     text:
-  //       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores porro iste sint suscipit",
-  //     phone: "+47 5785 8400",
-  //     email: "sales@fiskevegn.no",
-  //     map: "/"
-  //   }
-  // };
-
-  const department1 = {
-    intro: {
-      name: "Headquarter",
-      title: "Flatraket, Norway",
-      text: "Our headquarter is located at beautiful Flatraket"
-    },
-    content: {
-      demoImage: "/related-images/contact-flatraket.jpg",
-      title: "Contact",
-      text:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores porro iste sint suscipit",
-      phone: "+47 5785 8400",
-      email: "aalesund@fiskevegn.no",
-      map: "/"
-    }
-  };
-
-  const department2 = {
-    intro: {
-      name: "Department",
-      title: "Ålesund, Norway",
-      text: "Our department in Ålesund, Norway"
-    },
-    content: {
-      demoImage: "/related-images/contact-aalesund.jpg",
-      title: "Contact",
-      text:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores porro iste sint suscipit",
-      phone: "+47 5785 8400",
-      email: "aalesund@fiskevegn.no",
-      map: "/"
-    }
-  };
+  // const flatraket = lang == "no" ? uiContact.flatraket.no : uiContact.flatraket.en
+  const lang = "no";
 
   return (
     <Layout pageClass="" currentPage="contact" isCustomHeader={true}>
-      <SEO title="Fiskevegn Fishery" />
-      {/* <Hero demoSrc="/related-images/contact.jpg" demo /> */}
-      <div className={utils.videoContainer}>
-        <video className={utils.video} autoPlay muted>
-          <source src="/videos/factory.mov" type="video/mp4" />
-        </video>
-      </div>
+      <SEO title="AS Fiskevegn contact" />
+      <Hero demoSrc="/related-images/contact.jpg" demo />
       <Container>
         <Block>
           <InnerContainer>
-            <ContactCard {...department1} />
+            <Promoted {...flatraket.no} />
           </InnerContainer>
         </Block>
-        <Block>
+        <InnerContainer>
           <InnerContainer>
-            <ContactCard {...department2} />
+            <Promoted {...aalesund.no} />
           </InnerContainer>
-        </Block>
+        </InnerContainer>
       </Container>
     </Layout>
   );

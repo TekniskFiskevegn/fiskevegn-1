@@ -3,18 +3,30 @@ import { Link } from "gatsby";
 import { buildImageObj, cn } from "../lib/helpers";
 import { imageUrlFor } from "../lib/image-url";
 import Intro from "../components/intro";
-import utils from "./utils.module.css";
+import Meta from "../components/meta";
 import styles from "./promoted.module.css";
+import utils from "./utils.module.css";
+import { responsiveTitle2, responsiveTitle3 } from "./typography.module.css";
 
-const Promoted = ({ intro = {}, content = {}, styling = {} }) => {
-  const { title, text, image, demoImage, browseMoreHref, browseMoreText } = content;
-  const { theme, reverse } = styling;
+// {
+//   intro: {},
+//   visuals: {},
+//   content: {},
+//   meta: {},
+//   styling: {}
+// }
+
+const Promoted = ({ intro = {}, visuals = {}, content = {}, meta = {}, styling = {} }) => {
+  const { image, staticImage, svg } = visuals;
+  const { largeTitle, title, smallTitle, text } = content;
+  const { browseMoreHref, browseMoreText } = meta;
+  const { reverseFlow } = styling;
 
   return (
     <div className={styles.root}>
       <Intro {...intro} margin />
-      <div className={cn(styles.wrapper, reverse ? styles.reverse : "")}>
-        <div className={styles.image}>
+      <div className={cn(styles.wrapper, reverseFlow ? styles.reverseFlow : "")}>
+        <div className={styles.visuals}>
           {image && (
             <img
               src={imageUrlFor(buildImageObj(image))
@@ -25,14 +37,20 @@ const Promoted = ({ intro = {}, content = {}, styling = {} }) => {
               alt={image.alt}
             />
           )}
-          {demoImage && <img src={demoImage} alt="" />}
+          {staticImage && <img src={staticImage} alt="" />}
         </div>
-        <div className={cn(styles.text, theme == "white" ? styles.themeWhite : "")}>
-          <h3 className={styles.title}>{title}</h3>
-          <p>{text}</p>
-          <Link to={browseMoreHref} className={utils.callToActionLink}>
-            {browseMoreText}
-          </Link>
+        <div className={cn(styles.content, utils.boxShadowMoreSubtle)}>
+          <div>
+            {largeTitle && <h3 className={responsiveTitle2}>{title}</h3>}
+            {title && <h3 className={responsiveTitle3}>{title}</h3>}
+            {text && <p>{text}</p>}
+            {meta && <Meta />}
+            {/* {browseMoreHref && (
+              <Link to={browseMoreHref} className={utils.callToActionLink}>
+                {browseMoreText}
+              </Link>
+            )} */}
+          </div>
         </div>
       </div>
     </div>

@@ -82,7 +82,7 @@
 .nav {
   display: none;
   flex:0 1 auto;
-  padding:2em 0 0 0;
+  padding:1.5em 0 0 0;
 
   @nest & ul {
     padding:0;
@@ -91,14 +91,16 @@
   }
 
   @nest & ul li {
-    
+    padding:0.2em 1em;
   }
 
   @nest & ul li a {
-    text-decoration:none;
     color:inherit;
-    /* font-weight:700; */
-    text-transform:uppercase;
+    text-transform:capitalize;
+    text-decoration:none;
+    @media(--medium-and-up) {
+      text-transform:uppercase;
+    }
   }
 
   /* medium and up */
@@ -106,6 +108,7 @@
     padding:0;
     display: block;
     @nest & ul li {
+      padding:0;
       display:inline-block;
     }
     @nest & ul li a {

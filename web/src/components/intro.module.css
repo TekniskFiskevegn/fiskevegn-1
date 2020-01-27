@@ -2,22 +2,26 @@
 @import '../styles/custom-media.css';
 
 .root {
-  text-align: center;
+  text-align: left;
+  @media(--medium-and-up) {
+    text-align:center;
+  }
   @nest & p { 
     margin:0; 
   }
 }
 
 .name {
-  color:#999;
-  text-transform: uppercase;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1em;
+  font-size:14px;
+  color:var(--color-dusk);
+  display: block;
   line-height:1;
-  position:relative;
   letter-spacing: 1px;
+  margin-bottom: 1em;
+  text-transform: uppercase;
+  @media(--medium-and-up) {
+    font-size:16px;
+  }
 }
 
 .marginBottom {
@@ -28,6 +32,14 @@
 }
 
 .backButton {
-  position:absolute;
-  left:1em;
+  display:inline-block;
+  margin-bottom:1em;
+  position: relative;
+  width:25px;
+  @media(--medium-and-up) {
+    left:2em;
+    margin-bottom:0;
+    position:absolute;
+    width:35px;
+  }
 }

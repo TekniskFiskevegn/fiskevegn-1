@@ -26,7 +26,7 @@ const Header = ({ onHideNav, onShowNav, showNav, siteTitle, isCustomHeader, curr
         <ul>
           <li>
             <Link to="/about/" className={currentPage === "about" ? styles.activeLink : ""}>
-              About
+              Shop
             </Link>
           </li>
           <li>
@@ -40,13 +40,18 @@ const Header = ({ onHideNav, onShowNav, showNav, siteTitle, isCustomHeader, curr
             </Link>
           </li>
           <li>
+            <Link to="/about/" className={currentPage === "about" ? styles.activeLink : ""}>
+              About
+            </Link>
+          </li>
+          <li>
             <Link to="/contact/" className={currentPage === "contact" ? styles.activeLink : ""}>
               Contact
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link to="/not-found">Language</Link>
-          </li>
+          </li> */}
         </ul>
       </nav>
     </div>

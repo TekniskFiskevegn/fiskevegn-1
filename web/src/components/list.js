@@ -5,7 +5,7 @@ import Intro from "./intro";
 import NewsTeaser from "./news-teaser";
 import Item from "./item";
 import styles from "./list.module.css";
-import utils from "./utils.module.css";
+import { defaultLink } from "./utils.module.css";
 
 // A list takes nodes [] and style {}
 
@@ -21,7 +21,10 @@ const List = ({
     return null;
   }
 
-  const customStyle = cn(listStyle == "oneHalf" ? styles.oneHalf : "");
+  const customStyle = cn(
+    listStyle == "oneHalf" ? styles.oneHalf : "",
+    listStyle == "nav" ? styles.nav : ""
+  );
 
   return (
     <div className={styles.root}>
@@ -35,7 +38,7 @@ const List = ({
           ))}
       </ul>
       {browseMoreHref && (
-        <div className={utils.textRight}>
+        <div className={styles.browseMoreHref}>
           <Link to="/archive">{browseMoreTitle}</Link>
         </div>
       )}

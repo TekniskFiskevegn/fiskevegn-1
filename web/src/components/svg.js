@@ -4,9 +4,13 @@ import { cn } from "../lib/helpers";
 import { getWave, getBlob, getIcon } from "../lib/svg-provider";
 import styles from "./svg.module.css";
 
-const Svg = ({ icon, wave, blob, name, number, positionTop }) => {
+const Svg = ({ icon, wave, blob, name, number, positionTop, adjustToParent }) => {
   if (icon) {
-    return <i className={cn(styles.icon)}>{getIcon(name)}</i>;
+    return (
+      <i className={cn(styles.icon, adjustToParent ? styles.adjustToParent : "")}>
+        {getIcon(name)}
+      </i>
+    );
   }
   if (wave) {
     const cssClass = cn(styles.wave, positionTop ? styles.positionTop : styles.positionBottom);

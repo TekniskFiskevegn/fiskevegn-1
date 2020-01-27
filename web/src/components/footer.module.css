@@ -29,6 +29,10 @@
   font-size: var(--font-large-size);
   line-height: var(--font-large-line-height);
 
+  @nest & span, & a, & strong {
+    display:block;
+  }
+
   @nest & a {
     color:#d35400;
   }

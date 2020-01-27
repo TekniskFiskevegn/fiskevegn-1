@@ -1,0 +1,41 @@
+@import '../styles/custom-media.css';
+@import '../styles/custom-properties.css';
+
+.root {
+  display:flex;
+  flex-flow:column;
+  @media(--medium-and-up) {
+    flex-flow:row;
+  }
+}
+
+.container {
+  display:flex;
+  flex:1;
+  justify-content: center;
+  align-items: center;
+}
+
+.reverseFlow {
+  flex-flow: column;
+  @media(--medium-and-up) {
+    flex-flow: row-reverse;
+  }
+}
+
+.text {
+  composes: container;
+  padding: 0 0 2em 0;
+  @media(--medium-and-up) {
+    padding:2em 3em;
+  }
+}
+
+.visuals {
+  composes: container;
+}
+
+.title {
+  composes: responsiveTitle1 from "./typography.module.css";
+  margin-bottom:0.2em;
+}

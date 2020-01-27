@@ -85,31 +85,19 @@ export const demoProducts = [
     id: "2",
     title: "Longlining",
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores poro iste.",
-    url: ""
+    url: "/product-template"
   },
   {
     id: "3",
     title: "Gillnetting",
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores poro iste.",
-    url: ""
+    url: "/product-template"
   },
   {
     id: "4",
     title: "Trawl fishery",
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores poro iste.",
-    url: "/product-template-1"
-  },
-  {
-    id: "5",
-    title: "Waste handling",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores poro iste.",
-    url: ""
-  },
-  {
-    id: "6",
-    title: "All catalouges",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores poro iste.",
-    url: ""
+    url: "/product-template"
   }
 ];
 

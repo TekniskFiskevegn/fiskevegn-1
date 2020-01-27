@@ -14,7 +14,7 @@ import utils from "../components/utils.module.css";
 import GraphQLErrorList from "../components/graphql-error-list";
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
 
-import { demoServices } from "../lib/demo-content";
+import { demoServices } from "../lib/dummy";
 
 const Service = props => {
   const nodes = demoServices;
@@ -40,10 +40,8 @@ const Service = props => {
         <Block>
           <BlockDesign bgImage="/sceneries/scenery-6.jpg" opacityClass="015">
             <InnerContainer>
-              <div className={utils.boxShadow}>
-                <List oneHalf style={{ noGap: true, oddBorder: true }}>
-                  {/* {items} */}
-                </List>
+              <div className={utils.boxShadowSubtle}>
+                <List nodes={nodes} listStyle="nav" listItemStyle="nav" />
               </div>
             </InnerContainer>
           </BlockDesign>

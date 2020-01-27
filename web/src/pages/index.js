@@ -18,8 +18,8 @@ import Intro from "../components/intro";
 import GraphQLErrorList from "../components/graphql-error-list";
 import SEO from "../components/seo";
 
-import { demoText } from "../lib/demo-content";
-import { uiText } from "../lib/ui-text";
+import { demoText } from "../lib/dummy";
+import { uiNewsTitle, productsTeaser, servicesTeaser, FooBar } from "../lib/ui";
 
 export const query = graphql`
   query IndexPageQuery {
@@ -198,47 +198,8 @@ const IndexPage = props => {
 
   const site = (data || {}).site;
   const frontpage = (data || {}).frontpage;
-  // this is how it should be
-  const { image, products, services } = (data || {}).frontpage;
+
   const { promotedBlock, fullWidthBlock } = (data || {}).frontpage;
-
-  const mockBlock1 = {
-    intro: {
-      name: "",
-      title: "Modern fishing solutions",
-      text:
-        "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution"
-    },
-    content: {
-      image: promotedBlock.image,
-      title: "Modern fishing solutions",
-      text:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores porro iste sint suscipit excepturi aliquid a laudantium nihil rerum nisi. Saepe pariatur at atque esse accusamus repellendus exercitationem iusto odio!",
-      browseMoreHref: "/products",
-      browseMoreText: "See our products"
-    }
-  };
-
-  const mockBlock2 = {
-    intro: {
-      name: "",
-      title: "Rewarding Collaborations",
-      text:
-        "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution"
-    },
-    content: {
-      demoImage: "/related-images/ship.jpg",
-      title: "Industry know-how",
-      text:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores porro iste sint suscipit excepturi aliquid a laudantium nihil rerum nisi. Saepe pariatur at atque esse accusamus repellendus exercitationem iusto odio!",
-      browseMoreHref: "/services",
-      browseMoreText: "See our services"
-    },
-    styling: {
-      theme: "white",
-      reverse: true
-    }
-  };
 
   const projectNodes = (data || {}).projects
     ? mapEdgesToNodes(data.projects)
@@ -259,10 +220,10 @@ const IndexPage = props => {
 
   const mode = "en";
 
-  const newsIntro = {
-    name: "",
-    title: `${uiText.news[mode]}`
-  };
+  // const newsIntro = {
+  //   name: "",
+  //   title: `${uiNewsTitle.news[mode]}`
+  // };
 
   return (
     <Layout isCustomHeader={true}>
@@ -273,7 +234,7 @@ const IndexPage = props => {
         {promotedBlock && (
           <Block name="products">
             <InnerContainer>
-              <Promoted {...mockBlock1} />
+              <Promoted {...servicesTeaser} />
             </InnerContainer>
           </Block>
         )}
@@ -287,7 +248,7 @@ const IndexPage = props => {
               }}
             >
               <InnerContainer>
-                <Promoted {...mockBlock2} lightTheme />
+                <Promoted {...servicesTeaser} />
               </InnerContainer>
             </BlockDesign>
           </Block>
@@ -295,10 +256,10 @@ const IndexPage = props => {
         {newsNodes && (
           <Block name="news">
             <InnerContainer>
-              <Intro {...newsIntro} />
+              <Intro {...{}} />
               <List
                 nodes={newsNodes}
-                browseMoreTitle="Latest news"
+                browseMoreTitle="More news"
                 browseMoreHref="/archive/"
                 isNews
               />

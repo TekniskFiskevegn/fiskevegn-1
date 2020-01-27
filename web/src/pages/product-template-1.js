@@ -12,10 +12,8 @@ import BlockDesign from "../components/block-design";
 import Intro from "../components/intro";
 import List from "../components/list";
 
-import Presentation from "../components/product-pres";
-
+import Presentation from "../components/presentation";
 import utils from "../components/utils.module.css";
-import styles from "../components/product-data.module.css";
 
 import GraphQLErrorList from "../components/graphql-error-list";
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
