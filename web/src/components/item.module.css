@@ -54,7 +54,7 @@
   }
   @nest & a {
     align-items:center;
-    border-radius:10px;
+    border-radius:4px;
     background:white;
     box-shadow: 0 0.5rem 0.75rem -0.25rem rgba(39,48,54,0.1);
     display: flex;
@@ -102,8 +102,8 @@
   /* padding:0.5em; */
   @nest & h3 {
     color:var(--color-brand-complementary);
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    /* text-transform: uppercase;
+    letter-spacing: 1px; */
   }
   /* @media(--medium-and-up) {
     padding:0;
@@ -114,8 +114,8 @@
   composes: nav;
   @nest & h3 {
     color:var(--color-brand-complementary);
-    text-transform:capitalize;
-    letter-spacing: 0;
+    /* text-transform:capitalize;
+    letter-spacing: 0; */
   }
 }
 

@@ -111,6 +111,7 @@ export const servicesTeaser = {
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores porro iste sint suscipit excepturi aliquid a laudantium nihil rerum nisi. Saepe pariatur at atque esse accusamus repellendus exercitationem iusto odio!"
   },
   meta: {
+    isBrowseMore: true,
     browseMoreHref: "/services",
     browseMoreText: "See our services"
   },

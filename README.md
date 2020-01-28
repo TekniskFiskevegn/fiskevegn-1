@@ -30,9 +30,7 @@
 - disclaimer in footer i.e Personvern ++
 - clean up imports
 - make a new list type called categories, which needs to be flexible based on how many categories
-- default link for read more
 - finpusse nav
-- finpusse promoted, med dreamy soft og border? og lysere hvitfarge
 - begynne på templates
 - ferdigstille kontakt
 - mailto concatenation

@@ -18,7 +18,8 @@
     flex-flow:row-reverse;
   }
   @nest & .content {
-    background-color: var(--color-white);
+    /* background-color: var(--color-white); */
+    background-color: var(--color-almost-white);
     @media (--large-and-up) {
       left:0;
     }
@@ -32,8 +33,14 @@
   }
 }
 
+.maxHeightOnVisuals {
+  max-height: 400px;
+  overflow: hidden;
+}
+
 .content {
   background-color: var(--color-almost-white);
+  border:1px solid #f5f5f5;
   position:relative;
   padding:1em 1.5em;
   margin:-2em 1em 0 1em;

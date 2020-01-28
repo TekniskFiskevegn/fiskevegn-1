@@ -24,11 +24,11 @@ const Header = ({ onHideNav, onShowNav, showNav, siteTitle, isCustomHeader, curr
 
       <nav className={cn(styles.nav, showNav && styles.showNav)}>
         <ul>
-          <li>
+          {/* <li>
             <Link to="/about/" className={currentPage === "about" ? styles.activeLink : ""}>
               Shop
             </Link>
-          </li>
+          </li> */}
           <li>
             <Link to="/products/" className={currentPage === "products" ? styles.activeLink : ""}>
               Products

@@ -39,7 +39,7 @@ const Products = props => {
           </InnerContainer>
         </Block>
         <Block>
-          <BlockDesign bgImage="/sceneries/scenery-7.jpg" opacityClass="015">
+          <BlockDesign bgImage="/sceneries/scenery-7-grayscale.jpg" opacityClass="015">
             <InnerContainer>
               <div className={utils.boxShadowSubtle}>
                 <List nodes={nodes} listStyle="nav" listItemStyle="nav" />

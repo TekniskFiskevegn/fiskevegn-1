@@ -4,11 +4,6 @@
 .root {
 }
 
-.titleLarge {
-  composes: responsiveTitle3 from './typography.module.css';
-  margin:0 0 0.5rem 0;
-}
-
 .title {
   composes: responsiveTitle4 from './typography.module.css';
   margin:0 0 0.5rem 0;

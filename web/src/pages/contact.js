@@ -26,12 +26,12 @@ const Contact = props => {
       <Container>
         <Block>
           <InnerContainer>
-            <Promoted {...flatraket.no} />
+            <Promoted {...flatraket.no} maxHeight />
           </InnerContainer>
         </Block>
         <Block>
           <InnerContainer>
-            <Promoted {...aalesund.no} />
+            <Promoted {...aalesund.no} maxHeight />
           </InnerContainer>
         </Block>
       </Container>

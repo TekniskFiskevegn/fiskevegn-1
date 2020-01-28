@@ -14,9 +14,17 @@ import { responsiveTitle2, responsiveTitle3 } from "./typography.module.css";
 //   content: {},
 //   meta: {},
 //   styling: {}
+//   maxHeight: boolean
 // }
 
-const Promoted = ({ intro = {}, visuals = {}, content = {}, meta = {}, styling = {} }) => {
+const Promoted = ({
+  intro = {},
+  visuals = {},
+  content = {},
+  meta = {},
+  styling = {},
+  maxHeight
+}) => {
   const { image, staticImage, svg } = visuals;
   const { largeTitle, title, smallTitle, text } = content;
   const { reverseFlow } = styling;
@@ -25,7 +33,7 @@ const Promoted = ({ intro = {}, visuals = {}, content = {}, meta = {}, styling =
     <div className={styles.root}>
       <Intro {...intro} margin />
       <div className={cn(styles.wrapper, reverseFlow ? styles.reverseFlow : "")}>
-        <div className={styles.visuals}>
+        <div className={cn(styles.visuals, maxHeight ? styles.maxHeightOnVisuals : "")}>
           {image && (
             <img
               src={imageUrlFor(buildImageObj(image))
