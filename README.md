@@ -27,11 +27,11 @@
 
 @ Fiskevegn
 - ui text switch no eng
-- disclaimer in footer i.e Personvern ++
 - clean up imports
-- make a new list type called categories, which needs to be flexible based on how many categories
 - finpusse nav
 - begynne på templates
+- flytte data fra ui.js til static.js
+- datastrukturer studio som er tilpasset strukturen fra static.js
 - ferdigstille kontakt
 - mailto concatenation
 - phone tel link
