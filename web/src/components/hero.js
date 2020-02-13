@@ -4,7 +4,7 @@ import { buildImageObj, cn } from "../lib/helpers";
 import { imageUrlFor } from "../lib/image-url";
 import styles from "./hero.module.css";
 
-const Hero = ({ image }) => {
+const Hero = ({ image = null }) => {
   if (!image) {
     return null;
   }
