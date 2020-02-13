@@ -122,3 +122,20 @@
   line-height: var(--font-large-line-height);
   margin: 1rem 0 0.5rem;
 }
+
+.tinyTitle {
+  font-size:14px;
+  color:var(--color-dusk);
+  display: block;
+  line-height:1;
+  letter-spacing: 1px;
+  margin-bottom: 1em;
+  text-transform: uppercase;
+  @media(--medium-and-up) {
+    font-size:16px;
+  }
+}
+
+.noMarginText {
+  margin:0;
+}

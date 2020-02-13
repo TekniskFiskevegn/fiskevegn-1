@@ -4,29 +4,34 @@ export default {
   type: "object",
   fields: [
     {
+      name: "intro",
+      title: "Block intro",
+      type: "intro"
+    },
+    {
       name: "title",
       title: "Block title",
       type: "string"
     },
     {
-      name: "description",
-      type: "text",
-      title: "Block description"
-    },
-    {
-      name: "subtitle",
-      title: "Subtitle",
-      type: "string"
-    },
-    {
       name: "text",
-      type: "text",
-      title: "Text"
+      title: "Block text",
+      type: "text"
     },
     {
       name: "image",
-      title: "Image",
+      title: "Block image",
       type: "figure"
+    },
+    {
+      name: "browseMoreHref",
+      title: "Link (leave empty if no link)",
+      type: "string"
+    },
+    {
+      name: "browseMoreText",
+      title: "Link text (leave empty if no link)",
+      type: "string"
     }
   ]
 };

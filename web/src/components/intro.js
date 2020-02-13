@@ -8,10 +8,6 @@ import styles from "./intro.module.css";
 import { responsiveTitle1 } from "./typography.module.css";
 
 const Intro = ({ name, title, text, margin, backButton, backTo }) => {
-  if (!(title || text)) {
-    return null;
-  }
-
   return (
     <div className={cn(styles.root, margin ? styles.marginBottom : "")}>
       {backButton && (
@@ -28,7 +24,7 @@ const Intro = ({ name, title, text, margin, backButton, backTo }) => {
 
 Intro.propTypes = {
   name: PropTypes.string,
-  title: PropTypes.string,
+  title: PropTypes.string.isRequired,
   text: PropTypes.string,
   margin: PropTypes.bool
 };

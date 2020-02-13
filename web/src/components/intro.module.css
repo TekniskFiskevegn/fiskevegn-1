@@ -6,22 +6,10 @@
   @media(--medium-and-up) {
     text-align:center;
   }
-  @nest & p { 
-    margin:0; 
-  }
 }
 
 .name {
-  font-size:14px;
-  color:var(--color-dusk);
-  display: block;
-  line-height:1;
-  letter-spacing: 1px;
-  margin-bottom: 1em;
-  text-transform: uppercase;
-  @media(--medium-and-up) {
-    font-size:16px;
-  }
+  composes: tinyTitle from "./typography.module.css";
 }
 
 .marginBottom {

@@ -93,6 +93,9 @@
 }
 
 .browseMoreHref {
+  margin:0;
   composes: defaultLink from "./utils.module.css";
-  margin:0 1em;
+  @media(--medium-and-up) {
+    margin:0 1em;
+  }
 }

@@ -3,6 +3,10 @@
 ## Todo
 
 @ Sytalaust
+- find the best way to handle errors. Console.error or throw error. 
+- make more modular
+- make static content for demo purposes, when backend is not initiated, or so that backend doesnt need to be initiated in order to demo something
+- or even better, just have a branch for a static/demo version. Makes the code cleaner. 
 - theme.module.css
 - add palette component
 - button and or links
@@ -29,9 +33,6 @@
 - ui text switch no eng
 - clean up imports
 - finpusse nav
-- begynne på templates
-- flytte data fra ui.js til static.js
-- datastrukturer studio som er tilpasset strukturen fra static.js
 - ferdigstille kontakt
 - mailto concatenation
 - phone tel link

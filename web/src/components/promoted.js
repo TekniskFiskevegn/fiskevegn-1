@@ -1,39 +1,31 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Link } from "gatsby";
 import { buildImageObj, cn } from "../lib/helpers";
 import { imageUrlFor } from "../lib/image-url";
-import Intro from "../components/intro";
 import Meta from "../components/meta";
 import styles from "./promoted.module.css";
 import utils from "./utils.module.css";
-import { responsiveTitle2, responsiveTitle3 } from "./typography.module.css";
+import {
+  responsiveTitle1,
+  responsiveTitle2,
+  responsiveTitle3,
+  tinyTitle,
+  noMarginText
+} from "./typography.module.css";
 
-// {
-//   intro: {},
-//   visuals: {},
-//   content: {},
-//   meta: {},
-//   styling: {}
-//   maxHeight: boolean
-// }
-
-const Promoted = ({
-  intro = {},
-  visuals = {},
-  content = {},
-  meta = {},
-  styling = {},
-  maxHeight
-}) => {
-  const { image, staticImage, svg } = visuals;
-  const { largeTitle, title, smallTitle, text } = content;
-  const { reverseFlow } = styling;
-
+const Promoted = ({ intro, title, text, image, browseMoreHref, browseMoreText, reverseFlow }) => {
   return (
     <div className={styles.root}>
-      <Intro {...intro} margin />
+      {intro && (
+        <div className={cn(styles.intro, utils.marginBottom)}>
+          {intro.name && <span className={tinyTitle}>{intro.name}</span>}
+          {intro.title && <h2 className={responsiveTitle1}>{intro.title}</h2>}
+          {intro.text && <p className={noMarginText}>{intro.text}</p>}
+        </div>
+      )}
       <div className={cn(styles.wrapper, reverseFlow ? styles.reverseFlow : "")}>
-        <div className={cn(styles.visuals, maxHeight ? styles.maxHeightOnVisuals : "")}>
+        <div className={styles.visuals}>
           {image && (
             <img
               src={imageUrlFor(buildImageObj(image))
@@ -44,18 +36,16 @@ const Promoted = ({
               alt={image.alt}
             />
           )}
-          {staticImage && <img src={staticImage} alt="" />}
         </div>
         <div className={cn(styles.content, utils.boxShadowMoreSubtle)}>
           <div>
             {title && <h3 className={responsiveTitle2}>{title}</h3>}
             {text && <p>{text}</p>}
-            {meta && <Meta {...meta} />}
-            {/* {browseMoreHref && (
+            {browseMoreHref && (
               <Link to={browseMoreHref} className={utils.callToActionLink}>
-                {browseMoreText}
+                {browseMoreText || "Read more"}
               </Link>
-            )} */}
+            )}
           </div>
         </div>
       </div>
@@ -63,8 +53,13 @@ const Promoted = ({
   );
 };
 
-Promoted.DefaultProps = {
-  intro: {}
+Promoted.DefaultProps = {};
+
+Promoted.propTypes = {
+  intro: PropTypes.object,
+  title: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+  image: PropTypes.object.isRequired
 };
 
 export default Promoted;

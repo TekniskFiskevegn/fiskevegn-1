@@ -18,8 +18,7 @@ import Intro from "../components/intro";
 import GraphQLErrorList from "../components/graphql-error-list";
 import SEO from "../components/seo";
 
-import { demoText } from "../lib/dummy";
-import { uiNewsTitle, productsTeaser, servicesTeaser, FooBar } from "../lib/ui";
+import { uiNewsTitle } from "../lib/ui";
 
 export const query = graphql`
   query IndexPageQuery {
@@ -30,59 +29,7 @@ export const query = graphql`
     }
     frontpage: sanityFrontpage {
       _id
-      fullWidthBlock {
-        title
-        description
-        image {
-          crop {
-            _key
-            _type
-            top
-            bottom
-            left
-            right
-          }
-          hotspot {
-            _key
-            _type
-            x
-            y
-            height
-            width
-          }
-          asset {
-            _id
-          }
-          alt
-        }
-      }
-      promotedBlock {
-        title
-        description
-        image {
-          crop {
-            _key
-            _type
-            top
-            bottom
-            left
-            right
-          }
-          hotspot {
-            _key
-            _type
-            x
-            y
-            height
-            width
-          }
-          asset {
-            _id
-          }
-          alt
-        }
-      }
-      frontpageImage {
+      topImage {
         crop {
           _key
           _type
@@ -105,42 +52,70 @@ export const query = graphql`
         alt
         caption
       }
-    }
-    projects: allSanityProject(
-      limit: 2
-      sort: { fields: [publishedAt], order: DESC }
-      filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
-    ) {
-      edges {
-        node {
-          id
-          mainImage {
-            crop {
-              _key
-              _type
-              top
-              bottom
-              left
-              right
-            }
-            hotspot {
-              _key
-              _type
-              x
-              y
-              height
-              width
-            }
-            asset {
-              _id
-            }
-            alt
-          }
+      firstPromotedBlock {
+        intro {
+          name
           title
-          _rawExcerpt
-          slug {
-            current
+          text
+        }
+        title
+        text
+        browseMoreHref
+        browseMoreText
+        image {
+          crop {
+            _key
+            _type
+            top
+            bottom
+            left
+            right
           }
+          hotspot {
+            _key
+            _type
+            x
+            y
+            height
+            width
+          }
+          asset {
+            _id
+          }
+          alt
+        }
+      }
+      secondPromotedBlock {
+        intro {
+          name
+          title
+          text
+        }
+        title
+        text
+        browseMoreHref
+        browseMoreText
+        image {
+          crop {
+            _key
+            _type
+            top
+            bottom
+            left
+            right
+          }
+          hotspot {
+            _key
+            _type
+            x
+            y
+            height
+            width
+          }
+          asset {
+            _id
+          }
+          alt
         }
       }
     }
@@ -187,7 +162,7 @@ export const query = graphql`
 
 const IndexPage = props => {
   const { data, errors } = props;
-  console.log("log index.js - data", data);
+  console.log("log index.js data", data);
   if (errors) {
     return (
       <Layout>
@@ -199,13 +174,6 @@ const IndexPage = props => {
   const site = (data || {}).site;
   const frontpage = (data || {}).frontpage;
 
-  const { promotedBlock, fullWidthBlock } = (data || {}).frontpage;
-
-  const projectNodes = (data || {}).projects
-    ? mapEdgesToNodes(data.projects)
-        .filter(filterOutDocsWithoutSlugs)
-        .filter(filterOutDocsPublishedInTheFuture)
-    : [];
   const newsNodes = (data || {}).news
     ? mapEdgesToNodes(data.news)
         .filter(filterOutDocsWithoutSlugs)
@@ -218,24 +186,29 @@ const IndexPage = props => {
     );
   }
 
+  if (!frontpage) {
+    throw new Error(
+      'Missing "Frontpage". Open the studio at http://localhost:3333 and add some content to "Frontpage" and restart the development server.'
+    );
+  }
+
   const lang = "en";
 
   return (
     <Layout isCustomHeader={true}>
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
-      <Hero {...frontpage} />
+      {frontpage.topImage && <Hero image={frontpage.topImage} />}
       <Container>
         <h1 hidden>{site.title}</h1>
-        {promotedBlock && (
-          <Block name="products">
+        {frontpage.firstPromotedBlock && (
+          <Block>
             <InnerContainer>
-              <Promoted {...servicesTeaser} />
+              <Promoted {...frontpage.firstPromotedBlock} reverseFlow />
             </InnerContainer>
           </Block>
         )}
-
-        {fullWidthBlock && (
-          <Block name="services" verticalRhythm={{ bottom: 0 }}>
+        {frontpage.secondPromotedBlock && (
+          <Block name="serviceTeaser" verticalRhythm={{ bottom: 0 }}>
             <BlockDesign
               svg={{
                 wave: true,
@@ -243,13 +216,14 @@ const IndexPage = props => {
               }}
             >
               <InnerContainer>
-                <Promoted {...servicesTeaser} />
+                <Promoted {...frontpage.secondPromotedBlock} />
               </InnerContainer>
             </BlockDesign>
           </Block>
         )}
+
         {newsNodes && (
-          <Block name="news">
+          <Block>
             <InnerContainer>
               <Intro title={`${uiNewsTitle[lang]}`} />
               <List

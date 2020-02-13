@@ -26,8 +26,17 @@
   }
 }
 
+.intro {
+  text-align: left;
+  @media(--medium-and-up) {
+    text-align:center;
+  }
+}
+
 .visuals {
   flex:1;
+  max-height: 400px;
+  overflow: hidden;
   @media (--large-and-up) {
     flex:60% 0 0;
   }
@@ -42,7 +51,7 @@
   background-color: var(--color-almost-white);
   border:1px solid #f5f5f5;
   position:relative;
-  padding:1em 1.5em;
+  padding:1.5em 1.5em;
   margin:-2em 1em 0 1em;
   display:flex;
   flex:1;

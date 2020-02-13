@@ -15,13 +15,13 @@ import frontpage from "./documents/frontpage";
 import about from "./documents/about";
 
 // Object types
+import intro from "./objects/intro";
 import bioPortableText from "./objects/bioPortableText";
 import figure from "./objects/figure";
 import projectMember from "./objects/projectMember";
 import projectPortableText from "./objects/projectPortableText";
 import simplePortableText from "./objects/simplePortableText";
 import promotedBlock from "./objects/promotedBlock";
-import fullWidthBlock from "./objects/fullWidthBlock";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -38,7 +38,7 @@ export default createSchema({
     projectPortableText,
     simplePortableText,
     promotedBlock,
-    fullWidthBlock,
+    intro,
     // The following are document types which will appear
     // in the studio.
     // category,

@@ -10,19 +10,19 @@ export default {
   // ],
   fields: [
     {
-      name: "frontpageImage",
-      title: "Top image on frontpage",
+      name: "topImage",
+      title: "TOP IMAGE",
       type: "figure"
     },
     {
-      name: "promotedBlock",
-      title: "Products block on frontpage",
+      name: "firstPromotedBlock",
+      title: "OUR PRODUCTS",
       type: "promotedBlock"
     },
     {
-      name: "fullWidthBlock",
-      title: "Full width block frontpage",
-      type: "fullWidthBlock"
+      name: "secondPromotedBlock",
+      title: "OUR SERVICES",
+      type: "promotedBlock"
     }
   ]
 };

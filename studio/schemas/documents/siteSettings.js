@@ -1,7 +1,7 @@
 export default {
   name: "siteSettings",
   type: "document",
-  title: "Frontpage and SEO",
+  title: "SEO",
   // __experimental_actions: [
   //   // 'create',
   //   "update",
