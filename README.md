@@ -31,7 +31,6 @@
 
 @ Fiskevegn
 - ui text switch no eng
-- clean up imports
 - finpusse nav
 - ferdigstille kontakt
 - mailto concatenation

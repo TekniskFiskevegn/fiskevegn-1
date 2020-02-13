@@ -27,7 +27,7 @@ export const query = graphql`
       description
       keywords
     }
-    frontpage: sanityFrontpage {
+    page: sanityFrontpage {
       _id
       topImage {
         crop {
@@ -162,7 +162,7 @@ export const query = graphql`
 
 const IndexPage = props => {
   const { data, errors } = props;
-  console.log("log index.js data", data);
+  console.log("log 'frontpage' data", data);
   if (errors) {
     return (
       <Layout>
@@ -172,7 +172,7 @@ const IndexPage = props => {
   }
 
   const site = (data || {}).site;
-  const frontpage = (data || {}).frontpage;
+  const page = (data || {}).page;
 
   const newsNodes = (data || {}).news
     ? mapEdgesToNodes(data.news)
@@ -186,7 +186,7 @@ const IndexPage = props => {
     );
   }
 
-  if (!frontpage) {
+  if (!page) {
     throw new Error(
       'Missing "Frontpage". Open the studio at http://localhost:3333 and add some content to "Frontpage" and restart the development server.'
     );
@@ -197,17 +197,17 @@ const IndexPage = props => {
   return (
     <Layout isCustomHeader={true}>
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
-      {frontpage.topImage && <Hero image={frontpage.topImage} />}
+      {page.topImage && <Hero image={page.topImage} />}
       <Container>
         <h1 hidden>{site.title}</h1>
-        {frontpage.firstPromotedBlock && (
+        {page.firstPromotedBlock && (
           <Block>
             <InnerContainer>
-              <Promoted {...frontpage.firstPromotedBlock} reverseFlow />
+              <Promoted {...page.firstPromotedBlock} reverseFlow />
             </InnerContainer>
           </Block>
         )}
-        {frontpage.secondPromotedBlock && (
+        {page.secondPromotedBlock && (
           <Block name="serviceTeaser" verticalRhythm={{ bottom: 0 }}>
             <BlockDesign
               svg={{
@@ -216,7 +216,7 @@ const IndexPage = props => {
               }}
             >
               <InnerContainer>
-                <Promoted {...frontpage.secondPromotedBlock} />
+                <Promoted {...page.secondPromotedBlock} />
               </InnerContainer>
             </BlockDesign>
           </Block>

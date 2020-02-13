@@ -30,6 +30,11 @@ const Header = ({ onHideNav, onShowNav, showNav, siteTitle, isCustomHeader, curr
             </Link>
           </li> */}
           <li>
+            <Link to="/about/" className={currentPage === "about" ? styles.activeLink : ""}>
+              About
+            </Link>
+          </li>
+          <li>
             <Link to="/products/" className={currentPage === "products" ? styles.activeLink : ""}>
               Products
             </Link>
@@ -37,11 +42,6 @@ const Header = ({ onHideNav, onShowNav, showNav, siteTitle, isCustomHeader, curr
           <li>
             <Link to="/services" className={currentPage === "services" ? styles.activeLink : ""}>
               Services
-            </Link>
-          </li>
-          <li>
-            <Link to="/about/" className={currentPage === "about" ? styles.activeLink : ""}>
-              About
             </Link>
           </li>
           <li>

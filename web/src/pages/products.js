@@ -16,18 +16,47 @@ import utils from "../components/utils.module.css";
 import GraphQLErrorList from "../components/graphql-error-list";
 
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
-import { demoCategories } from "../lib/dummy";
+import { staticProductCategories } from "../lib/static";
+
+// export const query = graphql`
+//   query ProductsPageQuery {
+//     page: sanityProductsPage {
+//       _id
+//       intro {
+//         name
+//         title
+//         text
+//       }
+//     }
+//   }
+// `;
+
+export const query = graphql`
+  query ProductsPageQuery {
+    page: sanityProductsPage {
+      _id
+      intro {
+        name
+        title
+        text
+      }
+    }
+  }
+`;
 
 const Products = props => {
-  const page = {};
-  const nodes = demoCategories;
+  const { data, errors } = props;
+  console.log("log 'product page' data", data);
+  if (errors) {
+    return (
+      <Layout>
+        <GraphQLErrorList errors={errors} />
+      </Layout>
+    );
+  }
 
-  const pageIntro = {
-    name: "Categories",
-    title: "Provider of modern fishing solutions",
-    text:
-      "Since its inception Fiskevegn has built on the core values of quality, delivery and innovation. Our core values have yielded results for both our customer and for us. Fiskevegn is a leading international manufacturer and supplier of fiber, rope, fishing systems for automatic longlining, fishing gears and supplies for crew and vessels. We are proud to be one of the most trusted names in the global arena of longline fishing."
-  };
+  const page = (data || {}).page;
+  const nodes = staticProductCategories;
 
   return (
     <Layout pageClass="" currentPage="products">
@@ -35,11 +64,11 @@ const Products = props => {
       <Container>
         <Block>
           <InnerContainer>
-            <Intro {...pageIntro} />
+            <Intro {...page.intro} />
           </InnerContainer>
         </Block>
         <Block>
-          <BlockDesign bgImage="/sceneries/scenery-7-grayscale.jpg" opacityClass="015">
+          <BlockDesign bgImage="/sceneries/scenery-7.jpg" opacityClass="015">
             <InnerContainer>
               <div className={utils.boxShadowSubtle}>
                 <List nodes={nodes} listStyle="nav" listItemStyle="nav" />

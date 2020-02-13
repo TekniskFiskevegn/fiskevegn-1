@@ -6,13 +6,18 @@ import schemaTypes from "all:part:@sanity/base/schema-type";
 
 // Document types
 // import category from "./documents/category";
+import siteSettings from "./documents/siteSettings";
+
+import frontpage from "./documents/frontpage";
+import productsPage from "./documents/productsPage";
+import aboutPage from "./documents/aboutPage";
+import servicesPage from "./documents/servicesPage";
+import contactPage from "./documents/contactPage";
+
+import products from "./documents/products";
 import person from "./documents/person";
 import project from "./documents/project";
 import news from "./documents/news";
-import product from "./documents/product";
-import siteSettings from "./documents/siteSettings";
-import frontpage from "./documents/frontpage";
-import about from "./documents/about";
 
 // Object types
 import intro from "./objects/intro";
@@ -22,6 +27,8 @@ import projectMember from "./objects/projectMember";
 import projectPortableText from "./objects/projectPortableText";
 import simplePortableText from "./objects/simplePortableText";
 import promotedBlock from "./objects/promotedBlock";
+import partner from "./objects/partner";
+import product from "./objects/product";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -39,15 +46,20 @@ export default createSchema({
     simplePortableText,
     promotedBlock,
     intro,
+    partner,
+    product,
     // The following are document types which will appear
     // in the studio.
     // category,
     person,
     project,
-    product,
+    products,
     news,
     siteSettings,
     frontpage,
-    about
+    productsPage,
+    aboutPage,
+    servicesPage,
+    contactPage
   ])
 });
