@@ -10,7 +10,7 @@ export const query = graphql`
   query ProductTemplateQuery($id: String!) {
     product: sanityProducts(id: { eq: $id }) {
       id
-      title
+      name
       slug {
         current
       }

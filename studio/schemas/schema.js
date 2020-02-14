@@ -13,7 +13,6 @@ import aboutPage from "./documents/aboutPage";
 import servicesPage from "./documents/servicesPage";
 import contactPage from "./documents/contactPage";
 import productsPage from "./documents/productsPage";
-import productsPageFishery from "./documents/productsPageFishery";
 
 import products from "./documents/products";
 import person from "./documents/person";
@@ -61,7 +60,6 @@ export default createSchema({
     aboutPage,
     servicesPage,
     contactPage,
-    productsPage,
-    productsPageFishery
+    productsPage
   ])
 });

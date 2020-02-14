@@ -92,10 +92,6 @@
   }
 }
 
-.boxShadow {
-  composes: boxShadow3 from "./utils.module.css";
-}
-
 .browseMoreHref {
   margin:0;
   composes: defaultLink from "./utils.module.css";

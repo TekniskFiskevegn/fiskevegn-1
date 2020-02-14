@@ -1,21 +1,21 @@
 import React from "react";
 import { graphql } from "gatsby";
-
-import Layout from "../containers/layout";
+import { cn } from "../lib/helpers";
 
 import Block from "../components/block";
-import BlockDesign from "../components/block-design";
 import Container from "../components/container";
+import Design from "../components/block-design";
+import GraphQLErrorList from "../components/graphql-error-list";
 import InnerContainer from "../components/inner-container";
 import Intro from "../components/intro";
-import Item from "../components/item";
-import List from "../components/list";
+import Layout from "../containers/layout";
+import NavigationItem from "../components/navigation-item";
 import SEO from "../components/seo";
-import utils from "../components/utils.module.css";
 
-import GraphQLErrorList from "../components/graphql-error-list";
+// styles
+import listStyles from "../components/list.module.css";
 
-import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
+// static data
 import { staticProductCategories } from "../lib/static";
 
 export const query = graphql`
@@ -43,10 +43,11 @@ const ProductsPage = props => {
   }
 
   const page = (data || {}).page;
+  // static nodes
   const nodes = staticProductCategories;
 
   return (
-    <Layout pageClass="" currentPage="products">
+    <Layout currentPage="products">
       <SEO title="Fiskevegn products" />
       <Container>
         <Block>
@@ -55,13 +56,18 @@ const ProductsPage = props => {
           </InnerContainer>
         </Block>
         <Block>
-          <BlockDesign bgImage="/sceneries/scenery-7.jpg" opacityClass="015">
+          <Design bgImage="/sceneries/scenery-7.jpg" opacity="015">
             <InnerContainer>
-              <div className={utils.boxShadowSubtle}>
-                <List nodes={nodes} listStyle="nav" listItemStyle="nav" />
-              </div>
+              <ul className={cn(listStyles.ul, listStyles.nav, listStyles.boxShadow)}>
+                {nodes &&
+                  nodes.map(node => (
+                    <li key={node.id}>
+                      <NavigationItem {...node} />
+                    </li>
+                  ))}
+              </ul>
             </InnerContainer>
-          </BlockDesign>
+          </Design>
         </Block>
       </Container>
     </Layout>

@@ -1,22 +1,24 @@
 import React from "react";
 import { graphql } from "gatsby";
+import { mapEdgesToNodes, cn } from "../lib/helpers";
 
-import SEO from "../components/seo";
-import Layout from "../containers/layout";
-import Container from "../components/container";
-import InnerContainer from "../components/inner-container";
 import Block from "../components/block";
-import BlockDesign from "../components/block-design";
-import BreadCrumb from "../components/breadcrumb";
-import Svg from "../components/svg";
-import Intro from "../components/intro";
-import List from "../components/list";
-import Item from "../components/item";
-import utils from "../components/utils.module.css";
-
+import Design from "../components/block-design";
+import Container from "../components/container";
 import GraphQLErrorList from "../components/graphql-error-list";
-import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
-import { demoProducts } from "../lib/dummy";
+import GoBack from "../components/go-back";
+import InnerContainer from "../components/inner-container";
+import Intro from "../components/intro";
+import Layout from "../containers/layout";
+import NavigationItem from "../components/navigation-item";
+import SEO from "../components/seo";
+
+// css
+import utilStyles from "../components/utils.module.css";
+import listStyles from "../components/list.module.css";
+
+// static data
+import { staticFisheryPage } from "../lib/static";
 
 export const query = graphql`
   query FisheryProductsQuery {
@@ -24,8 +26,8 @@ export const query = graphql`
       edges {
         node {
           id
-          title
-          text
+          name
+          teaser
           slug {
             current
           }
@@ -46,37 +48,32 @@ const FisheryPage = props => {
     );
   }
 
-  const productsNodes = (data || {}).products ? mapEdgesToNodes(data.products) : [];
-
-  const nodes = productsNodes;
+  const page = staticFisheryPage;
+  const nodes = (data || {}).products ? mapEdgesToNodes(data.products) : [];
 
   return (
     <Layout pageClass="" currentPage="products">
       <SEO title="Fiskevegn Fishery" />
-
       <Container>
         <Block>
           <InnerContainer>
-            <Intro
-              backButton
-              backTo="/products"
-              name="Category"
-              title="Fishery"
-              text="Since its inception, Fiskevegn has been founded on the core values of quality,
-            delivery and innovation. We emphasize close communication with our customers and rapid
-            responses to deliver better Fishery, solutions and services. Our core values have
-            yielded results both for our customers."
-            />
+            <GoBack href="/products" />
+            <Intro {...page.intro} />
           </InnerContainer>
         </Block>
         <Block>
-          <BlockDesign bgImage="/sceneries/scenery-1.jpg" opacityClass="015">
+          <Design bgImage="/sceneries/scenery-1.jpg" opacityClass="015">
             <InnerContainer>
-              <div className={utils.boxShadowSubtle}>
-                <List nodes={nodes} listStyle="nav" listItemStyle="navMember" />
-              </div>
+              <ul className={cn(listStyles.ul, listStyles.nav, listStyles.boxShadow)}>
+                {nodes &&
+                  nodes.map(node => (
+                    <li key={node.id}>
+                      <NavigationItem {...node} />
+                    </li>
+                  ))}
+              </ul>
             </InnerContainer>
-          </BlockDesign>
+          </Design>
         </Block>
       </Container>
     </Layout>

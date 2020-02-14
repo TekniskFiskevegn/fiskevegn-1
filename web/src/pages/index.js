@@ -1,9 +1,10 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import {
   mapEdgesToNodes,
   filterOutDocsWithoutSlugs,
-  filterOutDocsPublishedInTheFuture
+  filterOutDocsPublishedInTheFuture,
+  cn
 } from "../lib/helpers";
 
 import Layout from "../containers/layout";
@@ -17,6 +18,8 @@ import List from "../components/list";
 import Intro from "../components/intro";
 import GraphQLErrorList from "../components/graphql-error-list";
 import SEO from "../components/seo";
+import NewsTeaser from "../components/news-teaser";
+import listStyles from "../components/list.module.css";
 
 import { uiNewsTitle } from "../lib/ui";
 
@@ -208,7 +211,7 @@ const IndexPage = props => {
           </Block>
         )}
         {page.secondPromotedBlock && (
-          <Block name="serviceTeaser" verticalRhythm={{ bottom: 0 }}>
+          <Block verticalRhythm={{ bottom: 0 }}>
             <BlockDesign
               svg={{
                 wave: true,
@@ -226,12 +229,16 @@ const IndexPage = props => {
           <Block>
             <InnerContainer>
               <Intro title={`${uiNewsTitle[lang]}`} />
-              <List
-                nodes={newsNodes}
-                browseMoreText="More news"
-                browseMoreHref="/archive/"
-                isNews
-              />
+              <ul className={cn(listStyles.ul)}>
+                {newsNodes.map(node => (
+                  <li key={node.id}>
+                    <NewsTeaser {...node} />
+                  </li>
+                ))}
+              </ul>
+              <div>
+                <Link to="/archive">More news</Link>
+              </div>
             </InnerContainer>
           </Block>
         )}

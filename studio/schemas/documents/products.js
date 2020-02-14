@@ -6,18 +6,14 @@ export default {
   type: "document",
   fields: [
     {
-      name: "title",
-      title: "Title",
-      type: "string"
-    },
-    {
-      name: "text",
-      title: "Introduction text",
-      type: "string"
+      name: "name",
+      title: "Product name",
+      type: "string",
+      description: "Shown in navigation and as title on product page"
     },
     {
       name: "slug",
-      title: "Slug",
+      title: "URL",
       type: "slug",
       description: "Just click generate",
       options: {
@@ -26,7 +22,7 @@ export default {
       }
     },
     {
-      title: "Belongs in category",
+      title: "Product category",
       name: "category",
       type: "array",
       of: [{ type: "string" }],
@@ -39,6 +35,18 @@ export default {
           { title: "General supplies", value: "generalSupplies" }
         ]
       }
+    },
+    {
+      name: "teaser",
+      title: "Teaser",
+      type: "string",
+      description: "Just some teaser text. Shown only in navigation."
+    },
+    {
+      name: "description",
+      title: "Product description",
+      type: "text",
+      description: "Only the most important. Please keep it short and sweet."
     },
     {
       name: "productComponents",

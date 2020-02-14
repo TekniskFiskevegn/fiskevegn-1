@@ -35,6 +35,11 @@
 2. clean up list.js
 3. clean up item.js
 
+components styles is styles
+utils should be utilsStyles
+typgraphy should be typographyStyles
+list listStyles
+
 
 - ui text switch no eng
 - finpusse nav

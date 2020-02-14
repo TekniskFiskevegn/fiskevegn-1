@@ -1,0 +1,18 @@
+@import '../styles/custom-media.css';
+@import '../styles/custom-properties.css';
+
+.root {
+}
+/* 
+.backButton {
+  display:inline-block;
+  margin-bottom:1em;
+  position: relative;
+  width:25px;
+  @media(--medium-and-up) {
+    left:2em;
+    margin-bottom:0;
+    position:absolute;
+    width:35px;
+  }
+} */
