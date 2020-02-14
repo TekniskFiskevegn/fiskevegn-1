@@ -18,8 +18,37 @@ import GraphQLErrorList from "../components/graphql-error-list";
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
 import { demoProducts } from "../lib/dummy";
 
-const ProductCategory = props => {
-  const nodes = demoProducts;
+export const query = graphql`
+  query FisheryProductsQuery {
+    products: allSanityProducts(limit: 10) {
+      edges {
+        node {
+          id
+          title
+          text
+          slug {
+            current
+          }
+        }
+      }
+    }
+  }
+`;
+
+const FisheryPage = props => {
+  const { data, errors } = props;
+  console.log("log 'fishery page' data", data);
+  if (errors) {
+    return (
+      <Layout>
+        <GraphQLErrorList errors={errors} />
+      </Layout>
+    );
+  }
+
+  const productsNodes = (data || {}).products ? mapEdgesToNodes(data.products) : [];
+
+  const nodes = productsNodes;
 
   return (
     <Layout pageClass="" currentPage="products">
@@ -54,4 +83,4 @@ const ProductCategory = props => {
   );
 };
 
-export default ProductCategory;
+export default FisheryPage;

@@ -44,7 +44,44 @@ async function createNewsPages(graphql, actions, reporter) {
     });
 }
 
+async function createProductPages(graphql, actions, reporter) {
+  const { createPage } = actions;
+  const result = await graphql(`
+    {
+      allSanityProducts(filter: { slug: { current: { ne: null } } }) {
+        edges {
+          node {
+            id
+            slug {
+              current
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  if (result.errors) throw result.errors;
+
+  const productEdges = (result.data.allSanityProducts || {}).edges || [];
+
+  productEdges.forEach(edge => {
+    const id = edge.node.id;
+    const slug = edge.node.slug.current;
+    const path = `/product/${slug}/`;
+
+    reporter.info(`Creating product page: ${path}`);
+
+    createPage({
+      path,
+      component: require.resolve("./src/templates/product.js"),
+      context: { id }
+    });
+  });
+}
+
 exports.createPages = async ({ graphql, actions, reporter }) => {
   // console.log("log in createPages", graphql, actions);
   await createNewsPages(graphql, actions, reporter);
+  await createProductPages(graphql, actions, reporter);
 };

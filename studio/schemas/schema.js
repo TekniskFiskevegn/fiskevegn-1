@@ -9,10 +9,11 @@ import schemaTypes from "all:part:@sanity/base/schema-type";
 import siteSettings from "./documents/siteSettings";
 
 import frontpage from "./documents/frontpage";
-import productsPage from "./documents/productsPage";
 import aboutPage from "./documents/aboutPage";
 import servicesPage from "./documents/servicesPage";
 import contactPage from "./documents/contactPage";
+import productsPage from "./documents/productsPage";
+import productsPageFishery from "./documents/productsPageFishery";
 
 import products from "./documents/products";
 import person from "./documents/person";
@@ -57,9 +58,10 @@ export default createSchema({
     news,
     siteSettings,
     frontpage,
-    productsPage,
     aboutPage,
     servicesPage,
-    contactPage
+    contactPage,
+    productsPage,
+    productsPageFishery
   ])
 });

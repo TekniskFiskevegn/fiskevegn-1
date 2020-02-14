@@ -7,13 +7,23 @@ export default {
   fields: [
     {
       name: "title",
-      title: "Name",
+      title: "Title",
       type: "string"
     },
     {
       name: "text",
       title: "Introduction text",
-      type: "text"
+      type: "string"
+    },
+    {
+      name: "slug",
+      title: "Slug",
+      type: "slug",
+      description: "Just click generate",
+      options: {
+        source: "name",
+        maxLength: 96
+      }
     },
     {
       title: "Belongs in category",
@@ -32,7 +42,7 @@ export default {
     },
     {
       name: "productComponents",
-      title: "Product models and/or components",
+      title: "Product models/components",
       type: "array",
       of: [{ type: "product" }]
     }

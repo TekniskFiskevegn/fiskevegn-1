@@ -18,19 +18,6 @@ import GraphQLErrorList from "../components/graphql-error-list";
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
 import { staticProductCategories } from "../lib/static";
 
-// export const query = graphql`
-//   query ProductsPageQuery {
-//     page: sanityProductsPage {
-//       _id
-//       intro {
-//         name
-//         title
-//         text
-//       }
-//     }
-//   }
-// `;
-
 export const query = graphql`
   query ProductsPageQuery {
     page: sanityProductsPage {
@@ -44,7 +31,7 @@ export const query = graphql`
   }
 `;
 
-const Products = props => {
+const ProductsPage = props => {
   const { data, errors } = props;
   console.log("log 'product page' data", data);
   if (errors) {
@@ -81,4 +68,4 @@ const Products = props => {
   );
 };
 
-export default Products;
+export default ProductsPage;

@@ -30,6 +30,12 @@
 - contact could and should be a promoted component
 
 @ Fiskevegn
+
+1. make productTeaser and servicesTeaser
+2. clean up list.js
+3. clean up item.js
+
+
 - ui text switch no eng
 - finpusse nav
 - ferdigstille kontakt

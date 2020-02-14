@@ -1,7 +1,7 @@
 export default {
-  name: "productsPage",
+  name: "productsPageFishery",
   type: "document",
-  title: "Products landing page",
+  title: "Products fishery page",
   // __experimental_actions: [
   //   // 'create',
   //   "update",
