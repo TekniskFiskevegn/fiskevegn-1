@@ -2,9 +2,6 @@
 @import '../styles/custom-properties.css';
 
 .root {
-}
-/* 
-.backButton {
   display:inline-block;
   margin-bottom:1em;
   position: relative;
@@ -15,4 +12,4 @@
     position:absolute;
     width:35px;
   }
-} */
+}

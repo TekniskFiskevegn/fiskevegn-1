@@ -14,7 +14,6 @@ import SEO from "../components/seo";
 
 // styles
 import listStyles from "../components/list.module.css";
-
 // static data
 import { staticProductCategories } from "../lib/static";
 

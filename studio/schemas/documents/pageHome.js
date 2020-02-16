@@ -1,7 +1,7 @@
 export default {
-  name: "frontpage",
+  name: "pageHome",
   type: "document",
-  title: "Frontpage",
+  title: "Page: Home",
   // __experimental_actions: [
   //   // 'create',
   //   "update",
@@ -10,18 +10,24 @@ export default {
   // ],
   fields: [
     {
+      name: "title",
+      type: "string",
+      title: "Title",
+      description: "Page title."
+    },
+    {
       name: "topImage",
-      title: "TOP IMAGE",
+      title: "Top image",
       type: "figure"
     },
     {
       name: "firstPromotedBlock",
-      title: "OUR PRODUCTS",
+      title: "Promoted content",
       type: "promotedBlock"
     },
     {
       name: "secondPromotedBlock",
-      title: "OUR SERVICES",
+      title: "Second promoted content",
       type: "promotedBlock"
     }
   ]

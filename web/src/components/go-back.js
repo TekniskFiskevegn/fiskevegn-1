@@ -1,17 +1,18 @@
 import React from "react";
 import { Link } from "gatsby";
-import { cn } from "../lib/helpers";
+import Svg from "../components/svg";
 import styles from "./go-back.module.css";
 
-const GoBack = props => {
-  return <p>foo</p>;
-};
+// Todo:
+// Use Link instead
 
-// {backButton && (
-//   <a className={styles.backButton} href={backTo}>
-//     <Svg adjustToParent icon name="arrow-left-circle" />
-//   </a>
-// )}
+const GoBack = props => {
+  return (
+    <a className={styles.root} href={props.href}>
+      <Svg adjustToParent icon name="arrow-left-circle" />
+    </a>
+  );
+};
 
 GoBack.DefaultProps = {};
 

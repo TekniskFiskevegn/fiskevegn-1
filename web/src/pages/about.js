@@ -1,51 +1,26 @@
 import React from "react";
 import { graphql } from "gatsby";
+import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
 
-import SEO from "../components/seo";
-import Layout from "../containers/layout";
-import Container from "../components/container";
 import Block from "../components/block";
 import BlockDesign from "../components/block-design";
+import Container from "../components/container";
+import GraphQLErrorList from "../components/graphql-error-list";
 import InnerContainer from "../components/inner-container";
 import Intro from "../components/intro";
+import Layout from "../containers/layout";
 import List from "../components/list";
-import Item from "../components/item";
-import { demoText, demoPartners, demoFeatures } from "../lib/dummy";
+import SEO from "../components/seo";
+
+// styles
 import { responsiveTitle1 } from "../components/typography.module.css";
 import { defaultLink } from "../components/utils.module.css";
 import borrowed from "../components/presentation.module.css";
 
-import GraphQLErrorList from "../components/graphql-error-list";
-import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
+// static data
+import { demoText, demoPartners, demoFeatures } from "../lib/dummy";
 
-// export const query = graphql`
-//   query AboutQuery {
-//     about: allSanityProject(
-//       limit: 12
-//       sort: { fields: [publishedAt], order: DESC }
-//       filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
-//     ) {
-//       edges {
-//         node {
-//           id
-//           mainImage {
-//             asset {
-//               _id
-//             }
-//             alt
-//           }
-//           title
-//           _rawExcerpt
-//           slug {
-//             current
-//           }
-//         }
-//       }
-//     }
-//   }
-// `;
-
-const About = props => {
+const AboutPage = props => {
   const partnerNodes = demoPartners;
   const featureNodes = demoFeatures;
   // const partners = nodes.map(node => (
@@ -71,9 +46,9 @@ const About = props => {
   };
   return (
     <Layout currentPage="about">
-      <SEO title="About Fiskevegn" />
+      <SEO title="AS Fiskevegn, the company and the history" />
       <Container>
-        <Block name="Company introduction" blockOrder="1">
+        <Block>
           <InnerContainer>
             <Intro {...blockIntro} />
           </InnerContainer>
@@ -121,4 +96,4 @@ const About = props => {
   );
 };
 
-export default About;
+export default AboutPage;
