@@ -20,6 +20,9 @@
   flex-flow: column;
   @media(--medium-and-up) {
     flex-flow: row-reverse;
+    @nest & .text {
+      padding:2em 0em 2em 3em;
+    }
   }
 }
 
@@ -27,15 +30,62 @@
   composes: container;
   padding: 0 0 2em 0;
   @media(--medium-and-up) {
-    padding:2em 3em;
+    padding:2em 3em 2em 0;
   }
+}
+
+.title {
+  composes: responsiveTitle1 from "./typography.module.css";
+  margin-bottom:0.2em;
 }
 
 .visuals {
   composes: container;
 }
 
-.title {
-  composes: responsiveTitle1 from "./typography.module.css";
-  margin-bottom:0.2em;
+.listOfVisuals {
+  list-style-type: none;
+  padding:0;
+  margin:0;
+  display:flex;
+  flex-flow:row;
+  flex-wrap:wrap;
+  
+  @nest & li {
+    flex:50%;
+    max-width:50%;  
+    /* background-color:#fff; */
+    /* @nest &:nth-child(3n+1) {
+      background-color:#fcfcfc;
+    } */
+  }
+}
+
+.listOfVisualsOddEven {
+  @nest & li {
+    background-color:#fff;
+    @nest &:nth-child(3n+1) {
+      background-color:#fcfcfc;
+    }
+  }
+}
+
+.listOfVisualsBorders {
+  @nest & li {
+    border:1px solid var(--color-light-gray);
+    /* @media (--medium-and-up) {
+      flex:50%;
+      max-width:50%;  
+    }
+    @nest &:nth-child(odd) {
+      @media(--medium-and-up) {
+        border-right:2px solid var(--color-light-gray);
+      }
+    }
+    @nest &:nth-last-of-type(-n+2) {
+      @media(--medium-and-up) {
+        border-bottom:0;
+      }
+    } */
+  }
 }

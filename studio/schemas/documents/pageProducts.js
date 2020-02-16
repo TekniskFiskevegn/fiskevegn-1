@@ -19,16 +19,16 @@ export default {
       name: "complementaryTitle",
       type: "string",
       title: "Complementary title",
-      description: "A small title shown above the page title."
+      description: "A small title shown above the page title"
     },
     {
-      name: "description",
+      name: "text",
       type: "text",
-      title: "Description",
+      title: "Text",
       description: "A short description."
     },
     {
-      name: "scenery",
+      name: "sceneryImage",
       title: "Scenery image",
       type: "figure"
     }

@@ -5,13 +5,18 @@ export default {
   fields: [
     {
       name: "name",
-      title: "Name",
-      type: "string"
+      type: "string",
+      title: "Name"
     },
     {
       name: "logo",
-      title: "Logo",
-      type: "figure"
+      type: "figure",
+      title: "Logo"
+    },
+    {
+      name: "href",
+      type: "string",
+      title: "Link"
     }
   ]
 };

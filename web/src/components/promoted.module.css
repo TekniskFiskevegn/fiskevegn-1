@@ -48,6 +48,7 @@
 }
 
 .content {
+  composes: boxShadow4 from "./utils.module.css";
   background-color: var(--color-almost-white);
   position:relative;
   padding:1.5em 1.5em;

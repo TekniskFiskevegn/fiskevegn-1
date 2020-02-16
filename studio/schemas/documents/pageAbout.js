@@ -19,24 +19,24 @@ export default {
       name: "complementaryTitle",
       type: "string",
       title: "Complementary title",
-      description: "A small title shown above the page title."
+      description: "A small title shown above the page title"
     },
     {
-      name: "description",
+      name: "text",
       type: "text",
-      title: "Description",
-      description: "A short description."
+      title: "Text",
+      description: "A short text about the company"
     },
     {
-      name: "scenery",
+      name: "sceneryImage",
       type: "figure",
       title: "Scenery image"
     },
     {
-      name: "sceneryFeatures",
+      name: "features",
       type: "array",
       title: "Features",
-      of: [{ type: "product" }],
+      of: [{ type: "feature" }],
       description: "This feature will show on top of the scenery image"
     },
     {
@@ -45,16 +45,9 @@ export default {
       title: "Career at Fiskevegn"
     },
     {
-      name: "partnersTitle",
-      type: "string",
-      title: "Partners",
-      description: "Presentation of our partners"
-    },
-    {
-      name: "partnersText",
-      type: "text",
-      title: "Partners introduction",
-      description: "Presentation of our partners"
+      name: "partners",
+      type: "presentationPartners",
+      title: "Our partners"
     }
   ]
 };

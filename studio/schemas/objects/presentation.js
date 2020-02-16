@@ -15,8 +15,8 @@ export default {
     },
     {
       name: "image",
-      title: "Image",
-      type: "figure"
+      type: "figure",
+      title: "Image"
     },
     {
       name: "email",
@@ -31,10 +31,10 @@ export default {
       description: "Leave empty if no link"
     },
     {
-      name: "pdf",
-      title: "PDF",
+      name: "attachment",
+      title: "PDF for download",
       type: "string",
-      description: "Leave empty if no pdf"
+      description: "Leave empty if no PDF"
     }
   ]
 };

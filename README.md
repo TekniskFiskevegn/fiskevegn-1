@@ -3,6 +3,8 @@
 ## Todo
 
 @ Sytalaust
+- Improvements in presentation.js
+- Improvements in schema. Should use intro object instead of repeating fields on every page, but currently there seems to be a bug in sanity when using an object to provide the title
 - find the best way to handle errors. Console.error or throw error. 
 - make more modular
 - make static content for demo purposes, when backend is not initiated, or so that backend doesnt need to be initiated in order to demo something
@@ -41,6 +43,7 @@ typgraphy should be typographyStyles
 list listStyles
 
 
+- rename from block design to only design
 - ui text switch no eng
 - finpusse nav
 - ferdigstille kontakt

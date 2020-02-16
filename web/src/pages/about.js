@@ -3,16 +3,19 @@ import { graphql } from "gatsby";
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
 
 import Block from "../components/block";
-import BlockDesign from "../components/block-design";
+import Design from "../components/block-design";
 import Container from "../components/container";
+import Feature from "../components/feature";
 import GraphQLErrorList from "../components/graphql-error-list";
 import InnerContainer from "../components/inner-container";
 import Intro from "../components/intro";
 import Layout from "../containers/layout";
+import Presentation from "../components/presentation";
 import List from "../components/list";
 import SEO from "../components/seo";
 
 // styles
+import listStyles from "../components/list.module.css";
 import { responsiveTitle1 } from "../components/typography.module.css";
 import { defaultLink } from "../components/utils.module.css";
 import borrowed from "../components/presentation.module.css";
@@ -20,76 +23,162 @@ import borrowed from "../components/presentation.module.css";
 // static data
 import { demoText, demoPartners, demoFeatures } from "../lib/dummy";
 
+export const query = graphql`
+  query AboutPageQuery {
+    page: sanityPageAbout {
+      _id
+      title
+      complementaryTitle
+      text
+      sceneryImage {
+        crop {
+          _key
+          _type
+          top
+          bottom
+          left
+          right
+        }
+        hotspot {
+          _key
+          _type
+          x
+          y
+          height
+          width
+        }
+        asset {
+          _id
+        }
+        alt
+      }
+      features {
+        title
+        text
+      }
+      career {
+        title
+        text
+        image {
+          crop {
+            _key
+            _type
+            top
+            bottom
+            left
+            right
+          }
+          hotspot {
+            _key
+            _type
+            x
+            y
+            height
+            width
+          }
+          asset {
+            _id
+          }
+          alt
+        }
+        email
+      }
+      partners {
+        title
+        text
+        partnerList {
+          name
+          logo {
+            crop {
+              _key
+              _type
+              top
+              bottom
+              left
+              right
+            }
+            hotspot {
+              _key
+              _type
+              x
+              y
+              height
+              width
+            }
+            asset {
+              _id
+            }
+            alt
+          }
+        }
+      }
+    }
+  }
+`;
+
 const AboutPage = props => {
-  const partnerNodes = demoPartners;
-  const featureNodes = demoFeatures;
-  // const partners = nodes.map(node => (
-  //   <Item {...node} key={node.id || 1} style={{ attention: true, opacity: true }} />
-  // ));
+  const { data, errors } = props;
+  console.log("log 'about page' data", data);
+  if (errors) {
+    return (
+      <Layout>
+        <GraphQLErrorList errors={errors} />
+      </Layout>
+    );
+  }
 
-  const blockIntro = {
-    name: "Made in norway",
-    title: "Leading Longline Manufacturer",
-    text: `${demoText(1)}`
-  };
+  const page = (data || {}).page;
 
-  const blockIntro2 = {
-    name: "",
-    title: "Partners and Collaborations",
-    text: `${demoText(2)}`
-  };
+  // static nodes
+  // const nodes = staticProductCategories;
 
-  const blockIntro3 = {
-    name: "",
-    title: "Career at AS Fiskevegn",
-    text: `${demoText(3)}`
-  };
+  if (!page) {
+    throw new Error('Missing "page". Open the studio and add some content to this page.');
+  }
+  const features = page.features;
+
   return (
     <Layout currentPage="about">
-      <SEO title="AS Fiskevegn, the company and the history" />
+      <SEO title="About AS Fiskevegn" />
       <Container>
         <Block>
           <InnerContainer>
-            <Intro {...blockIntro} />
+            <Intro
+              complementaryTitle={page.complementaryTitle}
+              title={page.title}
+              text={page.text}
+            />
           </InnerContainer>
         </Block>
 
-        <Block verticalRhythm={{ bottom: 0 }}>
-          <BlockDesign bgImage="/sceneries/scenery-4.jpg" opacityClass="065" flex>
+        <Block>
+          <Design backgroundImage={page.sceneryImage} opacityClass="075" flex>
             <InnerContainer>
-              <List nodes={demoFeatures} listItemStyle="feature" />
+              {features && features.length > 0 && (
+                <ul className={cn(listStyles.ul)}>
+                  {features.map(item => (
+                    <li key={item.id}>
+                      <Feature {...item} />
+                    </li>
+                  ))}
+                </ul>
+              )}
             </InnerContainer>
-          </BlockDesign>
-        </Block>
-
-        <Block verticalRhythm={{ top: 0, bottom: 1 }}>
-          <BlockDesign light gradient>
-            <InnerContainer>
-              <Intro {...blockIntro2} margin />
-              <List nodes={partnerNodes} style="" listItemStyle="pop" />
-            </InnerContainer>
-          </BlockDesign>
+          </Design>
         </Block>
 
         <Block>
           <InnerContainer>
-            <div className={cn(borrowed.root)}>
-              <div className={borrowed.first}>
-                <div>
-                  <h2 className={responsiveTitle1}>Career at Fiskevegn</h2>
-                  <p className={borrowed.pMargin}>
-                    Lorem ipsum dolor sit amet consectetur adipisicing.
-                  </p>
-                  <a href="" className={defaultLink}>
-                    career@fiskevegn.no
-                  </a>
-                </div>
-              </div>
-              <div className={borrowed.second}>
-                <img src="/scenery-small.jpg" alt="" />
-              </div>
-            </div>
+            <Presentation {...page.career} />
           </InnerContainer>
+        </Block>
+
+        <Block>
+          <Design light gradient>
+            <InnerContainer>
+              <Presentation {...page.partners} reverseFlow />
+            </InnerContainer>
+          </Design>
         </Block>
       </Container>
     </Layout>

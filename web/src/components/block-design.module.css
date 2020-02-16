@@ -3,6 +3,9 @@
 
 .root {
   background-color: var(--color-light-gray);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   min-height: 400px;
   padding:2em 0;
   position: relative;

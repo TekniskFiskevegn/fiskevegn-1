@@ -1,0 +1,17 @@
+@import '../styles/custom-media.css';
+@import '../styles/custom-properties.css';
+
+.root {
+  text-align: center;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 220px;
+  padding:0 1em;
+}
+
+.logo {
+  width:70%;
+  margin-bottom: 1em;
+}

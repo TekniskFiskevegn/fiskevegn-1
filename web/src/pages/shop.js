@@ -12,7 +12,7 @@ import utils from "../components/utils.module.css";
 import "../styles/pages.css";
 
 const ShopPage = () => (
-  <Layout isCustomHeader={false} pageClass="contentNotFound">
+  <Layout currentPage="shop">
     <SEO title="404: Not found" />
     <Container>
       <Block>

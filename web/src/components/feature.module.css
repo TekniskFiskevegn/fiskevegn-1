@@ -1,0 +1,20 @@
+@import '../styles/custom-media.css';
+@import '../styles/custom-properties.css';
+
+.root {
+  background-color: transparent;
+  color: #000;
+  font-family: "Lato";
+  text-transform: uppercase;
+  text-align: center;
+  display: flex;
+  flex-flow: column;
+  flex:1;
+}
+
+.title {
+  font-size:24px;
+  margin:0 0 0.2em 0;
+}
+
+.text {}

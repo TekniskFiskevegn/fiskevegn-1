@@ -19,6 +19,7 @@ import project from "./documents/project";
 import news from "./documents/news";
 
 // Object types
+import feature from "./objects/feature";
 import intro from "./objects/intro";
 import bioPortableText from "./objects/bioPortableText";
 import figure from "./objects/figure";
@@ -29,6 +30,7 @@ import promotedBlock from "./objects/promotedBlock";
 import partner from "./objects/partner";
 import product from "./objects/product";
 import presentation from "./objects/presentation";
+import presentationPartners from "./objects/presentationPartners";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -49,6 +51,8 @@ export default createSchema({
     partner,
     product,
     presentation,
+    presentationPartners,
+    feature,
     // The following are document types which will appear
     // in the studio.
     // category,

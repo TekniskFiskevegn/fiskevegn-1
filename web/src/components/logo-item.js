@@ -1,7 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "gatsby";
-import styles from "./navigation-item.module.css";
+import { buildImageObj, cn } from "../lib/helpers";
+import { imageUrlFor } from "../lib/image-url";
+import styles from "./logo-item.module.css";
 
 // Use case:
 // A list of partners
@@ -11,24 +13,24 @@ import styles from "./navigation-item.module.css";
 
 const LogoItem = props => {
   return (
-    <a href={`/${props.url}`} target="_blank" className={styles.root}>
-      {imgSrc && (
-        <div className={styles.bodyImage}>
-          <img src={imgSrc} alt={title} />
-        </div>
+    <a href={`/${props.href}`} target="_blank" className={styles.root}>
+      {props.logo && (
+        <img
+          className={styles.logo}
+          src={imageUrlFor(buildImageObj(props.logo))
+            .width(500)
+            .url()}
+          alt={props.logo.alt}
+        />
       )}
-      <div className={styles.bodyText}>
-        {title && <h3>{title}</h3>}
-        {description && <span>{description}</span>}
-      </div>
+      {props.name && <span>{props.name}</span>}
     </a>
   );
 };
 
 LogoItem.propTypes = {
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string,
-  url: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  href: PropTypes.string,
   logo: PropTypes.string
 };
 

@@ -19,13 +19,11 @@ import { staticProductCategories } from "../lib/static";
 
 export const query = graphql`
   query ProductsPageQuery {
-    page: sanityProductsPage {
+    page: sanityPageProducts {
       _id
-      intro {
-        name
-        title
-        text
-      }
+      title
+      complementaryTitle
+      text
     }
   }
 `;
@@ -45,13 +43,21 @@ const ProductsPage = props => {
   // static nodes
   const nodes = staticProductCategories;
 
+  if (!page) {
+    throw new Error('Missing "page". Open the studio and add some content to this page.');
+  }
+
   return (
     <Layout currentPage="products">
       <SEO title="Fiskevegn products" />
       <Container>
         <Block>
           <InnerContainer>
-            <Intro {...page.intro} />
+            <Intro
+              complementaryTitle={page.complementaryTitle}
+              title={page.title}
+              text={page.text}
+            />
           </InnerContainer>
         </Block>
         <Block>

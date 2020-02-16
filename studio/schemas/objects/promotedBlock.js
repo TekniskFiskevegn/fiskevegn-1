@@ -5,30 +5,36 @@ export default {
   fields: [
     {
       name: "title",
-      title: "Title",
-      type: "string"
+      type: "string",
+      title: "Title"
+    },
+    {
+      name: "complementaryTitle",
+      type: "string",
+      title: "Complementary title",
+      description: "A small title shown above the main title."
     },
     {
       name: "text",
-      title: "Text",
-      type: "text"
+      type: "text",
+      title: "Text"
     },
     {
-      name: "secondTitle",
-      title: "Second title",
+      name: "secondaryTitle",
       type: "string",
+      title: "Second title",
       description: "Smaller title beside the image"
     },
     {
-      name: "secondText",
-      title: "Second text",
+      name: "secondaryText",
       type: "text",
+      title: "Second text",
       description: "Text beside the image"
     },
     {
       name: "image",
-      title: "Image",
-      type: "figure"
+      type: "figure",
+      title: "Image"
     },
     {
       name: "browseMoreHref",

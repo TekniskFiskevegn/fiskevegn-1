@@ -7,14 +7,24 @@ import styles from "./promoted.module.css";
 import utils from "./utils.module.css";
 import typography from "./typography.module.css";
 
-const Promoted = ({ intro, title, text, image, browseMoreHref, browseMoreText, reverseFlow }) => {
+const Promoted = ({
+  complementaryTitle,
+  title,
+  text,
+  secondaryTitle,
+  secondaryText,
+  image,
+  browseMoreHref,
+  browseMoreText,
+  reverseFlow
+}) => {
   return (
     <div className={styles.root}>
-      {intro && (
+      {title && (
         <div className={cn(styles.intro, utils.marginBottom)}>
-          {intro.name && <span className={typography.tinyTitle}>{intro.name}</span>}
-          {intro.title && <h2 className={typography.responsiveTitle1}>{intro.title}</h2>}
-          {intro.text && <p className={typography.noMarginText}>{intro.text}</p>}
+          {complementaryTitle && <span className={typography.tinyTitle}>{complementaryTitle}</span>}
+          {title && <h2 className={typography.responsiveTitle1}>{title}</h2>}
+          {text && <p className={typography.noMarginText}>{text}</p>}
         </div>
       )}
       <div className={cn(styles.wrapper, reverseFlow ? styles.reverseFlow : "")}>
@@ -32,8 +42,8 @@ const Promoted = ({ intro, title, text, image, browseMoreHref, browseMoreText, r
         </div>
         <div className={cn(styles.content, utils.boxShadowMoreSubtle)}>
           <div>
-            {title && <h3 className={typography.responsiveTitle2}>{title}</h3>}
-            {text && <p>{text}</p>}
+            {secondaryTitle && <h3 className={typography.responsiveTitle2}>{secondaryTitle}</h3>}
+            {secondaryText && <p>{secondaryText}</p>}
             {browseMoreHref && (
               <Link to={browseMoreHref} className={utils.callToActionLink}>
                 {browseMoreText || "Read more"}
@@ -49,7 +59,6 @@ const Promoted = ({ intro, title, text, image, browseMoreHref, browseMoreText, r
 Promoted.DefaultProps = {};
 
 Promoted.propTypes = {
-  intro: PropTypes.object,
   title: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   image: PropTypes.object.isRequired,

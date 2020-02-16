@@ -28,7 +28,7 @@ export default {
       description: "A short description."
     },
     {
-      name: "scenery",
+      name: "sceneryImage",
       title: "Scenery image",
       type: "figure"
     }

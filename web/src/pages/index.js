@@ -30,7 +30,7 @@ export const query = graphql`
       description
       keywords
     }
-    page: sanityFrontpage {
+    page: sanityPageHome {
       _id
       topImage {
         crop {
@@ -56,13 +56,11 @@ export const query = graphql`
         caption
       }
       firstPromotedBlock {
-        intro {
-          name
-          title
-          text
-        }
         title
+        complementaryTitle
         text
+        secondaryTitle
+        secondaryText
         browseMoreHref
         browseMoreText
         image {
@@ -89,13 +87,11 @@ export const query = graphql`
         }
       }
       secondPromotedBlock {
-        intro {
-          name
-          title
-          text
-        }
         title
+        complementaryTitle
         text
+        secondaryTitle
+        secondaryText
         browseMoreHref
         browseMoreText
         image {

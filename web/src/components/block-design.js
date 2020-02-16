@@ -1,18 +1,33 @@
 import React from "react";
-import { cn } from "../lib/helpers";
+import { buildImageObj, cn } from "../lib/helpers";
+import { imageUrlFor } from "../lib/image-url";
 import Svg from "./svg";
 import styles from "./block-design.module.css";
 
-const BlockDesign = ({ svg, children, bgImage, opacityClass, split, flex, light, gradient }) => {
-  if (bgImage) {
+const BlockDesign = ({
+  svg,
+  children,
+  backgroundImage,
+  opacityClass,
+  split,
+  flex,
+  light,
+  gradient
+}) => {
+  if (backgroundImage) {
+    const img = imageUrlFor(buildImageObj(backgroundImage))
+      .width(1800)
+      .height(Math.floor((9 / 16) * 1800))
+      .fit("crop")
+      .url();
     const inlineStyle = {
-      backgroundImage: `url(${bgImage})`
+      backgroundImage: `url(${img})`
     };
     return (
       <div
         className={cn(
           styles.root,
-          styles.bgImage,
+          styles.backgroundImage,
           opacityClass == "015" ? styles.opacity015 : "",
           opacityClass == "025" ? styles.opacity025 : "",
           opacityClass == "050" ? styles.opacity050 : "",
@@ -41,7 +56,7 @@ const BlockDesign = ({ svg, children, bgImage, opacityClass, split, flex, light,
 };
 
 BlockDesign.DefaultProps = {
-  bgImage: false
+  backgroundImage: false
 };
 
 export default BlockDesign;
