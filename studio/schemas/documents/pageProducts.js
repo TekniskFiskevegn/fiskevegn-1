@@ -25,7 +25,7 @@ export default {
       name: "text",
       type: "text",
       title: "Text",
-      description: "A short description."
+      description: "A short introduction to our products"
     },
     {
       name: "sceneryImage",

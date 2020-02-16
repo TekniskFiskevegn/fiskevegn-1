@@ -8,7 +8,6 @@ import Container from "./container";
 import Block from "./block";
 import Intro from "./intro";
 import InnerContainer from "./inner-container";
-import RoleList from "./role-list";
 
 import { demoText } from "../lib/dummy";
 

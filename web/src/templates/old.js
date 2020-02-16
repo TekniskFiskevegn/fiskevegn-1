@@ -10,7 +10,6 @@ import InnerContainer from "../components/inner-container";
 import Block from "../components/block";
 import BlockDesign from "../components/block-design";
 import Intro from "../components/intro";
-import List from "../components/list";
 
 import Presentation from "../components/presentation";
 import utils from "../components/utils.module.css";

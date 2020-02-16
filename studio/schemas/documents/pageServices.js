@@ -22,10 +22,10 @@ export default {
       description: "A small title shown above the page title."
     },
     {
-      name: "description",
+      name: "text",
       type: "text",
-      title: "Description",
-      description: "A short description."
+      title: "Text",
+      description: "A short introduction to our services"
     },
     {
       name: "sceneryImage",

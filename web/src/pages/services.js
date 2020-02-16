@@ -1,54 +1,82 @@
 import React from "react";
 import { graphql } from "gatsby";
+import { cn } from "../lib/helpers";
 
-import SEO from "../components/seo";
-import Layout from "../containers/layout";
-import Container from "../components/container";
-import InnerContainer from "../components/inner-container";
 import Block from "../components/block";
-import BlockDesign from "../components/block-design";
-import Intro from "../components/intro";
-import List from "../components/list";
-import Item from "../components/item";
-import utils from "../components/utils.module.css";
+import Container from "../components/container";
+import Design from "../components/block-design";
 import GraphQLErrorList from "../components/graphql-error-list";
-import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
+import InnerContainer from "../components/inner-container";
+import Intro from "../components/intro";
+import Layout from "../containers/layout";
+import NavigationItem from "../components/navigation-item";
+import SEO from "../components/seo";
 
-import { demoServices } from "../lib/dummy";
+// styles
+import listStyles from "../components/list.module.css";
+// static data
+import { staticProductCategories } from "../lib/static";
 
-const Service = props => {
-  const nodes = demoServices;
-  // const items = nodes.map(node => (
-  //   <Item {...node} key={node.id || 1} style={{ attention: true, opacity: true }} />
-  // ));
-  const pageIntro = {
-    name: "Services",
-    title: "Industry know-how",
-    text:
-      "Fiskevegn supplies business-essential products and services. Supplying the ocean-going fishing fleet in particular can be compared to servicing the airline industry. Many ocean-going fishing vessels barely touch base before returning back to sea. Also for coastal vessels, the reality is that if essensial equipment breaks down or gears are lost, there may be no choice but to return to port while losing time and revenues."
-  };
+export const query = graphql`
+  query ServicesPageQuery {
+    page: sanityPageServices {
+      _id
+      title
+      complementaryTitle
+      text
+    }
+  }
+`;
+
+const ServicesPage = props => {
+  const { data, errors } = props;
+  console.log("log 'product page' data", data);
+  if (errors) {
+    return (
+      <Layout>
+        <GraphQLErrorList errors={errors} />
+      </Layout>
+    );
+  }
+
+  const page = (data || {}).page;
+  // static nodes
+  const nodes = staticProductCategories;
+
+  if (!page) {
+    throw new Error('Missing "page". Open the studio and add some content to this page.');
+  }
 
   return (
-    <Layout pageClass="" currentPage="services">
-      <SEO title="Fiskevegn products" />
+    <Layout currentPage="services">
+      <SEO title="Fiskevegn services" />
       <Container>
         <Block>
           <InnerContainer>
-            <Intro {...pageIntro} />
+            <Intro
+              complementaryTitle={page.complementaryTitle}
+              title={page.title}
+              text={page.text}
+            />
           </InnerContainer>
         </Block>
         <Block>
-          <BlockDesign bgImage="/sceneries/scenery-6.jpg" opacityClass="015">
+          <Design backgroundImage={page.sceneryImage} opacityClass="015">
             <InnerContainer>
-              <div className={utils.boxShadowSubtle}>
-                <List nodes={nodes} listStyle="nav" listItemStyle="nav" />
-              </div>
+              <ul className={cn(listStyles.ul, listStyles.nav, listStyles.boxShadow)}>
+                {nodes &&
+                  nodes.map(node => (
+                    <li key={node.id}>
+                      <NavigationItem {...node} />
+                    </li>
+                  ))}
+              </ul>
             </InnerContainer>
-          </BlockDesign>
+          </Design>
         </Block>
       </Container>
     </Layout>
   );
 };
 
-export default Service;
+export default ServicesPage;

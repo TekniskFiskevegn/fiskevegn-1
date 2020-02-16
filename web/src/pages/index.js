@@ -14,7 +14,6 @@ import BlockDesign from "../components/block-design";
 import InnerContainer from "../components/inner-container";
 import Hero from "../components/hero";
 import Promoted from "../components/promoted";
-import List from "../components/list";
 import Intro from "../components/intro";
 import GraphQLErrorList from "../components/graphql-error-list";
 import SEO from "../components/seo";

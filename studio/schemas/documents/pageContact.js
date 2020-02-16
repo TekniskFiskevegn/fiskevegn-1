@@ -22,12 +22,6 @@ export default {
       description: "A small title shown above the page title."
     },
     {
-      name: "description",
-      type: "text",
-      title: "Description",
-      description: "A short description."
-    },
-    {
       name: "sceneryImage",
       title: "Scenery image",
       type: "figure"

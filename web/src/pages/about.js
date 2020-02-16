@@ -11,7 +11,6 @@ import InnerContainer from "../components/inner-container";
 import Intro from "../components/intro";
 import Layout from "../containers/layout";
 import Presentation from "../components/presentation";
-import List from "../components/list";
 import SEO from "../components/seo";
 
 // styles
@@ -174,7 +173,7 @@ const AboutPage = props => {
         </Block>
 
         <Block>
-          <Design light gradient>
+          <Design>
             <InnerContainer>
               <Presentation {...page.partners} reverseFlow />
             </InnerContainer>

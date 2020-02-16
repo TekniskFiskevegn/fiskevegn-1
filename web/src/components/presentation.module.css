@@ -63,9 +63,9 @@
 
 .listOfVisualsOddEven {
   @nest & li {
-    background-color:#fff;
+    background-color:#fcfcfc;
     @nest &:nth-child(3n+1) {
-      background-color:#fcfcfc;
+      background-color:#fafafa;
     }
   }
 }

@@ -4,13 +4,13 @@ import Container from "../components/container";
 import GraphQLErrorList from "../components/graphql-error-list";
 import Block from "../components/block";
 import InnerContainer from "../components/inner-container";
-import List from "../components/list";
 import Intro from "../components/intro";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from "../lib/helpers";
 
 import utils from "../components/utils.module.css";
+import listStyles from "../components/list.module.css";
 import { responsiveTitle1 } from "../components/typography.module.css";
 
 export const query = graphql`
@@ -60,7 +60,14 @@ const ArchivePage = props => {
         <Block name="news">
           <InnerContainer>
             {/* {projectNodes && projectNodes.length > 0 && <NewsBlock nodes={projectNodes} />} */}
-            <List type="news" title="News archive" nodes={projectNodes} />
+            {/* <List type="news" title="News archive" nodes={projectNodes} /> */}
+            <ul className={cn(listStyles.ul, listStyles.oneHalf)}>
+              {projectNodes.map(node => (
+                <li key={node.id}>
+                  <NewsTeaser {...node} />
+                </li>
+              ))}
+            </ul>
           </InnerContainer>
         </Block>
       </Container>
