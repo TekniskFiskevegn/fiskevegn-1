@@ -43,7 +43,7 @@ const Contact = ({
         </div>
         <div className={cn(styles.content, utils.boxShadowMoreSubtle)}>
           <div>
-            <h3 className={typography.responsiveTitle2}>Post adress</h3>
+            <h3 className={typography.responsiveTitle2}>Contact</h3>
             {adress && <p>{adress}</p>}
             <ul className={cn(list.ul, list.plain)}>
               {phone && (

@@ -28,7 +28,7 @@
 .plain {
   flex-flow:column;
   @nest & li {
-    padding:0.3em;
+    padding:0.3em 0;
   }
 }
 
