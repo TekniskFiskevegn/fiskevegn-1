@@ -24,6 +24,28 @@ export const query = graphql`
       title
       complementaryTitle
       text
+      sceneryImage {
+        crop {
+          _key
+          _type
+          top
+          bottom
+          left
+          right
+        }
+        hotspot {
+          _key
+          _type
+          x
+          y
+          height
+          width
+        }
+        asset {
+          _id
+        }
+        alt
+      }
     }
   }
 `;
@@ -61,7 +83,7 @@ const ProductsPage = props => {
           </InnerContainer>
         </Block>
         <Block>
-          <Design bgImage="/sceneries/scenery-7.jpg" opacity="015">
+          <Design backgroundImage={page.sceneryImage} opacity="015">
             <InnerContainer>
               <ul className={cn(listStyles.ul, listStyles.nav, listStyles.boxShadow)}>
                 {nodes &&

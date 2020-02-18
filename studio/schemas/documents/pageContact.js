@@ -13,18 +13,19 @@ export default {
       name: "title",
       type: "string",
       title: "Title",
-      description: "Page title."
+      description: "Page title"
     },
     {
-      name: "complementaryTitle",
-      type: "string",
-      title: "Complementary title",
-      description: "A small title shown above the page title."
-    },
-    {
-      name: "sceneryImage",
-      title: "Scenery image",
+      name: "topImage",
+      title: "Top image",
       type: "figure"
+    },
+    {
+      name: "departments",
+      type: "array",
+      title: "Our departments",
+      of: [{ type: "contactBlock" }],
+      description: "Add department"
     }
   ]
 };

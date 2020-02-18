@@ -14,6 +14,7 @@ import pageServices from "./documents/pageServices";
 import pageContact from "./documents/pageContact";
 
 import products from "./documents/products";
+import services from "./documents/services";
 import person from "./documents/person";
 import project from "./documents/project";
 import news from "./documents/news";
@@ -27,6 +28,7 @@ import projectMember from "./objects/projectMember";
 import projectPortableText from "./objects/projectPortableText";
 import simplePortableText from "./objects/simplePortableText";
 import promotedBlock from "./objects/promotedBlock";
+import contactBlock from "./objects/contactBlock";
 import partner from "./objects/partner";
 import product from "./objects/product";
 import presentation from "./objects/presentation";
@@ -47,6 +49,7 @@ export default createSchema({
     projectPortableText,
     simplePortableText,
     promotedBlock,
+    contactBlock,
     intro,
     partner,
     product,
@@ -59,6 +62,7 @@ export default createSchema({
     person,
     project,
     products,
+    services,
     news,
     siteSettings,
     pageHome,

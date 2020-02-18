@@ -25,6 +25,13 @@
   }
 }
 
+.plain {
+  flex-flow:column;
+  @nest & li {
+    padding:0.3em;
+  }
+}
+
 .oneWhole {
   flex-flow: column;
 

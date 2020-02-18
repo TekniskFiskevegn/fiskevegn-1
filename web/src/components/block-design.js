@@ -4,16 +4,7 @@ import { imageUrlFor } from "../lib/image-url";
 import Svg from "./svg";
 import styles from "./block-design.module.css";
 
-const BlockDesign = ({
-  svg,
-  children,
-  backgroundImage,
-  opacityClass,
-  split,
-  flex,
-  light,
-  gradient
-}) => {
+const BlockDesign = ({ svg, children, backgroundImage, opacity, split, flex, light, gradient }) => {
   if (backgroundImage) {
     const img = imageUrlFor(buildImageObj(backgroundImage))
       .width(1800)
@@ -28,13 +19,13 @@ const BlockDesign = ({
         className={cn(
           styles.root,
           styles.backgroundImage,
-          opacityClass == "015" ? styles.opacity015 : "",
-          opacityClass == "025" ? styles.opacity025 : "",
-          opacityClass == "050" ? styles.opacity050 : "",
-          opacityClass == "065" ? styles.opacity065 : "",
-          opacityClass == "075" ? styles.opacity075 : "",
-          opacityClass == "085" ? styles.opacity085 : "",
-          opacityClass == "090" ? styles.opacity090 : "",
+          opacity == "015" ? styles.opacity015 : "",
+          opacity == "025" ? styles.opacity025 : "",
+          opacity == "050" ? styles.opacity050 : "",
+          opacity == "065" ? styles.opacity065 : "",
+          opacity == "075" ? styles.opacity075 : "",
+          opacity == "085" ? styles.opacity085 : "",
+          opacity == "090" ? styles.opacity090 : "",
           flex ? styles.flex : ""
         )}
         style={inlineStyle}

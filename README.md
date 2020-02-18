@@ -3,6 +3,8 @@
 ## Todo
 
 @ Sytalaust
+- utils + typography = sant
+- improvements naming convention
 - Improvements in presentation.js
 - Improvements in schema. Should use intro object instead of repeating fields on every page, but currently there seems to be a bug in sanity when using an object to provide the title
 - find the best way to handle errors. Console.error or throw error. 

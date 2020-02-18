@@ -2,7 +2,7 @@ import { format } from "date-fns";
 
 export default {
   name: "products",
-  title: "Products",
+  title: "Add: Products",
   type: "document",
   fields: [
     {

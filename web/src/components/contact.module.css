@@ -1,0 +1,79 @@
+@import '../styles/custom-media.css';
+@import '../styles/custom-properties.css';
+
+.root {}
+
+.wrapper {
+  display: flex;
+  flex-flow:column;
+  position: relative;
+
+  @media (--large-and-up) {
+    flex-flow:row;
+  }
+}
+
+.reverseFlow {
+  @media (--large-and-up) {
+    flex-flow:row-reverse;
+  }
+  @nest & .content {
+    /* background-color: var(--color-almost-white); */
+    background-color:var(--color-light-gray);
+    @media (--large-and-up) {
+      left:0;
+    }
+  }
+}
+
+.intro {
+  text-align: left;
+  @media(--medium-and-up) {
+    text-align:center;
+  }
+}
+
+.visuals {
+  flex:1;
+  max-height: 400px;
+  overflow: hidden;
+  @media (--large-and-up) {
+    flex:60% 0 0;
+  }
+}
+
+.maxHeightOnVisuals {
+  max-height: 400px;
+  overflow: hidden;
+}
+
+.content {
+  composes: boxShadow4 from "./utils.module.css";
+  background-color: var(--color-almost-white);
+  position:relative;
+  padding:1.5em 1.5em;
+  margin:-2em 1em 0 1em;
+  display:flex;
+  flex:1;
+  align-items: center;
+
+  @media (--medium-and-up) {
+    padding:2em;
+    margin:-6em 2em 0 2em;
+  } 
+
+  @media (--large-and-up) {
+    position: absolute;
+    top: 25px;
+    bottom: 25px;
+    right: 0;
+    padding:3em;
+    margin:0;
+    width:100%;
+    max-width: 50%;
+  }
+
+  @nest & p {
+    margin:0 0 1em 0;
+  }
+}
