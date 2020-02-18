@@ -17,13 +17,7 @@ const ShopPage = () => (
     <Container>
       <Block>
         <InnerContainer>
-          <Intro
-            backButton
-            backTo="/"
-            name="404"
-            title="Content Not Found"
-            text="Sorry, but this page doesn`t exist. Go back to our homepage and keep looking."
-          />
+          <Intro backButton backTo="/" title="SHOP" text="Fiskevegn web shop coming soon." />
         </InnerContainer>
       </Block>
     </Container>

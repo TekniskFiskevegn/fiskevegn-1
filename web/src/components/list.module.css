@@ -32,6 +32,13 @@
   }
 }
 
+.gapFix {
+  @media (--medium-and-up) {
+    margin-right:-1em;
+    margin-left:-1em;
+  }
+}
+
 .oneWhole {
   flex-flow: column;
 

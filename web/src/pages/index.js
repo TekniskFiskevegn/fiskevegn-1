@@ -18,6 +18,8 @@ import Intro from "../components/intro";
 import GraphQLErrorList from "../components/graphql-error-list";
 import SEO from "../components/seo";
 import NewsTeaser from "../components/news-teaser";
+// styles
+import utils from "../components/utils.module.css";
 import listStyles from "../components/list.module.css";
 
 import { uiNewsTitle } from "../lib/ui";
@@ -224,7 +226,7 @@ const IndexPage = props => {
           <Block>
             <InnerContainer>
               <Intro title={`${uiNewsTitle[lang]}`} />
-              <ul className={cn(listStyles.ul)}>
+              <ul className={cn(listStyles.ul, listStyles.gapFix)}>
                 {newsNodes.map(node => (
                   <li key={node.id}>
                     <NewsTeaser {...node} />
@@ -232,7 +234,9 @@ const IndexPage = props => {
                 ))}
               </ul>
               <div>
-                <Link to="/archive">More news</Link>
+                <Link to="/archive" className={utils.defaultLink}>
+                  More news
+                </Link>
               </div>
             </InnerContainer>
           </Block>

@@ -173,11 +173,9 @@ const AboutPage = props => {
         </Block>
 
         <Block>
-          <Design>
-            <InnerContainer>
-              <Presentation {...page.partners} reverseFlow />
-            </InnerContainer>
-          </Design>
+          <InnerContainer>
+            <Presentation {...page.partners} reverseFlow />
+          </InnerContainer>
         </Block>
       </Container>
     </Layout>

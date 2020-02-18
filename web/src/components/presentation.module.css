@@ -63,14 +63,15 @@
 
 .listOfVisualsOddEven {
   @nest & li {
-    background-color:#fcfcfc;
+    background-color:#fafafa;
     @nest &:nth-child(3n+1) {
-      background-color:#fafafa;
+      background-color:#fff;
     }
   }
 }
 
 .listOfVisualsBorders {
+  border:1px solid var(--color-light-gray);
   @nest & li {
     border:1px solid var(--color-light-gray);
     /* @media (--medium-and-up) {
