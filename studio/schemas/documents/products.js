@@ -2,11 +2,11 @@ import { format } from "date-fns";
 
 export default {
   name: "products",
-  title: "Add: Products",
+  title: "Edit: Products",
   type: "document",
   fields: [
     {
-      name: "name",
+      name: "title",
       title: "Product name",
       type: "string",
       description: "Shown in navigation and as title on product page"
@@ -17,40 +17,36 @@ export default {
       type: "slug",
       description: "Just click generate",
       options: {
-        source: "name",
+        source: "title",
         maxLength: 96
       }
     },
     {
+      name: "categoryReference",
       title: "Product category",
-      name: "category",
       type: "array",
-      of: [{ type: "string" }],
-      options: {
-        layout: "radio",
-        list: [
-          { title: "Fishery", value: "fishery" },
-          { title: "Aquaculture", value: "aquaculture" },
-          { title: "Ropes", value: "ropes" },
-          { title: "General supplies", value: "generalSupplies" }
-        ]
-      }
+      of: [
+        {
+          type: "reference",
+          to: [{ type: "categories" }]
+        }
+      ]
     },
     {
       name: "teaser",
       title: "Teaser",
       type: "string",
-      description: "Just some teaser text. Shown only in navigation."
+      description: "Teaser text for product, shown only in navigation"
     },
     {
-      name: "description",
-      title: "Product description",
+      name: "text",
+      title: "Product text",
       type: "text",
-      description: "Only the most important. Please keep it short and sweet."
+      description: "Keep it short and sweet"
     },
     {
-      name: "productComponents",
-      title: "Product models/components",
+      name: "models",
+      title: "Product models or components",
       type: "array",
       of: [{ type: "product" }]
     }

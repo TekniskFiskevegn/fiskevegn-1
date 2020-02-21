@@ -2,15 +2,30 @@ import React from "react";
 import { buildImageObj, cn } from "../lib/helpers";
 import { imageUrlFor } from "../lib/image-url";
 import Svg from "./svg";
-import styles from "./block-design.module.css";
+import styles from "./design.module.css";
 
-const BlockDesign = ({ svg, children, backgroundImage, opacity, split, flex, light, gradient }) => {
+const Design = ({
+  svg,
+  children,
+  backgroundImage,
+  opacity,
+  split,
+  flex,
+  light,
+  gradient,
+  isStatic
+}) => {
   if (backgroundImage) {
-    const img = imageUrlFor(buildImageObj(backgroundImage))
-      .width(1800)
-      .height(Math.floor((9 / 16) * 1800))
-      .fit("crop")
-      .url();
+    let img;
+    if (isStatic) {
+      img = backgroundImage;
+    } else {
+      img = imageUrlFor(buildImageObj(backgroundImage))
+        .width(1800)
+        .height(Math.floor((9 / 16) * 1800))
+        .fit("crop")
+        .url();
+    }
     const inlineStyle = {
       backgroundImage: `url(${img})`
     };
@@ -46,8 +61,8 @@ const BlockDesign = ({ svg, children, backgroundImage, opacity, split, flex, lig
   );
 };
 
-BlockDesign.DefaultProps = {
+Design.DefaultProps = {
   backgroundImage: false
 };
 
-export default BlockDesign;
+export default Design;

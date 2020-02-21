@@ -23,7 +23,7 @@ const LogoItem = props => {
           alt={props.logo.alt}
         />
       )}
-      {props.name && <span>{props.name}</span>}
+      {props.name && <span className={styles.name}>{props.name}</span>}
     </a>
   );
 };

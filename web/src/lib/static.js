@@ -19,7 +19,7 @@ export const staticProductCategories = [
   {
     id: "fishery",
     name: "Fishery",
-    teaser: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores poro iste.",
+    teaser: "Vessel planning, fishing stystem, fishing gear, crew and vessel supplies",
     slug: {
       current: "/fishery"
     },
@@ -28,7 +28,7 @@ export const staticProductCategories = [
   {
     id: "aquaculture",
     name: "Aquaculture",
-    teaser: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores poro iste.",
+    teaser: "A wide range of equipment, products and solutions for the aquaculture industry",
     slug: {
       current: "/not-found"
     },
@@ -37,7 +37,7 @@ export const staticProductCategories = [
   {
     id: "ropes",
     name: "Ropes",
-    teaser: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores poro iste.",
+    teaser: "Modern range of machinery for cord and rope production",
     slug: {
       current: "/not-found"
     },
@@ -46,7 +46,8 @@ export const staticProductCategories = [
   {
     id: "generalSupplies",
     name: "General supplies",
-    teaser: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores poro iste.",
+    teaser:
+      "A wide range of equipment and accessories for fishing vessels, aquaculture and offshore.",
     slug: {
       current: "/not-found"
     },
@@ -91,7 +92,7 @@ export const staticServiceCategories = [
 
 export const staticFisheryPage = {
   intro: {
-    name: "Category",
+    complementaryTitle: "Category",
     title: "Fishery",
     text:
       "Since its inception, Fiskevegn has been founded on the core values of quality, delivery and innovation. We emphasize close communication with our customers and rapid responses to deliver better Fishery, solutions and services. Our core values have yielded results both for our customers."

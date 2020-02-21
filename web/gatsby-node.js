@@ -80,8 +80,82 @@ async function createProductPages(graphql, actions, reporter) {
   });
 }
 
+async function createServicePages(graphql, actions, reporter) {
+  const { createPage } = actions;
+  const result = await graphql(`
+    {
+      allSanityServices(filter: { slug: { current: { ne: null } } }) {
+        edges {
+          node {
+            id
+            slug {
+              current
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  if (result.errors) throw result.errors;
+
+  const serviceEdges = (result.data.allSanityServices || {}).edges || [];
+
+  serviceEdges.forEach(edge => {
+    const id = edge.node.id;
+    const slug = edge.node.slug.current;
+    const path = `/service/${slug}/`;
+
+    reporter.info(`Creating service page: ${path}`);
+
+    createPage({
+      path,
+      component: require.resolve("./src/templates/service.js"),
+      context: { id }
+    });
+  });
+}
+
+async function createCategoryPages(graphql, actions, reporter) {
+  const { createPage } = actions;
+  const result = await graphql(`
+    {
+      allSanityCategories(filter: { slug: { current: { ne: null } } }) {
+        edges {
+          node {
+            id
+            slug {
+              current
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  if (result.errors) throw result.errors;
+
+  const categoryEdges = (result.data.allSanityCategories || {}).edges || [];
+
+  categoryEdges.forEach(edge => {
+    const id = edge.node.id;
+    const slug = edge.node.slug.current;
+    const path = `/category/${slug}/`;
+
+    reporter.info(`Creating service page: ${path}`);
+
+    createPage({
+      path,
+      component: require.resolve("./src/templates/category.js"),
+      context: { id }
+    });
+  });
+}
+
 exports.createPages = async ({ graphql, actions, reporter }) => {
   // console.log("log in createPages", graphql, actions);
   await createNewsPages(graphql, actions, reporter);
   await createProductPages(graphql, actions, reporter);
+  await createServicePages(graphql, actions, reporter);
+  await createCategoryPages(graphql, actions, reporter);
 };

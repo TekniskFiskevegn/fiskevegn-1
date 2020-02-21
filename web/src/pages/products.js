@@ -1,15 +1,15 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { cn } from "../lib/helpers";
+import { mapEdgesToNodes, cn } from "../lib/helpers";
 
 import Block from "../components/block";
 import Container from "../components/container";
-import Design from "../components/block-design";
+import Design from "../components/design";
 import GraphQLErrorList from "../components/graphql-error-list";
 import InnerContainer from "../components/inner-container";
 import Intro from "../components/intro";
 import Layout from "../containers/layout";
-import NavigationItem from "../components/navigation-item";
+import Navigation from "../components/navigation";
 import SEO from "../components/seo";
 
 // styles
@@ -47,6 +47,18 @@ export const query = graphql`
         alt
       }
     }
+    categories: allSanityCategories(limit: 6) {
+      edges {
+        node {
+          id
+          title
+          teaser
+          slug {
+            current
+          }
+        }
+      }
+    }
   }
 `;
 
@@ -62,8 +74,7 @@ const ProductsPage = props => {
   }
 
   const page = (data || {}).page;
-  // static nodes
-  const nodes = staticProductCategories;
+  const nodes = (data || {}).categories ? mapEdgesToNodes(data.categories) : [];
 
   if (!page) {
     throw new Error('Missing "page". Open the studio and add some content to this page.');
@@ -85,14 +96,7 @@ const ProductsPage = props => {
         <Block>
           <Design backgroundImage={page.sceneryImage} opacity="015">
             <InnerContainer>
-              <ul className={cn(listStyles.ul, listStyles.nav, listStyles.boxShadow)}>
-                {nodes &&
-                  nodes.map(node => (
-                    <li key={node.id}>
-                      <NavigationItem {...node} />
-                    </li>
-                  ))}
-              </ul>
+              <Navigation nodes={nodes} nodeLinksToTemplate="category" />
             </InnerContainer>
           </Design>
         </Block>

@@ -1,0 +1,9 @@
+@import '../styles/custom-media.css';
+@import '../styles/custom-properties.css';
+
+.root {
+  font-size: 12px;
+  @nest & span {
+    display: inline-block;
+  }
+}

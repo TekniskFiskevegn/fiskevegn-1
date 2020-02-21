@@ -10,9 +10,11 @@ import { responsiveTitle1 } from "./typography.module.css";
 const Intro = ({ complementaryTitle, title, text, margin, backButton, backTo }) => {
   return (
     <div className={cn(styles.root, margin ? styles.marginBottom : "")}>
-      {complementaryTitle && <span className={styles.name}>{complementaryTitle}</span>}
+      {complementaryTitle && (
+        <span className={styles.complementaryTitle}>{complementaryTitle}</span>
+      )}
       {title && <h2 className={responsiveTitle1}>{title}</h2>}
-      {text && <p>{text}</p>}
+      {text && <p className={styles.text}>{text}</p>}
     </div>
   );
 };

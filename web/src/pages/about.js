@@ -3,7 +3,7 @@ import { graphql } from "gatsby";
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
 
 import Block from "../components/block";
-import Design from "../components/block-design";
+import Design from "../components/design";
 import Container from "../components/container";
 import Feature from "../components/feature";
 import GraphQLErrorList from "../components/graphql-error-list";

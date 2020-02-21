@@ -10,7 +10,7 @@ import {
 import Layout from "../containers/layout";
 import Container from "../components/container";
 import Block from "../components/block";
-import BlockDesign from "../components/block-design";
+import Design from "../components/design";
 import InnerContainer from "../components/inner-container";
 import Hero from "../components/hero";
 import Promoted from "../components/promoted";
@@ -209,7 +209,7 @@ const IndexPage = props => {
         )}
         {page.secondPromotedBlock && (
           <Block verticalRhythm={{ bottom: 0 }}>
-            <BlockDesign
+            <Design
               svg={{
                 wave: true,
                 number: "1"
@@ -218,7 +218,7 @@ const IndexPage = props => {
               <InnerContainer>
                 <Promoted {...page.secondPromotedBlock} />
               </InnerContainer>
-            </BlockDesign>
+            </Design>
           </Block>
         )}
 

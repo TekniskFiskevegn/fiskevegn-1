@@ -2,14 +2,14 @@ import { format } from "date-fns";
 
 export default {
   name: "services",
-  title: "Add: Services",
+  title: "Edit: Services",
   type: "document",
   fields: [
     {
-      name: "name",
+      name: "title",
       title: "Service name",
       type: "string",
-      description: "Shown in navigation and as title on product page"
+      description: "Shown in navigation and as title on service page"
     },
     {
       name: "slug",
@@ -17,7 +17,7 @@ export default {
       type: "slug",
       description: "Just click generate",
       options: {
-        source: "name",
+        source: "title",
         maxLength: 96
       }
     },
@@ -25,13 +25,29 @@ export default {
       name: "teaser",
       title: "Teaser",
       type: "string",
-      description: "Just some teaser text. Shown only in navigation."
+      description: "Teaser text showing only in navigation"
     },
     {
       name: "text",
       title: "Service text",
       type: "text",
       description: "Only the most important. Please keep it short and sweet."
+    },
+    {
+      name: "firstImage",
+      title: "First service image",
+      type: "figure"
+    },
+    {
+      name: "secondText",
+      title: "Second service text",
+      type: "text",
+      description: "Only the most important. Please keep it short and sweet."
+    },
+    {
+      name: "secondImage",
+      title: "Second service image",
+      type: "figure"
     }
   ]
 };

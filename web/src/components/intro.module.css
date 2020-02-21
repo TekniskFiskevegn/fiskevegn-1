@@ -8,8 +8,12 @@
   }
 }
 
-.name {
+.complementaryTitle {
   composes: tinyTitle from "./typography.module.css";
+}
+
+.text {
+  margin-bottom: 0;
 }
 
 .marginBottom {

@@ -1,5 +1,9 @@
 import { format, isFuture } from "date-fns";
 
+export function filterOutProductsWithoutCorrectCategoryID({ id }) {
+  return id !== "0";
+}
+
 export function cn(...args) {
   return args.filter(Boolean).join(" ");
 }

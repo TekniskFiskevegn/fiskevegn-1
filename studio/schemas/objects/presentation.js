@@ -20,21 +20,21 @@ export default {
     },
     {
       name: "email",
-      title: "E-mail",
+      title: "Attached e-mail",
       type: "string",
-      description: "Leave empty if no e-mail"
+      description: "If no e-mail, leave empty"
     },
     {
       name: "link",
-      title: "Link",
+      title: "Attached link",
       type: "string",
-      description: "Leave empty if no link"
+      description: "If no link, leave empty"
     },
     {
       name: "attachment",
-      title: "PDF for download",
-      type: "string",
-      description: "Leave empty if no PDF"
+      title: "Attached PDF",
+      type: "file",
+      description: "If no PDF, leave empty"
     }
   ]
 };

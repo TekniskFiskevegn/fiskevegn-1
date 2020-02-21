@@ -5,7 +5,6 @@ import SEO from "../components/seo";
 import Container from "../components/container";
 import Block from "../components/block";
 import Intro from "../components/intro";
-import BlockDesign from "../components/block-design";
 import InnerContainer from "../components/inner-container";
 
 import utils from "../components/utils.module.css";

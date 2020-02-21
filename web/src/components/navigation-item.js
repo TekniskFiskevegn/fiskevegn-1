@@ -11,12 +11,15 @@ import styles from "./navigation-item.module.css";
 
 const NavigationItem = props => {
   // if !useTemplate change link
-  const url = props.linksToStaticPage ? props.slug.current : `/product/${props.slug.current}`;
+  console.log("log props NavigationItem", props);
+  // const template = props.isService ? "/service" : "/product";
+  // const url = props.linksToStaticPage ? props.slug.current : `/${template}/${props.slug.current}`;
+  const url = `/${props.templateUrl}/${props.slug.current}`;
   return (
     <Link className={styles.root} to={url}>
       <div className={styles.content}>
-        {props.name && <h3 className={styles.name}>{props.name}</h3>}
-        {props.teaser && <span>{props.teaser}</span>}
+        {props.title && <h3 className={styles.title}>{props.title}</h3>}
+        {props.teaser && <span className={styles.teaser}>{props.teaser}</span>}
       </div>
     </Link>
   );

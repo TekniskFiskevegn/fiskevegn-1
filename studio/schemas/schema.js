@@ -14,12 +14,14 @@ import pageServices from "./documents/pageServices";
 import pageContact from "./documents/pageContact";
 
 import products from "./documents/products";
+import categories from "./documents/categories";
 import services from "./documents/services";
 import person from "./documents/person";
 import project from "./documents/project";
 import news from "./documents/news";
 
 // Object types
+import pdf from "./objects/pdf";
 import feature from "./objects/feature";
 import intro from "./objects/intro";
 import bioPortableText from "./objects/bioPortableText";
@@ -56,12 +58,14 @@ export default createSchema({
     presentation,
     presentationPartners,
     feature,
+    pdf,
     // The following are document types which will appear
     // in the studio.
     // category,
     person,
     project,
     products,
+    categories,
     services,
     news,
     siteSettings,

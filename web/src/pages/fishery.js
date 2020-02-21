@@ -3,7 +3,7 @@ import { graphql } from "gatsby";
 import { mapEdgesToNodes, cn } from "../lib/helpers";
 
 import Block from "../components/block";
-import Design from "../components/block-design";
+import Design from "../components/design";
 import Container from "../components/container";
 import GraphQLErrorList from "../components/graphql-error-list";
 import GoBack from "../components/go-back";
@@ -26,7 +26,7 @@ export const query = graphql`
       edges {
         node {
           id
-          name
+          title
           teaser
           slug {
             current
@@ -62,7 +62,7 @@ const FisheryPage = props => {
           </InnerContainer>
         </Block>
         <Block>
-          <Design bgImage="/sceneries/scenery-1.jpg" opacityClass="015">
+          <Design backgroundImage="/sceneries/scenery-1.jpg" isStatic opacity="015">
             <InnerContainer>
               <ul className={cn(listStyles.ul, listStyles.nav, listStyles.boxShadow)}>
                 {nodes &&

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
+import Disclaimer from "./disclaimer";
 import styles from "./footer.module.css";
 
 function Footer(props) {
@@ -24,6 +25,7 @@ function Footer(props) {
             <a href="https://www.gatsbyjs.org">Gatsby</a>
             by WeBeyond
           </p>
+          {/* <Disclaimer /> */}
         </div>
       </div>
     </footer>

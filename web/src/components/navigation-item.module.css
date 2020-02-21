@@ -17,8 +17,12 @@
   }
 }
 
-.name {
+.title {
   color:var(--color-brand-complementary);
   margin:0;
   font-size:20px;
+}
+
+.teaser {
+  font-size:15px;
 }
