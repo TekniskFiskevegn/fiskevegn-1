@@ -17,11 +17,10 @@ import products from "./documents/products";
 import categories from "./documents/categories";
 import services from "./documents/services";
 import person from "./documents/person";
-import project from "./documents/project";
 import news from "./documents/news";
 
 // Object types
-import pdf from "./objects/pdf";
+import file from "./objects/file";
 import feature from "./objects/feature";
 import intro from "./objects/intro";
 import bioPortableText from "./objects/bioPortableText";
@@ -30,7 +29,7 @@ import projectMember from "./objects/projectMember";
 import projectPortableText from "./objects/projectPortableText";
 import simplePortableText from "./objects/simplePortableText";
 import promotedBlock from "./objects/promotedBlock";
-import contactBlock from "./objects/contactBlock";
+import department from "./objects/department";
 import partner from "./objects/partner";
 import product from "./objects/product";
 import presentation from "./objects/presentation";
@@ -51,19 +50,18 @@ export default createSchema({
     projectPortableText,
     simplePortableText,
     promotedBlock,
-    contactBlock,
+    department,
     intro,
     partner,
     product,
     presentation,
     presentationPartners,
     feature,
-    pdf,
+    file,
     // The following are document types which will appear
     // in the studio.
     // category,
     person,
-    project,
     products,
     categories,
     services,

@@ -8,6 +8,7 @@ import { cn } from "../lib/helpers";
 
 // Improvements:
 // 1. Add support for browseMoreHref
+// 2. Add more types of items
 
 function List(props) {
   const { style, listItem, nodes } = props;
@@ -42,7 +43,11 @@ const getCustomStyle = style => {
   if (!style) {
     return;
   }
-  return cn(style == "gapFix" ? styles.gapFix : "", style == "oneThird" ? styles.oneThird : "");
+  return cn(
+    style == "gapFix" ? styles.gapFix : "",
+    style == "oneHalf" ? styles.oneHalf : "",
+    style == "oneThird" ? styles.oneThird : ""
+  );
 };
 
 List.defaultProps = {};

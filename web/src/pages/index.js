@@ -227,14 +227,7 @@ const IndexPage = props => {
           <Block>
             <InnerContainer>
               <Intro title={`${uiNewsTitle[lang]}`} />
-              <List style="gapFix" listItem="NewsTeaser" nodes={newsNodes} />
-              {/* <ul className={cn(listStyles.ul, listStyles.gapFix)}>
-                {newsNodes.map(node => (
-                  <li key={node.id}>
-                    <NewsTeaser {...node} />
-                  </li>
-                ))}
-              </ul> */}
+              <List style="oneHalf" listItem="NewsTeaser" nodes={newsNodes} />
               <div>
                 <Link to="/archive" className={utils.defaultLink}>
                   More news

@@ -1,17 +1,2 @@
 .root {
-  display: inline-block;
-  font-size:13px;
-}
-
-.breadcrumbs {
-  display: inline-block;
-  @nest & a {
-    text-decoration:none;
-    color:#888;
-    border-bottom:1px solid #ccc;
-  }
-
-  @nest & .home {
-    padding-left:0;
-  }
 }

@@ -1,6 +1,6 @@
 export default {
-  name: "contactBlock",
-  title: "Contact Block",
+  name: "department",
+  title: "Department",
   type: "object",
   fields: [
     {

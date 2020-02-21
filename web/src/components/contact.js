@@ -45,7 +45,7 @@ const Contact = ({
           <div>
             <h3 className={typography.responsiveTitle2}>Contact</h3>
             {adress && <p>{adress}</p>}
-            <ul className={cn(list.ul, list.plain)}>
+            <ul className={cn(list.default, list.plain)}>
               {phone && (
                 <li>
                   <a className={utils.defaultLink} href="#">

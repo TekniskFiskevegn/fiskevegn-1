@@ -154,7 +154,7 @@ const AboutPage = props => {
           <Design backgroundImage={page.sceneryImage} opacity="075" flex>
             <InnerContainer>
               {features && features.length > 0 && (
-                <ul className={cn(listStyles.ul)}>
+                <ul className={cn(listStyles.default)}>
                   {features.map(item => (
                     <li key={item.id}>
                       <Feature {...item} />

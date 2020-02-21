@@ -3,53 +3,54 @@ import React from "react";
 import { Link } from "gatsby";
 import { buildImageObj } from "../lib/helpers";
 import { imageUrlFor } from "../lib/image-url";
-import SanityBlockContent from "./sanity-block-content";
-import Container from "./container";
 import Block from "./block";
-import Intro from "./intro";
+import BlockContent from "./sanity-block-content";
+import Container from "./container";
 import InnerContainer from "./inner-container";
+import Intro from "./intro";
 
-import { demoText } from "../lib/dummy";
-
+// styles
 import styles from "./article.module.css";
 
-function Project(props) {
-  const { _rawBody, title, categories, mainImage, members, publishedAt, relatedProjects } = props;
-  const blockIntro = {
-    name: "14. januar 2020",
-    title: `${title}`,
-    text: `${demoText(3)}`
-  };
+function Article(props) {
+  const {
+    _rawBody,
+    title,
+    introduction,
+    mainImage,
+    publishedAt,
+    members,
+    categories,
+    relatedProjects
+  } = props;
   return (
-    <article className={styles.root}>
-      <Container>
-        <Block>
-          <InnerContainer>
-            <Intro {...blockIntro} />
-          </InnerContainer>
-        </Block>
-        <Block verticalRhythm={{ bottom: 0 }}>
-          <InnerContainer>
-            {props.mainImage && mainImage.asset && (
-              <div className={styles.mainImage}>
-                <img
-                  src={imageUrlFor(buildImageObj(mainImage))
-                    .width(1200)
-                    .height(Math.floor((9 / 16) * 1200))
-                    .fit("crop")
-                    .url()}
-                  alt={mainImage.alt}
-                />
-              </div>
-            )}
-            <div className={styles.mainContent}>
-              {_rawBody && <SanityBlockContent blocks={_rawBody || []} />}
+    <Container>
+      <Block>
+        <InnerContainer>
+          <Intro publishedAt={publishedAt} title={title} text={introduction} />
+        </InnerContainer>
+      </Block>
+      <Block>
+        <InnerContainer>
+          {props.mainImage && mainImage.asset && (
+            <div className={styles.mainImage}>
+              <img
+                src={imageUrlFor(buildImageObj(mainImage))
+                  .width(1200)
+                  .height(Math.floor((9 / 16) * 1200))
+                  .fit("crop")
+                  .url()}
+                alt={mainImage.alt}
+              />
             </div>
-          </InnerContainer>
-        </Block>
-      </Container>
-    </article>
+          )}
+          <article className={styles.article}>
+            {_rawBody && <BlockContent blocks={_rawBody || []} />}
+          </article>
+        </InnerContainer>
+      </Block>
+    </Container>
   );
 }
 
-export default Project;
+export default Article;

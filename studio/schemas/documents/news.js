@@ -11,6 +11,11 @@ export default {
       type: "string"
     },
     {
+      name: "introduction",
+      title: "Introduction",
+      type: "string"
+    },
+    {
       name: "slug",
       title: "Slug",
       type: "slug",
@@ -52,12 +57,6 @@ export default {
       title: "Main image",
       type: "figure"
     },
-    // {
-    //   name: "categories",
-    //   title: "Categories",
-    //   type: "array",
-    //   of: [{ type: "reference", to: { type: "category" } }]
-    // },
     {
       name: "body",
       title: "Body",
@@ -67,7 +66,7 @@ export default {
       name: "relatedProjects",
       title: "Related projects",
       type: "array",
-      of: [{ type: "reference", to: { type: "project" } }]
+      of: [{ type: "reference", to: { type: "news" } }]
     }
   ],
   preview: {

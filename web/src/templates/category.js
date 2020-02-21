@@ -10,7 +10,6 @@ import Intro from "../components/intro";
 import InnerContainer from "../components/inner-container";
 import Layout from "../containers/layout";
 import Navigation from "../components/navigation";
-import Presentation from "../components/presentation";
 import SEO from "../components/seo";
 
 export const query = graphql`

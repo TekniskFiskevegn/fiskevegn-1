@@ -5,18 +5,14 @@ import GraphQLErrorList from "../components/graphql-error-list";
 import Block from "../components/block";
 import InnerContainer from "../components/inner-container";
 import Intro from "../components/intro";
-import NewsTeaser from "../components/news-teaser";
+import List from "../components/list";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
 
-import utils from "../components/utils.module.css";
-import listStyles from "../components/list.module.css";
-import { responsiveTitle1 } from "../components/typography.module.css";
-
 export const query = graphql`
   query ArchivePageQuery {
-    projects: allSanityNews(
+    news: allSanityNews(
       limit: 12
       sort: { fields: [publishedAt], order: DESC }
       filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
@@ -50,25 +46,17 @@ const ArchivePage = props => {
       </Layout>
     );
   }
-  const projectNodes =
-    data && data.projects && mapEdgesToNodes(data.projects).filter(filterOutDocsWithoutSlugs);
+  const newsNodes =
+    data && data.news && mapEdgesToNodes(data.news).filter(filterOutDocsWithoutSlugs);
 
-  // console.log("projectNodes in archive", projectNodes);
   return (
     <Layout>
       <SEO title="Archive" />
       <Container>
         <Block name="news">
           <InnerContainer>
-            {/* {projectNodes && projectNodes.length > 0 && <NewsBlock nodes={projectNodes} />} */}
-            {/* <List type="news" title="News archive" nodes={projectNodes} /> */}
-            <ul className={cn(listStyles.ul, listStyles.oneHalf)}>
-              {projectNodes.map(node => (
-                <li key={node.id}>
-                  <NewsTeaser {...node} />
-                </li>
-              ))}
-            </ul>
+            <Intro title="AS Fiskevegn News" />
+            <List style="oneHalf" listItem="NewsTeaser" nodes={newsNodes} />
           </InnerContainer>
         </Block>
       </Container>

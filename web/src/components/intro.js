@@ -1,4 +1,5 @@
 import React from "react";
+import { format, distanceInWords, differenceInDays } from "date-fns";
 import PropTypes from "prop-types";
 import { cn } from "../lib/helpers";
 import Svg from "../components/svg";
@@ -7,11 +8,18 @@ import GraphQLErrorList from "./graphql-error-list";
 import styles from "./intro.module.css";
 import { responsiveTitle1 } from "./typography.module.css";
 
-const Intro = ({ complementaryTitle, title, text, margin, backButton, backTo }) => {
+const Intro = ({ complementaryTitle, title, text, publishedAt }) => {
   return (
-    <div className={cn(styles.root, margin ? styles.marginBottom : "")}>
+    <div className={cn(styles.root)}>
       {complementaryTitle && (
         <span className={styles.complementaryTitle}>{complementaryTitle}</span>
+      )}
+      {publishedAt && (
+        <span className={styles.publishedAt}>
+          {differenceInDays(new Date(publishedAt), new Date()) > 3
+            ? distanceInWords(new Date(publishedAt), new Date())
+            : format(new Date(publishedAt), "MMMM Do YYYY")}
+        </span>
       )}
       {title && <h2 className={responsiveTitle1}>{title}</h2>}
       {text && <p className={styles.text}>{text}</p>}

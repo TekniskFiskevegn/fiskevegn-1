@@ -13,6 +13,11 @@
   margin-bottom:1.5em;
 }
 
+.publishedAt {
+  composes: complementaryTitle;
+  text-transform: none;
+}
+
 .text {
   margin-bottom: 0;
 }

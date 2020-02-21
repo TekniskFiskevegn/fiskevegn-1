@@ -32,7 +32,7 @@ export default {
     },
     {
       name: "pdf",
-      type: "pdf",
+      type: "file",
       title: "Attached PDF",
       description: "If no PDF, leave empty"
     }

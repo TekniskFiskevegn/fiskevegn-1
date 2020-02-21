@@ -23,9 +23,9 @@ export default {
     {
       name: "departments",
       type: "array",
-      title: "Our departments",
-      of: [{ type: "contactBlock" }],
-      description: "Add department"
+      title: "Add department",
+      of: [{ type: "department" }],
+      description: "Add contact information for our departments"
     }
   ]
 };
