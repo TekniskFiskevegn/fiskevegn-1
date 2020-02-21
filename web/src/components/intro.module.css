@@ -10,6 +10,7 @@
 
 .complementaryTitle {
   composes: tinyTitle from "./typography.module.css";
+  margin-bottom:1.5em;
 }
 
 .text {

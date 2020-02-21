@@ -15,9 +15,10 @@ import InnerContainer from "../components/inner-container";
 import Hero from "../components/hero";
 import Promoted from "../components/promoted";
 import Intro from "../components/intro";
+import List from "../components/list";
 import GraphQLErrorList from "../components/graphql-error-list";
 import SEO from "../components/seo";
-import NewsTeaser from "../components/news-teaser";
+
 // styles
 import utils from "../components/utils.module.css";
 import listStyles from "../components/list.module.css";
@@ -226,13 +227,14 @@ const IndexPage = props => {
           <Block>
             <InnerContainer>
               <Intro title={`${uiNewsTitle[lang]}`} />
-              <ul className={cn(listStyles.ul, listStyles.gapFix)}>
+              <List style="gapFix" listItem="NewsTeaser" nodes={newsNodes} />
+              {/* <ul className={cn(listStyles.ul, listStyles.gapFix)}>
                 {newsNodes.map(node => (
                   <li key={node.id}>
                     <NewsTeaser {...node} />
                   </li>
                 ))}
-              </ul>
+              </ul> */}
               <div>
                 <Link to="/archive" className={utils.defaultLink}>
                   More news

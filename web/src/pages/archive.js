@@ -5,9 +5,10 @@ import GraphQLErrorList from "../components/graphql-error-list";
 import Block from "../components/block";
 import InnerContainer from "../components/inner-container";
 import Intro from "../components/intro";
+import NewsTeaser from "../components/news-teaser";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
-import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from "../lib/helpers";
+import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
 
 import utils from "../components/utils.module.css";
 import listStyles from "../components/list.module.css";
