@@ -3,7 +3,7 @@
 
 .root {
   box-sizing: border-box;
-  padding:0;
+  padding:1em 0 0 0;
 
   @media(--medium-and-up) {
     padding: 2em 0 0 0;

@@ -3,12 +3,12 @@ import PropTypes from "prop-types";
 import { Link } from "gatsby";
 import { buildImageObj, cn } from "../lib/helpers";
 import { imageUrlFor } from "../lib/image-url";
+import Intro from "./intro";
 import styles from "./promoted.module.css";
 import utils from "./utils.module.css";
 import typography from "./typography.module.css";
 
 const Promoted = ({
-  complementaryTitle,
   title,
   text,
   secondaryTitle,
@@ -20,13 +20,14 @@ const Promoted = ({
 }) => {
   return (
     <div className={styles.root}>
-      {title && (
+      <Intro title={title} text={text} marginBottom />
+      {/* {title && (
         <div className={cn(styles.intro, utils.marginBottom)}>
           {complementaryTitle && <span className={typography.tinyTitle}>{complementaryTitle}</span>}
           {title && <h2 className={typography.responsiveTitle1}>{title}</h2>}
           {text && <p className={typography.noMarginText}>{text}</p>}
         </div>
-      )}
+      )} */}
       <div className={cn(styles.wrapper, reverseFlow ? styles.reverseFlow : "")}>
         <div className={styles.visuals}>
           {image && (

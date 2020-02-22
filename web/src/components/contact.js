@@ -3,7 +3,8 @@ import PropTypes from "prop-types";
 import { Link } from "gatsby";
 import { buildImageObj, cn } from "../lib/helpers";
 import { imageUrlFor } from "../lib/image-url";
-import styles from "./Contact.module.css";
+import Intro from "./intro";
+import styles from "./contact.module.css";
 import utils from "./utils.module.css";
 import typography from "./typography.module.css";
 import list from "./list.module.css";
@@ -21,13 +22,14 @@ const Contact = ({
 }) => {
   return (
     <div className={styles.root}>
-      {title && (
+      <Intro title={title} complementaryTitle={complementaryTitle} text={text} marginBottom />
+      {/* {title && (
         <div className={cn(styles.intro, utils.marginBottom)}>
           {complementaryTitle && <span className={typography.tinyTitle}>{complementaryTitle}</span>}
           {title && <h2 className={typography.responsiveTitle1}>{title}</h2>}
           {text && <p className={typography.noMarginText}>{text}</p>}
         </div>
-      )}
+      )} */}
       <div className={cn(styles.wrapper, reverseFlow ? styles.reverseFlow : "")}>
         <div className={styles.visuals}>
           {image && (
@@ -74,8 +76,6 @@ const Contact = ({
     </div>
   );
 };
-
-Contact.DefaultProps = {};
 
 Contact.propTypes = {
   title: PropTypes.string.isRequired,

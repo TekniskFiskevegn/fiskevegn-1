@@ -8,9 +8,9 @@ import GraphQLErrorList from "./graphql-error-list";
 import styles from "./intro.module.css";
 import { responsiveTitle1 } from "./typography.module.css";
 
-const Intro = ({ complementaryTitle, title, text, publishedAt }) => {
+const Intro = ({ complementaryTitle, title, text, publishedAt, marginBottom = false }) => {
   return (
-    <div className={cn(styles.root)}>
+    <div className={cn(styles.root, marginBottom ? styles.marginBottom : "")}>
       {complementaryTitle && (
         <span className={styles.complementaryTitle}>{complementaryTitle}</span>
       )}
