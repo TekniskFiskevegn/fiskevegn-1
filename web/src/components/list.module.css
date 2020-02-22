@@ -17,11 +17,6 @@
   @nest & li {
     display:flex;
     flex:1;
-    padding:0 0 1em 0;
-
-    @media (--medium-and-up) {
-      padding:1em;
-    }
   }
 }
 
@@ -32,10 +27,16 @@
   }
 }
 
-.gapFix {
+.gridFix {
   @media (--medium-and-up) {
     margin-right:-1em;
     margin-left:-1em;
+  }
+}
+
+.gap {
+  @nest & li {
+    padding:1em;
   }
 }
 
@@ -50,16 +51,45 @@
 
 
 .oneHalf {
-  composes: gapFix;
   flex-flow: column;
   @media (--medium-and-up) {
     flex-flow:row;
     flex-wrap:wrap;
   }
-  
   @nest & li {
     flex:1;
+    padding:0 0 1em 0;
+    @media (--medium-and-up) {
+      flex:50%;
+      max-width:50%;
+      padding:0;
+    }
+  }
+}
+
+.oneHalfAllTheWay {
+  flex-flow:row;
+  flex-wrap:wrap;
+  
+  @nest & li {
+    flex:50%;
+    max-width:50%;
     padding:0;
+  }
+}
+
+
+.oneHalfWithGapAndGridFix {
+  flex-flow: column;
+  @media (--medium-and-up) {
+    flex-flow:row;
+    flex-wrap:wrap;
+    composes: gridFix;
+    composes: gap;
+  }
+  @nest & li {
+    flex:1;
+    padding:0 0 1em 0;
     @media (--medium-and-up) {
       flex:50%;
       max-width:50%;
@@ -67,6 +97,7 @@
     }
   }
 }
+
 
 .oneFourth {
   flex-flow:wrap;
@@ -110,12 +141,4 @@
 
 .boxShadow {
   composes: boxShadow3 from "./utils.module.css";
-}
-
-.browseMoreHref {
-  margin:0;
-  composes: defaultLink from "./utils.module.css";
-  @media(--medium-and-up) {
-    margin:0 1em;
-  }
 }

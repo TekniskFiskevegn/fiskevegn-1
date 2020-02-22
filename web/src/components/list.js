@@ -2,6 +2,7 @@ import { Link } from "gatsby";
 import React from "react";
 import Intro from "./intro";
 import NewsTeaser from "./news-teaser";
+import ImageItem from "./image-item";
 import styles from "./list.module.css";
 import { responsiveTitle1 } from "../components/typography.module.css";
 import { cn } from "../lib/helpers";
@@ -34,6 +35,8 @@ const RenderListItem = props => {
   switch (typeOfListItem) {
     case "NewsTeaser":
       return <NewsTeaser {...node} />;
+    case "ImageItem":
+      return <ImageItem {...node} />;
     default:
       return <p>Missing type of list item</p>;
   }
@@ -44,8 +47,10 @@ const getCustomStyle = style => {
     return;
   }
   return cn(
-    style == "gapFix" ? styles.gapFix : "",
+    style == "gridFix" ? styles.gridFix : "",
     style == "oneHalf" ? styles.oneHalf : "",
+    style == "oneHalfAllTheWay" ? styles.oneHalfAllTheWay : "",
+    style == "oneHalfWithGapAndGridFix" ? styles.oneHalfWithGapAndGridFix : "",
     style == "oneThird" ? styles.oneThird : ""
   );
 };

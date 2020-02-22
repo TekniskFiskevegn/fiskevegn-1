@@ -227,7 +227,7 @@ const IndexPage = props => {
           <Block>
             <InnerContainer>
               <Intro title={`${uiNewsTitle[lang]}`} />
-              <List style="oneHalf" listItem="NewsTeaser" nodes={newsNodes} />
+              <List style="oneHalfWithGapAndGridFix" listItem="NewsTeaser" nodes={newsNodes} />
               <div>
                 <Link to="/archive" className={utils.defaultLink}>
                   More news

@@ -6,12 +6,14 @@ export default {
     {
       name: "title",
       title: "Title",
-      type: "string"
+      type: "string",
+      description: "Title for this content block"
     },
     {
       name: "text",
       title: "Text",
-      type: "text"
+      type: "text",
+      description: "Text for this content block"
     },
     {
       name: "image",
@@ -24,7 +26,7 @@ export default {
       type: "array",
       title: "List of images",
       of: [{ type: "figure" }],
-      description: "Add multiple images. I.e a list of partners."
+      description: "Add multiple images instead of a single image"
     },
     {
       name: "email",

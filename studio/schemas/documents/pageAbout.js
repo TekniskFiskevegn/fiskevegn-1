@@ -42,12 +42,14 @@ export default {
     {
       name: "career",
       type: "presentation",
-      title: "Career at Fiskevegn"
+      title: "Career at Fiskevegn",
+      description: "Content block"
     },
     {
       name: "partners",
       type: "presentation",
-      title: "Our partners"
+      title: "Our partners",
+      description: "Content block"
     }
   ]
 };

@@ -27,7 +27,10 @@ export default {
     {
       name: "imageHref",
       type: "string",
-      title: "Image link"
+      title: "Image link",
+      options: {
+        isHighlighted: true
+      }
     }
   ],
   preview: {

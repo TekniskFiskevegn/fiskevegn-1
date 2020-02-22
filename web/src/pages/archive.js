@@ -56,7 +56,7 @@ const ArchivePage = props => {
         <Block name="news">
           <InnerContainer>
             <Intro title="AS Fiskevegn News" />
-            <List style="oneHalf" listItem="NewsTeaser" nodes={newsNodes} />
+            <List style="oneHalfWithGapAndGridFix" listItem="NewsTeaser" nodes={newsNodes} />
           </InnerContainer>
         </Block>
       </Container>

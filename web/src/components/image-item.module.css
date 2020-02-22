@@ -11,13 +11,12 @@
   padding:0 1em;
 }
 
-.logo {
+.image {
   width:60%;
   margin-bottom: 1em;
 }
 
-.name {
+.caption {
   font-size: 14px;
-  /* text-transform: uppercase; */
   font-weight: bold;
 }

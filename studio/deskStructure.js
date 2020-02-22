@@ -17,10 +17,10 @@ export default () =>
             .documentId("siteSettings")
         )
         .icon(MdSettings),
-      S.listItem()
-        .title("Projects")
-        .schemaType("project")
-        .child(S.documentTypeList("project").title("Projects")),
+      // S.listItem()
+      //   .title("Projects")
+      //   .schemaType("project")
+      //   .child(S.documentTypeList("project").title("Projects")),
       S.listItem()
         .title("People")
         .schemaType("person")
