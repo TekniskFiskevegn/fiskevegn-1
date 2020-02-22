@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
+import propTypes from "prop-types";
 import { buildImageObj, cn } from "../lib/helpers";
 import { imageUrlFor } from "../lib/image-url";
 import List from "./list";
@@ -43,6 +43,6 @@ const renderImages = (image, listOfImages) => {
   }
 };
 
-Presentation.PropTypes = {};
+Presentation.propTypes = {};
 
 export default Presentation;

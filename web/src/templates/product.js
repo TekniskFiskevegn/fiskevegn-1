@@ -47,9 +47,11 @@ export const query = graphql`
         }
         email
         link
-        # pdf {
-        #   title
-        # }
+        pdf {
+          asset {
+            _id
+          }
+        }
       }
       # mainImage {
       #   crop {

@@ -30,7 +30,7 @@ import projectPortableText from "./objects/projectPortableText";
 import simplePortableText from "./objects/simplePortableText";
 import promotedBlock from "./objects/promotedBlock";
 import department from "./objects/department";
-import product from "./objects/product";
+import productModel from "./objects/productModel";
 import presentation from "./objects/presentation";
 
 // Then we give our schema to the builder and provide the result to Sanity
@@ -50,7 +50,7 @@ export default createSchema({
     promotedBlock,
     department,
     intro,
-    product,
+    productModel,
     presentation,
     feature,
     pdf,

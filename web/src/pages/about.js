@@ -17,10 +17,6 @@ import SEO from "../components/seo";
 import listStyles from "../components/list.module.css";
 import { responsiveTitle1 } from "../components/typography.module.css";
 import { defaultLink } from "../components/utils.module.css";
-import borrowed from "../components/presentation.module.css";
-
-// static data
-import { demoText, demoPartners, demoFeatures } from "../lib/dummy";
 
 export const query = graphql`
   query AboutPageQuery {

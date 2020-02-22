@@ -12,19 +12,35 @@ import styles from "./image-item.module.css";
 // 1. Add support for internal linking via the Link component
 
 const ImageItem = props => {
-  return (
-    <a href={`${props.imageHref}`} target="_blank" className={styles.root}>
-      <img
-        className={styles.image}
-        src={imageUrlFor(buildImageObj(props))
-          .width(500)
-          .url()}
-        alt={props.alt}
-      />
+  if (props.imageHref) {
+    return (
+      <a href={`${props.imageHref}`} target="_blank" className={styles.root}>
+        <img
+          className={styles.image}
+          src={imageUrlFor(buildImageObj(props))
+            .width(500)
+            .url()}
+          alt={props.alt}
+        />
 
-      {props.caption && <span className={styles.caption}>{props.caption}</span>}
-    </a>
-  );
+        {props.caption && <span className={styles.caption}>{props.caption}</span>}
+      </a>
+    );
+  } else {
+    return (
+      <div className={styles.root}>
+        <img
+          className={styles.image}
+          src={imageUrlFor(buildImageObj(props))
+            .width(500)
+            .url()}
+          alt={props.alt}
+        />
+
+        {props.caption && <span className={styles.caption}>{props.caption}</span>}
+      </div>
+    );
+  }
 };
 
 ImageItem.propTypes = {

@@ -41,9 +41,9 @@ export default {
       description: "If no link, leave empty"
     },
     {
-      name: "attachment",
+      name: "pdf",
       title: "Attached PDF",
-      type: "file",
+      type: "pdf",
       description: "If no PDF, leave empty"
     }
   ]

@@ -25,9 +25,9 @@ function Footer(props) {
             <a href="https://www.gatsbyjs.org">Gatsby</a>
             by WeBeyond
           </p>
-          {/* <Disclaimer /> */}
         </div>
       </div>
+      <Disclaimer />
     </footer>
   );
 }
