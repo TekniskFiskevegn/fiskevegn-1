@@ -21,13 +21,6 @@ const Promoted = ({
   return (
     <div className={styles.root}>
       <Intro title={title} text={text} marginBottom />
-      {/* {title && (
-        <div className={cn(styles.intro, utils.marginBottom)}>
-          {complementaryTitle && <span className={typography.tinyTitle}>{complementaryTitle}</span>}
-          {title && <h2 className={typography.responsiveTitle1}>{title}</h2>}
-          {text && <p className={typography.noMarginText}>{text}</p>}
-        </div>
-      )} */}
       <div className={cn(styles.wrapper, reverseFlow ? styles.reverseFlow : "")}>
         <div className={styles.visuals}>
           {image && (

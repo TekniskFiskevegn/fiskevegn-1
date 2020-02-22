@@ -4,7 +4,7 @@
 
 export const uiNewsTitle = {
   no: "Siste nytt",
-  en: "Latest news"
+  en: "AS Fiskevegn News"
 };
 
 // NB! remember staticImage instead of staticImage
