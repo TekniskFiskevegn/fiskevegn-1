@@ -29,12 +29,12 @@ export default {
       title: "Attached link",
       type: "string",
       description: "If no link, leave empty"
-    },
-    {
-      name: "pdf",
-      type: "file",
-      title: "Attached PDF",
-      description: "If no PDF, leave empty"
     }
+    // {
+    //   name: "pdf",
+    //   type: "file",
+    //   title: "Attached PDF",
+    //   description: "If no PDF, leave empty"
+    // }
   ]
 };

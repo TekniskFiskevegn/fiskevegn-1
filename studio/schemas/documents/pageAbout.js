@@ -46,7 +46,7 @@ export default {
     },
     {
       name: "partners",
-      type: "presentationPartners",
+      type: "presentation",
       title: "Our partners"
     }
   ]

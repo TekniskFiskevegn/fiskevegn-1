@@ -20,7 +20,7 @@ import person from "./documents/person";
 import news from "./documents/news";
 
 // Object types
-import file from "./objects/file";
+import pdf from "./objects/pdf";
 import feature from "./objects/feature";
 import intro from "./objects/intro";
 import bioPortableText from "./objects/bioPortableText";
@@ -30,10 +30,8 @@ import projectPortableText from "./objects/projectPortableText";
 import simplePortableText from "./objects/simplePortableText";
 import promotedBlock from "./objects/promotedBlock";
 import department from "./objects/department";
-import partner from "./objects/partner";
 import product from "./objects/product";
 import presentation from "./objects/presentation";
-import presentationPartners from "./objects/presentationPartners";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -52,12 +50,10 @@ export default createSchema({
     promotedBlock,
     department,
     intro,
-    partner,
     product,
     presentation,
-    presentationPartners,
     feature,
-    file,
+    pdf,
     // The following are document types which will appear
     // in the studio.
     // category,

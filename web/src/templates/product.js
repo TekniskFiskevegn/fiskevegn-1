@@ -47,9 +47,9 @@ export const query = graphql`
         }
         email
         link
-        pdf {
-          title
-        }
+        # pdf {
+        #   title
+        # }
       }
       # mainImage {
       #   crop {

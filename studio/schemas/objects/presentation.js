@@ -16,7 +16,15 @@ export default {
     {
       name: "image",
       type: "figure",
-      title: "Image"
+      title: "Image",
+      description: "Add single image."
+    },
+    {
+      name: "listOfImages",
+      type: "array",
+      title: "List of images",
+      of: [{ type: "figure" }],
+      description: "Add multiple images. I.e a list of partners."
     },
     {
       name: "email",
