@@ -11,6 +11,7 @@ import InnerContainer from "../components/inner-container";
 import Intro from "../components/intro";
 import Layout from "../containers/layout";
 import Presentation from "../components/presentation";
+import StandardContent from "../components/standard-content";
 import SEO from "../components/seo";
 
 // styles
@@ -105,6 +106,35 @@ export const query = graphql`
         }
         email
       }
+      partners1 {
+        title
+        complementaryTitle
+        text
+        listOfImages {
+          crop {
+            _key
+            _type
+            top
+            bottom
+            left
+            right
+          }
+          hotspot {
+            _key
+            _type
+            x
+            y
+            height
+            width
+          }
+          asset {
+            _id
+          }
+          alt
+          caption
+          imageHref
+        }
+      }
     }
   }
 `;
@@ -149,8 +179,8 @@ const AboutPage = props => {
             <InnerContainer>
               {features && features.length > 0 && (
                 <ul className={cn(listStyles.default)}>
-                  {features.map(item => (
-                    <li key={item.id}>
+                  {features.map((item, i) => (
+                    <li key={i}>
                       <Feature {...item} />
                     </li>
                   ))}
@@ -168,9 +198,15 @@ const AboutPage = props => {
 
         <Block>
           <InnerContainer>
-            <Presentation {...page.partners} reverseFlow />
+            <StandardContent {...page.partners} withBorders />
           </InnerContainer>
         </Block>
+
+        {/* <Block>
+          <InnerContainer>
+            <Presentation {...page.partners} reverseFlow />
+          </InnerContainer>
+        </Block> */}
       </Container>
     </Layout>
   );

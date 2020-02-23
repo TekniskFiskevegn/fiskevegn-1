@@ -4,8 +4,13 @@
 .root {
   display:flex;
   flex-flow:column;
+}
+
+.withBorders {
   @media(--medium-and-up) {
-    flex-flow:row;
+    border-top:2px solid var(--color-light-gray);
+    border-bottom:2px solid var(--color-light-gray);
+    padding:3em 0;
   }
 }
 

@@ -2,6 +2,7 @@ import React from "react";
 import { cn } from "../lib/helpers";
 import NewsTeaser from "./news-teaser";
 import ImageItem from "./image-item";
+import LogoItem from "./logo-item";
 
 import styles from "./list.module.css";
 
@@ -35,6 +36,8 @@ const RenderListItem = props => {
       return <NewsTeaser {...node} />;
     case "ImageItem":
       return <ImageItem {...node} />;
+    case "LogoItem":
+      return <LogoItem {...node} />;
     default:
       return <p>Missing type of list item</p>;
   }

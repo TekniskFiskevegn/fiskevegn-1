@@ -50,6 +50,12 @@ export default {
       type: "presentation",
       title: "Our partners",
       description: "Content block"
+    },
+    {
+      name: "partners1",
+      type: "standardContent",
+      title: "Our partners",
+      description: "Content block"
     }
   ]
 };

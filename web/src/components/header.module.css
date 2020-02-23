@@ -31,7 +31,8 @@
     padding: 2em;
     flex-flow:row;
     align-items: center;
-    box-shadow: 0 4px 2px -3px rgba(39,48,54,0.05);
+    /* box-shadow: 0 4px 2px -3px rgba(39,48,54,0.05); */
+    composes: boxShadow4 from "./utils.module.css";
   }
 
   @media (--large-and-up) {
@@ -125,12 +126,13 @@
 
 .showNav {
   display: flex;
-  padding:3em 0 0 0;
+  /* padding:3em 0 0 0; */
+  padding-left:1em;
   @nest & ul li {
     padding:0.5em;
   }
   @nest & ul li a {
-    font-size:24px;
+    font-size:22px;
   }
 }
 

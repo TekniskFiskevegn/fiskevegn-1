@@ -48,7 +48,7 @@ const Contact = ({
               )}
               {email && (
                 <li>
-                  <a className={styles.link} href="#">
+                  <a className={styles.link} href={"mailto:" + email}>
                     {email}
                   </a>
                 </li>
@@ -56,7 +56,7 @@ const Contact = ({
               {map && (
                 <li>
                   <a className={styles.link} href="#">
-                    Map
+                    See location on Google Maps
                   </a>
                 </li>
               )}

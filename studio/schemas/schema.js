@@ -32,6 +32,7 @@ import promotedBlock from "./objects/promotedBlock";
 import department from "./objects/department";
 import productModel from "./objects/productModel";
 import presentation from "./objects/presentation";
+import standardContent from "./objects/standardContent";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -52,6 +53,7 @@ export default createSchema({
     intro,
     productModel,
     presentation,
+    standardContent,
     feature,
     pdf,
     // The following are document types which will appear

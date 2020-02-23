@@ -3,6 +3,7 @@
 ## Todo
 
 @ Sytalaust
+- continue work with list and the different list items, and the difference between image item and logo item
 - utils + typography = sant
 - improvements naming convention
 - Improvements in presentation.js

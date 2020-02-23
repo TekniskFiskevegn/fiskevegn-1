@@ -13,6 +13,12 @@ const Disclaimer = props => {
           </a>
         </span>
       </p>
+      <p hidden>
+        Built with <a href="https://www.sanity.io">Sanity</a> &amp;
+        {` `}
+        <a href="https://www.gatsbyjs.org">Gatsby</a>
+        by WeBeyond
+      </p>
     </div>
   );
 };

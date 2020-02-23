@@ -23,6 +23,16 @@
   line-height: var(--font-large-line-height);
 }
 
+.complementaryLinkWithoutBorder {
+  color: var(--color-brand-complementary);
+  text-decoration: none;
+  font-weight: 400;
+  text-transform: none;
+  font-size: var(--font-large-size);
+  line-height: var(--font-large-line-height);
+}
+
+
 .defaultLink {
   color: var(--color-black);
   text-decoration: none;

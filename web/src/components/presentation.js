@@ -15,7 +15,11 @@ const Presentation = props => {
         <div>
           <h2 className={styles.title}>{title}</h2>
           <p>{text}</p>
-          {email && <a className={styles.link}>{email}</a>}
+          {email && (
+            <a className={styles.link} href={"mailto:" + email}>
+              {email}
+            </a>
+          )}
         </div>
       </div>
       <div className={styles.visuals}>{renderImages(image, listOfImages)}</div>

@@ -4,26 +4,20 @@ import { Link } from "gatsby";
 import { buildImageObj, cn } from "../lib/helpers";
 import { imageUrlFor } from "../lib/image-url";
 
-import styles from "./image-item.module.css";
+import styles from "./logo-item.module.css";
 
-// Use case:
-// A list of partners
-
-// Improvements:
-// 1. Add support for internal linking via the Link component
-
-const ImageItem = props => {
+const LogoItem = props => {
   if (props.imageHref) {
     return (
       <a href={`${props.imageHref}`} target="_blank" className={styles.root}>
         <img
-          className={cn(styles.image, props.grayScale ? styles.grayScale : "")}
+          className={cn(styles.image)}
           src={imageUrlFor(buildImageObj(props))
             .width(500)
             .url()}
           alt={props.alt}
         />
-        {props.caption && <span className={styles.caption}>{props.caption}</span>}
+        {/* {props.caption && <span className={styles.caption}>{props.caption}</span>} */}
       </a>
     );
   } else {
@@ -36,12 +30,12 @@ const ImageItem = props => {
             .url()}
           alt={props.alt}
         />
-        {props.caption && <span className={styles.caption}>{props.caption}</span>}
+        {/* {props.caption && <span className={styles.caption}>{props.caption}</span>} */}
       </div>
     );
   }
 };
 
-ImageItem.propTypes = {};
+LogoItem.propTypes = {};
 
-export default ImageItem;
+export default LogoItem;
