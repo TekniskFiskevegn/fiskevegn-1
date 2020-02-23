@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { buildImageObj, cn } from "../lib/helpers";
 import { imageUrlFor } from "../lib/image-url";
+
 import styles from "./hero.module.css";
 
 const Hero = ({ image = null }) => {

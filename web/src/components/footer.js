@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "gatsby";
 import Disclaimer from "./disclaimer";
+
 import styles from "./footer.module.css";
 
 function Footer(props) {

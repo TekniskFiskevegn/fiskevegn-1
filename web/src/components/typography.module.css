@@ -89,15 +89,10 @@
 
 .responsiveTitle2 {
   font-weight: 700;
-  font-size: var(--font-large-size);
-  line-height: var(--font-large-line-height);
-  margin: 0 0 0.5rem;
-
-  @media (--medium-and-up) {
     margin: 0 0 0.8rem;
     font-size: var(--font-title4-size);
     line-height: var(--font-title4-line-height);
-  }
+  
   @media (--large-and-up) {
     font-size: var(--font-title3-size);
     line-height: var(--font-title3-line-height);

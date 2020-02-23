@@ -1,6 +1,7 @@
 import React from "react";
 import { cn } from "../lib/helpers";
 import VerticalRhythm from "../components/vertical-rhythm";
+
 import styles from "./block.module.css";
 
 const Block = ({ name, ...props }) => {

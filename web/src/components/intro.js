@@ -2,11 +2,8 @@ import React from "react";
 import { format, distanceInWords, differenceInDays } from "date-fns";
 import PropTypes from "prop-types";
 import { cn } from "../lib/helpers";
-import Svg from "../components/svg";
-import GraphQLErrorList from "./graphql-error-list";
 
 import styles from "./intro.module.css";
-import { responsiveTitle1 } from "./typography.module.css";
 
 const Intro = ({ complementaryTitle, title, text, publishedAt, marginBottom = false }) => {
   return (
@@ -21,7 +18,7 @@ const Intro = ({ complementaryTitle, title, text, publishedAt, marginBottom = fa
             : format(new Date(publishedAt), "MMMM Do YYYY")}
         </span>
       )}
-      {title && <h2 className={responsiveTitle1}>{title}</h2>}
+      {title && <h2 className={styles.title}>{title}</h2>}
       {text && <p className={styles.text}>{text}</p>}
     </div>
   );

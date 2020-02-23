@@ -19,9 +19,7 @@ import List from "../components/list";
 import GraphQLErrorList from "../components/graphql-error-list";
 import SEO from "../components/seo";
 
-// styles
 import utils from "../components/utils.module.css";
-import listStyles from "../components/list.module.css";
 
 import { uiNewsTitle } from "../lib/ui";
 
@@ -217,7 +215,7 @@ const IndexPage = props => {
               }}
             >
               <InnerContainer>
-                <Promoted {...page.secondPromotedBlock} />
+                <Promoted {...page.secondPromotedBlock} lightBackground />
               </InnerContainer>
             </Design>
           </Block>

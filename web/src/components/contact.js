@@ -4,10 +4,8 @@ import { Link } from "gatsby";
 import { buildImageObj, cn } from "../lib/helpers";
 import { imageUrlFor } from "../lib/image-url";
 import Intro from "./intro";
+
 import styles from "./contact.module.css";
-import utils from "./utils.module.css";
-import typography from "./typography.module.css";
-import list from "./list.module.css";
 
 const Contact = ({
   complementaryTitle,
@@ -28,36 +26,36 @@ const Contact = ({
           {image && (
             <img
               src={imageUrlFor(buildImageObj(image))
-                .width(700)
-                .height(Math.floor((9 / 16) * 700))
+                .width(800)
+                .height(Math.floor((9 / 16) * 1000))
                 .fit("crop")
                 .url()}
               alt={image.alt}
             />
           )}
         </div>
-        <div className={cn(styles.content, utils.boxShadowMoreSubtle)}>
+        <div className={cn(styles.content)}>
           <div>
-            <h3 className={typography.responsiveTitle2}>Contact</h3>
+            <h3 className={styles.contentTitle}>Contact</h3>
             {adress && <p>{adress}</p>}
-            <ul className={cn(list.default, list.plain)}>
+            <ul className={styles.list}>
               {phone && (
                 <li>
-                  <a className={utils.defaultLink} href="#">
+                  <a className={styles.link} href="#">
                     {phone}
                   </a>
                 </li>
               )}
               {email && (
                 <li>
-                  <a className={utils.defaultLink} href="#">
+                  <a className={styles.link} href="#">
                     {email}
                   </a>
                 </li>
               )}
               {map && (
                 <li>
-                  <a className={utils.defaultLink} href="#">
+                  <a className={styles.link} href="#">
                     Map
                   </a>
                 </li>

@@ -5,7 +5,6 @@ import { imageUrlFor } from "../lib/image-url";
 import SanityBlockText from "./sanity-block-text";
 
 import styles from "./news-teaser.module.css";
-import { responsiveTitle3 } from "./typography.module.css";
 
 const NewsTeaser = props => {
   console.log("props", props);
@@ -22,7 +21,7 @@ const NewsTeaser = props => {
           />
         )}
       </div>
-      <h3 className={responsiveTitle3}>{props.title}</h3>
+      <h3 className={styles.title}>{props.title}</h3>
       {props._rawExcerpt && (
         <div className={styles.excerpt}>
           <SanityBlockText blocks={props._rawExcerpt} />

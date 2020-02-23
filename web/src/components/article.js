@@ -9,7 +9,6 @@ import Container from "./container";
 import InnerContainer from "./inner-container";
 import Intro from "./intro";
 
-// styles
 import styles from "./article.module.css";
 
 function Article(props) {

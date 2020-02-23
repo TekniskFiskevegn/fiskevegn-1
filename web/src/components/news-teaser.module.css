@@ -27,6 +27,8 @@
 }
 
 .title {
+  composes: responsiveTitle2 from './typography.module.css';
+  margin-top:1em;
   @media (hover: hover) {
     @nest .root:hover & {
       text-decoration: underline;

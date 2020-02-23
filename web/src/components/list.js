@@ -1,11 +1,9 @@
-import { Link } from "gatsby";
 import React from "react";
-import Intro from "./intro";
+import { cn } from "../lib/helpers";
 import NewsTeaser from "./news-teaser";
 import ImageItem from "./image-item";
+
 import styles from "./list.module.css";
-import { responsiveTitle1 } from "../components/typography.module.css";
-import { cn } from "../lib/helpers";
 
 // Improvements:
 // 1. Add support for browseMoreHref

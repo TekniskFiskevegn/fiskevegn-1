@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link } from "gatsby";
 import { cn } from "../lib/helpers";
 import NavigationItem from "./navigation-item";
+
 import styles from "./navigation.module.css";
 
 // Use case:

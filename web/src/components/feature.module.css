@@ -10,9 +10,14 @@
   display: flex;
   flex-flow: column;
   flex:1;
+  padding:1em 0;
+  @media (--medium-and-up) {
+    padding:0 1em;
+  }
 }
 
 .title {
+  composes: responsiveTitle2 from './typography.module.css';
   margin:0 0 0.2em 0;
 }
 

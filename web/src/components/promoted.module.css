@@ -18,11 +18,15 @@
     flex-flow:row-reverse;
   }
   @nest & .content {
-    /* background-color: var(--color-almost-white); */
-    background-color:var(--color-light-gray);
     @media (--large-and-up) {
       left:0;
     }
+  }
+}
+
+.lightBackground {
+  @nest & .content {
+    background-color:var(--color-white);
   }
 }
 
@@ -49,7 +53,7 @@
 
 .content {
   composes: boxShadow4 from "./utils.module.css";
-  background-color: var(--color-almost-white);
+  background-color: var(--color-light-gray);
   position:relative;
   padding:1.5em 1.5em;
   margin:-2em 1em 0 1em;
@@ -76,4 +80,12 @@
   @nest & p {
     margin:0 0 1em 0;
   }
+}
+
+.contentTitle {
+  composes: responsiveTitle2 from './typography.module.css';
+}
+
+.href {
+  composes: complementaryLink from './utils.module.css';
 }

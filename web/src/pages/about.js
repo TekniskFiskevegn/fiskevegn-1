@@ -15,8 +15,6 @@ import SEO from "../components/seo";
 
 // styles
 import listStyles from "../components/list.module.css";
-import { responsiveTitle1 } from "../components/typography.module.css";
-import { defaultLink } from "../components/utils.module.css";
 
 export const query = graphql`
   query AboutPageQuery {

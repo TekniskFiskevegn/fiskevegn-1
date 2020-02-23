@@ -18,8 +18,6 @@
     flex-flow:row-reverse;
   }
   @nest & .content {
-    /* background-color: var(--color-almost-white); */
-    background-color:var(--color-light-gray);
     @media (--large-and-up) {
       left:0;
     }
@@ -49,7 +47,7 @@
 
 .content {
   composes: boxShadow4 from "./utils.module.css";
-  background-color: var(--color-almost-white);
+  background-color:var(--color-light-gray);
   position:relative;
   padding:1.5em 1.5em;
   margin:-2em 1em 0 1em;
@@ -76,4 +74,18 @@
   @nest & p {
     margin:0 0 1em 0;
   }
+}
+
+.list {
+  composes: default from './list.module.css';
+  composes: plain from './list.module.css';
+  padding-left:1em;
+}
+
+.contentTitle {
+  composes: responsiveTitle2 from './typography.module.css';
+}
+
+.link {
+  composes: complementaryLink from './utils.module.css';
 }

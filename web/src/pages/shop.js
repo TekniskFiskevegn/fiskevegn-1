@@ -7,8 +7,6 @@ import Block from "../components/block";
 import Intro from "../components/intro";
 import InnerContainer from "../components/inner-container";
 
-import utils from "../components/utils.module.css";
-
 const ShopPage = () => (
   <Layout currentPage="shop">
     <SEO title="404: Not found" />

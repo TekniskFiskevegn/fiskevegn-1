@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "gatsby";
-import { cn } from "../lib/helpers";
+
 import styles from "./navigation-item.module.css";
 
 // Navigation Item is used for internal navigation on the site

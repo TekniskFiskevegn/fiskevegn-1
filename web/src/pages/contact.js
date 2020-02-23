@@ -11,10 +11,6 @@ import InnerContainer from "../components/inner-container";
 import Layout from "../containers/layout";
 import SEO from "../components/seo";
 
-// styles
-import listStyles from "../components/list.module.css";
-import { flatraket, aalesund } from "../lib/ui";
-
 export const query = graphql`
   query ContactPageQuery {
     page: sanityPageContact {

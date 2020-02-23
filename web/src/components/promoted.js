@@ -4,9 +4,8 @@ import { Link } from "gatsby";
 import { buildImageObj, cn } from "../lib/helpers";
 import { imageUrlFor } from "../lib/image-url";
 import Intro from "./intro";
+
 import styles from "./promoted.module.css";
-import utils from "./utils.module.css";
-import typography from "./typography.module.css";
 
 const Promoted = ({
   title,
@@ -16,30 +15,37 @@ const Promoted = ({
   image,
   browseMoreHref,
   browseMoreText,
-  reverseFlow
+  reverseFlow,
+  lightBackground
 }) => {
   return (
     <div className={styles.root}>
       <Intro title={title} text={text} marginBottom />
-      <div className={cn(styles.wrapper, reverseFlow ? styles.reverseFlow : "")}>
+      <div
+        className={cn(
+          styles.wrapper,
+          reverseFlow ? styles.reverseFlow : "",
+          lightBackground ? styles.lightBackground : ""
+        )}
+      >
         <div className={styles.visuals}>
           {image && (
             <img
               src={imageUrlFor(buildImageObj(image))
-                .width(700)
-                .height(Math.floor((9 / 16) * 700))
+                .width(800)
+                .height(Math.floor((9 / 16) * 1000))
                 .fit("crop")
                 .url()}
               alt={image.alt}
             />
           )}
         </div>
-        <div className={cn(styles.content, utils.boxShadowMoreSubtle)}>
+        <div className={cn(styles.content)}>
           <div>
-            {secondaryTitle && <h3 className={typography.responsiveTitle2}>{secondaryTitle}</h3>}
+            {secondaryTitle && <h3 className={styles.contentTitle}>{secondaryTitle}</h3>}
             {secondaryText && <p>{secondaryText}</p>}
             {browseMoreHref && (
-              <Link to={browseMoreHref} className={utils.callToActionLink}>
+              <Link to={browseMoreHref} className={styles.href}>
                 {browseMoreText || "Read more"}
               </Link>
             )}

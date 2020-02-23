@@ -5,7 +5,6 @@ import { imageUrlFor } from "../lib/image-url";
 import List from "./list";
 
 import styles from "./presentation.module.css";
-import { defaultLink } from "./utils.module.css";
 
 const Presentation = props => {
   const { title, text, image, listOfImages, email, reverseFlow } = props;
@@ -16,7 +15,7 @@ const Presentation = props => {
         <div>
           <h2 className={styles.title}>{title}</h2>
           <p>{text}</p>
-          {email && <a className={defaultLink}>{email}</a>}
+          {email && <a className={styles.link}>{email}</a>}
         </div>
       </div>
       <div className={styles.visuals}>{renderImages(image, listOfImages)}</div>
@@ -29,8 +28,8 @@ const renderImages = (image, listOfImages) => {
     return (
       <img
         src={imageUrlFor(buildImageObj(image))
-          .width(700)
-          .height(Math.floor((9 / 16) * 700))
+          .width(800)
+          .height(Math.floor((9 / 16) * 1000))
           .fit("crop")
           .url()}
         alt={image.alt}

@@ -12,11 +12,6 @@ import Layout from "../containers/layout";
 import Navigation from "../components/navigation";
 import SEO from "../components/seo";
 
-// styles
-import listStyles from "../components/list.module.css";
-// static data
-import { staticProductCategories } from "../lib/static";
-
 export const query = graphql`
   query ProductsPageQuery {
     page: sanityPageProducts {
