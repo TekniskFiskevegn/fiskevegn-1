@@ -8,9 +8,8 @@ function Footer(props) {
     <footer className={styles.root}>
       <div className={styles.wrapper}>
         <div className={styles.siteInfo}>
-          <h4 hidden>AS Fiskevegn kontaktinformasjon</h4>
           <p>
-            <strong>AS Fiskevegn</strong>
+            <span className={styles.title}>AS Fiskevegn</span>
             <span>N-6717 Flatraket</span>
             <span>NORWAY</span>
           </p>

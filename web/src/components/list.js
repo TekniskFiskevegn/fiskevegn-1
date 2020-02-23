@@ -49,7 +49,8 @@ const getCustomStyle = style => {
     style == "oneHalf" ? styles.oneHalf : "",
     style == "oneHalfAllTheWay" ? styles.oneHalfAllTheWay : "",
     style == "oneHalfWithGapAndGridFix" ? styles.oneHalfWithGapAndGridFix : "",
-    style == "oneThird" ? styles.oneThird : ""
+    style == "oneThird" ? styles.oneThird : "",
+    style == "customListForPartners" ? styles.customListForPartners : ""
   );
 };
 

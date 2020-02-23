@@ -36,7 +36,7 @@ const renderImages = (image, listOfImages) => {
       />
     );
   } else if (listOfImages && listOfImages.length > 0) {
-    return <List style="oneHalfAllTheWay" listItem="ImageItem" nodes={listOfImages} />;
+    return <List style="customListForPartners" listItem="ImageItem" nodes={listOfImages} />;
   } else {
     return <p>Missing image</p>;
   }

@@ -9,9 +9,9 @@ import styles from "./go-back.module.css";
 
 const GoBack = props => {
   return (
-    <a className={styles.root} href={props.href}>
+    <Link to={props.href} className={styles.root}>
       <Svg adjustToParent icon name="arrow-left-circle" />
-    </a>
+    </Link>
   );
 };
 

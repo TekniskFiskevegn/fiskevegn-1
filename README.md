@@ -140,6 +140,7 @@ You can create a folder named static at the root of your project. Every file you
 - Dribble
 - Adobe stock videos
 - https://uigradients.com/#Influenza
+- https://www.schemecolor.com/color/purple
 
 ## What I have installed
 

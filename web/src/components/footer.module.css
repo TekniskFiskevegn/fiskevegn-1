@@ -24,12 +24,16 @@
   margin: 0 0 1rem;
 }
 
+.title {
+  composes: responsiveTitle2 from './typography.module.css';
+}
+
 .siteInfo {
   text-align: center;
   font-size: var(--font-large-size);
   line-height: var(--font-large-line-height);
 
-  @nest & span, & a, & strong {
+  @nest & span, & a {
     display:block;
   }
 

@@ -26,6 +26,15 @@
   composes: boxShadow3 from "./utils.module.css";
 }
 
+.oddEven {
+  @nest & li {
+    background-color:#fff;
+    @nest &:nth-child(3n+1) {
+      background-color:#fafafa;
+    }
+  }
+}
+
 .plain {
   flex-flow:column;
   @nest & li {
@@ -103,6 +112,12 @@
       padding:1em;
     }
   }
+}
+
+.customListForPartners {
+  composes: oneHalfAllTheWay;
+  composes: oddEven;
+  border:2px solid #fafafa;
 }
 
 /* List with 25% width li items, but full width on mobile */

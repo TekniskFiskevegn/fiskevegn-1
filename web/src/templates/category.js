@@ -6,6 +6,7 @@ import Block from "../components/block";
 import Container from "../components/container";
 import Design from "../components/design";
 import GraphQLErrorList from "../components/graphql-error-list";
+import GoBack from "../components/go-back";
 import Intro from "../components/intro";
 import InnerContainer from "../components/inner-container";
 import Layout from "../containers/layout";
@@ -106,6 +107,7 @@ const CategoryTemplate = props => {
         {/* Category begins */}
         <Block>
           <InnerContainer>
+            <GoBack href="/products" />
             <Intro complementaryTitle={complementaryTitle} title={title} text={text} />
           </InnerContainer>
         </Block>
