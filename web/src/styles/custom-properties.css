@@ -39,8 +39,8 @@
   --font-title3-line-height: calc(35 / 26); /* 35px */
   --font-title2-size: calc(34 / var(--unit) * 1rem); /* 30px */
   --font-title2-line-height: calc(43 / 34); /* 43px */
-  --font-title1-size: calc(36 / var(--unit) * 1rem); /* 36px */
-  --font-title1-line-height: calc(45 / 36); /* 45px */
+  --font-title1-size: calc(38 / var(--unit) * 1rem); /* 36px */
+  --font-title1-line-height: calc(47 / 38); /* 45px */
 
   /* super */
   --font-super-size: calc(49 / var(--unit) * 1rem);

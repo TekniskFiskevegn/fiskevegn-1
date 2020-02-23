@@ -56,7 +56,7 @@ const Contact = ({
               {map && (
                 <li>
                   <a className={styles.link} href="#">
-                    See location on Google Maps
+                    Find us on Google Maps
                   </a>
                 </li>
               )}
