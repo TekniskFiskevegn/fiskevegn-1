@@ -1,13 +1,15 @@
-import React from 'react'
-import HamburgerIcon from './hamburger'
+import React from "react";
+import { FiMenu, FiX } from "react-icons/fi";
 
-function Icon (props) {
+function Icon(props) {
   switch (props.symbol) {
-    case 'hamburger':
-      return <HamburgerIcon />
+    case "hamburger":
+      return <FiMenu />;
+    case "foo":
+      return <FiX />;
     default:
-      return <span>Unknown icon: {props.symbol}</span>
+      return <span>Unknown icon: {props.symbol}</span>;
   }
 }
 
-export default Icon
+export default Icon;

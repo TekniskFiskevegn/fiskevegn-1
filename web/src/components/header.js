@@ -17,11 +17,10 @@ const Header = ({ onHideNav, onShowNav, showNav, siteTitle, isCustomHeader, curr
           <img src="/logo.png" alt="Fiskevegn" />
           <h1 hidden>{siteTitle}</h1>
         </Link>
+        <button className={styles.toggleNavButton} onClick={showNav ? onHideNav : onShowNav}>
+          <Icon symbol={showNav ? "foo" : "hamburger"} />
+        </button>
       </div>
-
-      <button className={styles.toggleNavButton} onClick={showNav ? onHideNav : onShowNav}>
-        <Icon symbol="hamburger" />
-      </button>
 
       <nav className={cn(styles.nav, showNav && styles.showNav)}>
         <ul>
