@@ -17,9 +17,9 @@ function List(props) {
     <div className={styles.root}>
       <ul className={cn(styles.default, getCustomStyle(style))}>
         {nodes &&
-          nodes.map(node => {
+          nodes.map((node, i) => {
             return (
-              <li key={node.id}>
+              <li key={i}>
                 <RenderListItem typeOfListItem={listItem} node={node} />
               </li>
             );
