@@ -142,6 +142,7 @@ You can create a folder named static at the root of your project. Every file you
 - Adobe stock videos
 - https://uigradients.com/#Influenza
 - https://www.schemecolor.com/color/purple
+- https://react-icons.netlify.com/#/
 
 ## What I have installed
 
