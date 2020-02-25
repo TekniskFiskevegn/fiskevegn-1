@@ -5,6 +5,7 @@ import GraphQLErrorList from "../components/graphql-error-list";
 import Article from "../components/article";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
+import localize from "../components/localize";
 
 export const query = graphql`
   query NewsTemplateQuery($id: String!) {
@@ -63,4 +64,4 @@ const NewsTemplate = props => {
   );
 };
 
-export default NewsTemplate;
+export default localize(NewsTemplate);

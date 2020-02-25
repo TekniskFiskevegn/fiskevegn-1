@@ -8,14 +8,19 @@ import GraphQLErrorList from "../components/graphql-error-list";
 import Intro from "../components/intro";
 import InnerContainer from "../components/inner-container";
 import Layout from "../containers/layout";
+import localize from "../components/localize";
 import Presentation from "../components/presentation";
 import SEO from "../components/seo";
 
 export const query = graphql`
   query serviceTemplateQuery($id: String!) {
-    service: sanityServices(id: { eq: $id }) {
+    template: sanityServices(id: { eq: $id }) {
       id
-      title
+      title {
+        _type
+        en
+        no
+      }
       slug {
         current
       }
@@ -46,18 +51,16 @@ export const query = graphql`
 `;
 
 const ServiceTemplate = props => {
+  console.log("log props service template", props);
   const { data, errors, pageContext } = props;
   const locale = pageContext.locale ? pageContext.locale : "default";
-  const service = data && data.service;
-
-  const { title, complementaryTitle, text, sceneryImage } = service;
+  const template = data && data.template;
 
   return (
     <Layout currentPage="Services" locale={locale}>
       <Container>
-        <p>foo</p>
         {errors && <SEO title="GraphQL Error" />}
-        {service && <SEO title={service.title || "Untitled"} />}
+        {template && <SEO title={template.title || "Untitled"} />}
 
         {errors && <GraphQLErrorList errors={errors} />}
 
@@ -68,7 +71,8 @@ const ServiceTemplate = props => {
         {/* Service begins */}
         <Block>
           <InnerContainer>
-            <Intro complementaryTitle={complementaryTitle} title={title} text={text} />
+            {/* <Intro complementaryTitle="hmm" title={template.title} text="hmm" /> */}
+            <p>foo {template.title}</p>
           </InnerContainer>
         </Block>
       </Container>
@@ -76,4 +80,4 @@ const ServiceTemplate = props => {
   );
 };
 
-export default ServiceTemplate;
+export default localize(ServiceTemplate);

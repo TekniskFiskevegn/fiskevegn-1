@@ -11,10 +11,25 @@ export default {
       description: "Title of the service"
     },
     {
-      type: "localeSlug",
       name: "slug",
-      title: "URL"
+      title: "URL",
+      type: "slug",
+      description: "Some frontend will require a slug to be set to be able to show the project",
+      options: {
+        source: "title",
+        maxLength: 96
+      }
     },
+    // {
+    //   name: "slugLocale",
+    //   title: "URL",
+    //   type: "slug",
+    //   description: "Translation of URL above",
+    //   options: {
+    //     source: "title.no",
+    //     maxLength: 96
+    //   }
+    // },
     // {
     //   name: "title",
     //   title: "Service name",

@@ -8,6 +8,7 @@ import GraphQLErrorList from "../components/graphql-error-list";
 import Intro from "../components/intro";
 import InnerContainer from "../components/inner-container";
 import Layout from "../containers/layout";
+import localize from "../components/localize";
 import Presentation from "../components/presentation";
 import SEO from "../components/seo";
 
@@ -119,4 +120,4 @@ const ProductTemplate = props => {
   );
 };
 
-export default ProductTemplate;
+export default localize(ProductTemplate);

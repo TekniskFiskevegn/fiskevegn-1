@@ -27,8 +27,13 @@ export const menuLinks = [
 ];
 
 export const uiNewsTitle = {
-  no: "Siste nytt",
-  en: "AS Fiskevegn News"
+  default: "Latest News",
+  no: "Siste nytt"
+};
+
+export const uiNewsReadMore = {
+  default: "More news",
+  no: "Flere nyheter"
 };
 
 // NB! remember staticImage instead of staticImage

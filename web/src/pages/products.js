@@ -11,6 +11,7 @@ import Intro from "../components/intro";
 import Layout from "../containers/layout";
 import Navigation from "../components/navigation";
 import SEO from "../components/seo";
+import sytalaust from "../../sytalaust";
 
 export const query = graphql`
   query ProductsPageQuery {
@@ -60,6 +61,8 @@ export const query = graphql`
 const ProductsPage = props => {
   const { data, errors, pageContext } = props;
   const locale = pageContext.locale ? pageContext.locale : "default";
+
+  // console.log("log sytalaust", sytalaust);
 
   console.log("log 'product page' data", data);
   if (errors) {

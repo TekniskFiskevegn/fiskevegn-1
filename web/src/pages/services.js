@@ -16,7 +16,7 @@ import SEO from "../components/seo";
 export const query = graphql`
   query ServicesPageQuery {
     page: sanityPageServices {
-      # _id
+      _id
       title {
         _type
         en
@@ -47,17 +47,21 @@ export const query = graphql`
       #   alt
       # }
     }
-    # services: allSanityServices(limit: 10) {
-    #   edges {
-    #     node {
-    #       id
-    #       title
-    #       slug {
-    #         current
-    #       }
-    #     }
-    #   }
-    # }
+    services: allSanityServices(limit: 10) {
+      edges {
+        node {
+          id
+          title {
+            _type
+            en
+            no
+          }
+          slug {
+            current
+          }
+        }
+      }
+    }
   }
 `;
 
@@ -86,8 +90,7 @@ const ServicesPage = props => {
     <Layout currentPage="Services" locale={locale}>
       <SEO title="Fiskevegn services" />
       <Container>
-        <h2>{page.title}</h2>
-        {/* <Block>
+        <Block>
           <InnerContainer>
             <Intro
               complementaryTitle={page.complementaryTitle}
@@ -102,7 +105,7 @@ const ServicesPage = props => {
               <Navigation nodes={nodes} nodeLinksToTemplate="service" />
             </InnerContainer>
           </Design>
-        </Block> */}
+        </Block>
       </Container>
     </Layout>
   );

@@ -21,7 +21,7 @@ import SEO from "../components/seo";
 
 import utils from "../components/utils.module.css";
 
-import { uiNewsTitle } from "../lib/ui";
+import { uiNewsTitle, uiNewsReadMore } from "../lib/ui";
 
 export const query = graphql`
   query IndexPageQuery {
@@ -225,11 +225,11 @@ const IndexPage = props => {
         {newsNodes && (
           <Block>
             <InnerContainer>
-              <Intro title={`${uiNewsTitle[lang]}`} />
+              <Intro title={`${uiNewsTitle[locale]}`} />
               <List style="oneHalfWithGapAndGridFix" listItem="NewsTeaser" nodes={newsNodes} />
               <div>
                 <Link to="/archive" className={utils.defaultLink}>
-                  More news
+                  {uiNewsReadMore[locale]}
                 </Link>
               </div>
             </InnerContainer>

@@ -10,6 +10,7 @@ import GoBack from "../components/go-back";
 import Intro from "../components/intro";
 import InnerContainer from "../components/inner-container";
 import Layout from "../containers/layout";
+import localize from "../components/localize";
 import Navigation from "../components/navigation";
 import SEO from "../components/seo";
 
@@ -124,4 +125,4 @@ const CategoryTemplate = props => {
   );
 };
 
-export default CategoryTemplate;
+export default localize(CategoryTemplate);
