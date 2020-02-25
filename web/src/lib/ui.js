@@ -1,6 +1,29 @@
-// ui text that does not have to come from cms
-
-// uiTextNewsTitle
+export const menuLinks = [
+  {
+    name: "Shop",
+    link: "/shop"
+  },
+  {
+    name: "About",
+    link: "/about"
+  },
+  {
+    name: "Products",
+    link: "/products"
+  },
+  {
+    name: "Services",
+    link: "/services"
+  },
+  {
+    name: "Contact",
+    link: "/contact"
+  },
+  {
+    name: "En",
+    link: "/"
+  }
+];
 
 export const uiNewsTitle = {
   no: "Siste nytt",

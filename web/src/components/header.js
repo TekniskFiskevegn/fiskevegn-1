@@ -3,6 +3,8 @@ import React from "react";
 import Icon from "./icon";
 import { cn } from "../lib/helpers";
 
+import { menuLinks } from "../lib/ui";
+
 import styles from "./header.module.css";
 
 const handleClick = () => {
@@ -24,34 +26,16 @@ const Header = ({ onHideNav, onShowNav, showNav, siteTitle, isCustomHeader, curr
 
       <nav className={cn(styles.nav, showNav && styles.showNav)}>
         <ul>
-          <li>
-            <Link to="/shop/" className={currentPage === "shop" ? styles.activeLink : ""}>
-              Shop
-            </Link>
-          </li>
-          <li>
-            <Link to="/about/" className={currentPage === "about" ? styles.activeLink : ""}>
-              About
-            </Link>
-          </li>
-          <li>
-            <Link to="/products/" className={currentPage === "products" ? styles.activeLink : ""}>
-              Products
-            </Link>
-          </li>
-          <li>
-            <Link to="/services" className={currentPage === "services" ? styles.activeLink : ""}>
-              Services
-            </Link>
-          </li>
-          <li>
-            <Link to="/contact/" className={currentPage === "contact" ? styles.activeLink : ""}>
-              Contact
-            </Link>
-          </li>
-          {/* <li>
-            <Link to="/not-found">Language</Link>
-          </li> */}
+          {menuLinks.map((item, i) => {
+            console.log("log menuitem", currentPage, item.name);
+            return (
+              <li>
+                <Link className={currentPage == item.name ? styles.activeLink : ""} to={item.link}>
+                  {item.name}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       </nav>
     </div>

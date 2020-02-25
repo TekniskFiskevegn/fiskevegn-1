@@ -76,7 +76,7 @@ const ProductsPage = props => {
   }
 
   return (
-    <Layout currentPage="products">
+    <Layout currentPage="Products">
       <SEO title="Fiskevegn products" />
       <Container>
         <Block>
