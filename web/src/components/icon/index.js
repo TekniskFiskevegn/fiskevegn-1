@@ -5,7 +5,7 @@ function Icon(props) {
   switch (props.symbol) {
     case "hamburger":
       return <FiMenu />;
-    case "foo":
+    case "close":
       return <FiX />;
     default:
       return <span>Unknown icon: {props.symbol}</span>;

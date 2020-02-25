@@ -20,6 +20,8 @@ import person from "./documents/person";
 import news from "./documents/news";
 
 // Object types
+import localeSlug from "./objects/localeSlug";
+import localeString from "./objects/localeString";
 import pdf from "./objects/pdf";
 import feature from "./objects/feature";
 import intro from "./objects/intro";
@@ -56,6 +58,8 @@ export default createSchema({
     standardContent,
     feature,
     pdf,
+    localeString,
+    localeSlug,
     // The following are document types which will appear
     // in the studio.
     // category,

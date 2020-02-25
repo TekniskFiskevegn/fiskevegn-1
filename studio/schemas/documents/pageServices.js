@@ -2,19 +2,18 @@ export default {
   name: "pageServices",
   type: "document",
   title: "Page: Services",
-  // __experimental_actions: [
-  //   // 'create',
-  //   "update",
-  //   // 'delete',
-  //   "publish"
-  // ],
   fields: [
     {
+      type: "localeString",
       name: "title",
-      type: "string",
-      title: "Title",
-      description: "Page title."
+      description: "Title of the page"
     },
+    // {
+    //   name: "title",
+    //   type: "string",
+    //   title: "Title",
+    //   description: "Page title."
+    // },
     {
       name: "complementaryTitle",
       type: "string",

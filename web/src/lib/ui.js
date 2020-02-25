@@ -1,27 +1,28 @@
+export const homeLink = {
+  default: { name: "home", link: "/" },
+  no: { name: "hjem", link: "/no" }
+};
+
 export const menuLinks = [
   {
-    name: "Shop",
-    link: "/shop"
+    default: { name: "Shop", link: "/shop" },
+    no: { name: "Shop", link: "/no/shop" }
   },
   {
-    name: "About",
-    link: "/about"
+    default: { name: "About", link: "/about" },
+    no: { name: "Om oss", link: "/no/about" }
   },
   {
-    name: "Products",
-    link: "/products"
+    default: { name: "Products", link: "/products" },
+    no: { name: "Produkter", link: "/no/products" }
   },
   {
-    name: "Services",
-    link: "/services"
+    default: { name: "Services", link: "/services" },
+    no: { name: "Tjenester", link: "/no/services" }
   },
   {
-    name: "Contact",
-    link: "/contact"
-  },
-  {
-    name: "En",
-    link: "/"
+    default: { name: "Contact", link: "/contact" },
+    no: { name: "Kontakt", link: "/no/contact" }
   }
 ];
 

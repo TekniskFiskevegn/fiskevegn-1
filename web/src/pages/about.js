@@ -21,9 +21,9 @@ export const query = graphql`
   query AboutPageQuery {
     page: sanityPageAbout {
       _id
-      title
+      # title
       complementaryTitle
-      text
+      # text
       sceneryImage {
         crop {
           _key
@@ -140,7 +140,8 @@ export const query = graphql`
 `;
 
 const AboutPage = props => {
-  const { data, errors } = props;
+  const { pageContext, data, errors } = props;
+  const locale = pageContext.locale ? pageContext.locale : "default";
   console.log("log 'about page' data", data);
   if (errors) {
     return (
@@ -161,7 +162,7 @@ const AboutPage = props => {
   const features = page.features;
 
   return (
-    <Layout currentPage="about">
+    <Layout currentPage="About" locale={locale}>
       <SEO title="About AS Fiskevegn" />
       <Container>
         <Block>

@@ -9,55 +9,61 @@ import GraphQLErrorList from "../components/graphql-error-list";
 import InnerContainer from "../components/inner-container";
 import Intro from "../components/intro";
 import Layout from "../containers/layout";
+import localize from "../components/localize";
 import Navigation from "../components/navigation";
 import SEO from "../components/seo";
 
 export const query = graphql`
   query ServicesPageQuery {
     page: sanityPageServices {
-      _id
-      title
-      complementaryTitle
-      text
-      sceneryImage {
-        crop {
-          _key
-          _type
-          top
-          bottom
-          left
-          right
-        }
-        hotspot {
-          _key
-          _type
-          x
-          y
-          height
-          width
-        }
-        asset {
-          _id
-        }
-        alt
+      # _id
+      title {
+        _type
+        en
+        no
       }
+      # text
+      # complementaryTitle
+      # sceneryImage {
+      #   crop {
+      #     _key
+      #     _type
+      #     top
+      #     bottom
+      #     left
+      #     right
+      #   }
+      #   hotspot {
+      #     _key
+      #     _type
+      #     x
+      #     y
+      #     height
+      #     width
+      #   }
+      #   asset {
+      #     _id
+      #   }
+      #   alt
+      # }
     }
-    services: allSanityServices(limit: 10) {
-      edges {
-        node {
-          id
-          title
-          slug {
-            current
-          }
-        }
-      }
-    }
+    # services: allSanityServices(limit: 10) {
+    #   edges {
+    #     node {
+    #       id
+    #       title
+    #       slug {
+    #         current
+    #       }
+    #     }
+    #   }
+    # }
   }
 `;
 
 const ServicesPage = props => {
-  const { data, errors } = props;
+  const { data, errors, pageContext } = props;
+  const locale = pageContext.locale ? pageContext.locale : "default";
   console.log("log 'product page' data", data);
   if (errors) {
     return (
@@ -74,11 +80,14 @@ const ServicesPage = props => {
     throw new Error('Missing "page". Open the studio and add some content to this page.');
   }
 
+  console.log("log props in services page", props);
+
   return (
-    <Layout currentPage="Services">
+    <Layout currentPage="Services" locale={locale}>
       <SEO title="Fiskevegn services" />
       <Container>
-        <Block>
+        <h2>{page.title}</h2>
+        {/* <Block>
           <InnerContainer>
             <Intro
               complementaryTitle={page.complementaryTitle}
@@ -93,10 +102,10 @@ const ServicesPage = props => {
               <Navigation nodes={nodes} nodeLinksToTemplate="service" />
             </InnerContainer>
           </Design>
-        </Block>
+        </Block> */}
       </Container>
     </Layout>
   );
 };
 
-export default ServicesPage;
+export default localize(ServicesPage);

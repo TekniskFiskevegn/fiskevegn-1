@@ -11,7 +11,7 @@ import styles from "./navigation-item.module.css";
 
 const NavigationItem = props => {
   // if !useTemplate change link
-  console.log("log props NavigationItem", props);
+  // console.log("log props NavigationItem", props);
   // const template = props.isService ? "/service" : "/product";
   // const url = props.linksToStaticPage ? props.slug.current : `/${template}/${props.slug.current}`;
   const url = `/${props.templateUrl}/${props.slug.current}`;

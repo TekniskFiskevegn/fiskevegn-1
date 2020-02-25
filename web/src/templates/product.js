@@ -80,7 +80,8 @@ export const query = graphql`
 `;
 
 const ProductTemplate = props => {
-  const { data, errors } = props;
+  const { data, errors, pageContext } = props;
+  const locale = pageContext.locale ? pageContext.locale : "default";
   const product = data && data.product;
 
   const { complementaryTitle, title, text, models } = product;
@@ -88,7 +89,7 @@ const ProductTemplate = props => {
   const nodes = models;
 
   return (
-    <Layout currentPage="products">
+    <Layout currentPage="Products" locale={locale}>
       <Container>
         {errors && <SEO title="GraphQL Error" />}
         {product && <SEO title={product.title || "Untitled"} />}

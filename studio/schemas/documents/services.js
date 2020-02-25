@@ -6,21 +6,31 @@ export default {
   type: "document",
   fields: [
     {
+      type: "localeString",
       name: "title",
-      title: "Service name",
-      type: "string",
-      description: "Shown in navigation and as title on service page"
+      description: "Title of the service"
     },
     {
+      type: "localeSlug",
       name: "slug",
-      title: "URL",
-      type: "slug",
-      description: "Just click generate",
-      options: {
-        source: "title",
-        maxLength: 96
-      }
+      title: "URL"
     },
+    // {
+    //   name: "title",
+    //   title: "Service name",
+    //   type: "string",
+    //   description: "Shown in navigation and as title on service page"
+    // },
+    // {
+    //   name: "slug",
+    //   title: "URL",
+    //   type: "slug",
+    //   description: "Just click generate",
+    //   options: {
+    //     source: "title.en",
+    //     maxLength: 96
+    //   }
+    // },
     {
       name: "teaser",
       title: "Teaser",

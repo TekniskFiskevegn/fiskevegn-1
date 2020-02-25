@@ -5,6 +5,33 @@ const { isFuture } = require("date-fns");
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
+const extraLanguages = ["no"]; // English is currently the default so it isn't needed here.
+const createLocalePage = (page, createPage) => {
+  const { context, ...rest } = page;
+  createPage({
+    ...rest,
+    context: {
+      ...context,
+      locale: process.env.LOCALE
+    }
+  });
+  if (extraLanguages.length) {
+    extraLanguages.forEach(code => {
+      const { path, context, ...rest } = page;
+      createPage({
+        ...rest,
+        path: `/${code}${path}`,
+        // every page for each language gets the language code as a prefix
+        // to its path: "/es/blog/<some-slug>" for example
+        context: {
+          ...context,
+          locale: code
+        }
+      });
+    });
+  }
+};
+
 async function createNewsPages(graphql, actions, reporter) {
   const { createPage } = actions;
   const result = await graphql(`
@@ -36,11 +63,18 @@ async function createNewsPages(graphql, actions, reporter) {
 
       reporter.info(`Creating news page: ${path}`);
 
-      createPage({
+      // createPage({
+      //   path,
+      //   component: require.resolve("./src/templates/news.js"),
+      //   context: { id }
+      // });
+      page = {
         path,
         component: require.resolve("./src/templates/news.js"),
         context: { id }
-      });
+      };
+
+      createLocalePage(page, createPage);
     });
 }
 
@@ -158,4 +192,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   await createProductPages(graphql, actions, reporter);
   await createServicePages(graphql, actions, reporter);
   await createCategoryPages(graphql, actions, reporter);
+};
+
+// Creating pages in /pages folder
+exports.onCreatePage = ({ page, actions }) => {
+  const { createPage, deletePage } = actions;
+  deletePage(page);
+  createLocalePage(page, createPage);
 };

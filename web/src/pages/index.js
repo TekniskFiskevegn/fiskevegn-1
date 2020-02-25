@@ -160,7 +160,8 @@ export const query = graphql`
 `;
 
 const IndexPage = props => {
-  const { data, errors } = props;
+  const { data, errors, pageContext } = props;
+  const locale = pageContext.locale ? pageContext.locale : "default";
   console.log("log 'frontpage' data", data);
   if (errors) {
     return (
@@ -194,7 +195,7 @@ const IndexPage = props => {
   const lang = "en";
 
   return (
-    <Layout isCustomHeader={true}>
+    <Layout isCustomHeader={true} locale={locale}>
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
       {page.topImage && <Hero image={page.topImage} />}
       <Container>

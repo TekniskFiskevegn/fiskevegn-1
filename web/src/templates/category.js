@@ -68,7 +68,8 @@ export const query = graphql`
 // 1. Make helper for filtering category products
 
 const CategoryTemplate = props => {
-  const { data, errors } = props;
+  const { data, errors, pageContext } = props;
+  const locale = pageContext.locale ? pageContext.locale : "default";
 
   let category = data && data.category;
   const allProducts = (data || {}).products ? mapEdgesToNodes(data.products) : [];
@@ -93,7 +94,7 @@ const CategoryTemplate = props => {
   const nodes = products;
 
   return (
-    <Layout currentPage="products">
+    <Layout currentPage="Products" locale={locale}>
       <Container>
         {errors && <SEO txitle="GraphQL Error" />}
         {category && <SEO title={category.title || "Untitled"} />}

@@ -46,13 +46,14 @@ export const query = graphql`
 `;
 
 const ServiceTemplate = props => {
-  const { data, errors } = props;
+  const { data, errors, pageContext } = props;
+  const locale = pageContext.locale ? pageContext.locale : "default";
   const service = data && data.service;
 
   const { title, complementaryTitle, text, sceneryImage } = service;
 
   return (
-    <Layout currentPage="services">
+    <Layout currentPage="Services" locale={locale}>
       <Container>
         <p>foo</p>
         {errors && <SEO title="GraphQL Error" />}

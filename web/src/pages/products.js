@@ -58,7 +58,9 @@ export const query = graphql`
 `;
 
 const ProductsPage = props => {
-  const { data, errors } = props;
+  const { data, errors, pageContext } = props;
+  const locale = pageContext.locale ? pageContext.locale : "default";
+
   console.log("log 'product page' data", data);
   if (errors) {
     return (
@@ -76,7 +78,7 @@ const ProductsPage = props => {
   }
 
   return (
-    <Layout currentPage="Products">
+    <Layout currentPage="Products" locale={locale}>
       <SEO title="Fiskevegn products" />
       <Container>
         <Block>

@@ -3,7 +3,10 @@
 ## Todo
 
 @ Sytalaust
+- improvements, could pass props to layout and header, and make the locale logic there. But its also nice to have it in order to genereate correct ui components
+- improvements: usage of page, service, product from graphql, should be more standardized?
 - menu links should probably be in a config file rather than ui
+- extra languages should probably be in a config file
 - continue work with list and the different list items, and the difference between image item and logo item
 - utils + typography = sant
 - improvements naming convention

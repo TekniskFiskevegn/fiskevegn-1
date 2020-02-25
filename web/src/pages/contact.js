@@ -74,7 +74,9 @@ export const query = graphql`
 `;
 
 const ContactPage = props => {
-  const { data, errors } = props;
+  const { pageContext, data, errors } = props;
+  const locale = pageContext.locale ? pageContext.locale : "default";
+
   console.log("log 'contact page' data", data);
   if (errors) {
     return (
@@ -90,8 +92,9 @@ const ContactPage = props => {
   }
   const departments = page.departments;
 
+  console.log("log props in contact", props);
   return (
-    <Layout pageClass="" currentPage="contact" isCustomHeader={true}>
+    <Layout currentPage="Contact" locale={locale} isCustomHeader>
       <SEO title="AS Fiskevegn contact" />
       {page.topImage && <Hero image={page.topImage} />}
       {departments && departments.length > 0 && (
