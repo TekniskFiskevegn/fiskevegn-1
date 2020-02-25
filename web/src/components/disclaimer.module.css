@@ -2,8 +2,9 @@
 @import '../styles/custom-properties.css';
 
 .root {
-  font-size: 13px;
-  text-align: center;
-  padding-bottom:3em;
-  /* color:#999; */
+  font-size:15px;
+  color:var(--color-dusk);
+  @nest & p {
+    margin-top:1.5em;
+  }
 }

@@ -6,12 +6,7 @@ const Disclaimer = props => {
   return (
     <div className={styles.root}>
       <p>
-        <span>
-          Copyright 2020 AS Fiskevegn.{" "}
-          <a href="#">
-            Website by <span>WeBeyond</span>
-          </a>
-        </span>
+        Copyright 2020 AS Fiskevegn. <a href="#">Website by WeBeyond.</a>
       </p>
       <p hidden>
         Built with <a href="https://www.sanity.io">Sanity</a> &amp;

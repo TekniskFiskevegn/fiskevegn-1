@@ -5,14 +5,13 @@
 .wrapper {
   box-sizing: border-box;
   max-width: 1140px;
-  width:100%;
-  min-height: 300px;
+  width:100%; 
   margin:0 auto;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* border-top:2px solid var(--color-light-gray); */
+  padding:3em;
 }
 
 .waveContainer {
@@ -33,11 +32,15 @@
   font-size: var(--font-large-size);
   line-height: var(--font-large-line-height);
 
-  @nest & span, & a {
+  @nest & span {
     display:block;
   }
+}
 
-  @nest & a {
-    color:#d35400;
-  }
+.link {
+  composes: plainLink from './utils.module.css';
+}
+
+.linkColor {
+  composes: complementaryLink from './utils.module.css';
 }
