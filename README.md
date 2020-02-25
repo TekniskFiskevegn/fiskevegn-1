@@ -3,6 +3,7 @@
 ## Todo
 
 @ Sytalaust
+- menu links should probably be in a config file rather than ui
 - continue work with list and the different list items, and the difference between image item and logo item
 - utils + typography = sant
 - improvements naming convention
@@ -35,22 +36,6 @@
 - contact could and should be a promoted component
 
 @ Fiskevegn
-
-1. make productTeaser and servicesTeaser
-2. clean up list.js
-3. clean up item.js
-
-components styles is styles
-utils should be utilsStyles
-typgraphy should be typographyStyles
-list listStyles
-
-
-- rename from block design to only design
-- ui text switch no eng
-- finpusse nav
-- ferdigstille kontakt
-- mailto concatenation
 - phone tel link
 
 

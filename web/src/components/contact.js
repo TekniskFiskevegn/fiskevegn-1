@@ -41,7 +41,7 @@ const Contact = ({
             <ul className={styles.list}>
               {phone && (
                 <li>
-                  <a className={styles.link} href="#">
+                  <a className={styles.link} href={"tel:" + phone}>
                     {phone}
                   </a>
                 </li>
@@ -55,7 +55,7 @@ const Contact = ({
               )}
               {map && (
                 <li>
-                  <a className={styles.link} href="#">
+                  <a className={styles.link} href={map}>
                     Find us on Google Maps
                   </a>
                 </li>
