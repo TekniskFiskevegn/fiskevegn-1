@@ -1,6 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
+import { getLocale } from "../../sytalaust";
 
 import Block from "../components/block";
 import Container from "../components/container";
@@ -9,6 +10,7 @@ import GraphQLErrorList from "../components/graphql-error-list";
 import Hero from "../components/hero";
 import InnerContainer from "../components/inner-container";
 import Layout from "../containers/layout";
+import localize from "../components/localize";
 import SEO from "../components/seo";
 
 export const query = graphql`
@@ -75,9 +77,7 @@ export const query = graphql`
 
 const ContactPage = props => {
   const { pageContext, data, errors } = props;
-  const locale = pageContext.locale ? pageContext.locale : "default";
-
-  console.log("log 'contact page' data", data);
+  const locale = getLocale(pageContext);
   if (errors) {
     return (
       <Layout>
@@ -92,10 +92,9 @@ const ContactPage = props => {
   }
   const departments = page.departments;
 
-  console.log("log props in contact", props);
   return (
-    <Layout currentPage="Contact" locale={locale} isCustomHeader>
-      <SEO title="AS Fiskevegn contact" />
+    <Layout locale={locale} {...props} isCustomHeader>
+      <SEO title={locale == "en" ? "Contact - AS Fiskevegn" : "Kontakt - AS Fiskevegn"} />
       {page.topImage && <Hero image={page.topImage} />}
       {departments && departments.length > 0 && (
         <Container>
@@ -112,4 +111,4 @@ const ContactPage = props => {
   );
 };
 
-export default ContactPage;
+export default localize(ContactPage);

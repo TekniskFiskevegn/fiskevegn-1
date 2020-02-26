@@ -26,7 +26,7 @@ const Intro = ({ complementaryTitle, title, text, publishedAt, marginBottom = fa
 
 Intro.propTypes = {
   complementaryTitle: PropTypes.string,
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   text: PropTypes.string,
   margin: PropTypes.bool
 };

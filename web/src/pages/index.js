@@ -3,25 +3,25 @@ import { graphql, Link } from "gatsby";
 import {
   mapEdgesToNodes,
   filterOutDocsWithoutSlugs,
-  filterOutDocsPublishedInTheFuture,
-  cn
+  filterOutDocsPublishedInTheFuture
 } from "../lib/helpers";
+import { getLocale } from "../../sytalaust";
+import { uiNewsTitle, uiNewsReadMore } from "../lib/ui";
 
-import Layout from "../containers/layout";
-import Container from "../components/container";
 import Block from "../components/block";
+import Container from "../components/container";
 import Design from "../components/design";
-import InnerContainer from "../components/inner-container";
-import Hero from "../components/hero";
-import Promoted from "../components/promoted";
-import Intro from "../components/intro";
-import List from "../components/list";
 import GraphQLErrorList from "../components/graphql-error-list";
+import Hero from "../components/hero";
+import InnerContainer from "../components/inner-container";
+import Intro from "../components/intro";
+import Layout from "../containers/layout";
+import List from "../components/list";
+import localize from "../components/localize";
+import Promoted from "../components/promoted";
 import SEO from "../components/seo";
 
 import utils from "../components/utils.module.css";
-
-import { uiNewsTitle, uiNewsReadMore } from "../lib/ui";
 
 export const query = graphql`
   query IndexPageQuery {
@@ -161,8 +161,8 @@ export const query = graphql`
 
 const IndexPage = props => {
   const { data, errors, pageContext } = props;
-  const locale = pageContext.locale ? pageContext.locale : "default";
-  console.log("log 'frontpage' data", data);
+  const locale = getLocale(pageContext);
+
   if (errors) {
     return (
       <Layout>
@@ -192,10 +192,8 @@ const IndexPage = props => {
     );
   }
 
-  const lang = "en";
-
   return (
-    <Layout isCustomHeader={true} locale={locale}>
+    <Layout locale={locale} {...props} isCustomHeader={true}>
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
       {page.topImage && <Hero image={page.topImage} />}
       <Container>
@@ -240,4 +238,4 @@ const IndexPage = props => {
   );
 };
 
-export default IndexPage;
+export default localize(IndexPage);

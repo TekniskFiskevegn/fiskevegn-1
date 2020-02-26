@@ -1,5 +1,8 @@
 import React from "react";
 import { graphql } from "gatsby";
+import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
+import { getLocale } from "../../sytalaust";
+
 import Container from "../components/container";
 import GraphQLErrorList from "../components/graphql-error-list";
 import Block from "../components/block";
@@ -8,7 +11,7 @@ import Intro from "../components/intro";
 import List from "../components/list";
 import SEO from "../components/seo";
 import Layout from "../containers/layout";
-import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
+import localize from "../components/localize";
 
 export const query = graphql`
   query ArchivePageQuery {
@@ -38,7 +41,8 @@ export const query = graphql`
 `;
 
 const ArchivePage = props => {
-  const { data, errors } = props;
+  const { pageContext, data, errors } = props;
+  const locale = getLocale(pageContext);
   if (errors) {
     return (
       <Layout>
@@ -50,12 +54,12 @@ const ArchivePage = props => {
     data && data.news && mapEdgesToNodes(data.news).filter(filterOutDocsWithoutSlugs);
 
   return (
-    <Layout>
-      <SEO title="Archive" />
+    <Layout locale={locale} {...props}>
+      <SEO title={locale == "en" ? "News - AS Fiskevegn" : "Nyheter - AS Fiskevegn"} />
       <Container>
-        <Block name="news">
+        <Block>
           <InnerContainer>
-            <Intro title="AS Fiskevegn News" />
+            <Intro title={locale == "en" ? "News archive" : "Nyhetsarkiv"} />
             <List style="oneHalfWithGapAndGridFix" listItem="NewsTeaser" nodes={newsNodes} />
           </InnerContainer>
         </Block>
@@ -64,4 +68,4 @@ const ArchivePage = props => {
   );
 };
 
-export default ArchivePage;
+export default localize(ArchivePage);

@@ -3,6 +3,8 @@
 ## Todo
 
 @ Sytalaust
+- Alle steder der "Fiskevegn" er brukt, skal erstattes med en konstant i sytalaust
+- bruk DEFAULT_LOCALE og UI function for å generere riktig språk i UI interface
 - improvements, could pass props to layout and header, and make the locale logic there. But its also nice to have it in order to genereate correct ui components
 - improvements: usage of page, service, product from graphql, should be more standardized?
 - menu links should probably be in a config file rather than ui

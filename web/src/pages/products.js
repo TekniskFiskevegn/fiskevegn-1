@@ -1,6 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import { mapEdgesToNodes, cn } from "../lib/helpers";
+import { getLocale } from "../../sytalaust";
 
 import Block from "../components/block";
 import Container from "../components/container";
@@ -9,9 +10,9 @@ import GraphQLErrorList from "../components/graphql-error-list";
 import InnerContainer from "../components/inner-container";
 import Intro from "../components/intro";
 import Layout from "../containers/layout";
+import localize from "../components/localize";
 import Navigation from "../components/navigation";
 import SEO from "../components/seo";
-import sytalaust from "../../sytalaust";
 
 export const query = graphql`
   query ProductsPageQuery {
@@ -60,11 +61,8 @@ export const query = graphql`
 
 const ProductsPage = props => {
   const { data, errors, pageContext } = props;
-  const locale = pageContext.locale ? pageContext.locale : "default";
+  const locale = getLocale(pageContext);
 
-  // console.log("log sytalaust", sytalaust);
-
-  console.log("log 'product page' data", data);
   if (errors) {
     return (
       <Layout>
@@ -81,8 +79,8 @@ const ProductsPage = props => {
   }
 
   return (
-    <Layout currentPage="Products" locale={locale}>
-      <SEO title="Fiskevegn products" />
+    <Layout locale={locale} {...props}>
+      <SEO title={locale == "en" ? "Products - AS Fiskevegn" : "Produkter - AS Fiskevegn"} />
       <Container>
         <Block>
           <InnerContainer>
@@ -105,4 +103,4 @@ const ProductsPage = props => {
   );
 };
 
-export default ProductsPage;
+export default localize(ProductsPage);

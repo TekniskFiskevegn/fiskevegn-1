@@ -1,32 +1,104 @@
-function getMappingForPages() {
+// Default language for the site
+const DEFAULT_LOCALE = "en";
+
+// Site name
+const SITE_NAME = "";
+
+// Other languages for the site
+export const extraLanguages = ["no"];
+
+// Function used throughout the solution to generate correct locale
+export function getLocale(pageContext) {
+  if (pageContext.locale) {
+    return pageContext.locale;
+  }
+  return DEFAULT_LOCALE;
+}
+
+// Sytalaust Gatsby page mapping
+export function getPageStructure() {
   return [
     {
-      path: "about",
-      pathLocale: "om-oss"
+      name: "about",
+      localeName: "om-oss",
+      nav: {
+        en: {
+          displayName: "About us",
+          url: "/about"
+        },
+        no: {
+          displayName: "Om oss",
+          url: "/om-oss"
+        }
+      }
     },
     {
-      path: "products",
-      pathLocale: "produkter"
+      name: "products",
+      localeName: "produkter",
+      nav: {
+        en: {
+          displayName: "Products",
+          url: "/products"
+        },
+        no: {
+          displayName: "Produkter",
+          url: "/produkter"
+        }
+      }
     },
     {
-      path: "services",
-      pathLocale: "tjenester"
+      name: "services",
+      localeName: "tjenester",
+      nav: {
+        en: {
+          displayName: "Services",
+          url: "/services"
+        },
+        no: {
+          displayName: "Tjenester",
+          url: "/tjenester"
+        }
+      }
     },
     {
-      path: "contact",
-      pathLocale: "kontakt"
+      name: "contact",
+      localeName: "kontakt",
+      nav: {
+        en: {
+          displayName: "Contact",
+          url: "/contact"
+        },
+        no: {
+          displayName: "Kontakt",
+          url: "/kontakt"
+        }
+      }
     },
     {
-      path: "shop",
-      pathLocale: "shop"
+      name: "shop",
+      localeName: "shop",
+      nav: {
+        en: {
+          displayName: "Shop",
+          url: "/shop"
+        },
+        no: {
+          displayName: "Shop",
+          url: "/shop"
+        }
+      }
     }
   ];
 }
 
-function getLocalePathForPage(gatsbyPage) {
-  const path = gatsbyPage.path;
-  return "string";
+// Function used to generate correct name and path for pages in other languages
+export function getlocalePageName(gatsbyPage) {
+  const pageStructure = getPageStructure();
+  let localePageName;
+  pageStructure.map(page => {
+    if (gatsbyPage.path.includes(page.name)) {
+      localePageName = page.localeName;
+    }
+  });
+  return localePageName;
 }
-
-module.exports.getLocalePathForPage = getLocalePathForPage;
-module.exports.getMappingForPages = getMappingForPages;

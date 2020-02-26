@@ -6,7 +6,7 @@ let sytalaust = require("./sytalaust");
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-const extraLanguages = ["no"]; // English is currently the default so it isn't needed here.
+const extraLanguages = sytalaust.extraLanguages;
 const createLocalePage = (page, createPage) => {
   console.log("log we are here", page);
   const { context, ...rest } = page;
@@ -20,10 +20,10 @@ const createLocalePage = (page, createPage) => {
   if (extraLanguages.length) {
     extraLanguages.forEach(code => {
       console.log("and then we are here");
-      const { path, pathLocale, context, ...rest } = page;
+      const { path, localePath, context, ...rest } = page;
       createPage({
         ...rest,
-        path: pathLocale ? `/${code}${pathLocale}` : `/${code}${path}`,
+        path: localePath ? `/${code}${localePath}` : `/${code}${path}`,
         // every page for each language gets the language code as a prefix
         // to its path: "/es/blog/<some-slug>" for example
         context: {
@@ -142,7 +142,7 @@ async function createServicePages(graphql, actions, reporter) {
     const id = edge.node.id;
     const slug = edge.node.slug.current;
     const path = `/service/${slug}/`;
-    const pathLocale = `/tjenester/${slug}/`;
+    const localePath = `/tjenester/${slug}/`;
 
     reporter.info(`Creating service page: ${path}`);
 
@@ -153,7 +153,7 @@ async function createServicePages(graphql, actions, reporter) {
     // });
     page = {
       path,
-      pathLocale,
+      localePath,
       component: require.resolve("./src/templates/service.js"),
       context: { id }
     };
@@ -208,18 +208,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
 // Creating pages in /pages folder
 exports.onCreatePage = ({ page, actions }) => {
-  console.log("log page yiha!", page);
-  // let pathLocale = "yiha!";
-  // some magic to map the english page to a norwegian
-  // sytalaust.mapping.pages.map(item => {
-  //   if (page.path.toLowerCase().indexOf(item.name.toLowerCase() >= 0)) localePageName = item.name;
-  // });
-
-  // det optimale
-
-  const pathLocale = sytalaust.getLocalePathForPage(page);
-
+  console.log("yiha! log page in onCreatePage", page);
+  // Custom solution to find correct mapping for a locale path
+  // Since we dont have any data upon this function being called
+  const localePageName = sytalaust.getlocalePageName(page);
+  const localePath = "/" + localePageName;
   const { createPage, deletePage } = actions;
   deletePage(page);
-  createLocalePage({ ...page, pathLocale }, createPage);
+  createLocalePage({ ...page, localePath }, createPage);
 };

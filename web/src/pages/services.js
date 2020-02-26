@@ -1,6 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import { mapEdgesToNodes, cn } from "../lib/helpers";
+import { getLocale } from "../../sytalaust";
 
 import Block from "../components/block";
 import Container from "../components/container";
@@ -67,8 +68,7 @@ export const query = graphql`
 
 const ServicesPage = props => {
   const { data, errors, pageContext } = props;
-  const locale = pageContext.locale ? pageContext.locale : "default";
-  console.log("log 'product page' data", data);
+  const locale = getLocale(pageContext);
   if (errors) {
     return (
       <Layout>
@@ -84,11 +84,9 @@ const ServicesPage = props => {
     throw new Error('Missing "page". Open the studio and add some content to this page.');
   }
 
-  console.log("log props in services page", props);
-
   return (
-    <Layout currentPage="Services" locale={locale}>
-      <SEO title="Fiskevegn services" />
+    <Layout locale={locale} {...props}>
+      <SEO title={locale == "en" ? "Services - AS Fiskevegn" : "Tjenester - AS Fiskevegn"} />
       <Container>
         <Block>
           <InnerContainer>

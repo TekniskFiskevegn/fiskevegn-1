@@ -1,4 +1,5 @@
 import React from "react";
+import { getLocale } from "../../sytalaust";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -6,18 +7,28 @@ import Container from "../components/container";
 import Block from "../components/block";
 import Intro from "../components/intro";
 import InnerContainer from "../components/inner-container";
+import localize from "../components/localize";
 
 const ShopPage = props => {
-  const { data, errors, pageContext } = props;
-  const locale = pageContext.locale ? pageContext.locale : "default";
+  const { pageContext } = props;
+  const locale = getLocale(pageContext);
 
   return (
-    <Layout currentPage="Shop" locale={locale}>
-      <SEO title="404: Not found" />
+    <Layout locale={locale} {...props}>
+      <SEO title={locale == "en" ? "Shop - AS Fiskevegn" : "Shop - AS Fiskevegn"} />
       <Container>
         <Block>
           <InnerContainer>
-            <Intro backButton backTo="/" title="SHOP" text="Fiskevegn web shop coming soon." />
+            <Intro
+              backButton
+              backTo="/"
+              title={locale == "en" ? "Shop" : "Nettbutikk"}
+              text={
+                locale == "en"
+                  ? "AS Fiskevegn web shop coming soon!"
+                  : "AS Fiskevegn nettbutikk kommer snart!"
+              }
+            />
           </InnerContainer>
         </Block>
         <Block>
@@ -32,4 +43,4 @@ const ShopPage = props => {
   );
 };
 
-export default ShopPage;
+export default localize(ShopPage);

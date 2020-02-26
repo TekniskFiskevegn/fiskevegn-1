@@ -1,6 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
+import { getLocale } from "../../sytalaust";
 
 import Block from "../components/block";
 import Design from "../components/design";
@@ -10,6 +11,7 @@ import GraphQLErrorList from "../components/graphql-error-list";
 import InnerContainer from "../components/inner-container";
 import Intro from "../components/intro";
 import Layout from "../containers/layout";
+import localize from "../components/localize";
 import Presentation from "../components/presentation";
 import StandardContent from "../components/standard-content";
 import SEO from "../components/seo";
@@ -141,8 +143,7 @@ export const query = graphql`
 
 const AboutPage = props => {
   const { pageContext, data, errors } = props;
-  const locale = pageContext.locale ? pageContext.locale : "default";
-  console.log("log 'about page' data", data);
+  const locale = getLocale(pageContext);
   if (errors) {
     return (
       <Layout>
@@ -150,20 +151,17 @@ const AboutPage = props => {
       </Layout>
     );
   }
-
   const page = (data || {}).page;
-
-  // static nodes
-  // const nodes = staticProductCategories;
 
   if (!page) {
     throw new Error('Missing "page". Open the studio and add some content to this page.');
   }
+
   const features = page.features;
 
   return (
-    <Layout currentPage="About" locale={locale}>
-      <SEO title="About AS Fiskevegn" />
+    <Layout locale={locale} {...props}>
+      <SEO title={locale == "en" ? "About - AS Fiskevegn" : "Om oss - AS Fiskevegn"} />
       <Container>
         <Block>
           <InnerContainer>
@@ -202,15 +200,9 @@ const AboutPage = props => {
             <StandardContent {...page.partners} withBorders />
           </InnerContainer>
         </Block>
-
-        {/* <Block>
-          <InnerContainer>
-            <Presentation {...page.partners} reverseFlow />
-          </InnerContainer>
-        </Block> */}
       </Container>
     </Layout>
   );
 };
 
-export default AboutPage;
+export default localize(AboutPage);
