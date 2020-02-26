@@ -1,7 +1,10 @@
 import React from "react";
 import Proptypes from "prop-types";
-import { createLocaleTextGetter } from "../lib/createLocaleTextGetter"; // Or wherever you stashed it
+import { LOG_IS_ACTIVE } from "../../sytalaust";
+import { log } from "../lib/helpers";
+import { createLocaleTextGetter } from "../lib/createLocaleTextGetter";
 function localize(Component) {
+  // if (LOG_IS_ACTIVE) log("localize component", Component);
   return class Localize extends React.Component {
     static propTypes = {
       data: Proptypes.object,

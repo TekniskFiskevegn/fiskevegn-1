@@ -1,14 +1,17 @@
 // Default language for the site
 const DEFAULT_LOCALE = "en";
 
+// For logging props in every page, default is false
+const LOG_IS_ACTIVE = true;
+
 // Site name
 const SITE_NAME = "";
 
 // Other languages for the site
-export const extraLanguages = ["no"];
+const extraLanguages = ["no"];
 
 // Function used throughout the solution to generate correct locale
-export function getLocale(pageContext) {
+function getLocale(pageContext) {
   if (pageContext.locale) {
     return pageContext.locale;
   }
@@ -16,19 +19,35 @@ export function getLocale(pageContext) {
 }
 
 // Sytalaust Gatsby page mapping
-export function getPageStructure() {
+function getPageStructure() {
   return [
+    {
+      name: "shop",
+      localeName: "shop",
+      nav: {
+        showInMenu: true,
+        en: {
+          displayName: "Shop",
+          url: "/shop"
+        },
+        no: {
+          displayName: "Shop",
+          url: "/no/shop"
+        }
+      }
+    },
     {
       name: "about",
       localeName: "om-oss",
       nav: {
+        showInMenu: true,
         en: {
-          displayName: "About us",
+          displayName: "About",
           url: "/about"
         },
         no: {
           displayName: "Om oss",
-          url: "/om-oss"
+          url: "/no/om-oss"
         }
       }
     },
@@ -36,13 +55,14 @@ export function getPageStructure() {
       name: "products",
       localeName: "produkter",
       nav: {
+        showInMenu: true,
         en: {
           displayName: "Products",
           url: "/products"
         },
         no: {
           displayName: "Produkter",
-          url: "/produkter"
+          url: "/no/produkter"
         }
       }
     },
@@ -50,13 +70,14 @@ export function getPageStructure() {
       name: "services",
       localeName: "tjenester",
       nav: {
+        showInMenu: true,
         en: {
           displayName: "Services",
           url: "/services"
         },
         no: {
           displayName: "Tjenester",
-          url: "/tjenester"
+          url: "/no/tjenester"
         }
       }
     },
@@ -64,27 +85,44 @@ export function getPageStructure() {
       name: "contact",
       localeName: "kontakt",
       nav: {
+        showInMenu: true,
         en: {
           displayName: "Contact",
           url: "/contact"
         },
         no: {
           displayName: "Kontakt",
-          url: "/kontakt"
+          url: "/no/kontakt"
         }
       }
     },
     {
-      name: "shop",
-      localeName: "shop",
+      name: "archive",
+      localeName: "arkiv",
       nav: {
+        showInMenu: false,
         en: {
-          displayName: "Shop",
-          url: "/shop"
+          displayName: "Archive",
+          url: "/archive"
         },
         no: {
-          displayName: "Shop",
-          url: "/shop"
+          displayName: "Arkiv",
+          url: "/no/arkiv"
+        }
+      }
+    },
+    {
+      name: "404",
+      localeName: "404",
+      nav: {
+        showInMenu: false,
+        en: {
+          displayName: "404",
+          url: "/404"
+        },
+        no: {
+          displayName: "404",
+          url: "/no/404"
         }
       }
     }
@@ -92,7 +130,7 @@ export function getPageStructure() {
 }
 
 // Function used to generate correct name and path for pages in other languages
-export function getlocalePageName(gatsbyPage) {
+function getlocalePageName(gatsbyPage) {
   const pageStructure = getPageStructure();
   let localePageName;
   pageStructure.map(page => {
@@ -102,3 +140,9 @@ export function getlocalePageName(gatsbyPage) {
   });
   return localePageName;
 }
+
+module.exports.LOG_IS_ACTIVE = LOG_IS_ACTIVE;
+module.exports.getPageStructure = getPageStructure;
+module.exports.getLocale = getLocale;
+module.exports.extraLanguages = extraLanguages;
+module.exports.getlocalePageName = getlocalePageName;

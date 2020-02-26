@@ -208,12 +208,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
 // Creating pages in /pages folder
 exports.onCreatePage = ({ page, actions }) => {
-  console.log("yiha! log page in onCreatePage", page);
-  // Custom solution to find correct mapping for a locale path
-  // Since we dont have any data upon this function being called
-  const localePageName = sytalaust.getlocalePageName(page);
-  const localePath = "/" + localePageName;
+  // Skip index
+  if (page.path !== "/") {
+    page = { ...page, localePath: "/" + sytalaust.getlocalePageName(page) };
+  }
   const { createPage, deletePage } = actions;
   deletePage(page);
-  createLocalePage({ ...page, localePath }, createPage);
+  createLocalePage(page, createPage);
 };

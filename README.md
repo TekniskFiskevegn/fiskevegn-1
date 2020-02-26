@@ -3,6 +3,9 @@
 ## Todo
 
 @ Sytalaust
+- getlocale could possibly be moved to layout
+- I should definately use a staticquery to genreate menu links
+- And they should be based on actual pages in sanity
 - Alle steder der "Fiskevegn" er brukt, skal erstattes med en konstant i sytalaust
 - bruk DEFAULT_LOCALE og UI function for å generere riktig språk i UI interface
 - improvements, could pass props to layout and header, and make the locale logic there. But its also nice to have it in order to genereate correct ui components

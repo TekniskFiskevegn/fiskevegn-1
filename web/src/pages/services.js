@@ -86,7 +86,7 @@ const ServicesPage = props => {
 
   return (
     <Layout locale={locale} {...props}>
-      <SEO title={locale == "en" ? "Services - AS Fiskevegn" : "Tjenester - AS Fiskevegn"} />
+      <SEO title={locale == "en" ? "Services" : "Tjenester"} />
       <Container>
         <Block>
           <InnerContainer>

@@ -80,7 +80,7 @@ const ProductsPage = props => {
 
   return (
     <Layout locale={locale} {...props}>
-      <SEO title={locale == "en" ? "Products - AS Fiskevegn" : "Produkter - AS Fiskevegn"} />
+      <SEO title={locale == "en" ? "Products" : "Produkter"} />
       <Container>
         <Block>
           <InnerContainer>

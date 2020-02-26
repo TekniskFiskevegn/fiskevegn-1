@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "gatsby";
 import Disclaimer from "./disclaimer";
 import InnerContainer from "./inner-container";
-import { uiHomeLink } from "../lib/ui";
 
 import styles from "./footer.module.css";
 
@@ -29,10 +28,10 @@ function Footer(props) {
               </a>
             </p>
             <p>
-              <a href={uiHomeLink[props.locale].url} className={styles.linkColor}>
+              <Link to={props.locale == "en" ? "/no" : "/"} className={styles.linkColor}>
                 {props.locale == "en" && <span>Visit our Norwegian website</span>}
                 {props.locale == "no" && <span>Visit our English website</span>}
-              </a>
+              </Link>
             </p>
             <Disclaimer />
           </div>

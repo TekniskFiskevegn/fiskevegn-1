@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
+import { mapEdgesToNodes, filterOutDocsWithoutSlugs, log } from "../lib/helpers";
 import { getLocale } from "../../sytalaust";
 
 import Container from "../components/container";
@@ -55,7 +55,7 @@ const ArchivePage = props => {
 
   return (
     <Layout locale={locale} {...props}>
-      <SEO title={locale == "en" ? "News - AS Fiskevegn" : "Nyheter - AS Fiskevegn"} />
+      <SEO title={locale == "en" ? "News" : "Nyheter"} />
       <Container>
         <Block>
           <InnerContainer>

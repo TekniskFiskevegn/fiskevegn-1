@@ -1,6 +1,5 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
 import { getLocale } from "../../sytalaust";
 
 import Block from "../components/block";
@@ -94,12 +93,12 @@ const ContactPage = props => {
 
   return (
     <Layout locale={locale} {...props} isCustomHeader>
-      <SEO title={locale == "en" ? "Contact - AS Fiskevegn" : "Kontakt - AS Fiskevegn"} />
+      <SEO title={locale == "en" ? "Contact" : "Kontakt"} />
       {page.topImage && <Hero image={page.topImage} />}
       {departments && departments.length > 0 && (
         <Container>
-          {departments.map(department => (
-            <Block>
+          {departments.map((department, i) => (
+            <Block key={i}>
               <InnerContainer>
                 <Contact {...department} />
               </InnerContainer>
@@ -112,3 +111,4 @@ const ContactPage = props => {
 };
 
 export default localize(ContactPage);
+// export default ContactPage;

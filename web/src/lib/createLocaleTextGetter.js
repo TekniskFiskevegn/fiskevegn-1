@@ -3,7 +3,7 @@ export const createLocaleTextGetter = languageCode => {
   const localize = value => {
     if (Array.isArray(value)) {
       return value.map(v => localize(v, languages));
-    } else if (typeof value == "object") {
+    } else if (typeof value == "object" && value !== null) {
       if (/^locale[A-Z]/.test(value._type)) {
         const language = languages.find(lang => value[lang]);
         return value[language];

@@ -6,7 +6,6 @@ import {
   filterOutDocsPublishedInTheFuture
 } from "../lib/helpers";
 import { getLocale } from "../../sytalaust";
-import { uiNewsTitle, uiNewsReadMore } from "../lib/ui";
 
 import Block from "../components/block";
 import Container from "../components/container";
@@ -223,11 +222,11 @@ const IndexPage = props => {
         {newsNodes && (
           <Block>
             <InnerContainer>
-              <Intro title={`${uiNewsTitle[locale]}`} />
+              <Intro title={locale == "en" ? "Latest News" : "Siste nytt"} />
               <List style="oneHalfWithGapAndGridFix" listItem="NewsTeaser" nodes={newsNodes} />
               <div>
                 <Link to="/archive" className={utils.defaultLink}>
-                  {uiNewsReadMore[locale]}
+                  {locale == "en" ? "More news" : "Flere nyheter"}
                 </Link>
               </div>
             </InnerContainer>

@@ -11,11 +11,12 @@ import localize from "../components/localize";
 
 import "../styles/pages.css";
 
-const NotFoundPage = () => {
+const NotFoundPage = props => {
+  const { pageContext, data, errors } = props;
   const locale = getLocale(pageContext);
   return (
     <Layout locale={locale} {...props}>
-      <SEO title={locale === "en" ? "404 - Not found" : "404 - Fant ikke innhold"} />
+      <SEO title={locale === "en" ? "404 Not found" : "404 Fant ikke innhold"} />
       <Container>
         <Block>
           <InnerContainer>

@@ -161,7 +161,7 @@ const AboutPage = props => {
 
   return (
     <Layout locale={locale} {...props}>
-      <SEO title={locale == "en" ? "About - AS Fiskevegn" : "Om oss - AS Fiskevegn"} />
+      <SEO title={locale == "en" ? "About" : "Om oss"} />
       <Container>
         <Block>
           <InnerContainer>

@@ -15,7 +15,7 @@ const ShopPage = props => {
 
   return (
     <Layout locale={locale} {...props}>
-      <SEO title={locale == "en" ? "Shop - AS Fiskevegn" : "Shop - AS Fiskevegn"} />
+      <SEO title={locale == "en" ? "Shop" : "Nettbutikk"} />
       <Container>
         <Block>
           <InnerContainer>
