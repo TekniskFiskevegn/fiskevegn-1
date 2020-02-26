@@ -4,8 +4,13 @@ export default {
   title: "Page: Services",
   fields: [
     {
-      type: "localeString",
+      name: "sanityTitle",
+      type: "string",
+      title: "Title"
+    },
+    {
       name: "title",
+      type: "localeString",
       description: "Title of the page"
     },
     // {

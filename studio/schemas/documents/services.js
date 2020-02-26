@@ -10,26 +10,25 @@ export default {
       name: "title",
       description: "Title of the service"
     },
-    {
-      name: "slug",
-      title: "URL",
-      type: "slug",
-      description: "Some frontend will require a slug to be set to be able to show the project",
-      options: {
-        source: "title",
-        maxLength: 96
-      }
-    },
     // {
-    //   name: "slugLocale",
+    //   name: "slug",
     //   title: "URL",
     //   type: "slug",
-    //   description: "Translation of URL above",
+    //   description: "Some frontend will require a slug to be set to be able to show the project",
     //   options: {
-    //     source: "title.no",
+    //     source: "title",
     //     maxLength: 96
     //   }
     // },
+    {
+      name: "slugLocale",
+      title: "URL",
+      type: "localeSlug",
+      description: "Translation of URL above",
+      options: {
+        maxLength: 96
+      }
+    },
     // {
     //   name: "title",
     //   title: "Service name",

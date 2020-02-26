@@ -23,9 +23,9 @@ export const query = graphql`
   query AboutPageQuery {
     page: sanityPageAbout {
       _id
-      # title
+      title
       complementaryTitle
-      # text
+      text
       sceneryImage {
         crop {
           _key

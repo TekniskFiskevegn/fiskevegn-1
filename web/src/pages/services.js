@@ -23,30 +23,30 @@ export const query = graphql`
         en
         no
       }
-      # text
-      # complementaryTitle
-      # sceneryImage {
-      #   crop {
-      #     _key
-      #     _type
-      #     top
-      #     bottom
-      #     left
-      #     right
-      #   }
-      #   hotspot {
-      #     _key
-      #     _type
-      #     x
-      #     y
-      #     height
-      #     width
-      #   }
-      #   asset {
-      #     _id
-      #   }
-      #   alt
-      # }
+      text
+      complementaryTitle
+      sceneryImage {
+        crop {
+          _key
+          _type
+          top
+          bottom
+          left
+          right
+        }
+        hotspot {
+          _key
+          _type
+          x
+          y
+          height
+          width
+        }
+        asset {
+          _id
+        }
+        alt
+      }
     }
     services: allSanityServices(limit: 10) {
       edges {
@@ -98,7 +98,7 @@ const ServicesPage = props => {
           </InnerContainer>
         </Block>
         <Block>
-          <Design backgroundImage={page.sceneryImage} opacity="015">
+          <Design backgroundImage={page.sceneryImage} opacity="025">
             <InnerContainer>
               <Navigation
                 nodes={nodes}

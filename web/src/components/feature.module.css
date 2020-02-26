@@ -3,7 +3,6 @@
 
 .root {
   background-color: transparent;
-  color: #000;
   font-family: "Lato";
   text-transform: uppercase;
   text-align: center;
@@ -19,6 +18,12 @@
 .title {
   composes: responsiveTitle2 from './typography.module.css';
   margin:0 0 0.2em 0;
+  color: rgba(0,0,0,.4);
 }
 
-.text {}
+.text {
+  color: rgba(0,0,0,.6);
+  /* font-weight: 700; */
+  text-transform: none;
+  font-size: 20px;
+}
