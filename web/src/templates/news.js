@@ -1,5 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
+import { getLocale } from "../../sytalaust";
+
 import Container from "../components/container";
 import GraphQLErrorList from "../components/graphql-error-list";
 import Article from "../components/article";
@@ -45,12 +47,12 @@ export const query = graphql`
 `;
 
 const NewsTemplate = props => {
-  const { data, errors, pageContext } = props;
-  const locale = pageContext.locale ? pageContext.locale : "default";
+  const { pageContext, data, errors } = props;
+  const locale = getLocale(pageContext);
 
   const news = data && data.news;
   return (
-    <Layout locale={locale}>
+    <Layout locale={locale} {...props}>
       {errors && <SEO title="GraphQL Error" />}
       {news && <SEO title={news.title || "Untitled"} />}
 

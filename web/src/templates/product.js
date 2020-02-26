@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
+import { getLocale } from "../../sytalaust";
 
 import Block from "../components/block";
 import Container from "../components/container";
@@ -81,8 +81,8 @@ export const query = graphql`
 `;
 
 const ProductTemplate = props => {
-  const { data, errors, pageContext } = props;
-  const locale = pageContext.locale ? pageContext.locale : "default";
+  const { pageContext, data, errors } = props;
+  const locale = getLocale(pageContext);
   const product = data && data.product;
 
   const { complementaryTitle, title, text, models } = product;
@@ -90,7 +90,7 @@ const ProductTemplate = props => {
   const nodes = models;
 
   return (
-    <Layout currentPage="Products" locale={locale}>
+    <Layout locale={locale} {...props}>
       <Container>
         {errors && <SEO title="GraphQL Error" />}
         {product && <SEO title={product.title || "Untitled"} />}

@@ -100,7 +100,11 @@ const ServicesPage = props => {
         <Block>
           <Design backgroundImage={page.sceneryImage} opacity="015">
             <InnerContainer>
-              <Navigation nodes={nodes} nodeLinksToTemplate="service" />
+              <Navigation
+                nodes={nodes}
+                template={{ en: "services", no: "no/tjenester" }}
+                locale={locale}
+              />
             </InnerContainer>
           </Design>
         </Block>

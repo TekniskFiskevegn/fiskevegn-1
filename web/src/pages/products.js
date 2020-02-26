@@ -94,7 +94,11 @@ const ProductsPage = props => {
         <Block>
           <Design backgroundImage={page.sceneryImage} opacity="015">
             <InnerContainer>
-              <Navigation nodes={nodes} nodeLinksToTemplate="category" />
+              <Navigation
+                nodes={nodes}
+                template={{ en: "products", no: "no/produkter" }}
+                locale={locale}
+              />
             </InnerContainer>
           </Design>
         </Block>

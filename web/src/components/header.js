@@ -12,8 +12,6 @@ const menuLinks = pageStructure.filter((page, i) => {
 });
 
 const Header = ({ locale, location, onHideNav, onShowNav, showNav, siteTitle, isCustomHeader }) => {
-  console.log("log locale in header", locale);
-
   return (
     <div className={cn(styles.root, isCustomHeader && styles.customHeader)}>
       <div className={styles.wrapper}>

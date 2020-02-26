@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
+import { getLocale } from "../../sytalaust";
 
 import Block from "../components/block";
 import Container from "../components/container";
@@ -14,8 +14,9 @@ import SEO from "../components/seo";
 
 export const query = graphql`
   query serviceTemplateQuery($id: String!) {
-    template: sanityServices(id: { eq: $id }) {
+    service: sanityServices(id: { eq: $id }) {
       id
+      _type
       title {
         _type
         en
@@ -51,16 +52,15 @@ export const query = graphql`
 `;
 
 const ServiceTemplate = props => {
-  console.log("log props service template", props);
-  const { data, errors, pageContext } = props;
-  const locale = pageContext.locale ? pageContext.locale : "default";
-  const template = data && data.template;
+  const { pageContext, data, errors } = props;
+  const locale = getLocale(pageContext);
+  const service = data && data.service;
 
   return (
-    <Layout currentPage="Services" locale={locale}>
+    <Layout locale={locale} {...props}>
       <Container>
         {errors && <SEO title="GraphQL Error" />}
-        {template && <SEO title={template.title || "Untitled"} />}
+        {service && <SEO title={service.title || "Untitled"} />}
 
         {errors && <GraphQLErrorList errors={errors} />}
 
@@ -72,7 +72,7 @@ const ServiceTemplate = props => {
         <Block>
           <InnerContainer>
             {/* <Intro complementaryTitle="hmm" title={template.title} text="hmm" /> */}
-            <p>foo {template.title}</p>
+            <p>foo {service.title}</p>
           </InnerContainer>
         </Block>
       </Container>

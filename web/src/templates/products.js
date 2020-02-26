@@ -1,6 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { mapEdgesToNodes, filterOutDocsWithoutSlugs, cn } from "../lib/helpers";
+import { mapEdgesToNodes } from "../lib/helpers";
+import { getLocale } from "../../sytalaust";
 
 import Block from "../components/block";
 import Container from "../components/container";
@@ -69,8 +70,8 @@ export const query = graphql`
 // 1. Make helper for filtering category products
 
 const CategoryTemplate = props => {
-  const { data, errors, pageContext } = props;
-  const locale = pageContext.locale ? pageContext.locale : "default";
+  const { pageContext, data, errors } = props;
+  const locale = getLocale(pageContext);
 
   let category = data && data.category;
   const allProducts = (data || {}).products ? mapEdgesToNodes(data.products) : [];
@@ -95,7 +96,7 @@ const CategoryTemplate = props => {
   const nodes = products;
 
   return (
-    <Layout currentPage="Products" locale={locale}>
+    <Layout locale={locale} {...props}>
       <Container>
         {errors && <SEO txitle="GraphQL Error" />}
         {category && <SEO title={category.title || "Untitled"} />}

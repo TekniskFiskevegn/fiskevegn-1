@@ -141,7 +141,7 @@ async function createServicePages(graphql, actions, reporter) {
   serviceEdges.forEach(edge => {
     const id = edge.node.id;
     const slug = edge.node.slug.current;
-    const path = `/service/${slug}/`;
+    const path = `/services/${slug}/`;
     const localePath = `/tjenester/${slug}/`;
 
     reporter.info(`Creating service page: ${path}`);
@@ -154,7 +154,7 @@ async function createServicePages(graphql, actions, reporter) {
     page = {
       path,
       localePath,
-      component: require.resolve("./src/templates/service.js"),
+      component: require.resolve("./src/templates/services.js"),
       context: { id }
     };
 
@@ -192,7 +192,7 @@ async function createCategoryPages(graphql, actions, reporter) {
 
     createPage({
       path,
-      component: require.resolve("./src/templates/category.js"),
+      component: require.resolve("./src/templates/products.js"),
       context: { id }
     });
   });
@@ -202,7 +202,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // console.log("log in createPages", graphql, actions);
   // await createNewsPages(graphql, actions, reporter);
   // await createProductPages(graphql, actions, reporter);
-  // await createServicePages(graphql, actions, reporter);
+  await createServicePages(graphql, actions, reporter);
   // await createCategoryPages(graphql, actions, reporter);
 };
 
