@@ -7,34 +7,34 @@ import schemaTypes from "all:part:@sanity/base/schema-type";
 // Document types
 // import category from "./documents/category";
 import siteSettings from "./documents/siteSettings";
-import pageHome from "./documents/pageHome";
-import pageAbout from "./documents/pageAbout";
-import pageProducts from "./documents/pageProducts";
-import pageServices from "./documents/pageServices";
-import pageContact from "./documents/pageContact";
+import pageHome from "./documents/pages/pageHome";
+import pageAbout from "./documents/pages/pageAbout";
+import pageProducts from "./documents/pages/pageProducts";
+import pageServices from "./documents/pages/pageServices";
+import pageContact from "./documents/pages/pageContact";
 
 import products from "./documents/products";
 import categories from "./documents/categories";
 import services from "./documents/services";
-import person from "./documents/person";
 import news from "./documents/news";
 
 // Object types
 import localeSlug from "./objects/localeSlug";
 import localeString from "./objects/localeString";
-import pdf from "./objects/pdf";
-import feature from "./objects/feature";
-import intro from "./objects/intro";
-import bioPortableText from "./objects/bioPortableText";
+import localeText from "./objects/localeText";
+
+import defaultPage from "./objects/defaultPage";
 import figure from "./objects/figure";
-import projectMember from "./objects/projectMember";
-import projectPortableText from "./objects/projectPortableText";
+import heroImage from "./objects/heroImage";
+
+import articlePortableText from "./objects/articlePortableText";
 import simplePortableText from "./objects/simplePortableText";
 import promotedBlock from "./objects/promotedBlock";
 import department from "./objects/department";
 import productModel from "./objects/productModel";
 import presentation from "./objects/presentation";
-import standardContent from "./objects/standardContent";
+import standardBlockContent from "./objects/standardBlockContent";
+import standardTextContent from "./objects/standardTextContent";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -45,25 +45,22 @@ export default createSchema({
   types: schemaTypes.concat([
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
-    bioPortableText,
     figure,
-    projectMember,
-    projectPortableText,
+    heroImage,
+    articlePortableText,
     simplePortableText,
     promotedBlock,
     department,
-    intro,
     productModel,
     presentation,
-    standardContent,
-    feature,
-    pdf,
+    standardBlockContent,
+    standardTextContent,
+    defaultPage,
     localeString,
+    localeText,
     localeSlug,
     // The following are document types which will appear
     // in the studio.
-    // category,
-    person,
     products,
     categories,
     services,

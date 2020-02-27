@@ -33,11 +33,29 @@ export default {
       title: "Scenery image"
     },
     {
-      name: "features",
+      name: "featureArray",
       type: "array",
-      title: "Features",
-      of: [{ type: "feature" }],
-      description: "This feature will show on top of the scenery image"
+      title: "Feature text",
+      description:
+        "For example: New Zealand - Antarctic Fishery. PS! Shown on top of scenery image.",
+      of: [
+        {
+          name: "feature",
+          type: "object",
+          fields: [
+            {
+              name: "title",
+              type: "string",
+              title: "Title"
+            },
+            {
+              name: "text",
+              type: "string",
+              title: "Text"
+            }
+          ]
+        }
+      ]
     },
     {
       name: "career",

@@ -42,8 +42,8 @@ export default {
     },
     {
       name: "pdf",
+      type: "file",
       title: "Attached PDF",
-      type: "pdf",
       description: "If no PDF, leave empty"
     }
   ]

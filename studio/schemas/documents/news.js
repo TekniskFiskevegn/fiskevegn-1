@@ -37,12 +37,6 @@ export default {
       type: "simplePortableText"
     },
     {
-      name: "members",
-      title: "Members",
-      type: "array",
-      of: [{ type: "projectMember" }]
-    },
-    {
       name: "startedAt",
       title: "Started at",
       type: "datetime"
@@ -60,7 +54,7 @@ export default {
     {
       name: "body",
       title: "Body",
-      type: "projectPortableText"
+      type: "articlePortableText"
     },
     {
       name: "relatedProjects",

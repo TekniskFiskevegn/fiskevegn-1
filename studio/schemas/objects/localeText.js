@@ -3,7 +3,7 @@ const supportedLanguages = [
   { id: "no", title: "Norsk" }
 ];
 export default {
-  name: "localeString",
+  name: "localeText",
   type: "object",
   fieldsets: [
     {
@@ -14,7 +14,7 @@ export default {
   fields: supportedLanguages.map(lang => ({
     title: lang.title,
     name: lang.id,
-    type: "string",
+    type: "text",
     fieldset: lang.isDefault ? null : "translations"
   }))
 };
