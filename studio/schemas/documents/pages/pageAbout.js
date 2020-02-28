@@ -32,31 +32,31 @@ export default {
       type: "figure",
       title: "Scenery image"
     },
-    {
-      name: "featureArray",
-      type: "array",
-      title: "Feature text",
-      description:
-        "For example: New Zealand - Antarctic Fishery. PS! Shown on top of scenery image.",
-      of: [
-        {
-          name: "feature",
-          type: "object",
-          fields: [
-            {
-              name: "title",
-              type: "string",
-              title: "Title"
-            },
-            {
-              name: "text",
-              type: "string",
-              title: "Text"
-            }
-          ]
-        }
-      ]
-    },
+    // {
+    //   name: "featureArray",
+    //   type: "array",
+    //   title: "Feature text",
+    //   description:
+    //     "For example: New Zealand - Antarctic Fishery. PS! Shown on top of scenery image.",
+    //   of: [
+    //     {
+    //       name: "feature",
+    //       type: "object",
+    //       fields: [
+    //         {
+    //           name: "title",
+    //           type: "string",
+    //           title: "Title"
+    //         },
+    //         {
+    //           name: "text",
+    //           type: "string",
+    //           title: "Text"
+    //         }
+    //       ]
+    //     }
+    //   ]
+    // },
     {
       name: "career",
       type: "presentation",

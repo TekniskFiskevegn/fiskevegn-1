@@ -53,6 +53,7 @@ const getCustomStyle = style => {
     style == "oneHalfAllTheWay" ? styles.oneHalfAllTheWay : "",
     style == "oneHalfWithGapAndGridFix" ? styles.oneHalfWithGapAndGridFix : "",
     style == "oneThird" ? styles.oneThird : "",
+    style == "oneWhole" ? styles.oneWhole : "",
     style == "customListForPartners" ? styles.customListForPartners : ""
   );
 };

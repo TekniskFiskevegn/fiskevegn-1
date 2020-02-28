@@ -1,7 +1,7 @@
 import { format } from "date-fns";
 
 export default {
-  name: "news",
+  name: "templateItemNews",
   title: "News",
   type: "document",
   fields: [
@@ -55,12 +55,6 @@ export default {
       name: "body",
       title: "Body",
       type: "articlePortableText"
-    },
-    {
-      name: "relatedProjects",
-      title: "Related projects",
-      type: "array",
-      of: [{ type: "reference", to: { type: "news" } }]
     }
   ],
   preview: {

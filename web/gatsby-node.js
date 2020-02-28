@@ -166,7 +166,7 @@ async function createCategoryPages(graphql, actions, reporter) {
   const { createPage } = actions;
   const result = await graphql(`
     {
-      allSanityCategories(filter: { slug: { current: { ne: null } } }) {
+      allSanityCategory(filter: { slug: { current: { ne: null } } }) {
         edges {
           node {
             id
@@ -181,7 +181,7 @@ async function createCategoryPages(graphql, actions, reporter) {
 
   if (result.errors) throw result.errors;
 
-  const categoryEdges = (result.data.allSanityCategories || {}).edges || [];
+  const categoryEdges = (result.data.allSanityCategory || {}).edges || [];
 
   categoryEdges.forEach(edge => {
     const id = edge.node.id;

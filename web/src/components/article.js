@@ -12,16 +12,7 @@ import Intro from "./intro";
 import styles from "./article.module.css";
 
 function Article(props) {
-  const {
-    _rawBody,
-    title,
-    introduction,
-    mainImage,
-    publishedAt,
-    members,
-    categories,
-    relatedProjects
-  } = props;
+  const { _rawBody, title, introduction, mainImage, publishedAt } = props;
   return (
     <Container>
       <Block>

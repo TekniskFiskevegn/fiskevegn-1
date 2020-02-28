@@ -13,17 +13,18 @@ import pageProducts from "./documents/pages/pageProducts";
 import pageServices from "./documents/pages/pageServices";
 import pageContact from "./documents/pages/pageContact";
 
-import products from "./documents/products";
-import categories from "./documents/categories";
-import services from "./documents/services";
-import news from "./documents/news";
+// template items
+import templateItemProduct from "./documents/templateItems/templateItemProduct";
+import templateItemCategory from "./documents/templateItems/templateItemCategory";
+import templateItemService from "./documents/templateItems/templateItemService";
+import templateItemNews from "./documents/templateItems/templateItemNews";
 
 // Object types
 import localeSlug from "./objects/localeSlug";
 import localeString from "./objects/localeString";
 import localeText from "./objects/localeText";
 
-import defaultPage from "./objects/defaultPage";
+import intro from "./objects/intro";
 import figure from "./objects/figure";
 import heroImage from "./objects/heroImage";
 
@@ -34,7 +35,8 @@ import department from "./objects/department";
 import productModel from "./objects/productModel";
 import presentation from "./objects/presentation";
 import standardBlockContent from "./objects/standardBlockContent";
-import standardTextContent from "./objects/standardTextContent";
+import defaultContent from "./objects/defaultContent";
+import defaultTemplateItem from "./objects/defaultTemplateItem";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -54,22 +56,23 @@ export default createSchema({
     productModel,
     presentation,
     standardBlockContent,
-    standardTextContent,
-    defaultPage,
+    defaultContent,
+    defaultTemplateItem,
+    intro,
     localeString,
     localeText,
     localeSlug,
     // The following are document types which will appear
     // in the studio.
-    products,
-    categories,
-    services,
-    news,
     siteSettings,
     pageHome,
     pageAbout,
     pageProducts,
     pageServices,
-    pageContact
+    pageContact,
+    templateItemProduct,
+    templateItemCategory,
+    templateItemService,
+    templateItemNews
   ])
 });

@@ -4,15 +4,20 @@ export default {
   title: "Services",
   fields: [
     {
-      name: "documentTitle",
+      name: "sanityDocumentTitle",
       type: "string",
       title: "Document title",
       description: "Not showing on page."
     },
     {
-      name: "defaultContent",
-      type: "defaultPage",
-      title: "Content"
+      name: "intro",
+      type: "intro",
+      title: "Intro"
+    },
+    {
+      name: "heroImage",
+      type: "heroImage",
+      title: "Scenery image"
     }
   ]
 };

@@ -2,7 +2,8 @@ import S from "@sanity/desk-tool/structure-builder";
 // import MdSettings from "react-icons/lib/md/settings";
 import { FiSettings, FiFile } from "react-icons/fi";
 
-const hiddenDocTypes = listItem => !["siteSettings", "pageServices"].includes(listItem.getId());
+const hiddenDocTypes = listItem =>
+  !["siteSettings", "pageServices", "pageProducts"].includes(listItem.getId());
 
 export default () =>
   S.list()
@@ -24,6 +25,15 @@ export default () =>
             .id("pageServices")
             .schemaType("pageServices")
             .documentId("pageServices")
+        )
+        .icon(FiFile),
+      S.listItem()
+        .title("Page Products")
+        .child(
+          S.editor()
+            .id("pageProducts")
+            .schemaType("pageProducts")
+            .documentId("pageProducts")
         )
         .icon(FiFile),
       // This returns an array of all the document types

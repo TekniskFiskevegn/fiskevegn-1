@@ -1,36 +1,23 @@
 export default {
   name: "pageProducts",
   type: "document",
-  title: "Page: Products",
-  // __experimental_actions: [
-  //   // 'create',
-  //   "update",
-  //   // 'delete',
-  //   "publish"
-  // ],
+  title: "Products",
   fields: [
     {
-      name: "title",
+      name: "sanityDocumentTitle",
       type: "string",
-      title: "Title",
-      description: "Page title."
+      title: "Document title",
+      description: "Not showing on page."
     },
     {
-      name: "complementaryTitle",
-      type: "string",
-      title: "Complementary title",
-      description: "A small title shown above the page title"
+      name: "intro",
+      type: "intro",
+      title: "Intro"
     },
     {
-      name: "text",
-      type: "text",
-      title: "Text",
-      description: "A short introduction to our products"
-    },
-    {
-      name: "sceneryImage",
-      title: "Scenery image",
-      type: "figure"
+      name: "heroImage",
+      type: "heroImage",
+      title: "Scenery image"
     }
   ]
 };

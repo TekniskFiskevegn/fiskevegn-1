@@ -8,7 +8,7 @@ import "../styles/scaffold.css";
 import styles from "./layout.module.css";
 
 const Layout = ({ children, ...rest }) => {
-  if (LOG_IS_ACTIVE) log(rest.location.pathname, rest);
+  if (LOG_IS_ACTIVE) log(rest.location.pathname, rest.data, rest);
   return (
     <div>
       <Header {...rest} />

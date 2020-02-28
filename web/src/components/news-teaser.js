@@ -1,5 +1,5 @@
-import { Link } from "gatsby";
 import React from "react";
+import { Link } from "gatsby";
 import { cn, buildImageObj } from "../lib/helpers";
 import { imageUrlFor } from "../lib/image-url";
 import SanityBlockText from "./sanity-block-text";
@@ -14,19 +14,22 @@ const NewsTeaser = props => {
         {props.mainImage && props.mainImage.asset && (
           <img
             src={imageUrlFor(buildImageObj(props.mainImage))
-              .width(600)
-              .height(Math.floor((9 / 16) * 600))
+              .width(1200)
+              .height(Math.floor((9 / 16) * 1200))
+              .fit("crop")
               .url()}
             alt={props.mainImage.alt}
           />
         )}
       </div>
-      <h3 className={styles.title}>{props.title}</h3>
-      {props._rawExcerpt && (
-        <div className={styles.excerpt}>
-          <SanityBlockText blocks={props._rawExcerpt} />
-        </div>
-      )}
+      <div className={styles.textContent}>
+        <h3 className={styles.title}>{props.title}</h3>
+        {props._rawExcerpt && (
+          <div className={styles.excerpt}>
+            <SanityBlockText blocks={props._rawExcerpt} />
+          </div>
+        )}
+      </div>
     </Link>
   );
 };

@@ -26,117 +26,117 @@ export const query = graphql`
       title
       complementaryTitle
       text
-      sceneryImage {
-        crop {
-          _key
-          _type
-          top
-          bottom
-          left
-          right
-        }
-        hotspot {
-          _key
-          _type
-          x
-          y
-          height
-          width
-        }
-        asset {
-          _id
-        }
-        alt
-      }
-      features {
-        title
-        text
-      }
-      career {
-        title
-        text
-        image {
-          crop {
-            _key
-            _type
-            top
-            bottom
-            left
-            right
-          }
-          hotspot {
-            _key
-            _type
-            x
-            y
-            height
-            width
-          }
-          asset {
-            _id
-          }
-          alt
-        }
-        email
-      }
-      partners {
-        title
-        text
-        listOfImages {
-          crop {
-            _key
-            _type
-            top
-            bottom
-            left
-            right
-          }
-          hotspot {
-            _key
-            _type
-            x
-            y
-            height
-            width
-          }
-          asset {
-            _id
-          }
-          alt
-          caption
-          imageHref
-        }
-        email
-      }
-      partners1 {
-        title
-        complementaryTitle
-        text
-        listOfImages {
-          crop {
-            _key
-            _type
-            top
-            bottom
-            left
-            right
-          }
-          hotspot {
-            _key
-            _type
-            x
-            y
-            height
-            width
-          }
-          asset {
-            _id
-          }
-          alt
-          caption
-          imageHref
-        }
-      }
+      # heroImage {
+      #   crop {
+      #     _key
+      #     _type
+      #     top
+      #     bottom
+      #     left
+      #     right
+      #   }
+      #   hotspot {
+      #     _key
+      #     _type
+      #     x
+      #     y
+      #     height
+      #     width
+      #   }
+      #   asset {
+      #     _id
+      #   }
+      #   alt
+      # }
+      # features {
+      #   title
+      #   text
+      # }
+      # career {
+      #   title
+      #   text
+      #   image {
+      #     crop {
+      #       _key
+      #       _type
+      #       top
+      #       bottom
+      #       left
+      #       right
+      #     }
+      #     hotspot {
+      #       _key
+      #       _type
+      #       x
+      #       y
+      #       height
+      #       width
+      #     }
+      #     asset {
+      #       _id
+      #     }
+      #     alt
+      #   }
+      #   email
+      # }
+      # partners {
+      #   title
+      #   text
+      #   listOfImages {
+      #     crop {
+      #       _key
+      #       _type
+      #       top
+      #       bottom
+      #       left
+      #       right
+      #     }
+      #     hotspot {
+      #       _key
+      #       _type
+      #       x
+      #       y
+      #       height
+      #       width
+      #     }
+      #     asset {
+      #       _id
+      #     }
+      #     alt
+      #     caption
+      #     imageHref
+      #   }
+      #   email
+      # }
+      # partners1 {
+      #   title
+      #   complementaryTitle
+      #   text
+      #   listOfImages {
+      #     crop {
+      #       _key
+      #       _type
+      #       top
+      #       bottom
+      #       left
+      #       right
+      #     }
+      #     hotspot {
+      #       _key
+      #       _type
+      #       x
+      #       y
+      #       height
+      #       width
+      #     }
+      #     asset {
+      #       _id
+      #     }
+      #     alt
+      #     caption
+      #     imageHref
+      #   }
+      # }
     }
   }
 `;
@@ -165,15 +165,15 @@ const AboutPage = props => {
       <Container>
         <Block>
           <InnerContainer>
-            <Intro
+            {/* <Intro
               complementaryTitle={page.complementaryTitle}
               title={page.title}
               text={page.text}
-            />
+            /> */}
           </InnerContainer>
         </Block>
 
-        <Block>
+        {/* <Block>
           <Design backgroundImage={page.sceneryImage} opacity="075" flex>
             <InnerContainer>
               {features && features.length > 0 && (
@@ -187,8 +187,8 @@ const AboutPage = props => {
               )}
             </InnerContainer>
           </Design>
-        </Block>
-
+        </Block> */}
+        {/* 
         <Block>
           <InnerContainer>
             <Presentation {...page.career} />
@@ -199,7 +199,7 @@ const AboutPage = props => {
           <InnerContainer>
             <StandardContent {...page.partners} withBorders />
           </InnerContainer>
-        </Block>
+        </Block> */}
       </Container>
     </Layout>
   );

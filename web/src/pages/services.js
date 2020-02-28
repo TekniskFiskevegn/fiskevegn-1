@@ -16,16 +16,26 @@ import SEO from "../components/seo";
 
 export const query = graphql`
   query ServicesPageQuery {
-    page: sanityPageServices {
-      _id
-      title {
-        _type
-        en
-        no
+    # Its neccessary to use this regex if page is hidden in deskStructure
+    page: sanityPageServices(_id: { regex: "/(drafts.|)pageServices/" }) {
+      intro {
+        title {
+          _type
+          en
+          no
+        }
+        complementaryTitle {
+          _type
+          en
+          no
+        }
+        text {
+          _type
+          en
+          no
+        }
       }
-      text
-      complementaryTitle
-      sceneryImage {
+      heroImage {
         crop {
           _key
           _type
@@ -48,21 +58,21 @@ export const query = graphql`
         alt
       }
     }
-    services: allSanityServices(limit: 10) {
-      edges {
-        node {
-          id
-          title {
-            _type
-            en
-            no
-          }
-          slug {
-            current
-          }
-        }
-      }
-    }
+    # services: allSanityServices(limit: 10) {
+    #   edges {
+    #     node {
+    #       id
+    #       title {
+    #         _type
+    #         en
+    #         no
+    #       }
+    #       slug {
+    #         current
+    #       }
+    #     }
+    #   }
+    # }
   }
 `;
 
@@ -78,11 +88,12 @@ const ServicesPage = props => {
   }
 
   const page = (data || {}).page;
-  const nodes = (data || {}).services ? mapEdgesToNodes(data.services) : [];
 
   if (!page) {
     throw new Error('Missing "page". Open the studio and add some content to this page.');
   }
+
+  const nodesServices = (data || {}).services ? mapEdgesToNodes(data.services) : [];
 
   return (
     <Layout locale={locale} {...props}>
@@ -90,21 +101,23 @@ const ServicesPage = props => {
       <Container>
         <Block>
           <InnerContainer>
-            <Intro
-              complementaryTitle={page.complementaryTitle}
-              title={page.title}
-              text={page.text}
-            />
+            {page.intro && (
+              <Intro
+                complementaryTitle={page.intro.complementaryTitle}
+                title={page.intro.title}
+                text={page.intro.text}
+              />
+            )}
           </InnerContainer>
         </Block>
         <Block>
-          <Design backgroundImage={page.sceneryImage} opacity="025">
+          <Design backgroundImage={page.heroImage} opacity="025">
             <InnerContainer>
-              <Navigation
-                nodes={nodes}
+              {/* <Navigation
+                nodes={nodesServices}
                 template={{ en: "services", no: "no/tjenester" }}
                 locale={locale}
-              />
+              /> */}
             </InnerContainer>
           </Design>
         </Block>

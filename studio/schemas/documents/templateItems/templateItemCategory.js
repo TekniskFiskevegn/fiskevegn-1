@@ -1,7 +1,7 @@
 export default {
-  name: "categories",
+  name: "templateItemCategory",
   type: "document",
-  title: "Edit: Product categories",
+  title: "Product categories",
   // __experimental_actions: [
   //   // 'create',
   //   "update",

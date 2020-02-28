@@ -29,18 +29,18 @@ export default {
       title: "Attached link",
       type: "string",
       description: "If no link, leave empty"
-    },
-    {
-      name: "pdf",
-      title: "PDF attachment",
-      type: "file",
-      fields: [
-        {
-          name: "title",
-          type: "string",
-          title: "Title"
-        }
-      ]
     }
+    // {
+    //   name: "pdf",
+    //   title: "PDF attachment",
+    //   type: "file",
+    //   fields: [
+    //     {
+    //       name: "title",
+    //       type: "string",
+    //       title: "Title"
+    //     }
+    //   ]
+    // }
   ]
 };
