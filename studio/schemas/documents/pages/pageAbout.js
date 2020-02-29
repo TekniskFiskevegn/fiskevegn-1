@@ -1,7 +1,7 @@
 export default {
   name: "pageAbout",
   type: "document",
-  title: "Page: About",
+  title: "About",
   // __experimental_actions: [
   //   // 'create',
   //   "update",
@@ -10,68 +10,36 @@ export default {
   // ],
   fields: [
     {
-      name: "title",
+      name: "sanityDocumentTitle",
       type: "string",
-      title: "Title",
-      description: "Page title."
+      title: "Document title",
+      description: "Not showing on page."
     },
     {
-      name: "complementaryTitle",
-      type: "string",
-      title: "Complementary title",
-      description: "A small title shown above the page title"
+      name: "intro",
+      type: "intro",
+      title: "Intro"
     },
     {
-      name: "text",
-      type: "text",
-      title: "Text",
-      description: "A short text about the company"
-    },
-    {
-      name: "sceneryImage",
-      type: "figure",
+      name: "heroImage",
+      type: "heroImage",
       title: "Scenery image"
     },
-    // {
-    //   name: "featureArray",
-    //   type: "array",
-    //   title: "Feature text",
-    //   description:
-    //     "For example: New Zealand - Antarctic Fishery. PS! Shown on top of scenery image.",
-    //   of: [
-    //     {
-    //       name: "feature",
-    //       type: "object",
-    //       fields: [
-    //         {
-    //           name: "title",
-    //           type: "string",
-    //           title: "Title"
-    //         },
-    //         {
-    //           name: "text",
-    //           type: "string",
-    //           title: "Text"
-    //         }
-    //       ]
-    //     }
-    //   ]
-    // },
+    {
+      name: "features",
+      type: "array",
+      title: "Add feature",
+      of: [{ type: "blockFeature" }]
+    },
     {
       name: "career",
-      type: "presentation",
+      type: "blockPresentation",
       title: "Career at Fiskevegn",
       description: "Content block"
     },
     {
       name: "partners",
-      type: "presentation",
-      title: "Our partners",
-      description: "Content block"
-    },
-    {
-      name: "partners1",
-      type: "standardContent",
+      type: "blockRegular",
       title: "Our partners",
       description: "Content block"
     }

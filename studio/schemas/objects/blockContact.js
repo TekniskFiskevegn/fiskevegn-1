@@ -1,23 +1,18 @@
 export default {
-  name: "department",
+  name: "blockContact",
   title: "Department",
   type: "object",
   fields: [
     {
-      name: "title",
+      name: "sanityDocumentTitle",
       type: "string",
-      title: "Title"
+      title: "Document title",
+      description: "Not showing on page."
     },
     {
-      name: "complementaryTitle",
-      type: "string",
-      title: "Complementary title",
-      description: "A small title shown above the main title"
-    },
-    {
-      name: "text",
-      type: "string",
-      title: "Text"
+      name: "intro",
+      type: "intro",
+      title: "Intro"
     },
     {
       name: "adress",

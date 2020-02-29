@@ -5,38 +5,35 @@ import createSchema from "part:@sanity/base/schema-creator";
 import schemaTypes from "all:part:@sanity/base/schema-type";
 
 // Document types
-// import category from "./documents/category";
+// pages
 import siteSettings from "./documents/siteSettings";
 import pageHome from "./documents/pages/pageHome";
 import pageAbout from "./documents/pages/pageAbout";
 import pageProducts from "./documents/pages/pageProducts";
 import pageServices from "./documents/pages/pageServices";
 import pageContact from "./documents/pages/pageContact";
-
-// template items
-import templateItemProduct from "./documents/templateItems/templateItemProduct";
-import templateItemCategory from "./documents/templateItems/templateItemCategory";
-import templateItemService from "./documents/templateItems/templateItemService";
-import templateItemNews from "./documents/templateItems/templateItemNews";
-
+// templates
+import templateProduct from "./documents/templates/templateProduct";
+import templateProductCategory from "./documents/templates/templateProductCategory";
+import templateService from "./documents/templates/templateService";
+import templateNews from "./documents/templates/templateNews";
 // Object types
 import localeSlug from "./objects/localeSlug";
 import localeString from "./objects/localeString";
 import localeText from "./objects/localeText";
-
 import intro from "./objects/intro";
 import figure from "./objects/figure";
 import heroImage from "./objects/heroImage";
-
 import articlePortableText from "./objects/articlePortableText";
-import simplePortableText from "./objects/simplePortableText";
-import promotedBlock from "./objects/promotedBlock";
-import department from "./objects/department";
-import productModel from "./objects/productModel";
-import presentation from "./objects/presentation";
-import standardBlockContent from "./objects/standardBlockContent";
-import defaultContent from "./objects/defaultContent";
-import defaultTemplateItem from "./objects/defaultTemplateItem";
+import articleSimplePortableText from "./objects/articleSimplePortableText";
+
+import blockFeature from "./objects/blockFeature";
+import blockContact from "./objects/blockContact";
+import blockPromoted from "./objects/blockPromoted";
+import blockPresentation from "./objects/blockPresentation";
+import blockRegular from "./objects/blockRegular";
+
+import templateStarter from "./objects/templateStarter";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -47,21 +44,20 @@ export default createSchema({
   types: schemaTypes.concat([
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
-    figure,
-    heroImage,
-    articlePortableText,
-    simplePortableText,
-    promotedBlock,
-    department,
-    productModel,
-    presentation,
-    standardBlockContent,
-    defaultContent,
-    defaultTemplateItem,
+    blockPromoted,
+    blockPresentation,
+    blockRegular,
+    blockFeature,
+    blockContact,
+    templateStarter,
     intro,
     localeString,
     localeText,
     localeSlug,
+    figure,
+    heroImage,
+    articlePortableText,
+    articleSimplePortableText,
     // The following are document types which will appear
     // in the studio.
     siteSettings,
@@ -70,9 +66,9 @@ export default createSchema({
     pageProducts,
     pageServices,
     pageContact,
-    templateItemProduct,
-    templateItemCategory,
-    templateItemService,
-    templateItemNews
+    templateProduct,
+    templateProductCategory,
+    templateService,
+    templateNews
   ])
 });

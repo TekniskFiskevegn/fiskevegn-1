@@ -1,31 +1,24 @@
 export default {
   name: "pageContact",
   type: "document",
-  title: "Page: Contact",
-  // __experimental_actions: [
-  //   // 'create',
-  //   "update",
-  //   // 'delete',
-  //   "publish"
-  // ],
+  title: "Contact",
   fields: [
     {
-      name: "title",
+      name: "sanityDocumentTitle",
       type: "string",
-      title: "Title",
-      description: "Page title"
+      title: "Document title",
+      description: "Not showing on page."
     },
     {
-      name: "topImage",
-      title: "Top image",
-      type: "figure"
+      name: "heroImage",
+      type: "heroImage",
+      title: "Scenery image"
     },
     {
       name: "departments",
       type: "array",
       title: "Add department",
-      of: [{ type: "department" }],
-      description: "Add contact information for our departments"
+      of: [{ type: "blockContact" }]
     }
   ]
 };

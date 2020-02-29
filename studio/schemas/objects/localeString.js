@@ -7,8 +7,9 @@ export default {
   type: "object",
   fieldsets: [
     {
+      title: "Translations",
       name: "translations",
-      options: { collapsible: false }
+      options: { collapsible: true }
     }
   ],
   fields: supportedLanguages.map(lang => ({

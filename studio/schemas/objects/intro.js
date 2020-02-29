@@ -7,19 +7,19 @@ export default {
       name: "title",
       type: "localeString",
       title: "Main title",
-      description: "Title showing at the top of the page."
+      description: "Main title"
     },
     {
       name: "complementaryTitle",
       type: "localeString",
       title: "Complementary title",
-      description: "Optional. Just a small title showing above the main title."
+      description: "Small title showing above the main title."
     },
     {
       name: "text",
       type: "localeText",
       title: "Text",
-      description: "Short and sweet introduction."
+      description: "Short and sweet text."
     }
   ]
 };

@@ -3,7 +3,14 @@ import S from "@sanity/desk-tool/structure-builder";
 import { FiSettings, FiFile } from "react-icons/fi";
 
 const hiddenDocTypes = listItem =>
-  !["siteSettings", "pageServices", "pageProducts"].includes(listItem.getId());
+  ![
+    "siteSettings",
+    "pageServices",
+    "pageProducts",
+    "pageHome",
+    "pageAbout",
+    "pageContact"
+  ].includes(listItem.getId());
 
 export default () =>
   S.list()
@@ -18,6 +25,7 @@ export default () =>
             .documentId("siteSettings")
         )
         .icon(FiSettings),
+      S.divider(),
       S.listItem()
         .title("Page Services")
         .child(
@@ -36,6 +44,34 @@ export default () =>
             .documentId("pageProducts")
         )
         .icon(FiFile),
+      S.listItem()
+        .title("Page Home")
+        .child(
+          S.editor()
+            .id("pageHome")
+            .schemaType("pageHome")
+            .documentId("pageHome")
+        )
+        .icon(FiFile),
+      S.listItem()
+        .title("Page About")
+        .child(
+          S.editor()
+            .id("pageAbout")
+            .schemaType("pageAbout")
+            .documentId("pageAbout")
+        )
+        .icon(FiFile),
+      S.listItem()
+        .title("Page Contact")
+        .child(
+          S.editor()
+            .id("pageContact")
+            .schemaType("pageContact")
+            .documentId("pageContact")
+        )
+        .icon(FiFile),
+      S.divider(),
       // This returns an array of all the document types
       // defined in schema.js. We filter out those that we have
       // defined the structure above

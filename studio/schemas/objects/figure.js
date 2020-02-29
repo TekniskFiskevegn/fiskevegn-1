@@ -23,14 +23,6 @@ export default {
       options: {
         isHighlighted: true
       }
-    },
-    {
-      name: "imageHref",
-      type: "string",
-      title: "Image link",
-      options: {
-        isHighlighted: true
-      }
     }
   ],
   preview: {

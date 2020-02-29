@@ -5,6 +5,7 @@ const supportedLanguages = [
 export default {
   name: "localeSlug",
   type: "object",
+  description: "Just click generate, and the system will collect the names you entered above.",
   fieldsets: [
     {
       title: "Translations",
@@ -12,10 +13,18 @@ export default {
       options: { collapsible: true }
     }
   ],
-  fields: supportedLanguages.map(lang => ({
-    title: lang.title,
-    name: lang.id,
+  fields: supportedLanguages.map(item => ({
+    name: item.id,
     type: "slug",
-    fieldset: lang.isDefault ? null : "translations"
+    title: item.title,
+    options: {
+      source: (doc, options) => {
+        if (doc.templateStarter) {
+          return doc.templateStarter.name[item.id];
+        }
+        return;
+      }
+    },
+    fieldset: item.isDefault ? null : "translations"
   }))
 };

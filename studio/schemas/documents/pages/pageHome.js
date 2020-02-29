@@ -1,7 +1,7 @@
 export default {
   name: "pageHome",
   type: "document",
-  title: "Page: Home",
+  title: "Home",
   // __experimental_actions: [
   //   // 'create',
   //   "update",
@@ -10,25 +10,21 @@ export default {
   // ],
   fields: [
     {
-      name: "title",
+      name: "sanityDocumentTitle",
       type: "string",
-      title: "Title",
-      description: "Page title."
+      title: "Document title",
+      description: "Not showing on page."
     },
     {
-      name: "topImage",
-      title: "Top image",
-      type: "figure"
+      name: "heroImage",
+      type: "heroImage",
+      title: "Add hero Image"
     },
     {
-      name: "firstPromotedBlock",
-      title: "Promoted content",
-      type: "promotedBlock"
-    },
-    {
-      name: "secondPromotedBlock",
-      title: "Second promoted content",
-      type: "promotedBlock"
+      name: "promotedBlocks",
+      type: "array",
+      title: "Add Content Blocks",
+      of: [{ type: "blockPromoted" }]
     }
   ]
 };

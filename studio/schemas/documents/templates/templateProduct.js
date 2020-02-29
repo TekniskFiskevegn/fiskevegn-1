@@ -1,8 +1,7 @@
-import { format } from "date-fns";
 import { FiPlus } from "react-icons/fi";
 
 export default {
-  name: "templateItemProduct",
+  name: "templateProduct",
   title: "Product",
   type: "document",
   icon: FiPlus,
@@ -14,8 +13,8 @@ export default {
       description: "Not showing on page."
     },
     {
-      name: "defaultContent",
-      type: "defaultTemplateItem",
+      name: "templateStarter",
+      type: "templateStarter",
       title: "Content"
     }
   ]
