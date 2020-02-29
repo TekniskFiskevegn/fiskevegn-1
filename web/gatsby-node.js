@@ -1,13 +1,12 @@
 const { isFuture } = require("date-fns");
-// let sytalaust = require("./sytalaust");
+let sytalaust = require("./sytalaust");
 /**
  * Implement Gatsby's Node APIs in this file.
  *
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-// const extraLanguages = sytalaust.extraLanguages;
-const extraLanguages = ["no"];
+const extraLanguages = sytalaust.extraLanguages;
 const createLocalePage = (page, createPage) => {
   console.log("log we are here", page);
   const { context, ...rest } = page;
@@ -67,11 +66,6 @@ async function createNewsPages(graphql, actions, reporter) {
 
       reporter.info(`Creating news page: ${path}`);
 
-      // createPage({
-      //   path,
-      //   component: require.resolve("./src/templates/news.js"),
-      //   context: { id }
-      // });
       page = {
         path,
         component: require.resolve("./src/templates/news.js"),
@@ -86,12 +80,20 @@ async function createProductPages(graphql, actions, reporter) {
   const { createPage } = actions;
   const result = await graphql(`
     {
-      allSanityProducts(filter: { slug: { current: { ne: null } } }) {
+      allSanityTemplateProduct {
         edges {
           node {
             id
-            slug {
-              current
+            basicTemplate {
+              slug {
+                _type
+                en {
+                  current
+                }
+                no {
+                  current
+                }
+              }
             }
           }
         }
@@ -101,25 +103,31 @@ async function createProductPages(graphql, actions, reporter) {
 
   if (result.errors) throw result.errors;
 
-  const productEdges = (result.data.allSanityProducts || {}).edges || [];
+  const productEdges = (result.data.allSanityTemplateProduct || {}).edges || [];
 
   productEdges.forEach(edge => {
     const id = edge.node.id;
-    const slug = edge.node.slug.current;
+    const slug = edge.node.basicTemplate.slug.en.current;
+    const localeSlug = edge.node.basicTemplate.slug.no
+      ? edge.node.basicTemplate.slug.no.current
+      : slug;
     const path = `/product/${slug}/`;
+    const localePath = `/produkt/${localeSlug}/`;
 
     reporter.info(`Creating product page: ${path}`);
 
-    createPage({
+    page = {
       path,
-      component: require.resolve("./src/templates/product.js"),
+      localePath,
+      component: require.resolve("./src/templates/template-product.js"),
       context: { id }
-    });
+    };
+
+    createLocalePage(page, createPage);
   });
 }
 
 async function createServicePages(graphql, actions, reporter) {
-  console.log("lets go!");
   const { createPage } = actions;
   const result = await graphql(`
     {
@@ -146,16 +154,14 @@ async function createServicePages(graphql, actions, reporter) {
 
   if (result.errors) throw result.errors;
 
-  console.log("log result", result);
-
   const serviceEdges = (result.data.allSanityTemplateService || {}).edges || [];
-
-  console.log("log servicesEdges!!", serviceEdges);
 
   serviceEdges.forEach(edge => {
     const id = edge.node.id;
     const slug = edge.node.basicTemplate.slug.en.current;
-    const localeSlug = edge.node.basicTemplate.slug.no.current;
+    const localeSlug = edge.node.basicTemplate.slug.no
+      ? edge.node.basicTemplate.slug.no.current
+      : slug;
     const path = `/services/${slug}/`;
     const localePath = `/tjenester/${localeSlug}/`;
 
@@ -164,25 +170,32 @@ async function createServicePages(graphql, actions, reporter) {
     page = {
       path,
       localePath,
-      component: require.resolve("./src/templates/service.js"),
+      component: require.resolve("./src/templates/template-service.js"),
       context: { id }
     };
 
-    console.log("logging page", page);
     createLocalePage(page, createPage);
   });
 }
 
-async function createCategoryPages(graphql, actions, reporter) {
+async function createProductCategoryPages(graphql, actions, reporter) {
   const { createPage } = actions;
   const result = await graphql(`
     {
-      allSanityCategory(filter: { slug: { current: { ne: null } } }) {
+      allSanityTemplateProductCategory {
         edges {
           node {
             id
-            slug {
-              current
+            basicTemplate {
+              slug {
+                _type
+                en {
+                  current
+                }
+                no {
+                  current
+                }
+              }
             }
           }
         }
@@ -192,37 +205,49 @@ async function createCategoryPages(graphql, actions, reporter) {
 
   if (result.errors) throw result.errors;
 
-  const categoryEdges = (result.data.allSanityCategory || {}).edges || [];
+  const categoryEdges = (result.data.allSanityTemplateProductCategory || {}).edges || [];
 
   categoryEdges.forEach(edge => {
     const id = edge.node.id;
-    const slug = edge.node.slug.current;
-    const path = `/category/${slug}/`;
+    const slug = edge.node.basicTemplate.slug.en.current;
+    const localeSlug = edge.node.basicTemplate.slug.no
+      ? edge.node.basicTemplate.slug.no.current
+      : slug;
+    const path = `/products/${slug}/`;
+    const localePath = `/produkter/${localeSlug}/`;
 
-    reporter.info(`Creating service page: ${path}`);
+    reporter.info(`Creating product category: ${path}`);
 
-    createPage({
+    // createPage({
+    //   path,
+    //   component: require.resolve("./src/templates/products.js"),
+    //   context: { id }
+    // });
+    page = {
       path,
-      component: require.resolve("./src/templates/products.js"),
+      localePath,
+      component: require.resolve("./src/templates/template-product-category.js"),
       context: { id }
-    });
+    };
+
+    createLocalePage(page, createPage);
   });
 }
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   // console.log("log in createPages", graphql, actions);
   // await createNewsPages(graphql, actions, reporter);
-  // await createProductPages(graphql, actions, reporter);
+  await createProductPages(graphql, actions, reporter);
   await createServicePages(graphql, actions, reporter);
-  // await createCategoryPages(graphql, actions, reporter);
+  await createProductCategoryPages(graphql, actions, reporter);
 };
 
 // Creating pages in /pages folder
 exports.onCreatePage = ({ page, actions }) => {
   // Skip index
-  // if (page.path !== "/") {
-  //   page = { ...page, localePath: "/" + sytalaust.getlocalePageName(page) };
-  // }
+  if (page.path !== "/") {
+    page = { ...page, localePath: "/" + sytalaust.getlocalePageName(page) };
+  }
   const { createPage, deletePage } = actions;
   deletePage(page);
   createLocalePage(page, createPage);

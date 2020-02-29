@@ -42,5 +42,5 @@
 }
 
 .linkColor {
-  composes: complementaryLink from './utils.module.css';
+  composes: complementaryLinkWithoutBorder from './utils.module.css';
 }

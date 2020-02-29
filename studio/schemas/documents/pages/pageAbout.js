@@ -2,12 +2,6 @@ export default {
   name: "pageAbout",
   type: "document",
   title: "About",
-  // __experimental_actions: [
-  //   // 'create',
-  //   "update",
-  //   // 'delete',
-  //   "publish"
-  // ],
   fields: [
     {
       name: "sanityDocumentTitle",

@@ -14,98 +14,144 @@ import localize from "../components/localize";
 import Navigation from "../components/navigation";
 import SEO from "../components/seo";
 
-// export const query = graphql`
-//   query ProductsPageQuery {
-//     page: sanityPageProducts {
-//       _id
-//       title
-//       complementaryTitle
-//       text
-//       sceneryImage {
-//         crop {
-//           _key
-//           _type
-//           top
-//           bottom
-//           left
-//           right
-//         }
-//         hotspot {
-//           _key
-//           _type
-//           x
-//           y
-//           height
-//           width
-//         }
-//         asset {
-//           _id
-//         }
-//         alt
-//       }
-//     }
-//     categories: allSanityCategories(limit: 6) {
-//       edges {
-//         node {
-//           id
-//           title
-//           teaser
-//           slug {
-//             current
-//           }
-//         }
-//       }
-//     }
-//   }
-// `;
-
 const ProductsPage = props => {
-  // const { data, errors, pageContext } = props;
-  // const locale = getLocale(pageContext);
+  const { data, errors, pageContext } = props;
+  const locale = getLocale(pageContext);
 
-  // if (errors) {
-  //   return (
-  //     <Layout>
-  //       <GraphQLErrorList errors={errors} />
-  //     </Layout>
-  //   );
-  // }
+  if (errors) {
+    return (
+      <Layout>
+        <GraphQLErrorList errors={errors} />
+      </Layout>
+    );
+  }
 
-  // const page = (data || {}).page;
-  // const nodes = (data || {}).categories ? mapEdgesToNodes(data.categories) : [];
+  const page = (data || {}).page;
+  const nodes = (data || {}).categories ? mapEdgesToNodes(data.categories) : [];
 
-  // if (!page) {
-  //   throw new Error('Missing "page". Open the studio and add some content to this page.');
-  // }
+  if (!page) {
+    throw new Error('Missing "page". Open the studio and add some content to this page.');
+  }
 
   return (
-    <p>foo</p>
-    // <Layout locale={locale} {...props}>
-    //   <SEO title={locale == "en" ? "Products" : "Produkter"} />
-    //   <Container>
-    //     <Block>
-    //       <InnerContainer>
-    //         <Intro
-    //           complementaryTitle={page.complementaryTitle}
-    //           title={page.title}
-    //           text={page.text}
-    //         />
-    //       </InnerContainer>
-    //     </Block>
-    //     <Block>
-    //       <Design backgroundImage={page.sceneryImage} opacity="015">
-    //         <InnerContainer>
-    //           <Navigation
-    //             nodes={nodes}
-    //             template={{ en: "products", no: "no/produkter" }}
-    //             locale={locale}
-    //           />
-    //         </InnerContainer>
-    //       </Design>
-    //     </Block>
-    //   </Container>
-    // </Layout>
+    <Layout locale={locale} {...props}>
+      <SEO title={locale == "en" ? "Products" : "Produkter"} />
+      <Container>
+        <Block>
+          <InnerContainer>
+            {page.intro && (
+              <Intro
+                complementaryTitle={page.intro.complementaryTitle}
+                title={page.intro.title}
+                text={page.intro.text}
+              />
+            )}
+          </InnerContainer>
+        </Block>
+        <Block>
+          <Design backgroundImage={page.heroImage} opacity="015">
+            <InnerContainer>
+              <Navigation
+                nodes={nodes}
+                template={{ en: "products", no: "no/produkter" }}
+                locale={locale}
+              />
+            </InnerContainer>
+          </Design>
+        </Block>
+      </Container>
+    </Layout>
   );
 };
+
+export const query = graphql`
+  query ProductsPageQuery {
+    # Its neccessary to use this regex if page is hidden in deskStructure
+    page: sanityPageProducts(_id: { regex: "/(drafts.|)pageProducts/" }) {
+      intro {
+        title {
+          _type
+          en
+          no
+        }
+        complementaryTitle {
+          _type
+          en
+          no
+        }
+        text {
+          _type
+          en
+          no
+        }
+      }
+      heroImage {
+        crop {
+          _key
+          _type
+          top
+          bottom
+          left
+          right
+        }
+        hotspot {
+          _key
+          _type
+          x
+          y
+          height
+          width
+        }
+        asset {
+          _id
+        }
+        alt
+      }
+    }
+    categories: allSanityTemplateProductCategory(limit: 6) {
+      edges {
+        node {
+          id
+          basicTemplate {
+            name {
+              _type
+              en
+              no
+            }
+            title {
+              _type
+              en
+              no
+            }
+            complementaryTitle {
+              _type
+              en
+              no
+            }
+            text {
+              _type
+              en
+              no
+            }
+            navigationText {
+              _type
+              en
+              no
+            }
+            slug {
+              _type
+              en {
+                current
+              }
+              no {
+                current
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
 
 export default localize(ProductsPage);

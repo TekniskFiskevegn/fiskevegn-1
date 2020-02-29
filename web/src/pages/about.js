@@ -19,131 +19,10 @@ import SEO from "../components/seo";
 // styles
 import listStyles from "../components/list.module.css";
 
-export const query = graphql`
-  query AboutPageQuery {
-    page: sanityPageAbout {
-      _id
-      # title
-      # complementaryTitle
-      # text
-      # heroImage {
-      #   crop {
-      #     _key
-      #     _type
-      #     top
-      #     bottom
-      #     left
-      #     right
-      #   }
-      #   hotspot {
-      #     _key
-      #     _type
-      #     x
-      #     y
-      #     height
-      #     width
-      #   }
-      #   asset {
-      #     _id
-      #   }
-      #   alt
-      # }
-      # features {
-      #   title
-      #   text
-      # }
-      # career {
-      #   title
-      #   text
-      #   image {
-      #     crop {
-      #       _key
-      #       _type
-      #       top
-      #       bottom
-      #       left
-      #       right
-      #     }
-      #     hotspot {
-      #       _key
-      #       _type
-      #       x
-      #       y
-      #       height
-      #       width
-      #     }
-      #     asset {
-      #       _id
-      #     }
-      #     alt
-      #   }
-      #   email
-      # }
-      # partners {
-      #   title
-      #   text
-      #   listOfImages {
-      #     crop {
-      #       _key
-      #       _type
-      #       top
-      #       bottom
-      #       left
-      #       right
-      #     }
-      #     hotspot {
-      #       _key
-      #       _type
-      #       x
-      #       y
-      #       height
-      #       width
-      #     }
-      #     asset {
-      #       _id
-      #     }
-      #     alt
-      #     caption
-      #     imageHref
-      #   }
-      #   email
-      # }
-      # partners1 {
-      #   title
-      #   complementaryTitle
-      #   text
-      #   listOfImages {
-      #     crop {
-      #       _key
-      #       _type
-      #       top
-      #       bottom
-      #       left
-      #       right
-      #     }
-      #     hotspot {
-      #       _key
-      #       _type
-      #       x
-      #       y
-      #       height
-      #       width
-      #     }
-      #     asset {
-      #       _id
-      #     }
-      #     alt
-      #     caption
-      #     imageHref
-      #   }
-      # }
-    }
-  }
-`;
-
 const AboutPage = props => {
-  const { pageContext, data, errors } = props;
+  const { data, errors, pageContext } = props;
   const locale = getLocale(pageContext);
+
   if (errors) {
     return (
       <Layout>
@@ -153,11 +32,12 @@ const AboutPage = props => {
   }
   const page = (data || {}).page;
 
-  // if (!page) {
-  //   throw new Error('Missing "page". Open the studio and add some content to this page.');
-  // }
+  if (!page) {
+    throw new Error('Missing "page". Open the studio and add some content to this page.');
+  }
 
-  // const features = page.features;
+  const { intro, features, partners } = page;
+  const { name, title, complementaryTitle, text, heroImage } = intro;
 
   return (
     <Layout locale={locale} {...props}>
@@ -165,11 +45,7 @@ const AboutPage = props => {
       <Container>
         <Block>
           <InnerContainer>
-            {/* <Intro
-              complementaryTitle={page.complementaryTitle}
-              title={page.title}
-              text={page.text}
-            /> */}
+            <Intro complementaryTitle={complementaryTitle} title={title} text={text} />
           </InnerContainer>
         </Block>
 
@@ -204,5 +80,125 @@ const AboutPage = props => {
     </Layout>
   );
 };
+
+export const query = graphql`
+  query AboutPageQuery {
+    # Its neccessary to use this regex if page is hidden in deskStructure
+    page: sanityPageAbout(_id: { regex: "/(drafts.|)pageAbout/" }) {
+      intro {
+        title {
+          _type
+          en
+          no
+        }
+        complementaryTitle {
+          _type
+          en
+          no
+        }
+        text {
+          _type
+          en
+          no
+        }
+      }
+      heroImage {
+        crop {
+          _key
+          _type
+          top
+          bottom
+          left
+          right
+        }
+        hotspot {
+          _key
+          _type
+          x
+          y
+          height
+          width
+        }
+        asset {
+          _id
+        }
+        alt
+      }
+      features {
+        title
+        text
+      }
+      career {
+        title {
+          _type
+          en
+          no
+        }
+        text {
+          _type
+          en
+          no
+        }
+        attachedEmail
+        image {
+          crop {
+            _key
+            _type
+            top
+            bottom
+            left
+            right
+          }
+          hotspot {
+            _key
+            _type
+            x
+            y
+            height
+            width
+          }
+          asset {
+            _id
+          }
+          alt
+        }
+      }
+      partners {
+        title {
+          _type
+          en
+          no
+        }
+        text {
+          _type
+          en
+          no
+        }
+        listOfImages {
+          crop {
+            _key
+            _type
+            top
+            bottom
+            left
+            right
+          }
+          hotspot {
+            _key
+            _type
+            x
+            y
+            height
+            width
+          }
+          asset {
+            _id
+          }
+          alt
+        }
+      }
+    }
+  }
+`;
 
 export default localize(AboutPage);

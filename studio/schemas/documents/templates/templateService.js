@@ -19,11 +19,6 @@ export default {
       title: "Content"
     },
     {
-      name: "heroImage",
-      type: "heroImage",
-      title: "Scenery Image"
-    },
-    {
       name: "blockPresentation",
       type: "array",
       title: "Add more content blocks",

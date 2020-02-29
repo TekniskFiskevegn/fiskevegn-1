@@ -34,6 +34,11 @@ export default {
       description: "Short and sweet introduction."
     },
     {
+      name: "heroImage",
+      type: "heroImage",
+      title: "Scenery Image"
+    },
+    {
       name: "navigationText",
       type: "localeString",
       title: "Navigation text",

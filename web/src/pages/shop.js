@@ -10,37 +10,36 @@ import InnerContainer from "../components/inner-container";
 import localize from "../components/localize";
 
 const ShopPage = props => {
-  // const { pageContext } = props;
-  // const locale = getLocale(pageContext);
+  const { pageContext } = props;
+  const locale = getLocale(pageContext);
 
   return (
-    <p>foo</p>
-    // <Layout locale={locale} {...props}>
-    //   <SEO title={locale == "en" ? "Shop" : "Nettbutikk"} />
-    //   <Container>
-    //     <Block>
-    //       <InnerContainer>
-    //         <Intro
-    //           backButton
-    //           backTo="/"
-    //           title={locale == "en" ? "Shop" : "Nettbutikk"}
-    //           text={
-    //             locale == "en"
-    //               ? "AS Fiskevegn web shop coming soon!"
-    //               : "AS Fiskevegn nettbutikk kommer snart!"
-    //           }
-    //         />
-    //       </InnerContainer>
-    //     </Block>
-    //     <Block>
-    //       <InnerContainer>
-    //         <div>
-    //           <img src="/related-images/ship.jpg" />
-    //         </div>
-    //       </InnerContainer>
-    //     </Block>
-    //   </Container>
-    // </Layout>
+    <Layout locale={locale} {...props}>
+      <SEO title={locale == "en" ? "Shop" : "Nettbutikk"} />
+      <Container>
+        <Block>
+          <InnerContainer>
+            <Intro
+              backButton
+              backTo="/"
+              title={locale == "en" ? "Shop" : "Nettbutikk"}
+              text={
+                locale == "en"
+                  ? "AS Fiskevegn web shop coming soon!"
+                  : "AS Fiskevegn nettbutikk kommer snart!"
+              }
+            />
+          </InnerContainer>
+        </Block>
+        <Block>
+          <InnerContainer>
+            <div>
+              <img src="/related-images/ship.jpg" />
+            </div>
+          </InnerContainer>
+        </Block>
+      </Container>
+    </Layout>
   );
 };
 

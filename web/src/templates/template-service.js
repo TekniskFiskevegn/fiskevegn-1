@@ -37,19 +37,27 @@ export const query = graphql`
           en
           no
         }
-        navigationText {
-          _type
-          en
-          no
-        }
-        slug {
-          _type
-          en {
-            current
+        heroImage {
+          crop {
+            _key
+            _type
+            top
+            bottom
+            left
+            right
           }
-          no {
-            current
+          hotspot {
+            _key
+            _type
+            x
+            y
+            height
+            width
           }
+          asset {
+            _id
+          }
+          alt
         }
       }
     }
@@ -59,7 +67,10 @@ export const query = graphql`
 const ServiceTemplate = props => {
   const { pageContext, data, errors } = props;
   const locale = getLocale(pageContext);
+
   const service = data && data.service;
+  const { basicTemplate } = service;
+  const { name, title, complementaryTitle, text, heroImage } = basicTemplate;
 
   return (
     <Layout locale={locale} {...props}>
@@ -69,15 +80,9 @@ const ServiceTemplate = props => {
 
         {errors && <GraphQLErrorList errors={errors} />}
 
-        {/* I could also make a specific component for this template item and initiate it here
-        But currently I see no use case for this, and for now that would just add overhead */}
-        {/* {categoryItem && <CategoryItem {...categoryItem} />} */}
-
-        {/* Service begins */}
         <Block>
           <InnerContainer>
-            {/* <Intro complementaryTitle="hmm" title={template.title} text="hmm" /> */}
-            {/* <p>foo {service.title}</p> */}
+            <Intro complementaryTitle={complementaryTitle} title={title} text={text} />
             <p>I am a service</p>
           </InnerContainer>
         </Block>

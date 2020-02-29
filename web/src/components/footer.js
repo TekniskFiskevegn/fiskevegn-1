@@ -29,8 +29,8 @@ function Footer(props) {
             </p>
             <p>
               <Link to={props.locale == "en" ? "/no" : "/"} className={styles.linkColor}>
-                {props.locale == "en" && <span>Visit our Norwegian website</span>}
-                {props.locale == "no" && <span>Visit our English website</span>}
+                {props.locale == "en" && <>Visit our Norwegian website</>}
+                {props.locale == "no" && <>Visit our English website</>}
               </Link>
             </p>
             <Disclaimer />

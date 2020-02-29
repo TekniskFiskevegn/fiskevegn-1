@@ -6,6 +6,7 @@
   /* brand */
   --color-brand: #292f8e;
   --color-brand-complementary: rgb(209, 74, 40);
+  --color-brand-complementary-hover:rgb(236, 92, 55);
   --color-brand-subtle: rbga(181,187,224,1);
   --color-background: #fff;
   

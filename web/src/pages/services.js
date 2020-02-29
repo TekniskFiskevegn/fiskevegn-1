@@ -14,6 +14,58 @@ import localize from "../components/localize";
 import Navigation from "../components/navigation";
 import SEO from "../components/seo";
 
+const ServicesPage = props => {
+  const { data, errors, pageContext } = props;
+  const locale = getLocale(pageContext);
+  if (errors) {
+    return (
+      <Layout>
+        <GraphQLErrorList errors={errors} />
+      </Layout>
+    );
+  }
+
+  const page = (data || {}).page;
+
+  if (!page) {
+    throw new Error('Missing "page". Open the studio and add some content to this page.');
+  }
+
+  const nodesServices = (data || {}).services ? mapEdgesToNodes(data.services) : [];
+
+  console.log("log nodesServices", nodesServices);
+
+  return (
+    <Layout locale={locale} {...props}>
+      <SEO title={locale == "en" ? "Services" : "Tjenester"} />
+      <Container>
+        <Block>
+          <InnerContainer>
+            {page.intro && (
+              <Intro
+                complementaryTitle={page.intro.complementaryTitle}
+                title={page.intro.title}
+                text={page.intro.text}
+              />
+            )}
+          </InnerContainer>
+        </Block>
+        <Block>
+          <Design backgroundImage={page.heroImage} opacity="025">
+            <InnerContainer>
+              <Navigation
+                nodes={nodesServices}
+                template={{ en: "services", no: "no/tjenester" }}
+                locale={locale}
+              />
+            </InnerContainer>
+          </Design>
+        </Block>
+      </Container>
+    </Layout>
+  );
+};
+
 export const query = graphql`
   query ServicesPageQuery {
     # Its neccessary to use this regex if page is hidden in deskStructure
@@ -103,57 +155,5 @@ export const query = graphql`
     }
   }
 `;
-
-const ServicesPage = props => {
-  const { data, errors, pageContext } = props;
-  const locale = getLocale(pageContext);
-  if (errors) {
-    return (
-      <Layout>
-        <GraphQLErrorList errors={errors} />
-      </Layout>
-    );
-  }
-
-  const page = (data || {}).page;
-
-  if (!page) {
-    throw new Error('Missing "page". Open the studio and add some content to this page.');
-  }
-
-  const nodesServices = (data || {}).services ? mapEdgesToNodes(data.services) : [];
-
-  console.log("log nodesServices", nodesServices);
-
-  return (
-    <Layout locale={locale} {...props}>
-      <SEO title={locale == "en" ? "Services" : "Tjenester"} />
-      <Container>
-        <Block>
-          <InnerContainer>
-            {page.intro && (
-              <Intro
-                complementaryTitle={page.intro.complementaryTitle}
-                title={page.intro.title}
-                text={page.intro.text}
-              />
-            )}
-          </InnerContainer>
-        </Block>
-        <Block>
-          <Design backgroundImage={page.heroImage} opacity="025">
-            <InnerContainer>
-              <Navigation
-                nodes={nodesServices}
-                template={{ en: "services", no: "no/tjenester" }}
-                locale={locale}
-              />
-            </InnerContainer>
-          </Design>
-        </Block>
-      </Container>
-    </Layout>
-  );
-};
 
 export default localize(ServicesPage);
