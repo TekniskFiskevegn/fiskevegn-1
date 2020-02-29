@@ -34,7 +34,7 @@ const ShopPage = props => {
         <Block>
           <InnerContainer>
             <div>
-              <img src="/related-images/ship.jpg" />
+              <img src="/images/shop.jpg" />
             </div>
           </InnerContainer>
         </Block>
