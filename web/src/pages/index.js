@@ -183,7 +183,9 @@ const IndexPage = props => {
     throw new Error('Missing "Frontpage". Open the studio and add some content to the homepage.');
   }
 
-  const { heroImage } = page;
+  const { heroImage, promotedBlocks } = page;
+
+  console.log("log promoted blocks", promotedBlocks);
 
   const newsNodes = (data || {}).news
     ? mapEdgesToNodes(data.news).filter(filterOutDocsPublishedInTheFuture)
@@ -197,27 +199,32 @@ const IndexPage = props => {
       {heroImage && <Hero image={heroImage} />}
       <Container>
         <h1 hidden>{site.title}</h1>
-        {/* {page.firstPromotedBlock && (
-          <Block>
-            <InnerContainer>
-              <Promoted {...page.firstPromotedBlock} reverseFlow />
-            </InnerContainer>
-          </Block>
-        )} */}
-        {/* {page.secondPromotedBlock && (
-          <Block verticalRhythm={{ bottom: 0 }}>
-            <Design
-              svg={{
-                wave: true,
-                number: "1"
-              }}
-            >
-              <InnerContainer>
-                <Promoted {...page.secondPromotedBlock} lightBackground />
-              </InnerContainer>
-            </Design>
-          </Block>
-        )} */}
+        {promotedBlocks.map((block, i) => {
+          if (Math.abs(i % 2) != 1) {
+            return (
+              <Block key={i}>
+                <InnerContainer>
+                  <Promoted {...block} reverseFlow />
+                </InnerContainer>
+              </Block>
+            );
+          } else {
+            return (
+              <Block verticalRhythm={{ bottom: 0 }}>
+                <Design
+                  svg={{
+                    wave: true,
+                    number: "1"
+                  }}
+                >
+                  <InnerContainer>
+                    <Promoted {...block} lightBackground />
+                  </InnerContainer>
+                </Design>
+              </Block>
+            );
+          }
+        })}
 
         {newsNodes && (
           <Block>

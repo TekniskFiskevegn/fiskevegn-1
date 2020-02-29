@@ -7,20 +7,26 @@ import Intro from "./intro";
 
 import styles from "./promoted.module.css";
 
-const Promoted = ({
-  title,
-  text,
-  secondaryTitle,
-  secondaryText,
-  image,
-  browseMoreHref,
-  browseMoreText,
-  reverseFlow,
-  lightBackground
-}) => {
+const Promoted = props => {
+  const { intro, title, text, image, reverseFlow = false, lightBackground = false } = props;
+
+  console.log("log props in promoted", props);
+
+  // ({
+  //   title,
+  //   text,
+  //   secondaryTitle,
+  //   secondaryText,
+  //   image,
+  //   browseMoreHref,
+  //   browseMoreText,
+  //   reverseFlow,
+  //   lightBackground
+  // })
+
   return (
     <div className={styles.root}>
-      <Intro title={title} text={text} marginBottom />
+      <Intro title={intro.title} text={intro.text} marginBottom />
       <div
         className={cn(
           styles.wrapper,
@@ -42,13 +48,13 @@ const Promoted = ({
         </div>
         <div className={cn(styles.content)}>
           <div>
-            {secondaryTitle && <h3 className={styles.contentTitle}>{secondaryTitle}</h3>}
-            {secondaryText && <p>{secondaryText}</p>}
-            {browseMoreHref && (
+            {title && <h3 className={styles.contentTitle}>{title}</h3>}
+            {text && <p>{text}</p>}
+            {/* {browseMoreHref && (
               <Link to={browseMoreHref} className={styles.href}>
                 {browseMoreText || "Read more"}
               </Link>
-            )}
+            )} */}
           </div>
         </div>
       </div>
@@ -59,9 +65,9 @@ const Promoted = ({
 Promoted.DefaultProps = {};
 
 Promoted.propTypes = {
-  title: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
-  image: PropTypes.object.isRequired,
+  title: PropTypes.string,
+  text: PropTypes.string,
+  image: PropTypes.object,
   browseMoreHref: PropTypes.string,
   browseMoreText: PropTypes.string,
   reverseFlow: PropTypes.bool
