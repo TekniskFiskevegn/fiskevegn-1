@@ -53,45 +53,108 @@ export const query = graphql`
         }
         alt
       }
+      promotedBlocks {
+        intro {
+          title {
+            _type
+            en
+            no
+          }
+          complementaryTitle {
+            _type
+            en
+            no
+          }
+          text {
+            _type
+            en
+            no
+          }
+        }
+        title {
+          _type
+          en
+          no
+        }
+        text {
+          _type
+          en
+          no
+        }
+        image {
+          crop {
+            _key
+            _type
+            top
+            bottom
+            left
+            right
+          }
+          hotspot {
+            _key
+            _type
+            x
+            y
+            height
+            width
+          }
+          asset {
+            _id
+          }
+          alt
+        }
+        # browserMoreHref
+        # browseMoreText {
+        #   _type
+        #   en
+        #   no
+        # }
+      }
     }
-    # news: allSanityNews(
-    #   limit: 2
-    #   sort: { fields: [publishedAt], order: DESC }
-    #   filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
-    # ) {
-    #   edges {
-    #     node {
-    #       id
-    #       mainImage {
-    #         crop {
-    #           _key
-    #           _type
-    #           top
-    #           bottom
-    #           left
-    #           right
-    #         }
-    #         hotspot {
-    #           _key
-    #           _type
-    #           x
-    #           y
-    #           height
-    #           width
-    #         }
-    #         asset {
-    #           _id
-    #         }
-    #         alt
-    #       }
-    #       title
-    #       _rawExcerpt
-    #       slug {
-    #         current
-    #       }
-    #     }
-    #   }
-    # }
+    news: allSanityTemplateNews {
+      edges {
+        node {
+          id
+          title {
+            _type
+            en
+            no
+          }
+          _rawExcerpt
+          slug {
+            _type
+            en {
+              current
+            }
+            no {
+              current
+            }
+          }
+          image {
+            crop {
+              _key
+              _type
+              top
+              bottom
+              left
+              right
+            }
+            hotspot {
+              _key
+              _type
+              x
+              y
+              height
+              width
+            }
+            asset {
+              _id
+            }
+            alt
+          }
+        }
+      }
+    }
   }
 `;
 
@@ -122,11 +185,11 @@ const IndexPage = props => {
 
   const { heroImage } = page;
 
-  // const newsNodes = (data || {}).news
-  //   ? mapEdgesToNodes(data.news)
-  //       .filter(filterOutDocsWithoutSlugs)
-  //       .filter(filterOutDocsPublishedInTheFuture)
-  //   : [];
+  const newsNodes = (data || {}).news
+    ? mapEdgesToNodes(data.news).filter(filterOutDocsPublishedInTheFuture)
+    : [];
+
+  console.log("log newsnodes", newsNodes);
 
   return (
     <Layout locale={locale} {...props} isCustomHeader={true}>
@@ -156,7 +219,7 @@ const IndexPage = props => {
           </Block>
         )} */}
 
-        {/* {newsNodes && (
+        {newsNodes && (
           <Block>
             <InnerContainer>
               <Intro title={locale == "en" ? "Latest News" : "Siste nytt"} />
@@ -168,7 +231,7 @@ const IndexPage = props => {
               </div>
             </InnerContainer>
           </Block>
-        )} */}
+        )}
       </Container>
     </Layout>
   );

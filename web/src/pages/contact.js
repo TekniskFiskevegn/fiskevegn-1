@@ -12,67 +12,75 @@ import Layout from "../containers/layout";
 import localize from "../components/localize";
 import SEO from "../components/seo";
 
-// export const query = graphql`
-//   query ContactPageQuery {
-//     page: sanityPageContact {
-//       _id
-//       title
-//       departments {
-//         complementaryTitle
-//         title
-//         text
-//         adress
-//         phone
-//         email
-//         map
-//         image {
-//           crop {
-//             _key
-//             _type
-//             top
-//             bottom
-//             left
-//             right
-//           }
-//           hotspot {
-//             _key
-//             _type
-//             x
-//             y
-//             height
-//             width
-//           }
-//           asset {
-//             _id
-//           }
-//           alt
-//         }
-//       }
-//       topImage {
-//         crop {
-//           _key
-//           _type
-//           top
-//           bottom
-//           left
-//           right
-//         }
-//         hotspot {
-//           _key
-//           _type
-//           x
-//           y
-//           height
-//           width
-//         }
-//         asset {
-//           _id
-//         }
-//         alt
-//       }
-//     }
-//   }
-// `;
+export const query = graphql`
+  query ContactPageQuery {
+    page: sanityPageContact(_id: { regex: "/(drafts.|)pageContact/" }) {
+      _id
+      heroImage {
+        crop {
+          _key
+          _type
+          top
+          bottom
+          left
+          right
+        }
+        hotspot {
+          _key
+          _type
+          x
+          y
+          height
+          width
+        }
+        asset {
+          _id
+        }
+        alt
+      }
+      departments {
+        intro {
+          title {
+            _type
+            en
+            no
+          }
+          text {
+            _type
+            en
+            no
+          }
+        }
+        adress
+        phone
+        email
+        map
+        image {
+          crop {
+            _key
+            _type
+            top
+            bottom
+            left
+            right
+          }
+          hotspot {
+            _key
+            _type
+            x
+            y
+            height
+            width
+          }
+          asset {
+            _id
+          }
+          alt
+        }
+      }
+    }
+  }
+`;
 
 const ContactPage = props => {
   const { pageContext, data, errors } = props;
@@ -85,29 +93,30 @@ const ContactPage = props => {
     );
   }
 
-  // const page = (data || {}).page;
-  // if (!page) {
-  //   throw new Error('Missing "page". Open the studio and add some content to this page.');
-  // }
-  // const departments = page.departments;
+  const page = (data || {}).page;
+
+  if (!page) {
+    throw new Error('Missing "page". Open the studio and add some content to this page.');
+  }
+
+  const { heroImage, departments } = page;
 
   return (
-    <p>foo</p>
-    // <Layout locale={locale} {...props} isCustomHeader>
-    //   <SEO title={locale == "en" ? "Contact" : "Kontakt"} />
-    //   {page.topImage && <Hero image={page.topImage} />}
-    //   {departments && departments.length > 0 && (
-    //     <Container>
-    //       {departments.map((department, i) => (
-    //         <Block key={i}>
-    //           <InnerContainer>
-    //             <Contact {...department} />
-    //           </InnerContainer>
-    //         </Block>
-    //       ))}
-    //     </Container>
-    //   )}
-    // </Layout>
+    <Layout locale={locale} {...props} isCustomHeader>
+      <SEO title={locale == "en" ? "Contact" : "Kontakt"} />
+      {heroImage && <Hero image={heroImage} />}
+      {departments && departments.length > 0 && (
+        <Container>
+          {departments.map((department, i) => (
+            <Block key={i}>
+              <InnerContainer>
+                <Contact {...department} />
+              </InnerContainer>
+            </Block>
+          ))}
+        </Container>
+      )}
+    </Layout>
   );
 };
 

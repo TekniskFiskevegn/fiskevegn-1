@@ -20,9 +20,8 @@ export default {
     options: {
       source: (doc, options) => {
         console.log("log localeSlug!", doc);
-        if (doc.basicTemplate) {
-          return doc.basicTemplate.name[item.id];
-        }
+        if (doc.basicTemplate) return doc.basicTemplate.name[item.id];
+        if (doc.title && doc.title[item.id]) return doc.title[item.id];
         return;
       }
     },

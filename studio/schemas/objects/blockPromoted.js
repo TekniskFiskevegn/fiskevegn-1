@@ -43,7 +43,7 @@ export default {
     },
     {
       name: "browseMoreHref",
-      type: "localeString",
+      type: "string",
       title: "Optional: add 'read more' link",
       fieldset: "content"
     },

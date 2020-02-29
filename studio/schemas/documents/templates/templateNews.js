@@ -14,9 +14,21 @@ export default {
       description: "Not showing on page."
     },
     {
-      name: "basicTemplate",
-      type: "basicTemplate",
-      title: "Content"
+      name: "title",
+      type: "localeString",
+      title: "Main title",
+      description: "Title showing at the top of the page."
+    },
+    {
+      name: "slug",
+      type: "localeSlug",
+      title: "URL"
+    },
+    {
+      name: "text",
+      type: "localeText",
+      title: "Text",
+      description: "Short and sweet introduction."
     },
     {
       name: "publishedAt",

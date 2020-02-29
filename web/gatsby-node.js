@@ -39,13 +39,19 @@ async function createNewsPages(graphql, actions, reporter) {
   const { createPage } = actions;
   const result = await graphql(`
     {
-      allSanityNews(filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }) {
+      allSanityTemplateNews {
         edges {
           node {
             id
             publishedAt
             slug {
-              current
+              _type
+              en {
+                current
+              }
+              no {
+                current
+              }
             }
           }
         }
@@ -55,20 +61,23 @@ async function createNewsPages(graphql, actions, reporter) {
 
   if (result.errors) throw result.errors;
 
-  const newsEdges = (result.data.allSanityNews || {}).edges || [];
+  const newsEdges = (result.data.allSanityTemplateNews || {}).edges || [];
 
   newsEdges
     .filter(edge => !isFuture(edge.node.publishedAt))
     .forEach(edge => {
       const id = edge.node.id;
-      const slug = edge.node.slug.current;
+      const slug = edge.node.slug.en.current;
+      const localeSlug = edge.node.slug.no ? edge.node.slug.no.current : slug;
       const path = `/news/${slug}/`;
+      const localePath = `/nyheter/${localeSlug}/`;
 
       reporter.info(`Creating news page: ${path}`);
 
       page = {
         path,
-        component: require.resolve("./src/templates/news.js"),
+        localePath,
+        component: require.resolve("./src/templates/template-news.js"),
         context: { id }
       };
 
@@ -236,7 +245,7 @@ async function createProductCategoryPages(graphql, actions, reporter) {
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   // console.log("log in createPages", graphql, actions);
-  // await createNewsPages(graphql, actions, reporter);
+  await createNewsPages(graphql, actions, reporter);
   await createProductPages(graphql, actions, reporter);
   await createServicePages(graphql, actions, reporter);
   await createProductCategoryPages(graphql, actions, reporter);
