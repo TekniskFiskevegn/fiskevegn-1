@@ -1,5 +1,5 @@
 export default {
-  name: "templateStarter",
+  name: "basicTemplate",
   type: "object",
   title: "Standard content template items",
   fields: [

@@ -19,8 +19,9 @@ export default {
     title: item.title,
     options: {
       source: (doc, options) => {
-        if (doc.templateStarter) {
-          return doc.templateStarter.name[item.id];
+        console.log("log localeSlug!", doc);
+        if (doc.basicTemplate) {
+          return doc.basicTemplate.name[item.id];
         }
         return;
       }

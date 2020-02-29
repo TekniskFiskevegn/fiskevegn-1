@@ -33,7 +33,7 @@ import blockPromoted from "./objects/blockPromoted";
 import blockPresentation from "./objects/blockPresentation";
 import blockRegular from "./objects/blockRegular";
 
-import templateStarter from "./objects/templateStarter";
+import basicTemplate from "./objects/basicTemplate";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -49,7 +49,7 @@ export default createSchema({
     blockRegular,
     blockFeature,
     blockContact,
-    templateStarter,
+    basicTemplate,
     intro,
     localeString,
     localeText,

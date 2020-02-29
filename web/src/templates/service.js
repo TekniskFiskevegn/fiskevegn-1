@@ -12,44 +12,49 @@ import localize from "../components/localize";
 import Presentation from "../components/presentation";
 import SEO from "../components/seo";
 
-// export const query = graphql`
-//   query serviceTemplateQuery($id: String!) {
-//     service: sanityServices(id: { eq: $id }) {
-//       id
-//       _type
-//       title {
-//         _type
-//         en
-//         no
-//       }
-//       slug {
-//         current
-//       }
-//       # mainImage {
-//       #   crop {
-//       #     _key
-//       #     _type
-//       #     top
-//       #     bottom
-//       #     left
-//       #     right
-//       #   }
-//       #   hotspot {
-//       #     _key
-//       #     _type
-//       #     x
-//       #     y
-//       #     height
-//       #     width
-//       #   }
-//       #   asset {
-//       #     _id
-//       #   }
-//       #   alt
-//       # }
-//     }
-//   }
-// `;
+export const query = graphql`
+  query serviceTemplateQuery($id: String!) {
+    service: sanityTemplateService(id: { eq: $id }) {
+      id
+      basicTemplate {
+        name {
+          _type
+          en
+          no
+        }
+        title {
+          _type
+          en
+          no
+        }
+        complementaryTitle {
+          _type
+          en
+          no
+        }
+        text {
+          _type
+          en
+          no
+        }
+        navigationText {
+          _type
+          en
+          no
+        }
+        slug {
+          _type
+          en {
+            current
+          }
+          no {
+            current
+          }
+        }
+      }
+    }
+  }
+`;
 
 const ServiceTemplate = props => {
   const { pageContext, data, errors } = props;

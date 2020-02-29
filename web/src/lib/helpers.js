@@ -1,7 +1,8 @@
 import { format, isFuture } from "date-fns";
 
-export function log(desc, data) {
-  console.log(desc, data.page);
+export function log(desc = "", data = {}, rest = {}) {
+  console.log(desc, data);
+  // console.log(desc, data, rest);
 }
 
 export function filterOutProductsWithoutCorrectCategoryID({ id }) {

@@ -1,18 +1,18 @@
-// import React from "react";
-// import { graphql } from "gatsby";
-// import { mapEdgesToNodes, cn } from "../lib/helpers";
-// import { getLocale } from "../../sytalaust";
+import React from "react";
+import { graphql } from "gatsby";
+import { mapEdgesToNodes, cn } from "../lib/helpers";
+import { getLocale } from "../../sytalaust";
 
-// import Block from "../components/block";
-// import Container from "../components/container";
-// import Design from "../components/design";
-// import GraphQLErrorList from "../components/graphql-error-list";
-// import InnerContainer from "../components/inner-container";
-// import Intro from "../components/intro";
-// import Layout from "../containers/layout";
-// import localize from "../components/localize";
-// import Navigation from "../components/navigation";
-// import SEO from "../components/seo";
+import Block from "../components/block";
+import Container from "../components/container";
+import Design from "../components/design";
+import GraphQLErrorList from "../components/graphql-error-list";
+import InnerContainer from "../components/inner-container";
+import Intro from "../components/intro";
+import Layout from "../containers/layout";
+import localize from "../components/localize";
+import Navigation from "../components/navigation";
+import SEO from "../components/seo";
 
 // export const query = graphql`
 //   query ProductsPageQuery {
@@ -59,52 +59,53 @@
 //   }
 // `;
 
-// const ProductsPage = props => {
-//   const { data, errors, pageContext } = props;
-//   const locale = getLocale(pageContext);
+const ProductsPage = props => {
+  // const { data, errors, pageContext } = props;
+  // const locale = getLocale(pageContext);
 
-//   if (errors) {
-//     return (
-//       <Layout>
-//         <GraphQLErrorList errors={errors} />
-//       </Layout>
-//     );
-//   }
+  // if (errors) {
+  //   return (
+  //     <Layout>
+  //       <GraphQLErrorList errors={errors} />
+  //     </Layout>
+  //   );
+  // }
 
-//   const page = (data || {}).page;
-//   const nodes = (data || {}).categories ? mapEdgesToNodes(data.categories) : [];
+  // const page = (data || {}).page;
+  // const nodes = (data || {}).categories ? mapEdgesToNodes(data.categories) : [];
 
-//   if (!page) {
-//     throw new Error('Missing "page". Open the studio and add some content to this page.');
-//   }
+  // if (!page) {
+  //   throw new Error('Missing "page". Open the studio and add some content to this page.');
+  // }
 
-//   return (
-//     <Layout locale={locale} {...props}>
-//       <SEO title={locale == "en" ? "Products" : "Produkter"} />
-//       <Container>
-//         <Block>
-//           <InnerContainer>
-//             <Intro
-//               complementaryTitle={page.complementaryTitle}
-//               title={page.title}
-//               text={page.text}
-//             />
-//           </InnerContainer>
-//         </Block>
-//         <Block>
-//           <Design backgroundImage={page.sceneryImage} opacity="015">
-//             <InnerContainer>
-//               <Navigation
-//                 nodes={nodes}
-//                 template={{ en: "products", no: "no/produkter" }}
-//                 locale={locale}
-//               />
-//             </InnerContainer>
-//           </Design>
-//         </Block>
-//       </Container>
-//     </Layout>
-//   );
-// };
+  return (
+    <p>foo</p>
+    // <Layout locale={locale} {...props}>
+    //   <SEO title={locale == "en" ? "Products" : "Produkter"} />
+    //   <Container>
+    //     <Block>
+    //       <InnerContainer>
+    //         <Intro
+    //           complementaryTitle={page.complementaryTitle}
+    //           title={page.title}
+    //           text={page.text}
+    //         />
+    //       </InnerContainer>
+    //     </Block>
+    //     <Block>
+    //       <Design backgroundImage={page.sceneryImage} opacity="015">
+    //         <InnerContainer>
+    //           <Navigation
+    //             nodes={nodes}
+    //             template={{ en: "products", no: "no/produkter" }}
+    //             locale={locale}
+    //           />
+    //         </InnerContainer>
+    //       </Design>
+    //     </Block>
+    //   </Container>
+    // </Layout>
+  );
+};
 
-// export default localize(ProductsPage);
+export default localize(ProductsPage);

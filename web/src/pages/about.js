@@ -23,9 +23,9 @@ export const query = graphql`
   query AboutPageQuery {
     page: sanityPageAbout {
       _id
-      title
-      complementaryTitle
-      text
+      # title
+      # complementaryTitle
+      # text
       # heroImage {
       #   crop {
       #     _key
@@ -153,11 +153,11 @@ const AboutPage = props => {
   }
   const page = (data || {}).page;
 
-  if (!page) {
-    throw new Error('Missing "page". Open the studio and add some content to this page.');
-  }
+  // if (!page) {
+  //   throw new Error('Missing "page". Open the studio and add some content to this page.');
+  // }
 
-  const features = page.features;
+  // const features = page.features;
 
   return (
     <Layout locale={locale} {...props}>
@@ -188,7 +188,7 @@ const AboutPage = props => {
             </InnerContainer>
           </Design>
         </Block> */}
-        {/* 
+        {/*
         <Block>
           <InnerContainer>
             <Presentation {...page.career} />

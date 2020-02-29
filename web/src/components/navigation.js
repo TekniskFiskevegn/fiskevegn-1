@@ -11,16 +11,19 @@ const Navigation = ({ nodes, template, locale }) => {
     <div className={styles.root}>
       <ul className={cn(styles.default, styles.custom, styles.boxShadow)}>
         {nodes &&
-          nodes.map(node => (
-            <li key={node.id}>
-              <Link className={stylesItem.root} to={`/${template[locale]}/${node.slug.current}`}>
-                <div className={stylesItem.content}>
-                  {node.title && <h3 className={stylesItem.title}>{node.title}</h3>}
-                  {node.teaser && <span className={stylesItem.teaser}>{node.teaser}</span>}
-                </div>
-              </Link>
-            </li>
-          ))}
+          nodes.map(node => {
+            const { name, navigationText, slug } = node.basicTemplate;
+            return (
+              <li key={node.id}>
+                <Link className={stylesItem.root} to={`/${template[locale]}/${slug.current}`}>
+                  <div className={stylesItem.content}>
+                    {name && <h3 className={stylesItem.title}>{name}</h3>}
+                    {navigationText && <span className={stylesItem.teaser}>{navigationText}</span>}
+                  </div>
+                </Link>
+              </li>
+            );
+          })}
       </ul>
     </div>
   );

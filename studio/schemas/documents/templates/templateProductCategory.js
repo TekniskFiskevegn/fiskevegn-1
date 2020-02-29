@@ -14,8 +14,8 @@ export default {
       description: "Not showing on page."
     },
     {
-      name: "templateStarter",
-      type: "templateStarter",
+      name: "basicTemplate",
+      type: "basicTemplate",
       title: "Content"
     }
   ]

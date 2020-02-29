@@ -58,21 +58,49 @@ export const query = graphql`
         alt
       }
     }
-    # services: allSanityServices(limit: 10) {
-    #   edges {
-    #     node {
-    #       id
-    #       title {
-    #         _type
-    #         en
-    #         no
-    #       }
-    #       slug {
-    #         current
-    #       }
-    #     }
-    #   }
-    # }
+    services: allSanityTemplateService(limit: 10) {
+      edges {
+        node {
+          id
+          basicTemplate {
+            name {
+              _type
+              en
+              no
+            }
+            title {
+              _type
+              en
+              no
+            }
+            complementaryTitle {
+              _type
+              en
+              no
+            }
+            text {
+              _type
+              en
+              no
+            }
+            navigationText {
+              _type
+              en
+              no
+            }
+            slug {
+              _type
+              en {
+                current
+              }
+              no {
+                current
+              }
+            }
+          }
+        }
+      }
+    }
   }
 `;
 
@@ -95,6 +123,8 @@ const ServicesPage = props => {
 
   const nodesServices = (data || {}).services ? mapEdgesToNodes(data.services) : [];
 
+  console.log("log nodesServices", nodesServices);
+
   return (
     <Layout locale={locale} {...props}>
       <SEO title={locale == "en" ? "Services" : "Tjenester"} />
@@ -113,11 +143,11 @@ const ServicesPage = props => {
         <Block>
           <Design backgroundImage={page.heroImage} opacity="025">
             <InnerContainer>
-              {/* <Navigation
+              <Navigation
                 nodes={nodesServices}
                 template={{ en: "services", no: "no/tjenester" }}
                 locale={locale}
-              /> */}
+              />
             </InnerContainer>
           </Design>
         </Block>

@@ -1,12 +1,13 @@
 const { isFuture } = require("date-fns");
-let sytalaust = require("./sytalaust");
+// let sytalaust = require("./sytalaust");
 /**
  * Implement Gatsby's Node APIs in this file.
  *
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-const extraLanguages = sytalaust.extraLanguages;
+// const extraLanguages = sytalaust.extraLanguages;
+const extraLanguages = ["no"];
 const createLocalePage = (page, createPage) => {
   console.log("log we are here", page);
   const { context, ...rest } = page;
@@ -118,15 +119,24 @@ async function createProductPages(graphql, actions, reporter) {
 }
 
 async function createServicePages(graphql, actions, reporter) {
+  console.log("lets go!");
   const { createPage } = actions;
   const result = await graphql(`
     {
-      allSanityServices(filter: { slug: { current: { ne: null } } }) {
+      allSanityTemplateService {
         edges {
           node {
             id
-            slug {
-              current
+            basicTemplate {
+              slug {
+                _type
+                en {
+                  current
+                }
+                no {
+                  current
+                }
+              }
             }
           }
         }
@@ -136,28 +146,29 @@ async function createServicePages(graphql, actions, reporter) {
 
   if (result.errors) throw result.errors;
 
-  const serviceEdges = (result.data.allSanityServices || {}).edges || [];
+  console.log("log result", result);
+
+  const serviceEdges = (result.data.allSanityTemplateService || {}).edges || [];
+
+  console.log("log servicesEdges!!", serviceEdges);
 
   serviceEdges.forEach(edge => {
     const id = edge.node.id;
-    const slug = edge.node.slug.current;
+    const slug = edge.node.basicTemplate.slug.en.current;
+    const localeSlug = edge.node.basicTemplate.slug.no.current;
     const path = `/services/${slug}/`;
-    const localePath = `/tjenester/${slug}/`;
+    const localePath = `/tjenester/${localeSlug}/`;
 
     reporter.info(`Creating service page: ${path}`);
 
-    // createPage({
-    //   path,
-    //   component: require.resolve("./src/templates/service.js"),
-    //   context: { id }
-    // });
     page = {
       path,
       localePath,
-      component: require.resolve("./src/templates/services.js"),
+      component: require.resolve("./src/templates/service.js"),
       context: { id }
     };
 
+    console.log("logging page", page);
     createLocalePage(page, createPage);
   });
 }
@@ -209,9 +220,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 // Creating pages in /pages folder
 exports.onCreatePage = ({ page, actions }) => {
   // Skip index
-  if (page.path !== "/") {
-    page = { ...page, localePath: "/" + sytalaust.getlocalePageName(page) };
-  }
+  // if (page.path !== "/") {
+  //   page = { ...page, localePath: "/" + sytalaust.getlocalePageName(page) };
+  // }
   const { createPage, deletePage } = actions;
   deletePage(page);
   createLocalePage(page, createPage);
