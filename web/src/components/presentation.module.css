@@ -95,3 +95,7 @@
 .link {
   composes: complementaryLink from './utils.module.css';
 }
+
+.downloadLink {
+  composes: defaultLink from './utils.module.css';
+}

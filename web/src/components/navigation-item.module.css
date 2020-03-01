@@ -7,9 +7,18 @@
   height: 100%;
   padding:1.5em 2em;
   width:100%;
+  display:flex;
+  align-items: center;
+  min-height: 160px;
 
   @nest &:hover {
     background-color:var(--color-almost-white);
+    @nest & .title {
+      color:var(--color-brand-complementary-hover);
+    }
+    /* @nest & .teaser {
+      color: var(--color-black);
+    } */
   }
   
   @media(--medium-and-up) {
@@ -21,8 +30,12 @@
   color:var(--color-brand-complementary);
   margin:0;
   font-size:20px;
+  @media(--medium-and-up) {
+    font-size:21px;
+  }
 }
 
 .teaser {
   font-size:15px;
+  color:#444;
 }

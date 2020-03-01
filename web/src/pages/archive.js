@@ -13,36 +13,43 @@ import SEO from "../components/seo";
 import Layout from "../containers/layout";
 import localize from "../components/localize";
 
-// export const query = graphql`
-//   query ArchivePageQuery {
-//     news: allSanityNews(
-//       limit: 12
-//       sort: { fields: [publishedAt], order: DESC }
-//       filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
-//     ) {
-//       edges {
-//         node {
-//           id
-//           mainImage {
-//             asset {
-//               _id
-//             }
-//             alt
-//           }
-//           title
-//           _rawExcerpt
-//           slug {
-//             current
-//           }
-//         }
-//       }
-//     }
-//   }
-// `;
+export const query = graphql`
+  query ArchivePageQuery {
+    news: allSanityTemplateNews(limit: 12, sort: { fields: [publishedAt], order: DESC }) {
+      edges {
+        node {
+          id
+          image {
+            asset {
+              _id
+            }
+            alt
+          }
+          title {
+            _type
+            en
+            no
+          }
+          _rawExcerpt
+          slug {
+            _type
+            en {
+              current
+            }
+            no {
+              current
+            }
+          }
+        }
+      }
+    }
+  }
+`;
 
 const ArchivePage = props => {
-  const { pageContext, data, errors } = props;
+  const { data, errors, pageContext } = props;
   const locale = getLocale(pageContext);
+
   if (errors) {
     return (
       <Layout>
@@ -51,21 +58,20 @@ const ArchivePage = props => {
     );
   }
 
-  // const newsNodes =
-  //   data && data.news && mapEdgesToNodes(data.news).filter(filterOutDocsWithoutSlugs);
+  const newsNodes =
+    data && data.news && mapEdgesToNodes(data.news).filter(filterOutDocsWithoutSlugs);
 
   return (
     <Layout locale={locale} {...props}>
-      <p>foo</p>
-      {/* <SEO title={locale == "en" ? "News" : "Nyheter"} />
+      <SEO title={locale == "en" ? "News" : "Nyheter"} />
       <Container>
         <Block>
           <InnerContainer>
-            <Intro title={locale == "en" ? "News archive" : "Nyhetsarkiv"} />
+            <Intro title={locale == "en" ? "News archive" : "Nyhetsarkiv"} textAlignLeft />
             <List style="oneHalfWithGapAndGridFix" listItem="NewsTeaser" nodes={newsNodes} />
           </InnerContainer>
         </Block>
-      </Container> */}
+      </Container>
     </Layout>
   );
 };

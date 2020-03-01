@@ -7,14 +7,14 @@
   composes: responsiveTitle1 from './typography.module.css';
 }
 
-.mainImage {
+.image {
   position: relative;
   background: #eee;
   padding-bottom: calc(9 / 16 * 100%);
 
 
   @media (--large-and-up) {
-    padding-bottom: calc(9 / 16 * 55%);
+    padding-bottom: calc(9 / 16 * 75%);
   }
 
   @nest & img {
@@ -31,7 +31,11 @@
 .article {
   max-width: 800px;
   margin:0 auto;
-  padding:3em 0;
+  padding:2em 0;
+  font-size:18px;
+  @media (--medium-and-up) {
+    font-size:20px;
+  }
   @nest & a {
     color: var(--color-brand-complementary);
 

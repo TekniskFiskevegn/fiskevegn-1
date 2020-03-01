@@ -33,3 +33,20 @@
     margin-bottom: 2.5em;
   }
 }
+
+.textAlignLeft {
+text-align: left;
+}
+
+.dropMarginOnTitle {
+  @nest & .title {
+    margin-bottom:0;
+  }
+}
+
+.borderBottom {
+  @media(--medium-and-up) {
+    border-bottom:2px solid var(--color-light-gray);
+    padding:0 0 2em 0;
+  }
+}

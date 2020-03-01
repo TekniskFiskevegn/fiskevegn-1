@@ -25,6 +25,7 @@
   line-height: var(--font-large-line-height);
   @nest &:hover {
     color: var(--color-brand-complementary-hover);
+    border-color:var(--color-brand-complementary-hover);
   }
 }
 

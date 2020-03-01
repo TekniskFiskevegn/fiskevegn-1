@@ -12,7 +12,13 @@ const StandardContent = props => {
 
   return (
     <div className={cn(styles.root, withBorders ? styles.withBorders : "")}>
-      <Intro title={title} complementaryTitle={complementaryTitle} text={text} marginBottom />
+      <Intro
+        title={title}
+        complementaryTitle={complementaryTitle}
+        text={text}
+        marginBottom
+        textAlignLeft
+      />
       <div className={styles.visuals}>{renderImages(image, listOfImages)}</div>
     </div>
   );

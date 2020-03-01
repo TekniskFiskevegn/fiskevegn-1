@@ -8,7 +8,16 @@ import Intro from "./intro";
 import styles from "./promoted.module.css";
 
 const Promoted = props => {
-  const { intro, title, text, image, reverseFlow = false, lightBackground = false } = props;
+  const {
+    intro,
+    title,
+    text,
+    image,
+    browseMoreHref,
+    browseMoreText,
+    reverseFlow = false,
+    lightBackground = false
+  } = props;
 
   console.log("log props in promoted", props);
 
@@ -50,11 +59,11 @@ const Promoted = props => {
           <div>
             {title && <h3 className={styles.contentTitle}>{title}</h3>}
             {text && <p>{text}</p>}
-            {/* {browseMoreHref && (
+            {browseMoreHref && (
               <Link to={browseMoreHref} className={styles.href}>
                 {browseMoreText || "Read more"}
               </Link>
-            )} */}
+            )}
           </div>
         </div>
       </div>

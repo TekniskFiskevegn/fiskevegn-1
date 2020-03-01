@@ -73,6 +73,12 @@ export const query = graphql`
           no
         }
         attachedEmail
+        attachedFile {
+          asset {
+            id
+            url
+          }
+        }
         image {
           crop {
             _key
@@ -113,10 +119,10 @@ const ProductTemplate = props => {
   const { basicTemplate, extraContentBlocks } = product;
   const { name, title, complementaryTitle, text, heroImage } = basicTemplate;
 
-  const nodesContentBlocks = extraContentBlocks ? mapEdgesToNodes(extraContentBlocks) : [];
+  console.log("log heroImage in template-product", heroImage);
 
   return (
-    <Layout locale={locale} {...props}>
+    <Layout locale={locale} {...props} currentPage="/products">
       <Container>
         {errors && <SEO title="GraphQL Error" />}
         {title && <SEO title={title || "AS Fiskevegn"} />}
@@ -125,11 +131,11 @@ const ProductTemplate = props => {
 
         <Block>
           <InnerContainer>
-            <Intro complementaryTitle={complementaryTitle} title={title} text={text} />
+            <Intro complementaryTitle={complementaryTitle} title={title} text={text} borderBottom />
           </InnerContainer>
         </Block>
 
-        {heroImage && (
+        {heroImage && heroImage.asset && (
           <Block>
             <Design backgroundImage={heroImage} opacity="025">
               <InnerContainer></InnerContainer>
@@ -137,14 +143,26 @@ const ProductTemplate = props => {
           </Block>
         )}
 
-        {nodesContentBlocks &&
-          nodesContentBlocks.map(contentBlock => (
-            <Block key={contentBlock.id}>
-              <InnerContainer>
-                <Presentation {...contentBlock} />
-              </InnerContainer>
-            </Block>
-          ))}
+        {extraContentBlocks &&
+          extraContentBlocks.map((contentBlock, i) => {
+            if (Math.abs(i % 2) != 1) {
+              return (
+                <Block key={contentBlock.id}>
+                  <InnerContainer>
+                    <Presentation {...contentBlock} locale={locale} reverseFlow />
+                  </InnerContainer>
+                </Block>
+              );
+            } else {
+              return (
+                <Block key={contentBlock.id}>
+                  <InnerContainer>
+                    <Presentation {...contentBlock} locale={locale} />
+                  </InnerContainer>
+                </Block>
+              );
+            }
+          })}
       </Container>
     </Layout>
   );

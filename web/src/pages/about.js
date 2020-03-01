@@ -36,8 +36,8 @@ const AboutPage = props => {
     throw new Error('Missing "page". Open the studio and add some content to this page.');
   }
 
-  const { intro, features, partners } = page;
-  const { name, title, complementaryTitle, text, heroImage } = intro;
+  const { intro, heroImage, features, career, partners } = page;
+  const { name, title, complementaryTitle, text } = intro;
 
   return (
     <Layout locale={locale} {...props}>
@@ -49,8 +49,8 @@ const AboutPage = props => {
           </InnerContainer>
         </Block>
 
-        {/* <Block>
-          <Design backgroundImage={page.sceneryImage} opacity="075" flex>
+        <Block>
+          <Design backgroundImage={heroImage} opacity="075" flex>
             <InnerContainer>
               {features && features.length > 0 && (
                 <ul className={cn(listStyles.default)}>
@@ -63,19 +63,19 @@ const AboutPage = props => {
               )}
             </InnerContainer>
           </Design>
-        </Block> */}
-        {/*
+        </Block>
+
         <Block>
           <InnerContainer>
-            <Presentation {...page.career} />
+            <Presentation {...career} />
           </InnerContainer>
         </Block>
 
         <Block>
           <InnerContainer>
-            <StandardContent {...page.partners} withBorders />
+            <StandardContent {...partners} withBorders />
           </InnerContainer>
-        </Block> */}
+        </Block>
       </Container>
     </Layout>
   );

@@ -5,6 +5,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Container from "../components/container";
 import Block from "../components/block";
+import Design from "../components/design";
 import Intro from "../components/intro";
 import InnerContainer from "../components/inner-container";
 import localize from "../components/localize";
@@ -25,18 +26,16 @@ const ShopPage = props => {
               title={locale == "en" ? "Shop" : "Nettbutikk"}
               text={
                 locale == "en"
-                  ? "AS Fiskevegn web shop coming soon!"
-                  : "AS Fiskevegn nettbutikk kommer snart!"
+                  ? "AS Fiskevegn webshop is coming during the first half of 2020."
+                  : "AS Fiskevegn nettbutikk kommer i løpet av første halvår 2020."
               }
             />
           </InnerContainer>
         </Block>
         <Block>
-          <InnerContainer>
-            <div>
-              <img src="/images/shop.jpg" />
-            </div>
-          </InnerContainer>
+          <Design backgroundImage="/images/shop.jpg" isStatic opacity="015" flex>
+            <InnerContainer></InnerContainer>
+          </Design>
         </Block>
       </Container>
     </Layout>

@@ -12,25 +12,25 @@ import Intro from "./intro";
 import styles from "./article.module.css";
 
 function Article(props) {
-  const { _rawBody, title, introduction, mainImage, publishedAt } = props;
+  const { _rawBody, title, introduction, image, publishedAt } = props;
   return (
     <Container>
       <Block>
         <InnerContainer>
-          <Intro publishedAt={publishedAt} title={title} text={introduction} />
+          <Intro publishedAt={publishedAt} title={title} text={introduction} dropMarginOnTitle />
         </InnerContainer>
       </Block>
-      <Block>
+      <Block verticalRhythm={{ top: 1 }}>
         <InnerContainer>
-          {props.mainImage && mainImage.asset && (
-            <div className={styles.mainImage}>
+          {props.image && image.asset && (
+            <div className={styles.image}>
               <img
-                src={imageUrlFor(buildImageObj(mainImage))
+                src={imageUrlFor(buildImageObj(image))
                   .width(1200)
                   .height(Math.floor((9 / 16) * 1200))
                   .fit("crop")
                   .url()}
-                alt={mainImage.alt}
+                alt={image.alt}
               />
             </div>
           )}

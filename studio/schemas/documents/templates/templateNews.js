@@ -28,7 +28,7 @@ export default {
       name: "text",
       type: "localeText",
       title: "Text",
-      description: "Short and sweet introduction."
+      description: "Optional. But the article will look better if you add some text to this."
     },
     {
       name: "publishedAt",
@@ -66,8 +66,6 @@ export default {
   //   select: {
   //     title: "title",
   //     publishedAt: "publishedAt",
-  //     slug: "slug",
-  //     media: "image"
   //   },
   //   prepare({ title = "No title", publishedAt, slug = {}, media }) {
   //     const dateSegment = format(publishedAt, "YYYY/MM");

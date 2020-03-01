@@ -124,7 +124,7 @@ const ProductCategoryTemplate = props => {
 
         <Block>
           <InnerContainer>
-            <GoBack href="/products" />
+            {/* <GoBack href="/products" /> */}
             <Intro complementaryTitle={complementaryTitle} title={title} text={text} />
           </InnerContainer>
         </Block>

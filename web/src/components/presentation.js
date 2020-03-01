@@ -7,17 +7,38 @@ import List from "./list";
 import styles from "./presentation.module.css";
 
 const Presentation = props => {
-  const { title, text, image, listOfImages, email, reverseFlow } = props;
+  const {
+    title,
+    text,
+    image,
+    listOfImages,
+    attachedEmail,
+    attachedFile,
+    reverseFlow,
+    locale
+  } = props;
+
+  let nameForAttachedFile;
+  if (attachedFile) {
+    // ?dl=<filename-of-your-choice.pdf>
+    nameForAttachedFile = attachedFile.asset.url + `?dl=${title}+.pdf`;
+    console.log("log filename", nameForAttachedFile);
+  }
 
   return (
     <div className={cn(styles.root, reverseFlow ? styles.reverseFlow : "")}>
       <div className={styles.text}>
         <div>
           <h2 className={styles.title}>{title}</h2>
-          <p>{text}</p>
-          {email && (
-            <a className={styles.link} href={"mailto:" + email}>
-              {email}
+          {text && <p>{text}</p>}
+          {attachedEmail && (
+            <a className={styles.link} href={"mailto:" + attachedEmail}>
+              {attachedEmail}
+            </a>
+          )}
+          {attachedFile && (
+            <a className={styles.downloadLink} target="_blank" href={nameForAttachedFile}>
+              {locale == "en" ? "Download Specification" : "Last ned spesifikasjoner"}
             </a>
           )}
         </div>

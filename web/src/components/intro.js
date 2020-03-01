@@ -5,9 +5,26 @@ import { cn } from "../lib/helpers";
 
 import styles from "./intro.module.css";
 
-const Intro = ({ complementaryTitle, title, text, publishedAt, marginBottom = false }) => {
+const Intro = ({
+  complementaryTitle,
+  title,
+  text,
+  publishedAt,
+  marginBottom = false,
+  textAlignLeft = false,
+  dropMarginOnTitle = false,
+  borderBottom = false
+}) => {
   return (
-    <div className={cn(styles.root, marginBottom ? styles.marginBottom : "")}>
+    <div
+      className={cn(
+        styles.root,
+        marginBottom ? styles.marginBottom : "",
+        textAlignLeft ? styles.textAlignLeft : "",
+        dropMarginOnTitle ? styles.dropMarginOnTitle : "",
+        borderBottom ? styles.borderBottom : ""
+      )}
+    >
       {complementaryTitle && (
         <span className={styles.complementaryTitle}>{complementaryTitle}</span>
       )}

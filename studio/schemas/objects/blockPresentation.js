@@ -4,6 +4,12 @@ export default {
   type: "object",
   fields: [
     {
+      name: "sanityDocumentTitle",
+      type: "string",
+      title: "Document title",
+      description: "Not showing on page."
+    },
+    {
       name: "title",
       type: "localeString",
       title: "Block title"

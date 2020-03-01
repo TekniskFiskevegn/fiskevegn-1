@@ -25,7 +25,7 @@ export default {
       name: "complementaryTitle",
       type: "localeString",
       title: "Complementary title",
-      description: "Optional. Just a small title showing above the main title."
+      description: "Optional. But for products and categories this should be used as a breadcrumb."
     },
     {
       name: "text",

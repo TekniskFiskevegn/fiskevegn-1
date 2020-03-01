@@ -103,15 +103,15 @@ export const query = graphql`
           }
           alt
         }
-        # browserMoreHref
-        # browseMoreText {
-        #   _type
-        #   en
-        #   no
-        # }
+        browseMoreHref
+        browseMoreText {
+          _type
+          en
+          no
+        }
       }
     }
-    news: allSanityTemplateNews {
+    news: allSanityTemplateNews(sort: { fields: [publishedAt], order: ASC }) {
       edges {
         node {
           id
@@ -229,7 +229,7 @@ const IndexPage = props => {
         {newsNodes && (
           <Block>
             <InnerContainer>
-              <Intro title={locale == "en" ? "Latest News" : "Siste nytt"} />
+              <Intro title={locale == "en" ? "Latest News" : "Siste nytt"} textAlignLeft />
               <List style="oneHalfWithGapAndGridFix" listItem="NewsTeaser" nodes={newsNodes} />
               <div>
                 <Link to="/archive" className={utils.defaultLink}>

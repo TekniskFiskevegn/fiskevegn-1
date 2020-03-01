@@ -11,7 +11,23 @@ const menuLinks = pageStructure.filter((page, i) => {
   return page.nav.showInMenu;
 });
 
-const Header = ({ locale, location, onHideNav, onShowNav, showNav, siteTitle, isCustomHeader }) => {
+const Header = ({
+  locale,
+  location,
+  currentPage,
+  onHideNav,
+  onShowNav,
+  showNav,
+  siteTitle,
+  isCustomHeader
+}) => {
+  let path = location.pathname;
+  if (currentPage) {
+    path = currentPage;
+  }
+
+  console.log("log path in header", path);
+
   return (
     <div className={cn(styles.root, isCustomHeader && styles.customHeader)}>
       <div className={styles.wrapper}>
@@ -32,9 +48,7 @@ const Header = ({ locale, location, onHideNav, onShowNav, showNav, siteTitle, is
                 <li key={i}>
                   <Link
                     to={item.nav[locale].url}
-                    className={
-                      location.pathname.includes(item.nav[locale].url) ? styles.activeLink : ""
-                    }
+                    className={path.includes(item.nav[locale].url) ? styles.activeLink : ""}
                   >
                     {item.nav[locale].displayName}
                   </Link>
