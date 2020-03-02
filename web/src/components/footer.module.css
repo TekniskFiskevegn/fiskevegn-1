@@ -1,3 +1,6 @@
+@import '../styles/custom-media.css';
+@import '../styles/custom-properties.css';
+
 .root {
   position: relative;
 }
@@ -11,7 +14,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding:3em;
+  padding: 2em 0 3em 0;
+  @media (--medium-and-up) {
+    padding:3em;
+  }
 }
 
 .waveContainer {
