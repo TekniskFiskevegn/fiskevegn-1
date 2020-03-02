@@ -7,7 +7,7 @@ import Intro from "./intro";
 
 import styles from "./contact.module.css";
 
-const Contact = ({ intro, adress, phone, email, map, image, reverseFlow }) => {
+const Contact = ({ intro, address, phone, email, map, image, reverseFlow }) => {
   const { title, complementaryTitle, text } = intro;
 
   return (
@@ -29,7 +29,7 @@ const Contact = ({ intro, adress, phone, email, map, image, reverseFlow }) => {
         <div className={cn(styles.content)}>
           <div>
             <h3 className={styles.contentTitle}>Info</h3>
-            {adress && <p>{adress}</p>}
+            {address && <p>{address}</p>}
             <ul className={styles.list}>
               {phone && (
                 <li>

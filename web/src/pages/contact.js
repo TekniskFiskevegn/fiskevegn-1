@@ -34,7 +34,7 @@ export const query = graphql`
             no
           }
         }
-        adress
+        address
         phone
         email
         map
