@@ -206,7 +206,7 @@ const IndexPage = props => {
             );
           } else {
             return (
-              <Block verticalRhythm={{ bottom: 0 }}>
+              <Block key={i} verticalRhythm={{ bottom: 0 }}>
                 <Design
                   svg={{
                     wave: true,

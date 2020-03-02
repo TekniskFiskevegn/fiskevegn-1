@@ -130,7 +130,8 @@ const ProductTemplate = props => {
   const { belongsToCategory, basicTemplate, extraContentBlocks } = product;
   const { name, title, complementaryTitle, text, heroImage } = basicTemplate;
 
-  const goBackTo = "products/" + belongsToCategory[0].basicTemplate.name.toLowerCase();
+  let goBackTo = "/products/" + belongsToCategory[0].basicTemplate.name;
+  goBackTo = goBackTo.replace(/\s+/g, "-").toLowerCase();
 
   return (
     <Layout locale={locale} location={location} info={props} currentPage="/products">
@@ -151,7 +152,7 @@ const ProductTemplate = props => {
           extraContentBlocks.map((contentBlock, i) => {
             if (Math.abs(i % 2) != 1) {
               return (
-                <Block key={contentBlock.id}>
+                <Block key={i}>
                   <InnerContainer>
                     <Presentation {...contentBlock} locale={locale} reverseFlow />
                   </InnerContainer>
@@ -159,7 +160,7 @@ const ProductTemplate = props => {
               );
             } else {
               return (
-                <Block key={contentBlock.id}>
+                <Block key={i}>
                   <InnerContainer>
                     <Presentation {...contentBlock} locale={locale} />
                   </InnerContainer>
