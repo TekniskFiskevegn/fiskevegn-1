@@ -44,8 +44,6 @@
 - contact could and should be a promoted component
 
 @ Fiskevegn
-- services
-- fiskevegn around the world instead of features
 
 
 ## Sytalaust!o workflow
