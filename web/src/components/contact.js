@@ -7,17 +7,9 @@ import Intro from "./intro";
 
 import styles from "./contact.module.css";
 
-const Contact = ({
-  complementaryTitle,
-  title,
-  text,
-  adress,
-  phone,
-  email,
-  map,
-  image,
-  reverseFlow
-}) => {
+const Contact = ({ intro, adress, phone, email, map, image, reverseFlow }) => {
+  const { title, complementaryTitle, text } = intro;
+
   return (
     <div className={styles.root}>
       <Intro title={title} complementaryTitle={complementaryTitle} text={text} marginBottom />
@@ -36,7 +28,7 @@ const Contact = ({
         </div>
         <div className={cn(styles.content)}>
           <div>
-            <h3 className={styles.contentTitle}>Contact</h3>
+            <h3 className={styles.contentTitle}>Info</h3>
             {adress && <p>{adress}</p>}
             <ul className={styles.list}>
               {phone && (
@@ -55,8 +47,8 @@ const Contact = ({
               )}
               {map && (
                 <li>
-                  <a className={styles.link} href={map}>
-                    Find us on Google Maps
+                  <a className={styles.mapLink} href={map}>
+                    Find on Google Maps
                   </a>
                 </li>
               )}

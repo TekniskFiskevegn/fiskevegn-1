@@ -28,6 +28,11 @@ export const query = graphql`
             en
             no
           }
+          complementaryTitle {
+            _type
+            en
+            no
+          }
         }
         adress
         phone
@@ -80,7 +85,7 @@ const ContactPage = props => {
   const { departments } = page;
   console.log("log props contact", props);
   return (
-    <Layout locale={locale} location={location} info={props} isCustomHeader>
+    <Layout locale={locale} location={location} info={props}>
       <SEO title={locale == "en" ? "Contact" : "Kontakt"} />
       {departments && departments.length > 0 && (
         <Container>

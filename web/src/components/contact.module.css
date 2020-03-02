@@ -90,3 +90,7 @@
 .link {
   composes: complementaryLinkWithoutBorder from './utils.module.css';
 }
+
+.mapLink {
+  composes: plainLink from './utils.module.css';
+}

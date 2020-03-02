@@ -15,9 +15,9 @@ export default {
       title: "Intro"
     },
     {
-      name: "adress",
+      name: "address",
       type: "string",
-      title: "Adress"
+      title: "Address"
     },
     {
       name: "phone",

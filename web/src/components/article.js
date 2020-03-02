@@ -17,7 +17,9 @@ function Article(props) {
     <Container>
       <Block>
         <InnerContainer>
-          <Intro publishedAt={publishedAt} title={title} text={introduction} dropMarginOnTitle />
+          <div className={styles.maxWidth}>
+            <Intro publishedAt={publishedAt} title={title} text={introduction} dropMarginOnTitle />
+          </div>
         </InnerContainer>
       </Block>
       <Block verticalRhythm={{ top: 1 }}>
