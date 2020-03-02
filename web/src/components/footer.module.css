@@ -14,7 +14,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2em 0 3em 0;
+  padding: 1.5em 0 3em 0;
   @media (--medium-and-up) {
     padding:3em;
   }
