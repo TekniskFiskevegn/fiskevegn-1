@@ -12,6 +12,7 @@ import pageAbout from "./documents/pages/pageAbout";
 import pageProducts from "./documents/pages/pageProducts";
 import pageServices from "./documents/pages/pageServices";
 import pageContact from "./documents/pages/pageContact";
+
 // templates
 import templateProduct from "./documents/templates/templateProduct";
 import templateProductCategory from "./documents/templates/templateProductCategory";

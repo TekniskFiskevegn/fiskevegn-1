@@ -16,7 +16,6 @@ const Design = ({
   gradient,
   isStatic
 }) => {
-  console.log("log background iamge", backgroundImage);
   if (backgroundImage) {
     let img;
     if (isStatic) {

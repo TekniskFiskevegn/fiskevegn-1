@@ -99,7 +99,7 @@ export const query = graphql`
 `;
 
 const ProductCategoryTemplate = props => {
-  const { data, errors, pageContext } = props;
+  const { data, pageContext, location, errors } = props;
   const locale = getLocale(pageContext);
 
   const { basicTemplate, id } = data && data.category;
@@ -115,16 +115,16 @@ const ProductCategoryTemplate = props => {
   });
 
   return (
-    <Layout locale={locale} {...props}>
+    <Layout locale={locale} location={location} info={props}>
       <Container>
         {errors && <SEO txitle="GraphQL Error" />}
-        {title && <SEO title={title || "AS Fiskevegn"} />}
+        <SEO title={title || "AS Fiskevegn"} />
 
         {errors && <GraphQLErrorList errors={errors} />}
 
         <Block>
           <InnerContainer>
-            {/* <GoBack href="/products" /> */}
+            <GoBack href="/products" />
             <Intro complementaryTitle={complementaryTitle} title={title} text={text} />
           </InnerContainer>
         </Block>

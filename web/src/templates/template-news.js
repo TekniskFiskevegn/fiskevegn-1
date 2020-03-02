@@ -61,13 +61,13 @@ export const query = graphql`
 `;
 
 const NewsTemplate = props => {
-  const { data, errors, pageContext } = props;
+  const { data, pageContext, location, errors } = props;
   const locale = getLocale(pageContext);
 
   const news = data && data.news;
 
   return (
-    <Layout locale={locale} {...props}>
+    <Layout locale={locale} location={location} info={props}>
       {errors && <SEO title="GraphQL Error" />}
       {news && <SEO title={news.title || "AS Fiskevegn"} />}
 

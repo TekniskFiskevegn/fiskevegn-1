@@ -1,7 +1,7 @@
 export default {
-  name: "pageContact",
+  name: "pageShop",
   type: "document",
-  title: "Contact",
+  title: "Shop",
   fields: [
     {
       name: "sanityDocumentTitle",
@@ -10,10 +10,14 @@ export default {
       description: "Not showing on page."
     },
     {
-      name: "departments",
-      type: "array",
-      title: "Add department",
-      of: [{ type: "blockContact" }]
+      name: "intro",
+      type: "intro",
+      title: "Intro"
+    },
+    {
+      name: "heroImage",
+      type: "heroImage",
+      title: "Scenery image"
     }
   ]
 };

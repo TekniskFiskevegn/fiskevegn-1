@@ -159,7 +159,7 @@ export const query = graphql`
 `;
 
 const IndexPage = props => {
-  const { data, errors, pageContext } = props;
+  const { data, pageContext, location, errors } = props;
   const locale = getLocale(pageContext);
 
   if (errors) {
@@ -194,7 +194,7 @@ const IndexPage = props => {
   console.log("log newsnodes", newsNodes);
 
   return (
-    <Layout locale={locale} {...props} isCustomHeader={true}>
+    <Layout locale={locale} location={location} info={props} isCustomHeader={true}>
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
       {heroImage && <Hero image={heroImage} />}
       <Container>

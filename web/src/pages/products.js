@@ -15,7 +15,7 @@ import Navigation from "../components/navigation";
 import SEO from "../components/seo";
 
 const ProductsPage = props => {
-  const { data, errors, pageContext } = props;
+  const { data, pageContext, location, errors } = props;
   const locale = getLocale(pageContext);
 
   if (errors) {
@@ -34,7 +34,7 @@ const ProductsPage = props => {
   }
 
   return (
-    <Layout locale={locale} {...props}>
+    <Layout locale={locale} location={location} info={props}>
       <SEO title={locale == "en" ? "Products" : "Produkter"} />
       <Container>
         <Block>

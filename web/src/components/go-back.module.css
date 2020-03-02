@@ -2,14 +2,26 @@
 @import '../styles/custom-properties.css';
 
 .root {
-  display:inline-block;
-  margin-bottom:1em;
-  position: relative;
-  width:25px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 1em;
   @media(--medium-and-up) {
+    justify-content: center;
+    min-height: 64px;
+    min-width: 64px;
+    border-radius: 50%;
+    background-color: var(--color-light-theme);
+    padding: .5rem;
     left:2em;
+    top:-24px;
     margin-bottom:0;
     position:absolute;
-    width:35px;
   }
+}
+
+.iconBody {
+  font-size: 2em;
+    display: flex;
+    align-items: center;
 }

@@ -44,7 +44,8 @@
 - contact could and should be a promoted component
 
 @ Fiskevegn
-- phone tel link
+- services
+- fiskevegn around the world instead of features
 
 
 ## Sytalaust!o workflow

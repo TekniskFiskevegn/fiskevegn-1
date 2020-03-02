@@ -20,7 +20,7 @@ import SEO from "../components/seo";
 import listStyles from "../components/list.module.css";
 
 const AboutPage = props => {
-  const { data, errors, pageContext } = props;
+  const { data, pageContext, location, errors } = props;
   const locale = getLocale(pageContext);
 
   if (errors) {
@@ -36,11 +36,11 @@ const AboutPage = props => {
     throw new Error('Missing "page". Open the studio and add some content to this page.');
   }
 
-  const { intro, heroImage, features, career, partners } = page;
+  const { intro, heroImage, features, history, career, partners } = page;
   const { name, title, complementaryTitle, text } = intro;
 
   return (
-    <Layout locale={locale} {...props}>
+    <Layout locale={locale} location={location} info={props}>
       <SEO title={locale == "en" ? "About" : "Om oss"} />
       <Container>
         <Block>
@@ -64,18 +64,29 @@ const AboutPage = props => {
             </InnerContainer>
           </Design>
         </Block>
+        {history && (
+          <Block>
+            <InnerContainer>
+              <Presentation {...history} reverseFlow />
+            </InnerContainer>
+          </Block>
+        )}
 
-        <Block>
-          <InnerContainer>
-            <Presentation {...career} />
-          </InnerContainer>
-        </Block>
+        {career && (
+          <Block>
+            <InnerContainer>
+              <Presentation {...career} />
+            </InnerContainer>
+          </Block>
+        )}
 
-        <Block>
-          <InnerContainer>
-            <StandardContent {...partners} withBorders />
-          </InnerContainer>
-        </Block>
+        {partners && (
+          <Block>
+            <InnerContainer>
+              <StandardContent {...partners} withBorders />
+            </InnerContainer>
+          </Block>
+        )}
       </Container>
     </Layout>
   );
@@ -127,6 +138,41 @@ export const query = graphql`
       features {
         title
         text
+      }
+      history {
+        title {
+          _type
+          en
+          no
+        }
+        text {
+          _type
+          en
+          no
+        }
+        attachedEmail
+        image {
+          crop {
+            _key
+            _type
+            top
+            bottom
+            left
+            right
+          }
+          hotspot {
+            _key
+            _type
+            x
+            y
+            height
+            width
+          }
+          asset {
+            _id
+          }
+          alt
+        }
       }
       career {
         title {

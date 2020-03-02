@@ -47,6 +47,6 @@ text-align: left;
 .borderBottom {
   @media(--medium-and-up) {
     border-bottom:2px solid var(--color-light-gray);
-    padding:0 0 2em 0;
+    padding:0 0 3em 0;
   }
 }

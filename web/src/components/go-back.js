@@ -1,16 +1,18 @@
 import React from "react";
 import { Link } from "gatsby";
 import Svg from "../components/svg";
+import { FiArrowLeft } from "react-icons/fi";
+import { TiArrowLeft } from "react-icons/ti";
 
 import styles from "./go-back.module.css";
-
-// Todo:
-// Use Link instead
 
 const GoBack = props => {
   return (
     <Link to={props.href} className={styles.root}>
-      <Svg adjustToParent icon name="arrow-left-circle" />
+      <div className={styles.iconBody}>
+        {/* <FiArrowLeft /> */}
+        <TiArrowLeft />
+      </div>
     </Link>
   );
 };

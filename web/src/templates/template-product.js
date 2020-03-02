@@ -6,6 +6,7 @@ import { getLocale } from "../../sytalaust";
 import Block from "../components/block";
 import Container from "../components/container";
 import GraphQLErrorList from "../components/graphql-error-list";
+import GoBack from "../components/go-back";
 import Intro from "../components/intro";
 import InnerContainer from "../components/inner-container";
 import Layout from "../containers/layout";
@@ -17,6 +18,16 @@ export const query = graphql`
   query productTemplateQuery($id: String!) {
     product: sanityTemplateProduct(id: { eq: $id }) {
       id
+      belongsToCategory {
+        id
+        basicTemplate {
+          name {
+            _type
+            en
+            no
+          }
+        }
+      }
       basicTemplate {
         name {
           _type
@@ -107,7 +118,7 @@ export const query = graphql`
 `;
 
 const ProductTemplate = props => {
-  const { pageContext, data, errors } = props;
+  const { data, pageContext, location, errors } = props;
   const locale = getLocale(pageContext);
 
   const product = data && data.product;
@@ -116,32 +127,25 @@ const ProductTemplate = props => {
     throw new Error('Missing "product". Open the studio and add some content to this product.');
   }
 
-  const { basicTemplate, extraContentBlocks } = product;
+  const { belongsToCategory, basicTemplate, extraContentBlocks } = product;
   const { name, title, complementaryTitle, text, heroImage } = basicTemplate;
 
-  console.log("log heroImage in template-product", heroImage);
+  const goBackTo = "products/" + belongsToCategory[0].basicTemplate.name.toLowerCase();
 
   return (
-    <Layout locale={locale} {...props} currentPage="/products">
+    <Layout locale={locale} location={location} info={props} currentPage="/products">
       <Container>
         {errors && <SEO title="GraphQL Error" />}
-        {title && <SEO title={title || "AS Fiskevegn"} />}
+        <SEO title={title || "AS Fiskevegn"} />
 
         {errors && <GraphQLErrorList errors={errors} />}
 
         <Block>
           <InnerContainer>
+            <GoBack href={goBackTo} />
             <Intro complementaryTitle={complementaryTitle} title={title} text={text} borderBottom />
           </InnerContainer>
         </Block>
-
-        {heroImage && heroImage.asset && (
-          <Block>
-            <Design backgroundImage={heroImage} opacity="025">
-              <InnerContainer></InnerContainer>
-            </Design>
-          </Block>
-        )}
 
         {extraContentBlocks &&
           extraContentBlocks.map((contentBlock, i) => {

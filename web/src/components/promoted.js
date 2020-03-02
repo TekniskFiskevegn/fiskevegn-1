@@ -18,9 +18,6 @@ const Promoted = props => {
     reverseFlow = false,
     lightBackground = false
   } = props;
-
-  console.log("log props in promoted", props);
-
   // ({
   //   title,
   //   text,

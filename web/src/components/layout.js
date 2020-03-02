@@ -7,13 +7,43 @@ import Footer from "./footer";
 import "../styles/scaffold.css";
 import styles from "./layout.module.css";
 
-const Layout = ({ children, ...rest }) => {
-  if (LOG_IS_ACTIVE) log(rest.location.pathname, rest.data, rest);
+const Layout = ({
+  children,
+  siteTitle,
+  onHideNav,
+  onShowNav,
+  showNav,
+  isCustomHeader,
+  currentPage,
+  location,
+  locale,
+  info
+}) => {
+  console.log("log in layout", {
+    siteTitle,
+    onHideNav,
+    onShowNav,
+    showNav,
+    isCustomHeader,
+    currentPage,
+    location,
+    locale
+  });
+  if (LOG_IS_ACTIVE) log(location.pathname, info);
   return (
     <div>
-      <Header {...rest} />
+      <Header
+        onHideNav={onHideNav}
+        onShowNav={onShowNav}
+        showNav={showNav}
+        siteTitle={siteTitle}
+        isCustomHeader={isCustomHeader}
+        currentPage={currentPage}
+        location={location}
+        locale={locale}
+      />
       <div className={styles.content}>{children}</div>
-      <Footer {...rest} />
+      <Footer locale={locale} />
     </div>
   );
 };

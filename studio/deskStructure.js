@@ -71,6 +71,7 @@ export default () =>
             .documentId("pageContact")
         )
         .icon(FiFile),
+
       S.divider(),
       // This returns an array of all the document types
       // defined in schema.js. We filter out those that we have

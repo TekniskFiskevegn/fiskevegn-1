@@ -15,7 +15,7 @@ import Navigation from "../components/navigation";
 import SEO from "../components/seo";
 
 const ServicesPage = props => {
-  const { data, errors, pageContext } = props;
+  const { data, pageContext, location, errors } = props;
   const locale = getLocale(pageContext);
   if (errors) {
     return (
@@ -36,7 +36,7 @@ const ServicesPage = props => {
   console.log("log nodesServices", nodesServices);
 
   return (
-    <Layout locale={locale} {...props}>
+    <Layout locale={locale} location={location} info={props}>
       <SEO title={locale == "en" ? "Services" : "Tjenester"} />
       <Container>
         <Block>

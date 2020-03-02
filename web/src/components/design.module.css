@@ -3,7 +3,7 @@
 
 .root {
   align-items: center;
-  background-color: var(--color-light-gray);
+  background-color: var(--color-light-theme);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

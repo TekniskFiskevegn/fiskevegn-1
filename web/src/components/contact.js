@@ -69,9 +69,9 @@ const Contact = ({
 };
 
 Contact.propTypes = {
-  title: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
-  image: PropTypes.object.isRequired,
+  title: PropTypes.string,
+  text: PropTypes.string,
+  image: PropTypes.object,
   browseMoreHref: PropTypes.string,
   browseMoreText: PropTypes.string,
   reverseFlow: PropTypes.bool

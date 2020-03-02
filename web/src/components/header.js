@@ -26,8 +26,6 @@ const Header = ({
     path = currentPage;
   }
 
-  console.log("log path in header", path);
-
   return (
     <div className={cn(styles.root, isCustomHeader && styles.customHeader)}>
       <div className={styles.wrapper}>

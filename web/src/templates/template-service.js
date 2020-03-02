@@ -65,25 +65,23 @@ export const query = graphql`
 `;
 
 const ServiceTemplate = props => {
-  const { pageContext, data, errors } = props;
+  const { data, pageContext, location, errors } = props;
   const locale = getLocale(pageContext);
 
-  const service = data && data.service;
-  const { basicTemplate } = service;
+  const { basicTemplate } = data && data.service;
   const { name, title, complementaryTitle, text, heroImage } = basicTemplate;
 
   return (
-    <Layout locale={locale} {...props}>
+    <Layout locale={locale} location={location} info={props}>
       <Container>
         {errors && <SEO title="GraphQL Error" />}
-        {service && <SEO title={service.title || "Untitled"} />}
+        <SEO title={title || "AS Fiskevegn"} />
 
         {errors && <GraphQLErrorList errors={errors} />}
 
         <Block>
           <InnerContainer>
             <Intro complementaryTitle={complementaryTitle} title={title} text={text} />
-            <p>I am a service</p>
           </InnerContainer>
         </Block>
       </Container>

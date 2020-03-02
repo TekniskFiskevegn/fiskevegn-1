@@ -16,28 +16,6 @@ export const query = graphql`
   query ContactPageQuery {
     page: sanityPageContact(_id: { regex: "/(drafts.|)pageContact/" }) {
       _id
-      heroImage {
-        crop {
-          _key
-          _type
-          top
-          bottom
-          left
-          right
-        }
-        hotspot {
-          _key
-          _type
-          x
-          y
-          height
-          width
-        }
-        asset {
-          _id
-        }
-        alt
-      }
       departments {
         intro {
           title {
@@ -83,7 +61,7 @@ export const query = graphql`
 `;
 
 const ContactPage = props => {
-  const { pageContext, data, errors } = props;
+  const { data, pageContext, location, errors } = props;
   const locale = getLocale(pageContext);
   if (errors) {
     return (
@@ -99,12 +77,11 @@ const ContactPage = props => {
     throw new Error('Missing "page". Open the studio and add some content to this page.');
   }
 
-  const { heroImage, departments } = page;
-
+  const { departments } = page;
+  console.log("log props contact", props);
   return (
-    <Layout locale={locale} {...props} isCustomHeader>
+    <Layout locale={locale} location={location} info={props} isCustomHeader>
       <SEO title={locale == "en" ? "Contact" : "Kontakt"} />
-      {heroImage && <Hero image={heroImage} />}
       {departments && departments.length > 0 && (
         <Container>
           {departments.map((department, i) => (

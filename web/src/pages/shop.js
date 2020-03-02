@@ -1,29 +1,38 @@
 import React from "react";
+import { graphql } from "gatsby";
 import { getLocale } from "../../sytalaust";
 
-import Layout from "../components/layout";
-import SEO from "../components/seo";
-import Container from "../components/container";
 import Block from "../components/block";
 import Design from "../components/design";
-import Intro from "../components/intro";
+import Container from "../components/container";
+import GraphQLErrorList from "../components/graphql-error-list";
 import InnerContainer from "../components/inner-container";
+import Intro from "../components/intro";
+import Layout from "../containers/layout";
 import localize from "../components/localize";
+import SEO from "../components/seo";
 
 const ShopPage = props => {
-  const { pageContext } = props;
+  const { data, pageContext, location, errors } = props;
   const locale = getLocale(pageContext);
 
+  if (errors) {
+    return (
+      <Layout>
+        <GraphQLErrorList errors={errors} />
+      </Layout>
+    );
+  }
+
   return (
-    <Layout locale={locale} {...props}>
-      <SEO title={locale == "en" ? "Shop" : "Nettbutikk"} />
+    <Layout locale={locale} location={location} info={props}>
+      <SEO title={locale == "en" ? "About" : "Om oss"} />
       <Container>
         <Block>
           <InnerContainer>
             <Intro
-              backButton
-              backTo="/"
-              title={locale == "en" ? "Shop" : "Nettbutikk"}
+              title={locale == "en" ? "Webshop" : "Nettbutikk"}
+              complementaryTitle="Coming"
               text={
                 locale == "en"
                   ? "AS Fiskevegn webshop is coming during the first half of 2020."

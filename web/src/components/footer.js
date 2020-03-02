@@ -5,7 +5,7 @@ import InnerContainer from "./inner-container";
 
 import styles from "./footer.module.css";
 
-function Footer(props) {
+function Footer({ locale }) {
   return (
     <footer className={styles.root}>
       <InnerContainer>
@@ -28,9 +28,9 @@ function Footer(props) {
               </a>
             </p>
             <p>
-              <Link to={props.locale == "en" ? "/no" : "/"} className={styles.linkColor}>
-                {props.locale == "en" && <>Visit our Norwegian website</>}
-                {props.locale == "no" && <>Visit our English website</>}
+              <Link to={locale == "en" ? "/no" : "/"} className={styles.linkColor}>
+                {locale == "en" && <>Visit our Norwegian website</>}
+                {locale == "no" && <>Visit our English website</>}
               </Link>
             </p>
             <Disclaimer />

@@ -26,6 +26,12 @@ export default {
       of: [{ type: "blockFeature" }]
     },
     {
+      name: "history",
+      type: "blockPresentation",
+      title: "Brief history",
+      description: "Content block"
+    },
+    {
       name: "career",
       type: "blockPresentation",
       title: "Career at Fiskevegn",
