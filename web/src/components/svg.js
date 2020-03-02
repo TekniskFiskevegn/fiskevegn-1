@@ -17,11 +17,9 @@ const Svg = ({ icon, wave, blob, name, number, positionTop, adjustToParent }) =>
     return getWave(number, cssClass);
   }
   if (blob) {
-    console.log("blob", blob);
     const { blobIcon, blobTitle, asBackground } = blob;
     const name = blobIcon;
     if (asBackground) {
-      console.log("blob as background");
       const inlineStyle = {
         backgroundImage: `url("/blobs/blob-${number}.svg")`
       };

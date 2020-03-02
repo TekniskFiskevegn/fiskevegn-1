@@ -136,7 +136,7 @@ const ProductTemplate = props => {
     <Layout locale={locale} location={location} info={props} currentPage="/products">
       <Container>
         {errors && <SEO title="GraphQL Error" />}
-        <SEO title={title || "AS Fiskevegn"} />
+        <SEO title={name || "AS Fiskevegn"} />
 
         {errors && <GraphQLErrorList errors={errors} />}
 

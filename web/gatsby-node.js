@@ -8,7 +8,6 @@ let sytalaust = require("./sytalaust");
 
 const extraLanguages = sytalaust.extraLanguages;
 const createLocalePage = (page, createPage) => {
-  console.log("log we are here", page);
   const { context, ...rest } = page;
   createPage({
     ...rest,
@@ -19,7 +18,6 @@ const createLocalePage = (page, createPage) => {
   });
   if (extraLanguages.length) {
     extraLanguages.forEach(code => {
-      console.log("and then we are here");
       const { path, localePath, context, ...rest } = page;
       createPage({
         ...rest,
@@ -244,7 +242,6 @@ async function createProductCategoryPages(graphql, actions, reporter) {
 }
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
-  // console.log("log in createPages", graphql, actions);
   await createNewsPages(graphql, actions, reporter);
   await createProductPages(graphql, actions, reporter);
   await createServicePages(graphql, actions, reporter);

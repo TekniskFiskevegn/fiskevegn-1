@@ -185,13 +185,9 @@ const IndexPage = props => {
 
   const { heroImage, promotedBlocks } = page;
 
-  console.log("log promoted blocks", promotedBlocks);
-
   const newsNodes = (data || {}).news
     ? mapEdgesToNodes(data.news).filter(filterOutDocsPublishedInTheFuture)
     : [];
-
-  console.log("log newsnodes", newsNodes);
 
   return (
     <Layout locale={locale} location={location} info={props} isCustomHeader={true}>

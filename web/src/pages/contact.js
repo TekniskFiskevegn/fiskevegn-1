@@ -83,7 +83,6 @@ const ContactPage = props => {
   }
 
   const { departments } = page;
-  console.log("log props contact", props);
   return (
     <Layout locale={locale} location={location} info={props}>
       <SEO title={locale == "en" ? "Contact" : "Kontakt"} />

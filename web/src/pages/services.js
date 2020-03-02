@@ -33,8 +33,6 @@ const ServicesPage = props => {
 
   const nodesServices = (data || {}).services ? mapEdgesToNodes(data.services) : [];
 
-  console.log("log nodesServices", nodesServices);
-
   return (
     <Layout locale={locale} location={location} info={props}>
       <SEO title={locale == "en" ? "Services" : "Tjenester"} />

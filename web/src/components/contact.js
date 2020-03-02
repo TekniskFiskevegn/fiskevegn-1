@@ -47,7 +47,7 @@ const Contact = ({ intro, adress, phone, email, map, image, reverseFlow }) => {
               )}
               {map && (
                 <li>
-                  <a className={styles.mapLink} href={map}>
+                  <a target="_blank" className={styles.mapLink} href={map}>
                     Find on Google Maps
                   </a>
                 </li>

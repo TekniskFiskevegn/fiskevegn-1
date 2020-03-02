@@ -22,7 +22,6 @@ const Presentation = props => {
   if (attachedFile) {
     // ?dl=<filename-of-your-choice.pdf>
     nameForAttachedFile = attachedFile.asset.url + `?dl=${title}+.pdf`;
-    console.log("log filename", nameForAttachedFile);
   }
 
   return (

@@ -19,16 +19,6 @@ const Layout = ({
   locale,
   info
 }) => {
-  console.log("log in layout", {
-    siteTitle,
-    onHideNav,
-    onShowNav,
-    showNav,
-    isCustomHeader,
-    currentPage,
-    location,
-    locale
-  });
   if (LOG_IS_ACTIVE) log(location.pathname, info);
   return (
     <div>

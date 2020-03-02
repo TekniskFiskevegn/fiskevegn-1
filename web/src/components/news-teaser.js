@@ -7,7 +7,6 @@ import SanityBlockText from "./sanity-block-text";
 import styles from "./news-teaser.module.css";
 
 const NewsTeaser = props => {
-  console.log("props", props);
   return (
     <Link className={styles.root} to={`/news/${props.slug.current}`}>
       <div className={styles.leadMediaThumb}>

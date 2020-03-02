@@ -1,7 +1,6 @@
 import React from "react";
 
 export function getIcon(name) {
-  console.log("getIcon");
   switch (name) {
     case "arrow":
       return (
@@ -42,7 +41,6 @@ export function getIcon(name) {
 }
 
 export function getBlob(number) {
-  console.log("getBlob");
   switch (number) {
     case "1":
       return (
