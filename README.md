@@ -122,6 +122,9 @@ You can create a folder named static at the root of your project. Every file you
 
 ## Useful resources
 
+<!-- linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%) -->
+
+- https://webgradients.com/
 - https://getwaves.io/
 - https://undraw.co/illustrations
 - https://www.blobmaker.app/
