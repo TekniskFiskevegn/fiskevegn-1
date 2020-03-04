@@ -108,10 +108,11 @@ export const query = graphql`
         alt
       }
     }
-    categories: allSanityTemplateProductCategory(limit: 6) {
+    categories: allSanityTemplateProductCategory(limit: 6, sort: { fields: sanityDocumentTitle }) {
       edges {
         node {
           id
+          sanityDocumentTitle
           basicTemplate {
             name {
               _type

@@ -64,10 +64,11 @@ export const query = graphql`
         }
       }
     }
-    products: allSanityTemplateProduct(limit: 100) {
+    products: allSanityTemplateProduct(limit: 100, sort: { fields: sanityDocumentTitle }) {
       edges {
         node {
           id
+          sanityDocumentTitle
           basicTemplate {
             name {
               _type

@@ -108,10 +108,11 @@ export const query = graphql`
         alt
       }
     }
-    services: allSanityTemplateService(limit: 10) {
+    services: allSanityTemplateService(limit: 10, sort: { fields: sanityDocumentTitle }) {
       edges {
         node {
           id
+          sanityDocumentTitle
           basicTemplate {
             name {
               _type
