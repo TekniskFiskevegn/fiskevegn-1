@@ -19,7 +19,7 @@ export default {
       title: "Content"
     },
     {
-      name: "blockPresentation",
+      name: "extraContentBlocks",
       type: "array",
       title: "Add more content blocks",
       of: [{ type: "blockPresentation" }]

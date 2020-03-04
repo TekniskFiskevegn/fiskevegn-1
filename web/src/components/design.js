@@ -18,15 +18,16 @@ const Design = ({
 }) => {
   if (backgroundImage) {
     let img;
-    if (isStatic) {
-      img = backgroundImage;
-    } else {
+    if (backgroundImage.asset) {
       img = imageUrlFor(buildImageObj(backgroundImage))
         .width(1800)
         .height(Math.floor((9 / 16) * 1800))
         .fit("crop")
         .url();
+    } else {
+      img = backgroundImage;
     }
+
     const inlineStyle = {
       backgroundImage: `url(${img})`
     };

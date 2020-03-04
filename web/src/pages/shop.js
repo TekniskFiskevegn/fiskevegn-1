@@ -42,9 +42,9 @@ const ShopPage = props => {
           </InnerContainer>
         </Block>
         <Block>
-          <Design backgroundImage="/images/shop.jpg" isStatic opacity="015" flex>
-            <InnerContainer></InnerContainer>
-          </Design>
+          <InnerContainer>
+            <img src="/images/grundens.jpg" alt="" />
+          </InnerContainer>
         </Block>
       </Container>
     </Layout>

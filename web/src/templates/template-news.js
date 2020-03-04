@@ -41,11 +41,6 @@ export const query = graphql`
         en
         no
       }
-      text {
-        _type
-        en
-        no
-      }
       slug {
         _type
         en {

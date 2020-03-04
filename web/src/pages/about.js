@@ -50,7 +50,7 @@ const AboutPage = props => {
         </Block>
 
         <Block>
-          <Design backgroundImage={heroImage} opacity="075" flex>
+          <Design backgroundImage={heroImage} opacity="065" flex>
             <InnerContainer>
               {features && features.length > 0 && (
                 <ul className={cn(listStyles.default)}>

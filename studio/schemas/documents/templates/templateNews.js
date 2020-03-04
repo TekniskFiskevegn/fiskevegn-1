@@ -25,12 +25,6 @@ export default {
       title: "URL"
     },
     {
-      name: "text",
-      type: "localeText",
-      title: "Text",
-      description: "Optional. But the article will look better if you add some text to this."
-    },
-    {
       name: "publishedAt",
       title: "Published at",
       description: "You can use this field to schedule projects where you show them",
