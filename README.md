@@ -1,5 +1,9 @@
 # fiskevegn
 
+## running backup
+
+curl https://myProjectID.api.sanity.io/v1/data/export/myProjectDataset/ > backup.ndjson
+
 ## Todo
 
 @ Sytalaust
