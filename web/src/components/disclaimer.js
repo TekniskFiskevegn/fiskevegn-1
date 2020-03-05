@@ -7,9 +7,9 @@ const Disclaimer = props => {
     <div className={styles.root}>
       <p>
         Copyright 2020 AS Fiskevegn.{" "}
-        <a href="http://www.webeyond.no" target="_blank">
+        {/* <a href="http://www.webeyond.no" target="_blank">
           Website by WeBeyond.
-        </a>
+        </a> */}
       </p>
       <p hidden>
         Built with <a href="https://www.sanity.io">Sanity</a> &amp;
