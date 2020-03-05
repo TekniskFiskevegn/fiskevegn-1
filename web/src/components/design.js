@@ -36,6 +36,7 @@ const Design = ({
         className={cn(
           styles.root,
           styles.backgroundImage,
+          opacity == "010" ? styles.opacity010 : "",
           opacity == "015" ? styles.opacity015 : "",
           opacity == "025" ? styles.opacity025 : "",
           opacity == "050" ? styles.opacity050 : "",

@@ -49,7 +49,7 @@ const ProductsPage = props => {
           </InnerContainer>
         </Block>
         <Block>
-          <Design backgroundImage={page.heroImage} opacity="015">
+          <Design backgroundImage={page.heroImage} opacity="010">
             <InnerContainer>
               <Navigation
                 nodes={nodes}

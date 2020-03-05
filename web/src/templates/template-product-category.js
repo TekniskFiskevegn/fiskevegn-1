@@ -125,7 +125,7 @@ const ProductCategoryTemplate = props => {
 
         <Block>
           <InnerContainer>
-            <GoBack href="/products" />
+            <GoBack href={locale == "en" ? "/products" : "no/produkter"} />
             <Intro complementaryTitle={complementaryTitle} title={title} text={text} />
           </InnerContainer>
         </Block>

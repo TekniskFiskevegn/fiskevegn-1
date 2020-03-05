@@ -49,7 +49,7 @@ const ServicesPage = props => {
           </InnerContainer>
         </Block>
         <Block>
-          <Design backgroundImage={page.heroImage} opacity="025">
+          <Design backgroundImage={page.heroImage} opacity="010">
             <InnerContainer>
               <Navigation
                 nodes={nodesServices}

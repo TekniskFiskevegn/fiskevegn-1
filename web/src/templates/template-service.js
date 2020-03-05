@@ -124,7 +124,7 @@ const ServiceTemplate = props => {
 
         <Block>
           <InnerContainer>
-            <GoBack href={locale == "en" ? "/services" : "/tjenester"} />
+            <GoBack href={locale == "en" ? "/services" : "no/tjenester"} />
             <Intro complementaryTitle={complementaryTitle} title={title} text={text} />
           </InnerContainer>
         </Block>

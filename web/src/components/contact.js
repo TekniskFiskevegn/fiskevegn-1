@@ -10,6 +10,8 @@ import styles from "./contact.module.css";
 const Contact = ({ intro, address, phone, email, map, image, reverseFlow, locale }) => {
   const { title, complementaryTitle, text } = intro;
 
+  console.log("log address", address);
+
   return (
     <div className={styles.root}>
       <Intro title={title} complementaryTitle={complementaryTitle} text={text} marginBottom />
