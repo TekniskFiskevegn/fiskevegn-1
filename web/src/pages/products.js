@@ -49,7 +49,7 @@ const ProductsPage = props => {
           </InnerContainer>
         </Block>
         <Block>
-          <Design backgroundImage={page.heroImage} opacity="015">
+          <Design backgroundImage={page.heroImage} opacity="010">
             <InnerContainer>
               <Navigation
                 nodes={nodes}
@@ -108,10 +108,11 @@ export const query = graphql`
         alt
       }
     }
-    categories: allSanityTemplateProductCategory(limit: 6) {
+    categories: allSanityTemplateProductCategory(limit: 6, sort: { fields: sanityDocumentTitle }) {
       edges {
         node {
           id
+          sanityDocumentTitle
           basicTemplate {
             name {
               _type

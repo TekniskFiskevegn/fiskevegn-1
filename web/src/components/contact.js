@@ -7,8 +7,10 @@ import Intro from "./intro";
 
 import styles from "./contact.module.css";
 
-const Contact = ({ intro, address, phone, email, map, image, reverseFlow }) => {
+const Contact = ({ intro, address, phone, email, map, image, reverseFlow, locale }) => {
   const { title, complementaryTitle, text } = intro;
+
+  console.log("log address", address);
 
   return (
     <div className={styles.root}>
@@ -28,7 +30,9 @@ const Contact = ({ intro, address, phone, email, map, image, reverseFlow }) => {
         </div>
         <div className={cn(styles.content)}>
           <div>
-            <h3 className={styles.contentTitle}>Info</h3>
+            <h3 className={styles.contentTitle}>
+              {locale == "en" ? "Contact information" : "Kontaktinformasjon"}
+            </h3>
             {address && <p>{address}</p>}
             <ul className={styles.list}>
               {phone && (

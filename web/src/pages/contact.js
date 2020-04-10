@@ -88,13 +88,25 @@ const ContactPage = props => {
       <SEO title={locale == "en" ? "Contact" : "Kontakt"} />
       {departments && departments.length > 0 && (
         <Container>
-          {departments.map((department, i) => (
-            <Block key={i}>
-              <InnerContainer>
-                <Contact {...department} />
-              </InnerContainer>
-            </Block>
-          ))}
+          {departments.map((department, i) => {
+            if (Math.abs(i % 2) != 1) {
+              return (
+                <Block key={i}>
+                  <InnerContainer>
+                    <Contact {...department} locale={locale} reverseFlow />
+                  </InnerContainer>
+                </Block>
+              );
+            } else {
+              return (
+                <Block key={i}>
+                  <InnerContainer>
+                    <Contact {...department} locale={locale} />
+                  </InnerContainer>
+                </Block>
+              );
+            }
+          })}
         </Container>
       )}
     </Layout>

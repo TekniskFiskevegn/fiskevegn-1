@@ -2,6 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import { StaticQuery, graphql } from "gatsby";
+// import favicon from "../../static/images/favicon-16x16.png";
+import favicon from "../../static/images/favicon.ico";
 
 function SEO({ description, lang, meta, keywords, title }) {
   return (
@@ -16,6 +18,7 @@ function SEO({ description, lang, meta, keywords, title }) {
             htmlAttributes={{ lang }}
             title={title}
             titleTemplate={title === siteTitle ? "%s" : `%s - ${siteTitle}`}
+            link={[{ rel: "icon", type: "image/png", sizes: "16x16", href: `${favicon}` }]}
             meta={[
               {
                 name: "description",

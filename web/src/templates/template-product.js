@@ -130,7 +130,8 @@ const ProductTemplate = props => {
   const { belongsToCategory, basicTemplate, extraContentBlocks } = product;
   const { name, title, complementaryTitle, text, heroImage } = basicTemplate;
 
-  let goBackTo = "/products/" + belongsToCategory[0].basicTemplate.name;
+  let goBackTo =
+    `${locale == "en" ? "/products/" : "no/produkter/"}` + belongsToCategory[0].basicTemplate.name;
   goBackTo = goBackTo.replace(/\s+/g, "-").toLowerCase();
 
   return (

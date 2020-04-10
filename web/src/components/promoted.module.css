@@ -18,6 +18,7 @@
     flex-flow:row-reverse;
   }
   @nest & .content {
+    background-image:linear-gradient(120deg, #ebedee 0%, #fdfbfb 100%);
     @media (--large-and-up) {
       left:0;
     }
@@ -60,6 +61,7 @@
   display:flex;
   flex:1;
   align-items: center;
+  background-image:linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
 
   @media (--medium-and-up) {
     padding:2em;

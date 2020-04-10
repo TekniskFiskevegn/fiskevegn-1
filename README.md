@@ -1,5 +1,9 @@
 # fiskevegn
 
+## running backup
+
+curl https://myProjectID.api.sanity.io/v1/data/export/myProjectDataset/ > backup.ndjson
+
 ## Todo
 
 @ Sytalaust
@@ -122,6 +126,9 @@ You can create a folder named static at the root of your project. Every file you
 
 ## Useful resources
 
+<!-- linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%) -->
+
+- https://webgradients.com/
 - https://getwaves.io/
 - https://undraw.co/illustrations
 - https://www.blobmaker.app/

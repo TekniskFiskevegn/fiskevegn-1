@@ -32,7 +32,7 @@ const ShopPage = props => {
           <InnerContainer>
             <Intro
               title={locale == "en" ? "Webshop" : "Nettbutikk"}
-              complementaryTitle="Coming"
+              complementaryTitle={locale == "en" ? "Coming" : "Kommer"}
               text={
                 locale == "en"
                   ? "AS Fiskevegn webshop is coming during the first half of 2020."

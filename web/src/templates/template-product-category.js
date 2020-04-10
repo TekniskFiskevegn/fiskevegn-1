@@ -64,10 +64,11 @@ export const query = graphql`
         }
       }
     }
-    products: allSanityTemplateProduct(limit: 100) {
+    products: allSanityTemplateProduct(limit: 100, sort: { fields: sanityDocumentTitle }) {
       edges {
         node {
           id
+          sanityDocumentTitle
           basicTemplate {
             name {
               _type
@@ -124,7 +125,7 @@ const ProductCategoryTemplate = props => {
 
         <Block>
           <InnerContainer>
-            <GoBack href="/products" />
+            <GoBack href={locale == "en" ? "/products" : "no/produkter"} />
             <Intro complementaryTitle={complementaryTitle} title={title} text={text} />
           </InnerContainer>
         </Block>
