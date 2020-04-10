@@ -1,148 +1,133 @@
 // Default language for the site
-const DEFAULT_LOCALE = "en";
+const DEFAULT_LOCALE = 'en'
 
 // For logging props in every page, default is false
-const LOG_IS_ACTIVE = true;
+const LOG_IS_ACTIVE = true
 
 // Site name
-const SITE_NAME = "";
+const SITE_NAME = ''
 
 // Other languages for the site
-const extraLanguages = ["no"];
+const extraLanguages = ['no']
 
 // Function used throughout the solution to generate correct locale
-function getLocale(pageContext) {
+function getLocale (pageContext) {
   if (pageContext.locale) {
-    return pageContext.locale;
+    return pageContext.locale
   }
-  return DEFAULT_LOCALE;
+  return DEFAULT_LOCALE
 }
 
 // Sytalaust Gatsby page mapping
-function getPageStructure() {
+function getPageStructure () {
   return [
     {
-      name: "shop",
-      localeName: "shop",
+      name: 'about',
+      localeName: 'om-oss',
       nav: {
         showInMenu: true,
         en: {
-          displayName: "Shop",
-          url: "/shop"
+          displayName: 'About',
+          url: '/about'
         },
         no: {
-          displayName: "Shop",
-          url: "/no/shop"
+          displayName: 'Om oss',
+          url: '/no/om-oss'
         }
       }
     },
     {
-      name: "about",
-      localeName: "om-oss",
+      name: 'products',
+      localeName: 'produkter',
       nav: {
         showInMenu: true,
         en: {
-          displayName: "About",
-          url: "/about"
+          displayName: 'Products',
+          url: '/products'
         },
         no: {
-          displayName: "Om oss",
-          url: "/no/om-oss"
+          displayName: 'Produkter',
+          url: '/no/produkter'
         }
       }
     },
     {
-      name: "products",
-      localeName: "produkter",
+      name: 'services',
+      localeName: 'tjenester',
       nav: {
         showInMenu: true,
         en: {
-          displayName: "Products",
-          url: "/products"
+          displayName: 'Services',
+          url: '/services'
         },
         no: {
-          displayName: "Produkter",
-          url: "/no/produkter"
+          displayName: 'Tjenester',
+          url: '/no/tjenester'
         }
       }
     },
     {
-      name: "services",
-      localeName: "tjenester",
+      name: 'contact',
+      localeName: 'kontakt',
       nav: {
         showInMenu: true,
         en: {
-          displayName: "Services",
-          url: "/services"
+          displayName: 'Contact',
+          url: '/contact'
         },
         no: {
-          displayName: "Tjenester",
-          url: "/no/tjenester"
+          displayName: 'Kontakt',
+          url: '/no/kontakt'
         }
       }
     },
     {
-      name: "contact",
-      localeName: "kontakt",
-      nav: {
-        showInMenu: true,
-        en: {
-          displayName: "Contact",
-          url: "/contact"
-        },
-        no: {
-          displayName: "Kontakt",
-          url: "/no/kontakt"
-        }
-      }
-    },
-    {
-      name: "archive",
-      localeName: "arkiv",
+      name: 'archive',
+      localeName: 'arkiv',
       nav: {
         showInMenu: false,
         en: {
-          displayName: "Archive",
-          url: "/archive"
+          displayName: 'Archive',
+          url: '/archive'
         },
         no: {
-          displayName: "Arkiv",
-          url: "/no/arkiv"
+          displayName: 'Arkiv',
+          url: '/no/arkiv'
         }
       }
     },
     {
-      name: "404",
-      localeName: "404",
+      name: '404',
+      localeName: '404',
       nav: {
         showInMenu: false,
         en: {
-          displayName: "404",
-          url: "/404"
+          displayName: '404',
+          url: '/404'
         },
         no: {
-          displayName: "404",
-          url: "/no/404"
+          displayName: '404',
+          url: '/no/404'
         }
       }
     }
-  ];
+  ]
 }
 
 // Function used to generate correct name and path for pages in other languages
-function getlocalePageName(gatsbyPage) {
-  const pageStructure = getPageStructure();
-  let localePageName;
+function getlocalePageName (gatsbyPage) {
+  const pageStructure = getPageStructure()
+  let localePageName
   pageStructure.map(page => {
     if (gatsbyPage.path.includes(page.name)) {
-      localePageName = page.localeName;
+      localePageName = page.localeName
     }
-  });
-  return localePageName;
+  })
+  return localePageName
 }
 
-module.exports.LOG_IS_ACTIVE = LOG_IS_ACTIVE;
-module.exports.getPageStructure = getPageStructure;
-module.exports.getLocale = getLocale;
-module.exports.extraLanguages = extraLanguages;
-module.exports.getlocalePageName = getlocalePageName;
+module.exports.LOG_IS_ACTIVE = LOG_IS_ACTIVE
+module.exports.getPageStructure = getPageStructure
+module.exports.getLocale = getLocale
+module.exports.extraLanguages = extraLanguages
+module.exports.getlocalePageName = getlocalePageName

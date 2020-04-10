@@ -1,35 +1,35 @@
-import React from "react";
-import { graphql, Link } from "gatsby";
+import React from 'react'
+import {graphql, Link} from 'gatsby'
 import {
   mapEdgesToNodes,
   filterOutDocsWithoutSlugs,
   filterOutDocsPublishedInTheFuture
-} from "../lib/helpers";
-import { getLocale } from "../../sytalaust";
+} from '../lib/helpers'
+import {getLocale} from '../../sytalaust'
 
-import Block from "../components/block";
-import Container from "../components/container";
-import Design from "../components/design";
-import GraphQLErrorList from "../components/graphql-error-list";
-import Hero from "../components/hero";
-import InnerContainer from "../components/inner-container";
-import Intro from "../components/intro";
-import Layout from "../containers/layout";
-import List from "../components/list";
-import localize from "../components/localize";
-import Promoted from "../components/promoted";
-import SEO from "../components/seo";
+import Block from '../components/block'
+import Container from '../components/container'
+import Design from '../components/design'
+import GraphQLErrorList from '../components/graphql-error-list'
+import Hero from '../components/hero'
+import InnerContainer from '../components/inner-container'
+import Intro from '../components/intro'
+import Layout from '../containers/layout'
+import List from '../components/list'
+import localize from '../components/localize'
+import Promoted from '../components/promoted'
+import SEO from '../components/seo'
 
-import utils from "../components/utils.module.css";
+import utils from '../components/utils.module.css'
 
 export const query = graphql`
   query IndexPageQuery {
-    site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
+    site: sanitySiteSettings(_id: {regex: "/(drafts.|)siteSettings/"}) {
       title
       description
       keywords
     }
-    page: sanityPageHome(_id: { regex: "/(drafts.|)pageHome/" }) {
+    page: sanityPageHome(_id: {regex: "/(drafts.|)pageHome/"}) {
       _id
       heroImage {
         crop {
@@ -111,7 +111,7 @@ export const query = graphql`
         }
       }
     }
-    news: allSanityTemplateNews(sort: { fields: [publishedAt], order: ASC }) {
+    news: allSanityTemplateNews(sort: {fields: [publishedAt], order: ASC}) {
       edges {
         node {
           id
@@ -156,41 +156,41 @@ export const query = graphql`
       }
     }
   }
-`;
+`
 
 const IndexPage = props => {
-  const { data, pageContext, location, errors } = props;
-  const locale = getLocale(pageContext);
+  const {data, pageContext, location, errors} = props
+  const locale = getLocale(pageContext)
 
   if (errors) {
     return (
       <Layout>
         <GraphQLErrorList errors={errors} />
       </Layout>
-    );
+    )
   }
 
-  const site = (data || {}).site;
-  const page = (data || {}).page;
+  const site = (data || {}).site
+  const page = (data || {}).page
 
   if (!site) {
     throw new Error(
       'Missing "Site settings". Open the studio and add some content to site settings.'
-    );
+    )
   }
 
   if (!page) {
-    throw new Error('Missing "Frontpage". Open the studio and add some content to the homepage.');
+    throw new Error('Missing "Frontpage". Open the studio and add some content to the homepage.')
   }
 
-  const { heroImage, promotedBlocks } = page;
+  const {heroImage, promotedBlocks} = page
 
   const newsNodes = (data || {}).news
     ? mapEdgesToNodes(data.news).filter(filterOutDocsPublishedInTheFuture)
-    : [];
+    : []
 
   return (
-    <Layout locale={locale} location={location} info={props} isCustomHeader={true}>
+    <Layout locale={locale} location={location} info={props}>
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
       {heroImage && <Hero image={heroImage} />}
       <Container>
@@ -203,14 +203,14 @@ const IndexPage = props => {
                   <Promoted {...block} reverseFlow />
                 </InnerContainer>
               </Block>
-            );
+            )
           } else {
             return (
-              <Block key={i} verticalRhythm={{ bottom: 0 }}>
+              <Block key={i} verticalRhythm={{bottom: 0}}>
                 <Design
                   svg={{
                     wave: true,
-                    number: "1"
+                    number: '1'
                   }}
                 >
                   <InnerContainer>
@@ -218,18 +218,18 @@ const IndexPage = props => {
                   </InnerContainer>
                 </Design>
               </Block>
-            );
+            )
           }
         })}
 
         {newsNodes && (
           <Block>
             <InnerContainer>
-              <Intro title={locale == "en" ? "Latest News" : "Siste nytt"} textAlignLeft />
-              <List style="oneHalfWithGapAndGridFix" listItem="NewsTeaser" nodes={newsNodes} />
+              <Intro title={locale == 'en' ? 'Latest News' : 'Siste nytt'} textAlignLeft />
+              <List style='oneHalfWithGapAndGridFix' listItem='NewsTeaser' nodes={newsNodes} />
               <div>
-                <Link to="/archive" className={utils.defaultLink}>
-                  {locale == "en" ? "More news" : "Flere nyheter"}
+                <Link to='/archive' className={utils.defaultLink}>
+                  {locale == 'en' ? 'More news' : 'Flere nyheter'}
                 </Link>
               </div>
             </InnerContainer>
@@ -237,7 +237,7 @@ const IndexPage = props => {
         )}
       </Container>
     </Layout>
-  );
-};
+  )
+}
 
-export default localize(IndexPage);
+export default localize(IndexPage)
