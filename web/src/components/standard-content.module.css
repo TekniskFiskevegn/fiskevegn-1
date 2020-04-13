@@ -5,10 +5,35 @@
   display:flex;
   flex-flow:column;
   background: #edeff3;
+  position: relative;
+  padding:2em 2em;
 
-  @nest &:before {
-    
+  @media(--medium-and-up) {
+    padding:5em 3em;
   }
+
+  @media(--extra-large-and-up) {
+      padding:5em 0;
+      @nest &:after {
+        content:'';
+        position: absolute;
+        top:0;
+        width:100px;
+        right:-100px;
+        bottom:0;
+        background:#edeff3;
+      }
+      @nest &:before {
+        content:'';
+        position: absolute;
+        top:0;
+        width:100px;
+        left:-100px;
+        bottom:0;
+        background:#edeff3;
+      }
+  }
+
 }
 
 .withBorders {

@@ -1,28 +1,28 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Link } from "gatsby";
-import { buildImageObj, cn } from "../lib/helpers";
-import { imageUrlFor } from "../lib/image-url";
-import Intro from "./intro";
+import React from 'react'
+import PropTypes from 'prop-types'
+import {Link} from 'gatsby'
+import {buildImageObj, cn} from '../lib/helpers'
+import {imageUrlFor} from '../lib/image-url'
+import Intro from './intro'
 
-import styles from "./contact.module.css";
+import styles from './contact.module.css'
 
-const Contact = ({ intro, address, phone, email, map, image, reverseFlow, locale }) => {
-  const { title, complementaryTitle, text } = intro;
+const Contact = ({intro, address, phone, email, map, image, reverseFlow, locale}) => {
+  const {title, complementaryTitle, text} = intro
 
-  console.log("log address", address);
+  console.log('log address', address)
 
   return (
     <div className={styles.root}>
       <Intro title={title} complementaryTitle={complementaryTitle} text={text} marginBottom />
-      <div className={cn(styles.wrapper, reverseFlow ? styles.reverseFlow : "")}>
+      <div className={cn(styles.wrapper, reverseFlow ? styles.reverseFlow : '')}>
         <div className={styles.visuals}>
           {image && (
             <img
               src={imageUrlFor(buildImageObj(image))
                 .width(800)
                 .height(Math.floor((9 / 16) * 1000))
-                .fit("crop")
+                .fit('crop')
                 .url()}
               alt={image.alt}
             />
@@ -31,28 +31,28 @@ const Contact = ({ intro, address, phone, email, map, image, reverseFlow, locale
         <div className={cn(styles.content)}>
           <div>
             <h3 className={styles.contentTitle}>
-              {locale == "en" ? "Contact information" : "Kontaktinformasjon"}
+              {locale == 'en' ? 'Contact information' : 'Kontaktinformasjon'}
             </h3>
             {address && <p>{address}</p>}
             <ul className={styles.list}>
               {phone && (
                 <li>
-                  <a className={styles.link} href={"tel:" + phone}>
+                  <a className={styles.link} href={'tel:' + phone}>
                     {phone}
                   </a>
                 </li>
               )}
               {email && (
                 <li>
-                  <a className={styles.link} href={"mailto:" + email}>
+                  <a className={styles.link} href={'mailto:' + email}>
                     {email}
                   </a>
                 </li>
               )}
               {map && (
                 <li>
-                  <a target="_blank" className={styles.mapLink} href={map}>
-                    Find on Google Maps
+                  <a target='_blank' className={styles.mapLink} href={map}>
+                    Find us on google maps
                   </a>
                 </li>
               )}
@@ -61,8 +61,8 @@ const Contact = ({ intro, address, phone, email, map, image, reverseFlow, locale
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
 Contact.propTypes = {
   title: PropTypes.string,
@@ -71,6 +71,6 @@ Contact.propTypes = {
   browseMoreHref: PropTypes.string,
   browseMoreText: PropTypes.string,
   reverseFlow: PropTypes.bool
-};
+}
 
-export default Contact;
+export default Contact

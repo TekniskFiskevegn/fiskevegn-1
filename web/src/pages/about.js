@@ -83,7 +83,7 @@ const AboutPage = props => {
         {partners && (
           <Block>
             <InnerContainer>
-              <StandardContent {...partners} withBorders />
+              <StandardContent {...partners} />
             </InnerContainer>
           </Block>
         )}

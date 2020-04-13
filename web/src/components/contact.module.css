@@ -18,7 +18,7 @@
     flex-flow:row-reverse;
   }
   @nest & .content {
-    /* background-image:linear-gradient(120deg, #ebedee 0%, #fdfbfb 100%); */
+    background-image:linear-gradient(120deg, #ebedee 0%, #fdfbfb 100%);
     @media (--large-and-up) {
       left:0;
     }
@@ -49,7 +49,7 @@
 .content {
   composes: boxShadow4 from "./utils.module.css";
   background-color:var(--color-light-gray);
-  /* background-image:linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%); */
+  background-image:linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
   position:relative;
   padding:1.5em 1.5em;
   margin:-2em 1em 0 1em;
