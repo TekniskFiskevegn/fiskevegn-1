@@ -27,15 +27,11 @@
 }
 
 .title {
+  composes: h4 from "./utils.module.css";
   color:var(--color-brand-complementary);
-  margin:0;
-  font-size:20px;
-  @media(--medium-and-up) {
-    font-size:21px;
-  }
+  /* margin:0; */
 }
 
 .teaser {
-  font-size:15px;
-  color:#444;
+  color:#333;
 }

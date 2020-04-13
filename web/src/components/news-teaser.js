@@ -1,36 +1,36 @@
-import React from "react";
-import { Link } from "gatsby";
-import { cn, buildImageObj } from "../lib/helpers";
-import { imageUrlFor } from "../lib/image-url";
-import SanityBlockText from "./sanity-block-text";
+import React from 'react'
+import {Link} from 'gatsby'
+import {cn, buildImageObj} from '../lib/helpers'
+import {imageUrlFor} from '../lib/image-url'
+import SanityBlockText from './sanity-block-text'
 
-import styles from "./news-teaser.module.css";
+import styles from './news-teaser.module.css'
+import utils from './utils.module.css'
 
 const NewsTeaser = props => {
   return (
     <Link className={styles.root} to={`/news/${props.slug.current}`}>
-      <div className={styles.leadMediaThumb}>
+      <div className={utils.relative}>
         {props.image && props.image.asset && (
           <img
+            className={styles.image}
             src={imageUrlFor(buildImageObj(props.image))
-              .width(1200)
-              .height(Math.floor((9 / 16) * 1200))
-              .fit("crop")
+              .width(800)
+              .height(800)
+              .fit('crop')
               .url()}
             alt={props.image.alt}
           />
         )}
-      </div>
-      <div className={styles.textContent}>
-        <h3 className={styles.title}>{props.title}</h3>
-        {props._rawExcerpt && (
-          <div className={styles.excerpt}>
-            <SanityBlockText blocks={props._rawExcerpt} />
-          </div>
-        )}
+
+        <h3
+          className={cn(styles.featureText, utils.absolute, utils.textRight, utils.wFull, utils.h2)}
+        >
+          {props.title}
+        </h3>
       </div>
     </Link>
-  );
-};
+  )
+}
 
-export default NewsTeaser;
+export default NewsTeaser

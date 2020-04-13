@@ -9,7 +9,7 @@
 }
 
 .complementaryTitle {
-  composes: tinyTitle from "./typography.module.css";
+  composes: tinyTitle from "./utils.module.css";
   margin-bottom:1.5em;
 }
 
@@ -19,12 +19,11 @@
 }
 
 .title {
-  composes: responsiveTitle1 from './typography.module.css';
+  composes: h1 from './utils.module.css';
 }
 
 .text {
   margin:0;
-  font-size:17px;
 }
 
 .marginBottom {

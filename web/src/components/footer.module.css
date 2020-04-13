@@ -32,7 +32,7 @@
 }
 
 .title {
-  composes: responsiveTitle2 from './typography.module.css';
+  composes: h3 from './utils.module.css';
 }
 
 .siteInfo {

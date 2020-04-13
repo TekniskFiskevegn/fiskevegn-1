@@ -12,9 +12,26 @@
   letter-spacing: 1px;
   display: inline-block;
   text-align: center;
-  padding: 22px 42px;
+  padding: 20px 42px;
   text-decoration: none;
   border-radius: 3rem;
+  transition: background-color 0.25s ease 0s, color 0.25s ease 0s;
+}
+
+.btnOutlined {
+  background:transparent;
+  color:var(--color-brand);
+  font-size: 13px;
+  line-height: 1;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block;
+  text-align: center;
+  padding: 20px 42px;
+  text-decoration: none;
+  border-radius: 3rem;
+  border:3px solid var(--color-brand);
   transition: background-color 0.25s ease 0s, color 0.25s ease 0s;
 }
 
@@ -92,11 +109,11 @@
   line-height: var(--font-large-line-height);
 }
 
-.positionRelative {
+.relative {
   position: relative;
 }
 
-.positionAbsolute {
+.absolute {
   position: absolute;
   left:0;
   right:0;
@@ -167,4 +184,102 @@
   @media (--medium-and-up) {
     margin-bottom: 2.5em;
   }
+}
+
+
+.h1 {
+  margin: 0rem 0 0.8rem;
+  font-size:35px;
+  line-height: 45px;
+
+  @media (--medium-and-up) {
+    margin: 0rem 0 1.5rem;
+    font-size:45px;
+    line-height:55px;
+  }
+  @media (--large-and-up) {
+    font-size:52px;
+    line-height:62px;
+  }
+}
+
+.h2 {
+	margin: 0rem 0 0.8rem;
+  font-size:30px;
+  line-height: 40px;
+	@media (--medium-and-up) {
+    margin: 0rem 0 1.5rem;
+    font-size:42px;
+    line-height:52px;
+  }
+}
+
+.h3 {
+	margin: 0rem 0 0.8rem;
+  font-size:24px;
+  line-height: 34px;
+	@media (--medium-and-up) {
+		margin: 0rem 0 1.2rem;
+    font-size:28px;
+    line-height:38px;
+	}
+}
+
+.h4 {
+	margin: 0rem 0 0.4rem;
+  font-size:20px;
+  line-height: 30px;
+	@media (--medium-and-up) {
+    font-size:24px;
+    line-height:34px;
+	}
+}
+
+.superTitle {
+  composes: h1;
+  @media (--large-and-up) {
+    font-size:60px;
+    line-height:70px;
+  }
+}
+
+.noMarginText {
+  margin:0;
+}
+
+.tinyTitle {
+  font-size:15px;
+  display: block;
+  line-height:1;
+  letter-spacing: 1px;
+  margin-bottom: 1em;
+  text-transform: uppercase;
+  @media(--medium-and-up) {
+    font-size:18px;
+  }
+}
+
+.largeFontSize {
+  font-size:23px;
+  line-height: 1.9;
+}
+
+.mediumFontSize {
+  font-size:20px;
+  line-height: 1.8;
+}
+
+.defaultFontSize {
+  font-size:18px;
+  line-height: 1.8;
+}
+
+.smallFontSize {
+  font-size:14px;
+  line-height: 1.2;
+}
+
+.microFontSize {
+  font-size:12px;
+  line-height: 1.2;
 }

@@ -86,7 +86,6 @@
 }
 
 .contentTitle {
-  composes: responsiveTitle2 from './typography.module.css';
 }
 
 .link {

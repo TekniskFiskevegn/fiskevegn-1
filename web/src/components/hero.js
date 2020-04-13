@@ -22,7 +22,6 @@ const Hero = ({image = null}) => {
       />
       <div className={styles.caption}>
         <h2 className={styles.captionTitle}>World leading longline manufacturer.</h2>
-        <p>And a leading provider of general supplies for modern fishery.</p>
       </div>
     </div>
   )

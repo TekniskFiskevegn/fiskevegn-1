@@ -48,6 +48,6 @@
 }
 
 .captionTitle {
-  composes: responsiveTitle1 from './typography.module.css';
+  composes: superTitle from './utils.module.css';
   color:#fff;
 }

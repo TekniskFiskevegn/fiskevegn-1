@@ -3,9 +3,7 @@
 
 .root {}
 
-.title {
-  composes: responsiveTitle1 from './typography.module.css';
-}
+.title {}
 
 .image {
   position: relative;
