@@ -2,6 +2,10 @@
 @import '../styles/custom-media.css';
 
 
+.btnSpace {
+  margin:1rem 0;
+}
+
 .btn {
   color:#fff;
   background:var(--color-brand);
@@ -18,9 +22,10 @@
   transition: background-color 0.25s ease 0s, color 0.25s ease 0s;
 }
 
+
 .btnOutlined {
   background:transparent;
-  color:var(--color-brand);
+  color:var(--color-brand-complementary);
   font-size: 13px;
   line-height: 1;
   font-weight: 700;
@@ -31,8 +36,12 @@
   padding: 20px 42px;
   text-decoration: none;
   border-radius: 3rem;
-  border:3px solid var(--color-brand);
+  border:3px solid var(--color-brand-complementary);
   transition: background-color 0.25s ease 0s, color 0.25s ease 0s;
+  @nest &:hover {
+    background-color:var(--color-brand-complementary);
+    color:#fff;
+  }
 }
 
 .ctaLink {
@@ -198,8 +207,8 @@
     line-height:55px;
   }
   @media (--large-and-up) {
-    font-size:52px;
-    line-height:62px;
+    font-size:46px;
+    line-height:56px;
   }
 }
 

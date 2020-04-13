@@ -12,10 +12,12 @@
   min-height: 160px;
 
   @nest &:hover {
-    background-color:var(--color-almost-white);
-    @nest & .title {
+    /* background-color:var(--color-almost-white); */
+    background-color:#edeff3;
+    background-color:rgba(237,239,243,0.98);
+    /* @nest & .title {
       color:var(--color-brand-complementary-hover);
-    }
+    } */
     /* @nest & .teaser {
       color: var(--color-black);
     } */
@@ -33,5 +35,5 @@
 }
 
 .teaser {
-  color:#333;
+  color:#555;
 }

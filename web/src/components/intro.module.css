@@ -11,6 +11,9 @@
 .complementaryTitle {
   composes: tinyTitle from "./utils.module.css";
   margin-bottom:1.5em;
+  color:#999;
+  font-size:16px;
+  letter-spacing: 2px;
 }
 
 .publishedAt {

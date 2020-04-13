@@ -12,11 +12,15 @@
     min-width: 64px;
     border-radius: 50%;
     background-color: var(--color-light-theme);
+    /* background-color:#edeff3; */
+    /* border:3px solid #edeff3;
+    border-radius:3rem; */
     padding: .5rem;
     left:2em;
     top:-24px;
     margin-bottom:0;
     position:absolute;
+    
   }
 }
 

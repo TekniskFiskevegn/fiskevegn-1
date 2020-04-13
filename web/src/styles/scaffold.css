@@ -34,8 +34,8 @@ h1 {
     line-height:55px;
   }
   @media (--large-and-up) {
-    font-size:52px;
-    line-height:62px;
+    font-size:46px;
+    line-height:56px;
   }
 }
 

@@ -1,23 +1,23 @@
-import React from "react";
-import { graphql } from "gatsby";
-import { mapEdgesToNodes } from "../lib/helpers";
-import { getLocale } from "../../sytalaust";
+import React from 'react'
+import {graphql} from 'gatsby'
+import {mapEdgesToNodes} from '../lib/helpers'
+import {getLocale} from '../../sytalaust'
 
-import Block from "../components/block";
-import Container from "../components/container";
-import Design from "../components/design";
-import GraphQLErrorList from "../components/graphql-error-list";
-import GoBack from "../components/go-back";
-import Intro from "../components/intro";
-import InnerContainer from "../components/inner-container";
-import Layout from "../containers/layout";
-import localize from "../components/localize";
-import Navigation from "../components/navigation";
-import SEO from "../components/seo";
+import Block from '../components/block'
+import Container from '../components/container'
+import Design from '../components/design'
+import GraphQLErrorList from '../components/graphql-error-list'
+import GoBack from '../components/go-back'
+import Intro from '../components/intro'
+import InnerContainer from '../components/inner-container'
+import Layout from '../containers/layout'
+import localize from '../components/localize'
+import Navigation from '../components/navigation'
+import SEO from '../components/seo'
 
 export const query = graphql`
   query ProductCategoryQuery($id: String!) {
-    category: sanityTemplateProductCategory(id: { eq: $id }) {
+    category: sanityTemplateProductCategory(id: {eq: $id}) {
       id
       basicTemplate {
         name {
@@ -64,7 +64,7 @@ export const query = graphql`
         }
       }
     }
-    products: allSanityTemplateProduct(limit: 100, sort: { fields: sanityDocumentTitle }) {
+    products: allSanityTemplateProduct(limit: 100, sort: {fields: sanityDocumentTitle}) {
       edges {
         node {
           id
@@ -97,44 +97,44 @@ export const query = graphql`
       }
     }
   }
-`;
+`
 
 const ProductCategoryTemplate = props => {
-  const { data, pageContext, location, errors } = props;
-  const locale = getLocale(pageContext);
+  const {data, pageContext, location, errors} = props
+  const locale = getLocale(pageContext)
 
-  const { basicTemplate, id } = data && data.category;
-  const { name, title, complementaryTitle, text, heroImage } = basicTemplate;
+  const {basicTemplate, id} = data && data.category
+  const {name, title, complementaryTitle, text, heroImage} = basicTemplate
 
-  const allProducts = (data || {}).products ? mapEdgesToNodes(data.products) : [];
+  const allProducts = (data || {}).products ? mapEdgesToNodes(data.products) : []
 
   const categoryProducts = allProducts.filter(product => {
     let innerFilter = product.belongsToCategory.filter(c => {
-      return c.id === id;
-    });
-    return innerFilter.length > 0;
-  });
+      return c.id === id
+    })
+    return innerFilter.length > 0
+  })
 
   return (
     <Layout locale={locale} location={location} info={props}>
       <Container>
-        {errors && <SEO txitle="GraphQL Error" />}
-        <SEO title={name || "AS Fiskevegn"} />
+        {errors && <SEO txitle='GraphQL Error' />}
+        <SEO title={name || 'AS Fiskevegn'} />
 
         {errors && <GraphQLErrorList errors={errors} />}
 
         <Block>
           <InnerContainer>
-            <GoBack href={locale == "en" ? "/products" : "no/produkter"} />
+            <GoBack href={locale == 'en' ? '/products' : 'no/produkter'} />
             <Intro complementaryTitle={complementaryTitle} title={title} text={text} />
           </InnerContainer>
         </Block>
         <Block>
-          <Design backgroundImage={heroImage} opacity="015">
+          <Design backgroundImage={heroImage} darkOverlay>
             <InnerContainer>
               <Navigation
                 nodes={categoryProducts}
-                template={{ en: "product", no: "no/produkt" }}
+                template={{en: 'product', no: 'no/produkt'}}
                 locale={locale}
               />
             </InnerContainer>
@@ -142,7 +142,7 @@ const ProductCategoryTemplate = props => {
         </Block>
       </Container>
     </Layout>
-  );
-};
+  )
+}
 
-export default localize(ProductCategoryTemplate);
+export default localize(ProductCategoryTemplate)

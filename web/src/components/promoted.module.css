@@ -40,7 +40,7 @@
 
 .visuals {
   flex:1;
-  max-height: 400px;
+  /* max-height: 400px; */
   overflow: hidden;
   @media (--large-and-up) {
     flex:60% 0 0;
@@ -89,5 +89,6 @@
 }
 
 .href {
-  composes: complementaryLink from './utils.module.css';
+  composes: btnOutlined from './utils.module.css';
+  composes: btnSpace from './utils.module.css';
 }

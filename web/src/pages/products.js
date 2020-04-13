@@ -1,41 +1,41 @@
-import React from "react";
-import { graphql } from "gatsby";
-import { mapEdgesToNodes, cn } from "../lib/helpers";
-import { getLocale } from "../../sytalaust";
+import React from 'react'
+import {graphql} from 'gatsby'
+import {mapEdgesToNodes, cn} from '../lib/helpers'
+import {getLocale} from '../../sytalaust'
 
-import Block from "../components/block";
-import Container from "../components/container";
-import Design from "../components/design";
-import GraphQLErrorList from "../components/graphql-error-list";
-import InnerContainer from "../components/inner-container";
-import Intro from "../components/intro";
-import Layout from "../containers/layout";
-import localize from "../components/localize";
-import Navigation from "../components/navigation";
-import SEO from "../components/seo";
+import Block from '../components/block'
+import Container from '../components/container'
+import Design from '../components/design'
+import GraphQLErrorList from '../components/graphql-error-list'
+import InnerContainer from '../components/inner-container'
+import Intro from '../components/intro'
+import Layout from '../containers/layout'
+import localize from '../components/localize'
+import Navigation from '../components/navigation'
+import SEO from '../components/seo'
 
 const ProductsPage = props => {
-  const { data, pageContext, location, errors } = props;
-  const locale = getLocale(pageContext);
+  const {data, pageContext, location, errors} = props
+  const locale = getLocale(pageContext)
 
   if (errors) {
     return (
       <Layout>
         <GraphQLErrorList errors={errors} />
       </Layout>
-    );
+    )
   }
 
-  const page = (data || {}).page;
-  const nodes = (data || {}).categories ? mapEdgesToNodes(data.categories) : [];
+  const page = (data || {}).page
+  const nodes = (data || {}).categories ? mapEdgesToNodes(data.categories) : []
 
   if (!page) {
-    throw new Error('Missing "page". Open the studio and add some content to this page.');
+    throw new Error('Missing "page". Open the studio and add some content to this page.')
   }
 
   return (
     <Layout locale={locale} location={location} info={props}>
-      <SEO title={locale == "en" ? "Products" : "Produkter"} />
+      <SEO title={locale == 'en' ? 'Products' : 'Produkter'} />
       <Container>
         <Block>
           <InnerContainer>
@@ -49,11 +49,11 @@ const ProductsPage = props => {
           </InnerContainer>
         </Block>
         <Block>
-          <Design backgroundImage={page.heroImage} opacity="010">
+          <Design backgroundImage={page.heroImage} darkOverlay>
             <InnerContainer>
               <Navigation
                 nodes={nodes}
-                template={{ en: "products", no: "no/produkter" }}
+                template={{en: 'products', no: 'no/produkter'}}
                 locale={locale}
               />
             </InnerContainer>
@@ -61,13 +61,13 @@ const ProductsPage = props => {
         </Block>
       </Container>
     </Layout>
-  );
-};
+  )
+}
 
 export const query = graphql`
   query ProductsPageQuery {
     # Its neccessary to use this regex if page is hidden in deskStructure
-    page: sanityPageProducts(_id: { regex: "/(drafts.|)pageProducts/" }) {
+    page: sanityPageProducts(_id: {regex: "/(drafts.|)pageProducts/"}) {
       intro {
         title {
           _type
@@ -108,7 +108,7 @@ export const query = graphql`
         alt
       }
     }
-    categories: allSanityTemplateProductCategory(limit: 6, sort: { fields: sanityDocumentTitle }) {
+    categories: allSanityTemplateProductCategory(limit: 6, sort: {fields: sanityDocumentTitle}) {
       edges {
         node {
           id
@@ -153,6 +153,6 @@ export const query = graphql`
       }
     }
   }
-`;
+`
 
-export default localize(ProductsPage);
+export default localize(ProductsPage)

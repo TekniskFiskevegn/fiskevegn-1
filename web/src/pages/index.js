@@ -3,7 +3,8 @@ import {graphql, Link} from 'gatsby'
 import {
   mapEdgesToNodes,
   filterOutDocsWithoutSlugs,
-  filterOutDocsPublishedInTheFuture
+  filterOutDocsPublishedInTheFuture,
+  cn
 } from '../lib/helpers'
 import {getLocale} from '../../sytalaust'
 
@@ -228,7 +229,7 @@ const IndexPage = props => {
               <Intro title={locale == 'en' ? 'Latest News' : 'Siste nytt'} textAlignLeft />
               <List style='oneHalfWithGapAndGridFix' listItem='NewsTeaser' nodes={newsNodes} />
               <div>
-                <Link to='/archive' className={utils.defaultLink}>
+                <Link to='/archive' className={cn(utils.btnOutlined, utils.btnSpace)}>
                   {locale == 'en' ? 'More news' : 'Flere nyheter'}
                 </Link>
               </div>

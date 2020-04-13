@@ -34,7 +34,7 @@
 
 .visuals {
   flex:1;
-  max-height: 400px;
+  /* max-height: 400px; */
   overflow: hidden;
   @media (--large-and-up) {
     flex:60% 0 0;
@@ -42,7 +42,7 @@
 }
 
 .maxHeightOnVisuals {
-  max-height: 400px;
+  /* max-height: 400px; */
   overflow: hidden;
 }
 
@@ -86,6 +86,7 @@
 }
 
 .contentTitle {
+  composes: h3 from "./utils.module.css";
 }
 
 .link {

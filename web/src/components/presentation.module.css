@@ -35,7 +35,7 @@
 }
 
 .title {
-  composes: h1 from "./utils.module.css";
+  composes: h2 from "./utils.module.css";
   margin-bottom:0.2em;
 }
 

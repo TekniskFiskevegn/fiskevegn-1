@@ -4,6 +4,11 @@
 .root {
   display:flex;
   flex-flow:column;
+  background: #edeff3;
+
+  @nest &:before {
+    
+  }
 }
 
 .withBorders {

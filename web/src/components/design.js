@@ -1,15 +1,16 @@
-import React from "react";
-import { buildImageObj, cn } from "../lib/helpers";
-import { imageUrlFor } from "../lib/image-url";
-import Svg from "./svg";
+import React from 'react'
+import {buildImageObj, cn} from '../lib/helpers'
+import {imageUrlFor} from '../lib/image-url'
+import Svg from './svg'
 
-import styles from "./design.module.css";
+import styles from './design.module.css'
 
 const Design = ({
   svg,
   children,
   backgroundImage,
-  opacity,
+  darkOverlay,
+  lightOverlay,
   split,
   flex,
   light,
@@ -17,55 +18,49 @@ const Design = ({
   isStatic
 }) => {
   if (backgroundImage) {
-    let img;
+    let img
     if (backgroundImage.asset) {
       img = imageUrlFor(buildImageObj(backgroundImage))
         .width(1800)
         .height(Math.floor((9 / 16) * 1800))
-        .fit("crop")
-        .url();
+        .fit('crop')
+        .url()
     } else {
-      img = backgroundImage;
+      img = backgroundImage
     }
 
     const inlineStyle = {
       backgroundImage: `url(${img})`
-    };
+    }
     return (
       <div
         className={cn(
           styles.root,
           styles.backgroundImage,
-          opacity == "010" ? styles.opacity010 : "",
-          opacity == "015" ? styles.opacity015 : "",
-          opacity == "025" ? styles.opacity025 : "",
-          opacity == "050" ? styles.opacity050 : "",
-          opacity == "065" ? styles.opacity065 : "",
-          opacity == "075" ? styles.opacity075 : "",
-          opacity == "085" ? styles.opacity085 : "",
-          opacity == "090" ? styles.opacity090 : "",
-          flex ? styles.flex : ""
+          darkOverlay ? styles.darkOverlay : '',
+          lightOverlay ? styles.lightOverlay : '',
+          flex ? styles.flex : ''
         )}
         style={inlineStyle}
       >
-        {split && <div className={styles.splitLeft}></div>}
-        {split && <div className={styles.splitRight}></div>}
+        {split && <div className={styles.splitLeft} />}
+        {split && <div className={styles.splitRight} />}
         {svg && <Svg {...svg} />}
         {children}
       </div>
-    );
+    )
   }
 
   return (
-    <div className={cn(styles.root, light ? styles.light : "", gradient ? styles.gradient : "")}>
+    <div className={cn(styles.root, light ? styles.light : '', gradient ? styles.gradient : '')}>
       {svg && <Svg {...svg} />}
       {children}
     </div>
-  );
-};
+  )
+}
 
 Design.DefaultProps = {
   backgroundImage: false
-};
+}
 
-export default Design;
+export default Design
