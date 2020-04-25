@@ -246,6 +246,10 @@
 
 .superTitle {
   composes: h1;
+  line-height: 40px;
+  @media (--medium-and-up) {
+    line-height:55px;
+  }
   @media (--large-and-up) {
     font-size:60px;
     line-height:70px;

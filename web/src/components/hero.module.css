@@ -38,13 +38,23 @@
 .caption {
   position: absolute;
   z-index: 2;
-  text-align: center;
   color:#fff;
-
   background-color: transparent;
-  top: 55%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left:5%;
+  top:auto;
+  bottom:0;
+  width:100%;
+  @media (--medium-and-up) {
+    bottom:auto;
+    text-align:center;
+    max-width: 600px;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  @media (--large-and-up) {
+    max-width: 800px;
+  }
 }
 
 .captionTitle {
