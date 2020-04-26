@@ -65,8 +65,8 @@
 
   @media (--large-and-up) {
     position: absolute;
-    top: 25px;
-    bottom: 25px;
+    top: 50px;
+    bottom: 50px;
     right: 0;
     padding:3em;
     margin:0;

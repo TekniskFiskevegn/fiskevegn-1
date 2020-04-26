@@ -14,6 +14,8 @@ import localize from '../components/localize'
 import Navigation from '../components/navigation'
 import SEO from '../components/seo'
 
+import utils from '../components/utils.module.css'
+
 const ServicesPage = props => {
   const {data, pageContext, location, errors} = props
   const locale = getLocale(pageContext)
@@ -44,12 +46,16 @@ const ServicesPage = props => {
                 complementaryTitle={page.intro.complementaryTitle}
                 title={page.intro.title}
                 text={page.intro.text}
+                marginBottomSmall
               />
             )}
           </InnerContainer>
         </Block>
         <Block>
           <Design backgroundImage={page.heroImage} darkOverlay>
+            <div className={utils.navConnector}>
+              {locale == 'en' ? 'Our services' : 'Våre tjenester'}
+            </div>
             <InnerContainer>
               <Navigation
                 nodes={nodesServices}

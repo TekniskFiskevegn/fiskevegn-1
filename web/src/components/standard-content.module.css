@@ -5,6 +5,7 @@
   display:flex;
   flex-flow:column;
   background: #edeff3;
+  background:var(--color-light-gray);
   position: relative;
   padding:2em 2em;
 
@@ -22,6 +23,7 @@
         right:-100px;
         bottom:0;
         background:#edeff3;
+        background:var(--color-light-gray);
       }
       @nest &:before {
         content:'';
@@ -31,6 +33,7 @@
         left:-100px;
         bottom:0;
         background:#edeff3;
+        background:var(--color-light-gray);
       }
   }
 

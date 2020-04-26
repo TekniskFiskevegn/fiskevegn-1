@@ -15,6 +15,8 @@ import localize from '../components/localize'
 import Navigation from '../components/navigation'
 import SEO from '../components/seo'
 
+import utils from '../components/utils.module.css'
+
 export const query = graphql`
   query ProductCategoryQuery($id: String!) {
     category: sanityTemplateProductCategory(id: {eq: $id}) {
@@ -126,11 +128,17 @@ const ProductCategoryTemplate = props => {
         <Block>
           <InnerContainer>
             <GoBack href={locale == 'en' ? '/products' : 'no/produkter'} />
-            <Intro complementaryTitle={complementaryTitle} title={title} text={text} />
+            <Intro
+              complementaryTitle={complementaryTitle}
+              title={title}
+              text={text}
+              marginBottomSmall
+            />
           </InnerContainer>
         </Block>
         <Block>
           <Design backgroundImage={heroImage} darkOverlay>
+            <div className={utils.navConnector}>{locale == 'en' ? 'Assortment' : 'Sortiment'}</div>
             <InnerContainer>
               <Navigation
                 nodes={categoryProducts}

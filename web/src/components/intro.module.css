@@ -36,6 +36,10 @@
   }
 }
 
+.marginBottomSmall {
+margin-bottom:1em;
+}
+
 .textAlignLeft {
 text-align: left;
 }

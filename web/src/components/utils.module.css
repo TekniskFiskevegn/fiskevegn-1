@@ -2,6 +2,8 @@
 @import '../styles/custom-media.css';
 
 
+
+
 .btnSpace {
   margin:1rem 0;
 }
@@ -42,6 +44,15 @@
     background-color:var(--color-brand-complementary);
     color:#fff;
   }
+}
+
+.navConnector {
+  composes: btn;
+  position: absolute;
+  top:-26px;
+  background: var(--color-light-gray);
+  color:var(--color-black);
+  border-radius:2px;
 }
 
 .ctaLink {
