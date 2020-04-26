@@ -48,11 +48,15 @@
 
 .navConnector {
   composes: btn;
+  display: none;
   position: absolute;
   top:-26px;
   background: var(--color-light-gray);
   color:var(--color-black);
   border-radius:2px;
+  @media (--medium-and-up) {
+    display: block;
+  }
 }
 
 .ctaLink {
