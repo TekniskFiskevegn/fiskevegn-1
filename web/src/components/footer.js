@@ -11,8 +11,8 @@ function Footer ({locale}) {
       <InnerContainer>
         <div className={styles.wrapper}>
           <div className={styles.siteInfo}>
+            <h4 className={styles.title}>AS Fiskevegn</h4>
             <p>
-              <h4 className={styles.title}>AS Fiskevegn</h4>
               N-6717 Flatraket
               <br />
               NORWAY

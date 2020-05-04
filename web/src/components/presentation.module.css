@@ -104,3 +104,10 @@
 .downloadLink {
   composes: defaultLink from './utils.module.css';
 }
+
+.textController {
+  width: 100%;
+  @media (--medium-and-up) {
+    width:auto;
+  }
+}

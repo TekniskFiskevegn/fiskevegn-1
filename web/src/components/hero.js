@@ -5,7 +5,7 @@ import {imageUrlFor} from '../lib/image-url'
 
 import styles from './hero.module.css'
 
-const Hero = ({image = null}) => {
+const Hero = ({image = null, locale}) => {
   if (!image) {
     return null
   }
@@ -21,7 +21,11 @@ const Hero = ({image = null}) => {
         alt={image.alt}
       />
       <div className={styles.caption}>
-        <h2 className={styles.captionTitle}>World leading longline manufacturer.</h2>
+        <h2 className={styles.captionTitle}>
+          {locale == 'en'
+            ? 'World leading manufacturer of Longline Systems and fishing gear.'
+            : 'Verdensledende produsent av Linesystem og fiskeredskaper.'}
+        </h2>
       </div>
     </div>
   )

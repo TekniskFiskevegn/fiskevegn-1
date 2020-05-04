@@ -1,22 +1,22 @@
-import React from "react";
-import { graphql } from "gatsby";
-import { mapEdgesToNodes, cn } from "../lib/helpers";
-import { getLocale } from "../../sytalaust";
+import React from 'react'
+import {graphql} from 'gatsby'
+import {mapEdgesToNodes, cn} from '../lib/helpers'
+import {getLocale} from '../../sytalaust'
 
-import Block from "../components/block";
-import Container from "../components/container";
-import GraphQLErrorList from "../components/graphql-error-list";
-import GoBack from "../components/go-back";
-import Intro from "../components/intro";
-import InnerContainer from "../components/inner-container";
-import Layout from "../containers/layout";
-import localize from "../components/localize";
-import Presentation from "../components/presentation";
-import SEO from "../components/seo";
+import Block from '../components/block'
+import Container from '../components/container'
+import GraphQLErrorList from '../components/graphql-error-list'
+import GoBack from '../components/go-back'
+import Intro from '../components/intro'
+import InnerContainer from '../components/inner-container'
+import Layout from '../containers/layout'
+import localize from '../components/localize'
+import Presentation from '../components/presentation'
+import SEO from '../components/seo'
 
 export const query = graphql`
   query productTemplateQuery($id: String!) {
-    product: sanityTemplateProduct(id: { eq: $id }) {
+    product: sanityTemplateProduct(id: {eq: $id}) {
       id
       belongsToCategory {
         id
@@ -115,30 +115,30 @@ export const query = graphql`
       }
     }
   }
-`;
+`
 
 const ProductTemplate = props => {
-  const { data, pageContext, location, errors } = props;
-  const locale = getLocale(pageContext);
+  const {data, pageContext, location, errors} = props
+  const locale = getLocale(pageContext)
 
-  const product = data && data.product;
+  const product = data && data.product
 
   if (!product) {
-    throw new Error('Missing "product". Open the studio and add some content to this product.');
+    throw new Error('Missing "product". Open the studio and add some content to this product.')
   }
 
-  const { belongsToCategory, basicTemplate, extraContentBlocks } = product;
-  const { name, title, complementaryTitle, text, heroImage } = basicTemplate;
+  const {belongsToCategory, basicTemplate, extraContentBlocks} = product
+  const {name, title, complementaryTitle, text, heroImage} = basicTemplate
 
   let goBackTo =
-    `${locale == "en" ? "/products/" : "no/produkter/"}` + belongsToCategory[0].basicTemplate.name;
-  goBackTo = goBackTo.replace(/\s+/g, "-").toLowerCase();
+    `${locale == 'en' ? '/products/' : 'no/produkter/'}` + belongsToCategory[0].basicTemplate.name
+  goBackTo = goBackTo.replace(/\s+/g, '-').toLowerCase()
 
   return (
-    <Layout locale={locale} location={location} info={props} currentPage="/products">
+    <Layout locale={locale} location={location} info={props} currentPage='/products'>
       <Container>
-        {errors && <SEO title="GraphQL Error" />}
-        <SEO title={name || "AS Fiskevegn"} />
+        {errors && <SEO title='GraphQL Error' />}
+        <SEO title={name || 'AS Fiskevegn'} />
 
         {errors && <GraphQLErrorList errors={errors} />}
 
@@ -155,23 +155,23 @@ const ProductTemplate = props => {
               return (
                 <Block key={i}>
                   <InnerContainer>
-                    <Presentation {...contentBlock} locale={locale} reverseFlow />
+                    <Presentation {...contentBlock} locale={locale} />
                   </InnerContainer>
                 </Block>
-              );
+              )
             } else {
               return (
                 <Block key={i}>
                   <InnerContainer>
-                    <Presentation {...contentBlock} locale={locale} />
+                    <Presentation {...contentBlock} locale={locale} reverseFlow />
                   </InnerContainer>
                 </Block>
-              );
+              )
             }
           })}
       </Container>
     </Layout>
-  );
-};
+  )
+}
 
-export default localize(ProductTemplate);
+export default localize(ProductTemplate)

@@ -191,9 +191,9 @@ const IndexPage = props => {
     : []
 
   return (
-    <Layout locale={locale} location={location} info={props}>
+    <Layout locale={locale} location={location} info={props} isCustomHeader>
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
-      {heroImage && <Hero image={heroImage} />}
+      {heroImage && <Hero image={heroImage} locale={locale} />}
       <Container>
         <h1 hidden>{site.title}</h1>
         {promotedBlocks.map((block, i) => {

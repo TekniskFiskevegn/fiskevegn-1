@@ -166,6 +166,10 @@
   height: 100%;
 }
 
+.width100 {
+  width:100%;
+}
+
 /* most subtle */
 .boxShadow4 {
   box-shadow: 0 1px 1px rgba(0,0,0,0.005), 
@@ -257,18 +261,6 @@
     font-size:24px;
     line-height:34px;
 	}
-}
-
-.superTitle {
-  composes: h1;
-  line-height: 40px;
-  @media (--medium-and-up) {
-    line-height:55px;
-  }
-  @media (--large-and-up) {
-    font-size:60px;
-    line-height:70px;
-  }
 }
 
 .noMarginText {

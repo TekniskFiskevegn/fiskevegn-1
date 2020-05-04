@@ -5,19 +5,12 @@
   position: relative;
   z-index: 100;
   width:100%;
-  composes: boxShadow4 from "./utils.module.css";
+  border-bottom:2px solid var(--color-light-gray);
 }
 
-/* .customHeader {
-  position: relative;
-  
-  @media (--extra-large-and-up) {
-    position:absolute;
-    @nest & .wrapper {
-      background:rgba(255,255,255,0.96);
-    }
-  }
-} */
+.customHeader {
+  border-bottom:0;
+}
 
 .wrapper {
   display: flex;

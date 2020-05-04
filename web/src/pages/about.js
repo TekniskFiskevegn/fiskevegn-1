@@ -36,7 +36,7 @@ const AboutPage = props => {
     throw new Error('Missing "page". Open the studio and add some content to this page.')
   }
 
-  const {intro, heroImage, features, history, career, partners} = page
+  const {intro, heroImage, features, history, presence, career, partners} = page
   const {name, title, complementaryTitle, text} = intro
 
   return (
@@ -52,7 +52,7 @@ const AboutPage = props => {
         <Block>
           <Design backgroundImage={heroImage} darkOverlay flex>
             <InnerContainer>
-              {features && features.length > 0 && (
+              {/* {features && features.length > 0 && (
                 <ul className={cn(listStyles.default)}>
                   {features.map((item, i) => (
                     <li key={i}>
@@ -60,7 +60,7 @@ const AboutPage = props => {
                     </li>
                   ))}
                 </ul>
-              )}
+              )} */}
             </InnerContainer>
           </Design>
         </Block>
@@ -72,10 +72,18 @@ const AboutPage = props => {
           </Block>
         )}
 
+        {presence && (
+          <Block>
+            <InnerContainer>
+              <Presentation {...presence} />
+            </InnerContainer>
+          </Block>
+        )}
+
         {career && (
           <Block>
             <InnerContainer>
-              <Presentation {...career} />
+              <Presentation {...career} reverseFlow />
             </InnerContainer>
           </Block>
         )}
@@ -140,6 +148,41 @@ export const query = graphql`
         text
       }
       history {
+        title {
+          _type
+          en
+          no
+        }
+        text {
+          _type
+          en
+          no
+        }
+        attachedEmail
+        image {
+          crop {
+            _key
+            _type
+            top
+            bottom
+            left
+            right
+          }
+          hotspot {
+            _key
+            _type
+            x
+            y
+            height
+            width
+          }
+          asset {
+            _id
+          }
+          alt
+        }
+      }
+      presence {
         title {
           _type
           en
