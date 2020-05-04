@@ -55,13 +55,13 @@ const Header = ({
                 )
               })}
               <li className={styles.navLinkShop}>
-                <a href='https://fiskevegn.myshopify.com'>Shop</a>
+                <a href='/shop'>Shop</a>
               </li>
             </ul>
           </nav>
         </div>
         <div className={styles.shopButton}>
-          <a href='https://fiskevegn.myshopify.com' className={utils.btn}>
+          <a href='/shop' className={utils.btn}>
             Shop
           </a>
         </div>
