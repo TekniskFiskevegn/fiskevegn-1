@@ -1,22 +1,22 @@
-import React from "react";
-import { graphql } from "gatsby";
-import { getLocale } from "../../sytalaust";
+import React from 'react'
+import {graphql} from 'gatsby'
+import {getLocale} from '../../sytalaust'
 
-import Block from "../components/block";
-import Container from "../components/container";
-import GraphQLErrorList from "../components/graphql-error-list";
-import GoBack from "../components/go-back";
-import Hero from "../components/hero";
-import Intro from "../components/intro";
-import InnerContainer from "../components/inner-container";
-import Layout from "../containers/layout";
-import localize from "../components/localize";
-import Presentation from "../components/presentation";
-import SEO from "../components/seo";
+import Block from '../components/block'
+import Container from '../components/container'
+import GraphQLErrorList from '../components/graphql-error-list'
+import GoBack from '../components/go-back'
+import Hero from '../components/hero'
+import Intro from '../components/intro'
+import InnerContainer from '../components/inner-container'
+import Layout from '../containers/layout'
+import localize from '../components/localize'
+import Presentation from '../components/presentation'
+import SEO from '../components/seo'
 
 export const query = graphql`
   query serviceTemplateQuery($id: String!) {
-    service: sanityTemplateService(id: { eq: $id }) {
+    service: sanityTemplateService(id: {eq: $id}) {
       id
       basicTemplate {
         name {
@@ -105,27 +105,27 @@ export const query = graphql`
       }
     }
   }
-`;
+`
 
 const ServiceTemplate = props => {
-  const { data, pageContext, location, errors } = props;
-  const locale = getLocale(pageContext);
+  const {data, pageContext, location, errors} = props
+  const locale = getLocale(pageContext)
 
-  const { basicTemplate, extraContentBlocks } = data && data.service;
-  const { name, title, complementaryTitle, text, heroImage } = basicTemplate;
+  const {basicTemplate, extraContentBlocks} = data && data.service
+  const {name, title, complementaryTitle, text, heroImage} = basicTemplate
 
   return (
     <Layout locale={locale} location={location} info={props}>
       <Container>
-        {errors && <SEO title="GraphQL Error" />}
-        <SEO title={name || "AS Fiskevegn"} />
+        {errors && <SEO title='GraphQL Error' />}
+        <SEO title={name || 'AS Fiskevegn'} />
 
         {errors && <GraphQLErrorList errors={errors} />}
 
         <Block>
           <InnerContainer>
-            <GoBack href={locale == "en" ? "/services" : "no/tjenester"} />
-            <Intro complementaryTitle={complementaryTitle} title={title} text={text} />
+            <GoBack href={locale == 'en' ? '/services' : 'no/tjenester'} />
+            <Intro complementaryTitle={complementaryTitle} title={title} text={text} borderBottom />
           </InnerContainer>
         </Block>
         {extraContentBlocks &&
@@ -137,7 +137,7 @@ const ServiceTemplate = props => {
                     <Presentation {...contentBlock} locale={locale} reverseFlow />
                   </InnerContainer>
                 </Block>
-              );
+              )
             } else {
               return (
                 <Block key={i}>
@@ -145,12 +145,12 @@ const ServiceTemplate = props => {
                     <Presentation {...contentBlock} locale={locale} />
                   </InnerContainer>
                 </Block>
-              );
+              )
             }
           })}
       </Container>
     </Layout>
-  );
-};
+  )
+}
 
-export default localize(ServiceTemplate);
+export default localize(ServiceTemplate)
