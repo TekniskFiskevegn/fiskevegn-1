@@ -74,6 +74,7 @@ export const query = graphql`
           no
         }
         attachedEmail
+        attachedLink
         attachedFile {
           asset {
             id

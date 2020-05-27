@@ -8,8 +8,12 @@ import styles from './news-teaser.module.css'
 import utils from './utils.module.css'
 
 const NewsTeaser = props => {
+  const url =
+    props.locale === 'en'
+      ? `/news/${props.slug.current}`
+      : `${props.locale}/nyheter/${props.slug.current}`
   return (
-    <Link className={styles.root} to={`/news/${props.slug.current}`}>
+    <Link className={styles.root} to={url}>
       <div className={utils.relative}>
         {props.image && props.image.asset && (
           <img

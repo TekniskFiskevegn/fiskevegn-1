@@ -30,6 +30,11 @@ export default {
       title: "Attach e-mail adress"
     },
     {
+      name: "attachedLink",
+      type: "string",
+      title: "Attach link"
+    },
+    {
       name: "attachedFile",
       type: "file",
       title: "Attach PDF"

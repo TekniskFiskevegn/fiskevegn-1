@@ -55,13 +55,13 @@ const Header = ({
                 )
               })}
               <li className={styles.navLinkShop}>
-                <a href='/shop'>Shop</a>
+                <a href={locale === 'en' ? '/shop' : '/shop'}>Shop</a>
               </li>
             </ul>
           </nav>
         </div>
         <div className={styles.shopButton}>
-          <a href='/shop' className={utils.btn}>
+          <a href={locale === 'en' ? '/shop' : 'no/shop'} className={utils.btn}>
             Shop
           </a>
         </div>

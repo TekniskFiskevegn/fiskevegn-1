@@ -7,7 +7,17 @@ import List from './list'
 import styles from './presentation.module.css'
 
 const Presentation = props => {
-  const {title, text, image, listOfImages, attachedEmail, attachedFile, reverseFlow, locale} = props
+  const {
+    title,
+    text,
+    image,
+    listOfImages,
+    attachedEmail,
+    attachedLink,
+    attachedFile,
+    reverseFlow,
+    locale
+  } = props
 
   let nameForAttachedFile
   if (attachedFile) {
@@ -24,6 +34,11 @@ const Presentation = props => {
           {attachedEmail && (
             <a className={styles.link} href={'mailto:' + attachedEmail}>
               {attachedEmail}
+            </a>
+          )}
+          {attachedLink && (
+            <a target='_blank' className={styles.attachedLink} href={attachedLink}>
+              {attachedLink}
             </a>
           )}
           {attachedFile && (

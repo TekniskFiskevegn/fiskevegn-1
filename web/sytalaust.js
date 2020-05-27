@@ -97,6 +97,36 @@ function getPageStructure () {
       }
     },
     {
+      name: 'news',
+      localeName: 'nyheter',
+      nav: {
+        showInMenu: false,
+        en: {
+          displayName: 'News',
+          url: '/news'
+        },
+        no: {
+          displayName: 'Nyheter',
+          url: '/no/nyheter'
+        }
+      }
+    },
+    {
+      name: 'shop',
+      localeName: 'shop',
+      nav: {
+        showInMenu: false,
+        en: {
+          displayName: 'shop',
+          url: '/shop'
+        },
+        no: {
+          displayName: 'shop',
+          url: '/no/shop'
+        }
+      }
+    },
+    {
       name: '404',
       localeName: '404',
       nav: {

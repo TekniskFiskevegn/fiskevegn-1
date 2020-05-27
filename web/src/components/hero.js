@@ -23,8 +23,8 @@ const Hero = ({image = null, locale}) => {
       <div className={styles.caption}>
         <h2 className={styles.captionTitle}>
           {locale == 'en'
-            ? 'World leading manufacturer of Longline Systems and fishing gear.'
-            : 'Verdensledende produsent av Linesystem og fiskeredskaper.'}
+            ? 'World leading manufacturer of longline systems and fishing gear.'
+            : 'Verdensledende produsent av linesystem og fiskeredskaper.'}
         </h2>
       </div>
     </div>

@@ -15,6 +15,7 @@ import SEO from '../components/seo'
 const ShopPage = props => {
   const {data, pageContext, location, errors} = props
   const locale = getLocale(pageContext)
+  // console.log('log locale', locale)
 
   if (errors) {
     return (
@@ -36,7 +37,7 @@ const ShopPage = props => {
               text={
                 locale == 'en'
                   ? 'We are currently working on our new web shop, and will be launching soon.'
-                  : 'We are currently working on our new web shop, and will be launching soon.'
+                  : 'Vi jobber med utviklingen av vår nye nettbutikk. Denne blir lansert ila. 2020.'
               }
             />
           </InnerContainer>

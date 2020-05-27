@@ -6,6 +6,7 @@ import {TiArrowRight} from 'react-icons/ti'
 
 import styles from './navigation.module.css'
 import stylesItem from './navigation-item.module.css'
+import utils from './utils.module.css'
 
 const Navigation = ({nodes, template, locale}) => {
   return (
@@ -17,14 +18,22 @@ const Navigation = ({nodes, template, locale}) => {
             return (
               <li key={node.id}>
                 <Link className={stylesItem.root} to={`/${template[locale]}/${slug.current}`}>
-                  <div className={stylesItem.content}>
+                  <div>
                     {name && (
-                      <h3 className={stylesItem.title}>
-                        {name}
-                        <TiArrowRight className={stylesItem.icon} />
-                      </h3>
+                      <div className={utils.relative}>
+                        <h3 className={cn(stylesItem.title, utils.relative)}>
+                          {name}
+                          <div className={stylesItem.iconContainer}>
+                            <TiArrowRight className={stylesItem.icon} />
+                          </div>
+                        </h3>
+                      </div>
                     )}
-                    {navigationText && <span className={stylesItem.teaser}>{navigationText}</span>}
+                    {navigationText && (
+                      <div>
+                        <span className={stylesItem.teaser}>{navigationText}</span>
+                      </div>
+                    )}
                   </div>
                 </Link>
               </li>

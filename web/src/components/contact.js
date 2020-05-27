@@ -10,7 +10,7 @@ import styles from './contact.module.css'
 const Contact = ({intro, address, phone, email, map, image, reverseFlow, locale}) => {
   const {title, complementaryTitle, text} = intro
 
-  console.log('log address', address)
+  // console.log('log address', address)
 
   return (
     <div className={styles.root}>
@@ -52,7 +52,7 @@ const Contact = ({intro, address, phone, email, map, image, reverseFlow, locale}
               {map && (
                 <li>
                   <a target='_blank' className={styles.mapLink} href={map}>
-                    Find us on google maps
+                    Google maps
                   </a>
                 </li>
               )}

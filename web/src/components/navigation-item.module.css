@@ -25,6 +25,12 @@
   }
   
   @media(--medium-and-up) {
+    /* padding:2em 3em; */
+  }
+  @media(--large-and-up) {
+    /* padding:2.5em 3em; */
+  }
+  @media(--extra-large-and-up) {
     padding:2.5em 4em;
   }
 }
@@ -32,11 +38,23 @@
 .title {
   composes: h4 from "./utils.module.css";
   color:var(--color-brand-complementary);
+  display: inline-block;
+  padding-right: 2rem;
   /* margin:0; */
 }
 
 .teaser {
   color:#555;
+}
+
+.iconContainer {
+  position:absolute;
+  top:0;
+  bottom:0;
+  right: 0;
+  display: flex;
+  align-items:center;
+  justify-content: center;
 }
 
 .icon {

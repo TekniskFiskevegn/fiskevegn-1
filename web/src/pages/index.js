@@ -227,9 +227,17 @@ const IndexPage = props => {
           <Block>
             <InnerContainer>
               <Intro title={locale == 'en' ? 'Latest News' : 'Siste nytt'} textAlignLeft />
-              <List style='oneHalfWithGapAndGridFix' listItem='NewsTeaser' nodes={newsNodes} />
+              <List
+                style='oneHalfWithGapAndGridFix'
+                listItem='NewsTeaser'
+                nodes={newsNodes}
+                locale={locale}
+              />
               <div>
-                <Link to='/archive' className={cn(utils.btnOutlined, utils.btnSpace)}>
+                <Link
+                  to={locale == 'en' ? '/archive' : 'no/arkiv'}
+                  className={cn(utils.btnOutlined, utils.btnSpace)}
+                >
                   {locale == 'en' ? 'More news' : 'Flere nyheter'}
                 </Link>
               </div>

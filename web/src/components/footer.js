@@ -12,12 +12,7 @@ function Footer ({locale}) {
         <div className={styles.wrapper}>
           <div className={styles.siteInfo}>
             <h4 className={styles.title}>AS Fiskevegn</h4>
-            <p>
-              N-6717 Flatraket
-              <br />
-              NORWAY
-            </p>
-
+            <p>Pernesvegen 35, 6717 Flatraket</p>
             <p>
               +47 57 85 84 00
               <br />
