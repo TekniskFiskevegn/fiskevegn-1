@@ -1,21 +1,21 @@
-import React from "react";
-import { graphql } from "gatsby";
-import { mapEdgesToNodes, filterOutDocsWithoutSlugs, log } from "../lib/helpers";
-import { getLocale } from "../../sytalaust";
+import React from 'react'
+import {graphql} from 'gatsby'
+import {mapEdgesToNodes, filterOutDocsWithoutSlugs, log} from '../lib/helpers'
+import {getLocale} from '../../sytalaust'
 
-import Container from "../components/container";
-import GraphQLErrorList from "../components/graphql-error-list";
-import Block from "../components/block";
-import InnerContainer from "../components/inner-container";
-import Intro from "../components/intro";
-import List from "../components/list";
-import SEO from "../components/seo";
-import Layout from "../containers/layout";
-import localize from "../components/localize";
+import Container from '../components/container'
+import GraphQLErrorList from '../components/graphql-error-list'
+import Block from '../components/block'
+import InnerContainer from '../components/inner-container'
+import Intro from '../components/intro'
+import List from '../components/list'
+import SEO from '../components/seo'
+import Layout from '../containers/layout'
+import localize from '../components/localize'
 
 export const query = graphql`
   query ArchivePageQuery {
-    news: allSanityTemplateNews(limit: 12, sort: { fields: [publishedAt], order: ASC }) {
+    news: allSanityTemplateNews(limit: 12, sort: {fields: [publishedAt], order: ASC}) {
       edges {
         node {
           id
@@ -44,36 +44,36 @@ export const query = graphql`
       }
     }
   }
-`;
+`
 
 const ArchivePage = props => {
-  const { data, pageContext, location, errors } = props;
-  const locale = getLocale(pageContext);
+  const {data, pageContext, location, errors} = props
+  const locale = getLocale(pageContext)
 
   if (errors) {
     return (
       <Layout>
         <GraphQLErrorList errors={errors} />
       </Layout>
-    );
+    )
   }
 
   const newsNodes =
-    data && data.news && mapEdgesToNodes(data.news).filter(filterOutDocsWithoutSlugs);
+    data && data.news && mapEdgesToNodes(data.news).filter(filterOutDocsWithoutSlugs)
 
   return (
     <Layout locale={locale} location={location} info={props}>
-      <SEO title={locale == "en" ? "News" : "Nyheter"} />
+      <SEO title={locale == 'en' ? 'News' : 'Nyheter'} />
       <Container>
         <Block>
           <InnerContainer>
-            <Intro title={locale == "en" ? "News archive" : "Nyhetsarkiv"} textAlignLeft />
-            <List style="oneHalfWithGapAndGridFix" listItem="NewsTeaser" nodes={newsNodes} />
+            <Intro title={locale == 'en' ? 'News' : 'Nyheter'} textAlignLeft />
+            <List style='oneHalfWithGapAndGridFix' listItem='NewsTeaser' nodes={newsNodes} />
           </InnerContainer>
         </Block>
       </Container>
     </Layout>
-  );
-};
+  )
+}
 
-export default localize(ArchivePage);
+export default localize(ArchivePage)

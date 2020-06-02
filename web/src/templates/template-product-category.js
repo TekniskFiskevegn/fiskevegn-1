@@ -91,6 +91,11 @@ export const query = graphql`
                 current
               }
             }
+            alternativeSlug {
+              _type
+              en
+              no
+            }
           }
           belongsToCategory {
             id

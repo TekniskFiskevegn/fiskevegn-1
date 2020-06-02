@@ -41,11 +41,6 @@
 
 .visuals {
   composes: container;
-  @nest & img {
-    @media(--medium-and-up) {
-      border-radius:4px;
-    }
-  }
 }
 
 .listOfVisuals {

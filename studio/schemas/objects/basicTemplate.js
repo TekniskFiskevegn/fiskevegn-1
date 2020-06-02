@@ -1,48 +1,53 @@
 export default {
-  name: "basicTemplate",
-  type: "object",
-  title: "Standard content template items",
+  name: 'basicTemplate',
+  type: 'object',
+  title: 'Standard content template items',
   fields: [
     {
-      name: "name",
-      type: "localeString",
-      title: "Name",
+      name: 'name',
+      type: 'localeString',
+      title: 'Name',
       description:
-        "Choose name carefully, because this is used to generate an URL, in the next step."
+        'Choose name carefully, because this is used to generate an URL, in the next step.'
     },
     {
-      name: "slug",
-      type: "localeSlug",
-      title: "URL"
+      name: 'slug',
+      type: 'localeSlug',
+      title: 'URL'
     },
     {
-      name: "title",
-      type: "localeString",
-      title: "Main title",
-      description: "Title showing at the top of the page."
+      name: 'alternativeSlug',
+      type: 'localeString',
+      title: 'Alternative URL'
     },
     {
-      name: "complementaryTitle",
-      type: "localeString",
-      title: "Complementary title",
-      description: "Optional. But for products and categories this should be used as a breadcrumb."
+      name: 'title',
+      type: 'localeString',
+      title: 'Main title',
+      description: 'Title showing at the top of the page.'
     },
     {
-      name: "text",
-      type: "localeText",
-      title: "Text",
-      description: "Short and sweet introduction."
+      name: 'complementaryTitle',
+      type: 'localeString',
+      title: 'Complementary title',
+      description: 'Optional. But for products and categories this should be used as a breadcrumb.'
     },
     {
-      name: "heroImage",
-      type: "heroImage",
-      title: "Scenery Image"
+      name: 'text',
+      type: 'localeText',
+      title: 'Text',
+      description: 'Short and sweet introduction.'
     },
     {
-      name: "navigationText",
-      type: "localeString",
-      title: "Navigation text",
-      description: "A sneak peak of what this is about. Shown only in navigation menu."
+      name: 'heroImage',
+      type: 'heroImage',
+      title: 'Scenery Image'
+    },
+    {
+      name: 'navigationText',
+      type: 'localeString',
+      title: 'Navigation text',
+      description: 'A sneak peak of what this is about. Shown only in navigation menu.'
     }
   ]
-};
+}

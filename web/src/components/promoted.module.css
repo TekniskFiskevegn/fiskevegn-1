@@ -57,7 +57,7 @@
   background-color: var(--color-light-gray);
   position:relative;
   padding:1.5em 1.5em;
-  margin:-2em 1em 0 1em;
+  /* margin:-2em 1em 0 1em; */
   display:flex;
   flex:1;
   align-items: center;

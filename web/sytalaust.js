@@ -67,6 +67,21 @@ function getPageStructure () {
       }
     },
     {
+      name: 'archive',
+      localeName: 'arkiv',
+      nav: {
+        showInMenu: true,
+        en: {
+          displayName: 'News',
+          url: '/archive'
+        },
+        no: {
+          displayName: 'Nyheter',
+          url: '/no/arkiv'
+        }
+      }
+    },
+    {
       name: 'contact',
       localeName: 'kontakt',
       nav: {
@@ -78,21 +93,6 @@ function getPageStructure () {
         no: {
           displayName: 'Kontakt',
           url: '/no/kontakt'
-        }
-      }
-    },
-    {
-      name: 'archive',
-      localeName: 'arkiv',
-      nav: {
-        showInMenu: false,
-        en: {
-          displayName: 'Archive',
-          url: '/archive'
-        },
-        no: {
-          displayName: 'Arkiv',
-          url: '/no/arkiv'
         }
       }
     },

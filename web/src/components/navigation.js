@@ -14,10 +14,22 @@ const Navigation = ({nodes, template, locale}) => {
       <ul className={cn(styles.default, styles.custom, styles.boxShadow)}>
         {nodes &&
           nodes.map(node => {
-            const {name, navigationText, slug} = node.basicTemplate
+            const {name, navigationText, slug, alternativeSlug} = node.basicTemplate
+            const linkTo = () => {
+              if (alternativeSlug) {
+                if (locale === 'en') {
+                  return `/${alternativeSlug}`
+                } else {
+                  return `/no/${alternativeSlug}`
+                }
+              } else {
+                return `/${template[locale]}/${slug.current}`
+              }
+            }
+            console.log('log in navigation item 2', node.basicTemplate, template)
             return (
               <li key={node.id}>
-                <Link className={stylesItem.root} to={`/${template[locale]}/${slug.current}`}>
+                <Link className={stylesItem.root} to={linkTo()}>
                   <div>
                     {name && (
                       <div className={utils.relative}>
