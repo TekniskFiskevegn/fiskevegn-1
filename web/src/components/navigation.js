@@ -26,7 +26,6 @@ const Navigation = ({nodes, template, locale}) => {
                 return `/${template[locale]}/${slug.current}`
               }
             }
-            console.log('log in navigation item 2', node.basicTemplate, template)
             return (
               <li key={node.id}>
                 <Link className={stylesItem.root} to={linkTo()}>
