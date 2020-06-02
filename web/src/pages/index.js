@@ -112,7 +112,7 @@ export const query = graphql`
         }
       }
     }
-    news: allSanityTemplateNews(sort: {fields: [publishedAt], order: ASC}) {
+    news: allSanityTemplateNews(limit: 2, sort: {fields: [publishedAt], order: DESC}) {
       edges {
         node {
           id

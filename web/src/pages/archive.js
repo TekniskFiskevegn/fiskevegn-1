@@ -15,7 +15,7 @@ import localize from '../components/localize'
 
 export const query = graphql`
   query ArchivePageQuery {
-    news: allSanityTemplateNews(limit: 12, sort: {fields: [publishedAt], order: ASC}) {
+    news: allSanityTemplateNews(limit: 12, sort: {fields: [publishedAt], order: DESC}) {
       edges {
         node {
           id
@@ -49,6 +49,7 @@ export const query = graphql`
 const ArchivePage = props => {
   const {data, pageContext, location, errors} = props
   const locale = getLocale(pageContext)
+  console.log('log locale in archive', locale)
 
   if (errors) {
     return (
@@ -68,7 +69,12 @@ const ArchivePage = props => {
         <Block>
           <InnerContainer>
             <Intro title={locale == 'en' ? 'News' : 'Nyheter'} textAlignLeft />
-            <List style='oneHalfWithGapAndGridFix' listItem='NewsTeaser' nodes={newsNodes} />
+            <List
+              style='oneHalfWithGapAndGridFix'
+              listItem='NewsTeaser'
+              nodes={newsNodes}
+              locale={locale}
+            />
           </InnerContainer>
         </Block>
       </Container>
