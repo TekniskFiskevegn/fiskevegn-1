@@ -1,59 +1,64 @@
-import {format} from 'date-fns'
-import {FiPlus} from 'react-icons/fi'
+import { format } from "date-fns";
+import { FiPlus } from "react-icons/fi";
 
 export default {
-  name: 'templateNews',
-  title: 'News',
-  type: 'document',
+  name: "templateNews",
+  title: "News",
+  type: "document",
   icon: FiPlus,
   fields: [
     {
-      name: 'sanityDocumentTitle',
-      type: 'string',
-      title: 'Document title',
-      description: 'Not showing on page.'
+      name: "sanityDocumentTitle",
+      type: "string",
+      title: "Document title",
+      description: "Not showing on page."
     },
     {
-      name: 'title',
-      type: 'localeString',
-      title: 'Main title',
-      description: 'Title showing at the top of the page.'
+      name: "title",
+      type: "localeString",
+      title: "Main title",
+      description: "Title showing at the top of the page."
     },
     {
-      name: 'slug',
-      type: 'localeSlug',
-      title: 'URL'
+      name: "slug",
+      type: "localeSlug",
+      title: "URL"
     },
     {
-      name: 'publishedAt',
-      title: 'Published at',
-      description: 'You can use this field to schedule projects where you show them',
-      type: 'datetime'
+      name: "publishedAt",
+      title: "Published at",
+      description: "You can use this field to schedule projects where you show them",
+      type: "datetime"
     },
     {
-      name: 'excerpt',
-      title: 'Excerpt',
-      type: 'articleSimplePortableText'
+      name: "excerpt",
+      title: "Excerpt",
+      type: "articleSimplePortableText"
     },
     {
-      name: 'startedAt',
-      title: 'Started at',
-      type: 'datetime'
+      name: "startedAt",
+      title: "Started at",
+      type: "datetime"
     },
     {
-      name: 'endedAt',
-      title: 'Ended at',
-      type: 'datetime'
+      name: "endedAt",
+      title: "Ended at",
+      type: "datetime"
     },
     {
-      name: 'image',
-      title: 'Image',
-      type: 'figure'
+      name: "image",
+      title: "Image",
+      type: "figure"
     },
     {
-      name: 'body',
-      title: 'Body',
-      type: 'articlePortableText'
+      name: "body",
+      title: "Body",
+      type: "articlePortableText"
+    },
+    {
+      name: "bodyNorwegian",
+      title: "Body Norwegian",
+      type: "articlePortableText"
     }
   ]
   // preview: {
@@ -71,4 +76,4 @@ export default {
   //     };
   //   }
   // }
-}
+};

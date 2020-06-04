@@ -1,18 +1,18 @@
-import {format, distanceInWords, differenceInDays} from 'date-fns'
-import React from 'react'
-import {Link} from 'gatsby'
-import {buildImageObj} from '../lib/helpers'
-import {imageUrlFor} from '../lib/image-url'
-import Block from './block'
-import BlockContent from './sanity-block-content'
-import Container from './container'
-import InnerContainer from './inner-container'
-import Intro from './intro'
+import { format, distanceInWords, differenceInDays } from "date-fns";
+import React from "react";
+import { Link } from "gatsby";
+import { buildImageObj } from "../lib/helpers";
+import { imageUrlFor } from "../lib/image-url";
+import Block from "./block";
+import BlockContent from "./sanity-block-content";
+import Container from "./container";
+import InnerContainer from "./inner-container";
+import Intro from "./intro";
 
-import styles from './article.module.css'
+import styles from "./article.module.css";
 
-function Article (props) {
-  const {_rawBody, title, introduction, image, publishedAt} = props
+function Article(props) {
+  const { _rawBody, _rawBodyNorwegian, title, introduction, image, publishedAt, locale } = props;
   return (
     <Container>
       <Block>
@@ -22,7 +22,7 @@ function Article (props) {
           </div>
         </InnerContainer>
       </Block>
-      <Block verticalRhythm={{top: 1}}>
+      <Block verticalRhythm={{ top: 1 }}>
         <InnerContainer>
           {props.image && image.asset && (
             <div className={styles.image}>
@@ -30,19 +30,22 @@ function Article (props) {
                 src={imageUrlFor(buildImageObj(image))
                   .width(1200)
                   .height(Math.floor((9 / 16) * 1200))
-                  .fit('crop')
+                  .fit("crop")
                   .url()}
                 alt={image.alt}
               />
             </div>
           )}
           <article className={styles.article}>
-            {_rawBody && <BlockContent blocks={_rawBody || []} />}
+            {locale === "en" && _rawBody && <BlockContent blocks={_rawBody || []} />}
+            {locale === "no" && _rawBodyNorwegian && (
+              <BlockContent blocks={_rawBodyNorwegian || []} />
+            )}
           </article>
         </InnerContainer>
       </Block>
     </Container>
-  )
+  );
 }
 
-export default Article
+export default Article;
