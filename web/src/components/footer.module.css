@@ -14,10 +14,10 @@
   margin:0 auto;
   position: relative;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1.5em 0 3em 0;
+  padding:3em 0;
   @media (--medium-and-up) {
+    justify-content: center;
+    align-items: center;
     padding:3em;
   }
 }
@@ -31,17 +31,23 @@
   margin: 0 0 1rem;
 }
 
+.privacy {
+  font-size:14px;
+}
+
 .title {
   composes: h3 from './utils.module.css';
 }
 
 .siteInfo {
-  text-align: center;
   font-size: var(--font-large-size);
   line-height: var(--font-large-line-height);
 
   @nest & span {
     display:block;
+  }
+  @media (--medium-and-up) {
+    text-align:center;
   }
 }
 

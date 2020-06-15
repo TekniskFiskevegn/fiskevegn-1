@@ -1,11 +1,11 @@
-import React from 'react'
-import {Link} from 'gatsby'
-import Disclaimer from './disclaimer'
-import InnerContainer from './inner-container'
+import React from "react";
+import { Link } from "gatsby";
+import Disclaimer from "./disclaimer";
+import InnerContainer from "./inner-container";
 
-import styles from './footer.module.css'
+import styles from "./footer.module.css";
 
-function Footer ({locale}) {
+function Footer({ locale }) {
   return (
     <footer className={styles.root}>
       <InnerContainer>
@@ -18,22 +18,28 @@ function Footer ({locale}) {
               <br />
               facebook.com/fiskevegn
               <br />
-              <a className={styles.link} href='mailto:sales@fiskevegn.no'>
+              <a className={styles.link} href="mailto:sales@fiskevegn.no">
                 sales@fiskevegn.no
               </a>
             </p>
             <p>
-              <Link to={locale == 'en' ? '/no' : '/'} className={styles.linkColor}>
-                {locale == 'en' && <>Visit our Norwegian website</>}
-                {locale == 'no' && <>Visit our English website</>}
+              <Link to={locale == "en" ? "/no" : "/"} className={styles.linkColor}>
+                {locale == "en" && <>Visit our Norwegian website</>}
+                {locale == "no" && <>Visit our English website</>}
               </Link>
             </p>
             {/* <Disclaimer /> */}
+            <p className={styles.privacy}>
+              {locale == "en" && <>Privacy policy: We don`t store your data.</>}
+            </p>
+            <p className={styles.privacy}>
+              {locale == "no" && <>Vilkår: Vi lagrer ikke dataene dine.</>}
+            </p>
           </div>
         </div>
       </InnerContainer>
     </footer>
-  )
+  );
 }
 
-export default Footer
+export default Footer;
