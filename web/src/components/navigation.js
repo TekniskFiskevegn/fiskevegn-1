@@ -8,8 +8,6 @@ import styles from "./navigation.module.css";
 import stylesItem from "./navigation-item.module.css";
 import utils from "./utils.module.css";
 
-// comment
-
 const Navigation = ({ nodes, template, locale }) => {
   return (
     <div className={styles.root}>
