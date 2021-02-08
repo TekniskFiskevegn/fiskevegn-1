@@ -1,17 +1,16 @@
-import React from 'react'
-import {Link} from 'gatsby'
-import {cn, buildImageObj} from '../lib/helpers'
-import {imageUrlFor} from '../lib/image-url'
-import SanityBlockText from './sanity-block-text'
+import React from "react";
+import { Link } from "gatsby";
+import { cn, buildImageObj } from "../lib/helpers";
+import { imageUrlFor } from "../lib/image-url";
+import SanityBlockText from "./sanity-block-text";
 
-import styles from './news-teaser.module.css'
-import utils from './utils.module.css'
+import styles from "./news-teaser.module.css";
+import utils from "./utils.module.css";
 
 const NewsTeaser = props => {
+  console.log("log props newsteaser", props);
   const url =
-    props.locale === 'en'
-      ? `/news/${props.slug.current}`
-      : `${props.locale}/nyheter/${props.slug.current}`
+    props.locale === "en" ? `/news/${props.slug.current}` : `/no/nyheter/${props.slug.current}`;
   return (
     <Link className={styles.root} to={url}>
       <div className={utils.relative}>
@@ -21,7 +20,7 @@ const NewsTeaser = props => {
             src={imageUrlFor(buildImageObj(props.image))
               .width(800)
               .height(800)
-              .fit('crop')
+              .fit("crop")
               .url()}
             alt={props.image.alt}
           />
@@ -34,7 +33,7 @@ const NewsTeaser = props => {
         </h3>
       </div>
     </Link>
-  )
-}
+  );
+};
 
-export default NewsTeaser
+export default NewsTeaser;
