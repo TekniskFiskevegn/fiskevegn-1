@@ -61,7 +61,7 @@ const NewsTemplate = props => {
   const locale = getLocale(pageContext);
 
   const news = data && data.news;
-  console.log("log data for news", news);
+  // console.log("log data for news", news);
 
   return (
     <Layout locale={locale} location={location} info={props}>

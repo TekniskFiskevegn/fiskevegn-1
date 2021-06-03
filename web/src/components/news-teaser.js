@@ -8,7 +8,7 @@ import styles from "./news-teaser.module.css";
 import utils from "./utils.module.css";
 //comment
 const NewsTeaser = props => {
-  console.log("log props newsteaser", props);
+  // console.log("log props newsteaser", props);
   const url =
     props.locale === "en" ? `/news/${props.slug.current}` : `/no/nyheter/${props.slug.current}`;
   return (
